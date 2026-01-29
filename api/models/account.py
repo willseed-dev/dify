@@ -75,6 +75,17 @@ class TenantAccountRole(enum.StrEnum):
             TenantAccountRole.DATASET_OPERATOR,
         }
 
+    @staticmethod
+    def is_chat_history_role(role: Optional["TenantAccountRole"]) -> bool:
+        """Determines if the role has chat history viewing permission.
+
+        Only OWNER and ADMIN can view chat history.
+        EDITOR cannot view chat history for privacy reasons.
+        """
+        if not role:
+            return False
+        return role in {TenantAccountRole.OWNER, TenantAccountRole.ADMIN}
+
 
 class AccountStatus(enum.StrEnum):
     PENDING = "pending"
@@ -232,6 +243,15 @@ class Account(UserMixin, TypeBase):
     @property
     def is_dataset_operator(self):
         return self.role == TenantAccountRole.DATASET_OPERATOR
+
+    @property
+    def has_chat_history_permission(self):
+        """Determines if the account has chat history viewing permission.
+
+        Only OWNER and ADMIN can view chat history.
+        EDITOR cannot view chat history for privacy reasons.
+        """
+        return TenantAccountRole.is_chat_history_role(self.role)
 
 
 class TenantStatus(enum.StrEnum):

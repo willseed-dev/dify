@@ -343,6 +343,30 @@ def is_admin_or_owner_required(f: Callable[P, R]):
     return decorated_function
 
 
+def chat_history_permission_required(f: Callable[P, R]):
+    """Decorator that requires chat history viewing permission.
+
+    Only OWNER and ADMIN can view chat history.
+    EDITOR cannot view chat history for privacy reasons.
+    """
+
+    @wraps(f)
+    def decorated_function(*args: P.args, **kwargs: P.kwargs):
+        from werkzeug.exceptions import Forbidden
+
+        from libs.login import current_user
+        from models import Account
+
+        user = current_user._get_current_object()  # type: ignore
+        if not isinstance(user, Account):
+            raise Forbidden()
+        if not current_user.has_chat_history_permission:
+            raise Forbidden()
+        return f(*args, **kwargs)
+
+    return decorated_function
+
+
 def annotation_import_rate_limit(view: Callable[P, R]):
     """
     Rate limiting decorator for annotation import operations.

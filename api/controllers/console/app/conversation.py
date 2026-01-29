@@ -10,7 +10,12 @@ from werkzeug.exceptions import NotFound
 
 from controllers.console import console_ns
 from controllers.console.app.wraps import get_app_model
-from controllers.console.wraps import account_initialization_required, edit_permission_required, setup_required
+from controllers.console.wraps import (
+    account_initialization_required,
+    chat_history_permission_required,
+    edit_permission_required,
+    setup_required,
+)
 from core.app.entities.app_invoke_entities import InvokeFrom
 from extensions.ext_database import db
 from fields.raws import FilesContainedField
@@ -338,7 +343,7 @@ class CompletionConversationApi(Resource):
     @account_initialization_required
     @get_app_model(mode=AppMode.COMPLETION)
     @marshal_with(conversation_pagination_model)
-    @edit_permission_required
+    @chat_history_permission_required
     def get(self, app_model):
         current_user, _ = current_account_with_tenant()
         args = CompletionConversationQuery.model_validate(request.args.to_dict(flat=True))  # type: ignore
@@ -405,7 +410,7 @@ class CompletionConversationDetailApi(Resource):
     @account_initialization_required
     @get_app_model(mode=AppMode.COMPLETION)
     @marshal_with(conversation_message_detail_model)
-    @edit_permission_required
+    @chat_history_permission_required
     def get(self, app_model, conversation_id):
         conversation_id = str(conversation_id)
 
@@ -447,7 +452,7 @@ class ChatConversationApi(Resource):
     @account_initialization_required
     @get_app_model(mode=[AppMode.CHAT, AppMode.AGENT_CHAT, AppMode.ADVANCED_CHAT])
     @marshal_with(conversation_with_summary_pagination_model)
-    @edit_permission_required
+    @chat_history_permission_required
     def get(self, app_model):
         current_user, _ = current_account_with_tenant()
         args = ChatConversationQuery.model_validate(request.args.to_dict(flat=True))  # type: ignore
@@ -552,7 +557,7 @@ class ChatConversationDetailApi(Resource):
     @account_initialization_required
     @get_app_model(mode=[AppMode.CHAT, AppMode.AGENT_CHAT, AppMode.ADVANCED_CHAT])
     @marshal_with(conversation_detail_model)
-    @edit_permission_required
+    @chat_history_permission_required
     def get(self, app_model, conversation_id):
         conversation_id = str(conversation_id)
 
