@@ -50,7 +50,7 @@ const AppDetailLayout: FC<IAppDetailLayoutProps> = (props) => {
   const pathname = usePathname()
   const media = useBreakpoints()
   const isMobile = media === MediaType.mobile
-  const { isCurrentWorkspaceEditor, isLoadingCurrentWorkspace, currentWorkspace } = useAppContext()
+  const { isCurrentWorkspaceEditor, isCurrentWorkspaceManager, isLoadingCurrentWorkspace, currentWorkspace } = useAppContext()
   const { appDetail, setAppDetail, setAppSidebarExpand } = useStore(useShallow(state => ({
     appDetail: state.appDetail,
     setAppDetail: state.setAppDetail,
@@ -66,7 +66,7 @@ const AppDetailLayout: FC<IAppDetailLayoutProps> = (props) => {
     selectedIcon: NavIcon
   }>>([])
 
-  const getNavigationConfig = useCallback((appId: string, isCurrentWorkspaceEditor: boolean, mode: AppModeEnum) => {
+  const getNavigationConfig = useCallback((appId: string, isCurrentWorkspaceEditor: boolean, isCurrentWorkspaceManager: boolean, mode: AppModeEnum) => {
     const navConfig = [
       ...(isCurrentWorkspaceEditor
         ? [{
@@ -83,7 +83,8 @@ const AppDetailLayout: FC<IAppDetailLayoutProps> = (props) => {
         icon: RiTerminalBoxLine,
         selectedIcon: RiTerminalBoxFill,
       },
-      ...(isCurrentWorkspaceEditor
+      // Logs menu: only visible to owner/admin (isCurrentWorkspaceManager)
+      ...(isCurrentWorkspaceManager
         ? [{
             name: mode !== AppModeEnum.WORKFLOW
               ? t('appMenus.logAndAnn', { ns: 'common' })
@@ -136,7 +137,8 @@ const AppDetailLayout: FC<IAppDetailLayoutProps> = (props) => {
     const res = appDetailRes
     // redirection
     const canIEditApp = isCurrentWorkspaceEditor
-    if (!canIEditApp && (pathname.endsWith('configuration') || pathname.endsWith('workflow') || pathname.endsWith('logs'))) {
+    const canIViewLogs = isCurrentWorkspaceManager
+    if (!canIEditApp && (pathname.endsWith('configuration') || pathname.endsWith('workflow')) || (!canIViewLogs && pathname.endsWith('logs'))) {
       router.replace(`/app/${appId}/overview`)
       return
     }
@@ -148,7 +150,7 @@ const AppDetailLayout: FC<IAppDetailLayoutProps> = (props) => {
     }
     else {
       setAppDetail({ ...res, enable_sso: false })
-      setNavigation(getNavigationConfig(appId, isCurrentWorkspaceEditor, res.mode))
+      setNavigation(getNavigationConfig(appId, isCurrentWorkspaceEditor, isCurrentWorkspaceManager, res.mode))
     }
   }, [appDetailRes, isCurrentWorkspaceEditor, isLoadingAppDetail, isLoadingCurrentWorkspace])
 
