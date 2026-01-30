@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useSetWorkflowVarsWithValue = void 0;
+const hooks_store_1 = require("@/app/components/workflow/hooks-store");
+const useSetWorkflowVarsWithValue = () => {
+    const fetchInspectVars = (0, hooks_store_1.useHooksStore)(s => s.fetchInspectVars);
+    return {
+        fetchInspectVars,
+    };
+};
+exports.useSetWorkflowVarsWithValue = useSetWorkflowVarsWithValue;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXNlLXNldC13b3JrZmxvdy12YXJzLXdpdGgtdmFsdWUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ1c2Utc2V0LXdvcmtmbG93LXZhcnMtd2l0aC12YWx1ZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSx1RUFBcUU7QUFFOUQsTUFBTSwyQkFBMkIsR0FBRyxHQUFHLEVBQUU7SUFDOUMsTUFBTSxnQkFBZ0IsR0FBRyxJQUFBLDJCQUFhLEVBQUMsQ0FBQyxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUMsZ0JBQWdCLENBQUMsQ0FBQTtJQUUvRCxPQUFPO1FBQ0wsZ0JBQWdCO0tBQ2pCLENBQUE7QUFDSCxDQUFDLENBQUE7QUFOWSxRQUFBLDJCQUEyQiwrQkFNdkMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyB1c2VIb29rc1N0b3JlIH0gZnJvbSAnQC9hcHAvY29tcG9uZW50cy93b3JrZmxvdy9ob29rcy1zdG9yZSdcblxuZXhwb3J0IGNvbnN0IHVzZVNldFdvcmtmbG93VmFyc1dpdGhWYWx1ZSA9ICgpID0+IHtcbiAgY29uc3QgZmV0Y2hJbnNwZWN0VmFycyA9IHVzZUhvb2tzU3RvcmUocyA9PiBzLmZldGNoSW5zcGVjdFZhcnMpXG5cbiAgcmV0dXJuIHtcbiAgICBmZXRjaEluc3BlY3RWYXJzLFxuICB9XG59XG4iXX0=

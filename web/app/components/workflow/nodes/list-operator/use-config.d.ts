@@ -1,0 +1,20 @@
+import type { ListFilterNodeType } from './types';
+declare const useConfig: (id: string, payload: ListFilterNodeType) => {
+    readOnly: any;
+    inputs: any;
+    filterVar: any;
+    varType: any;
+    itemVarType: any;
+    itemVarTypeShowName: any;
+    hasSubVariable: boolean;
+    handleVarChanges: any;
+    handleFilterEnabledChange: any;
+    handleFilterChange: any;
+    handleLimitChange: any;
+    handleOrderByEnabledChange: any;
+    handleOrderByKeyChange: any;
+    handleOrderByTypeChange: any;
+    handleExtractsEnabledChange: any;
+    handleExtractsChange: any;
+};
+export default useConfig;

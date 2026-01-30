@@ -1,0 +1,24 @@
+import type { AliyunConfig, ArizeConfig, DatabricksConfig, LangFuseConfig, LangSmithConfig, MLflowConfig, OpikConfig, PhoenixConfig, TencentConfig, WeaveConfig } from './type';
+import { TracingProvider } from './type';
+export type PopupProps = {
+    appId: string;
+    readOnly: boolean;
+    enabled: boolean;
+    onStatusChange: (enabled: boolean) => void;
+    chosenProvider: TracingProvider | null;
+    onChooseProvider: (provider: TracingProvider) => void;
+    arizeConfig: ArizeConfig | null;
+    phoenixConfig: PhoenixConfig | null;
+    langSmithConfig: LangSmithConfig | null;
+    langFuseConfig: LangFuseConfig | null;
+    opikConfig: OpikConfig | null;
+    weaveConfig: WeaveConfig | null;
+    aliyunConfig: AliyunConfig | null;
+    mlflowConfig: MLflowConfig | null;
+    databricksConfig: DatabricksConfig | null;
+    tencentConfig: TencentConfig | null;
+    onConfigUpdated: (provider: TracingProvider, payload: ArizeConfig | PhoenixConfig | LangSmithConfig | LangFuseConfig | OpikConfig | WeaveConfig | AliyunConfig | TencentConfig | MLflowConfig | DatabricksConfig) => void;
+    onConfigRemoved: (provider: TracingProvider) => void;
+};
+declare const _default: any;
+export default _default;

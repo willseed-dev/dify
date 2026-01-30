@@ -1,0 +1,27 @@
+export declare const useNodesInteractions: () => {
+    handleNodeDragStart: any;
+    handleNodeDrag: any;
+    handleNodeDragStop: any;
+    handleNodeEnter: any;
+    handleNodeLeave: any;
+    handleNodeSelect: any;
+    handleNodeClick: any;
+    handleNodeConnect: any;
+    handleNodeConnectStart: any;
+    handleNodeConnectEnd: any;
+    handleNodeDelete: any;
+    handleNodeChange: any;
+    handleNodeAdd: any;
+    handleNodesCancelSelected: any;
+    handleNodeContextMenu: any;
+    handleNodesCopy: any;
+    handleNodesPaste: any;
+    handleNodesDuplicate: any;
+    handleNodesDelete: any;
+    handleNodeResize: any;
+    handleNodeDisconnect: any;
+    handleHistoryBack: any;
+    handleHistoryForward: any;
+    dimOtherNodes: any;
+    undimAllNodes: any;
+};

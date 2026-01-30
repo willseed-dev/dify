@@ -1,0 +1,16 @@
+import type { StoryObj } from '@storybook/nextjs';
+declare const meta: Meta<({ value, onChange, placeholder, editable, compact, className, wrapperClassName }: any) => any>;
+export default meta;
+type Story = StoryObj<typeof meta>;
+export declare const Default: Story;
+export declare const WithInitialValue: Story;
+export declare const CompactMode: Story;
+export declare const ReadOnlyMode: Story;
+export declare const WithVariablesExample: Story;
+export declare const LongContent: Story;
+export declare const CustomPlaceholder: Story;
+export declare const MultipleEditors: Story;
+export declare const EmailTemplate: Story;
+export declare const ChatPromptBuilder: Story;
+export declare const APIInstructionEditor: Story;
+export declare const Playground: Story;

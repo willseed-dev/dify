@@ -1,0 +1,21 @@
+export type IDrawerProps = {
+    title?: string;
+    description?: string;
+    dialogClassName?: string;
+    dialogBackdropClassName?: string;
+    containerClassName?: string;
+    panelClassName?: string;
+    children: React.ReactNode;
+    footer?: React.ReactNode;
+    mask?: boolean;
+    positionCenter?: boolean;
+    isOpen: boolean;
+    showClose?: boolean;
+    clickOutsideNotOpen?: boolean;
+    onClose: () => void;
+    onCancel?: () => void;
+    onOk?: () => void;
+    unmount?: boolean;
+    noOverlay?: boolean;
+};
+export default function Drawer({ title, description, dialogClassName, dialogBackdropClassName, containerClassName, panelClassName, children, footer, mask, positionCenter, showClose, isOpen, clickOutsideNotOpen, onClose, onCancel, onOk, unmount, noOverlay, }: IDrawerProps): any;

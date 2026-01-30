@@ -1,0 +1,46 @@
+import type { RefObject } from 'react';
+import type { ChatConfig, ChatItem, Feedback } from '../types';
+import type { ThemeBuilder } from './theme/theme-context';
+import type { AppConversationData, AppData, AppMeta, ConversationItem } from '@/models/share';
+export type EmbeddedChatbotContextValue = {
+    appMeta: AppMeta | null;
+    appData: AppData | null;
+    appParams: ChatConfig | null;
+    appChatListDataLoading?: boolean;
+    currentConversationId: string;
+    currentConversationItem?: ConversationItem;
+    appPrevChatList: ChatItem[];
+    pinnedConversationList: AppConversationData['data'];
+    conversationList: AppConversationData['data'];
+    newConversationInputs: Record<string, any>;
+    newConversationInputsRef: RefObject<Record<string, any>>;
+    handleNewConversationInputsChange: (v: Record<string, any>) => void;
+    inputsForms: any[];
+    handleNewConversation: () => void;
+    handleStartChat: (callback?: any) => void;
+    handleChangeConversation: (conversationId: string) => void;
+    handleNewConversationCompleted: (newConversationId: string) => void;
+    chatShouldReloadKey: string;
+    isMobile: boolean;
+    isInstalledApp: boolean;
+    allowResetChat: boolean;
+    appId?: string;
+    handleFeedback: (messageId: string, feedback: Feedback) => void;
+    currentChatInstanceRef: RefObject<{
+        handleStop: () => void;
+    }>;
+    themeBuilder?: ThemeBuilder;
+    clearChatList?: boolean;
+    setClearChatList: (state: boolean) => void;
+    isResponding?: boolean;
+    setIsResponding: (state: boolean) => void;
+    currentConversationInputs: Record<string, any> | null;
+    setCurrentConversationInputs: (v: Record<string, any>) => void;
+    allInputsHidden: boolean;
+    initUserVariables?: {
+        name?: string;
+        avatar_url?: string;
+    };
+};
+export declare const EmbeddedChatbotContext: any;
+export declare const useEmbeddedChatbotContext: () => any;

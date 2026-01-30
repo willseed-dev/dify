@@ -1,0 +1,25 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const react_1 = require("react");
+const portal_to_follow_elem_1 = require("@/app/components/base/portal-to-follow-elem");
+const Tooltip = ({ data, text, icon, }) => {
+    const [open, setOpen] = (0, react_1.useState)(false);
+    return (<portal_to_follow_elem_1.PortalToFollowElem open={open} onOpenChange={setOpen} placement="top-start">
+      <portal_to_follow_elem_1.PortalToFollowElemTrigger onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+        <div className="mr-6 flex items-center">
+          {icon}
+          {data}
+        </div>
+      </portal_to_follow_elem_1.PortalToFollowElemTrigger>
+      <portal_to_follow_elem_1.PortalToFollowElemContent style={{ zIndex: 1001 }}>
+        <div className="system-xs-medium rounded-lg bg-components-tooltip-bg p-3 text-text-quaternary shadow-lg">
+          {text}
+          {' '}
+          {data}
+        </div>
+      </portal_to_follow_elem_1.PortalToFollowElemContent>
+    </portal_to_follow_elem_1.PortalToFollowElem>);
+};
+exports.default = Tooltip;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidG9vbHRpcC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInRvb2x0aXAudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQ0EsK0JBQThCO0FBQzlCLGlDQUFnQztBQUNoQyx1RkFJb0Q7QUFRcEQsTUFBTSxPQUFPLEdBQXFCLENBQUMsRUFDakMsSUFBSSxFQUNKLElBQUksRUFDSixJQUFJLEdBQ0wsRUFBRSxFQUFFO0lBQ0gsTUFBTSxDQUFDLElBQUksRUFBRSxPQUFPLENBQUMsR0FBRyxJQUFBLGdCQUFRLEVBQUMsS0FBSyxDQUFDLENBQUE7SUFFdkMsT0FBTyxDQUNMLENBQUMsMENBQWtCLENBQ2pCLElBQUksQ0FBQyxDQUFDLElBQUksQ0FBQyxDQUNYLFlBQVksQ0FBQyxDQUFDLE9BQU8sQ0FBQyxDQUN0QixTQUFTLENBQUMsV0FBVyxDQUVyQjtNQUFBLENBQUMsaURBQXlCLENBQ3hCLFlBQVksQ0FBQyxDQUFDLEdBQUcsRUFBRSxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsQ0FBQyxDQUNsQyxZQUFZLENBQUMsQ0FBQyxHQUFHLEVBQUUsQ0FBQyxPQUFPLENBQUMsS0FBSyxDQUFDLENBQUMsQ0FFbkM7UUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsd0JBQXdCLENBQ3JDO1VBQUEsQ0FBQyxJQUFJLENBQ0w7VUFBQSxDQUFDLElBQUksQ0FDUDtRQUFBLEVBQUUsR0FBRyxDQUNQO01BQUEsRUFBRSxpREFBeUIsQ0FDM0I7TUFBQSxDQUFDLGlEQUF5QixDQUFDLEtBQUssQ0FBQyxDQUFDLEVBQUUsTUFBTSxFQUFFLElBQUksRUFBRSxDQUFDLENBQ2pEO1FBQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLHlGQUF5RixDQUN0RztVQUFBLENBQUMsSUFBSSxDQUNMO1VBQUEsQ0FBQyxHQUFHLENBQ0o7VUFBQSxDQUFDLElBQUksQ0FDUDtRQUFBLEVBQUUsR0FBRyxDQUNQO01BQUEsRUFBRSxpREFBeUIsQ0FDN0I7SUFBQSxFQUFFLDBDQUFrQixDQUFDLENBQ3RCLENBQUE7QUFDSCxDQUFDLENBQUE7QUFFRCxrQkFBZSxPQUFPLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IEZDIH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgKiBhcyBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnXG5pbXBvcnQge1xuICBQb3J0YWxUb0ZvbGxvd0VsZW0sXG4gIFBvcnRhbFRvRm9sbG93RWxlbUNvbnRlbnQsXG4gIFBvcnRhbFRvRm9sbG93RWxlbVRyaWdnZXIsXG59IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS9wb3J0YWwtdG8tZm9sbG93LWVsZW0nXG5cbnR5cGUgVG9vbHRpcFByb3BzID0ge1xuICBkYXRhOiBudW1iZXIgfCBzdHJpbmdcbiAgdGV4dDogc3RyaW5nXG4gIGljb246IFJlYWN0LlJlYWN0Tm9kZVxufVxuXG5jb25zdCBUb29sdGlwOiBGQzxUb29sdGlwUHJvcHM+ID0gKHtcbiAgZGF0YSxcbiAgdGV4dCxcbiAgaWNvbixcbn0pID0+IHtcbiAgY29uc3QgW29wZW4sIHNldE9wZW5dID0gdXNlU3RhdGUoZmFsc2UpXG5cbiAgcmV0dXJuIChcbiAgICA8UG9ydGFsVG9Gb2xsb3dFbGVtXG4gICAgICBvcGVuPXtvcGVufVxuICAgICAgb25PcGVuQ2hhbmdlPXtzZXRPcGVufVxuICAgICAgcGxhY2VtZW50PVwidG9wLXN0YXJ0XCJcbiAgICA+XG4gICAgICA8UG9ydGFsVG9Gb2xsb3dFbGVtVHJpZ2dlclxuICAgICAgICBvbk1vdXNlRW50ZXI9eygpID0+IHNldE9wZW4odHJ1ZSl9XG4gICAgICAgIG9uTW91c2VMZWF2ZT17KCkgPT4gc2V0T3BlbihmYWxzZSl9XG4gICAgICA+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibXItNiBmbGV4IGl0ZW1zLWNlbnRlclwiPlxuICAgICAgICAgIHtpY29ufVxuICAgICAgICAgIHtkYXRhfVxuICAgICAgICA8L2Rpdj5cbiAgICAgIDwvUG9ydGFsVG9Gb2xsb3dFbGVtVHJpZ2dlcj5cbiAgICAgIDxQb3J0YWxUb0ZvbGxvd0VsZW1Db250ZW50IHN0eWxlPXt7IHpJbmRleDogMTAwMSB9fT5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJzeXN0ZW0teHMtbWVkaXVtIHJvdW5kZWQtbGcgYmctY29tcG9uZW50cy10b29sdGlwLWJnIHAtMyB0ZXh0LXRleHQtcXVhdGVybmFyeSBzaGFkb3ctbGdcIj5cbiAgICAgICAgICB7dGV4dH1cbiAgICAgICAgICB7JyAnfVxuICAgICAgICAgIHtkYXRhfVxuICAgICAgICA8L2Rpdj5cbiAgICAgIDwvUG9ydGFsVG9Gb2xsb3dFbGVtQ29udGVudD5cbiAgICA8L1BvcnRhbFRvRm9sbG93RWxlbT5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBUb29sdGlwXG4iXX0=

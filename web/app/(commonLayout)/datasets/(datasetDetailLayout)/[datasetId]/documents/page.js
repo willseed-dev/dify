@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const documents_1 = require("@/app/components/datasets/documents");
+const Documents = async (props) => {
+    const params = await props.params;
+    const { datasetId, } = params;
+    return (<documents_1.default datasetId={datasetId}/>);
+};
+exports.default = Documents;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFnZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInBhZ2UudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsK0JBQThCO0FBQzlCLG1FQUFzRDtBQU10RCxNQUFNLFNBQVMsR0FBRyxLQUFLLEVBQUUsS0FBYSxFQUFFLEVBQUU7SUFDeEMsTUFBTSxNQUFNLEdBQUcsTUFBTSxLQUFLLENBQUMsTUFBTSxDQUFBO0lBRWpDLE1BQU0sRUFDSixTQUFTLEdBQ1YsR0FBRyxNQUFNLENBQUE7SUFFVixPQUFPLENBQ0wsQ0FBQyxtQkFBSSxDQUFDLFNBQVMsQ0FBQyxDQUFDLFNBQVMsQ0FBQyxFQUFHLENBQy9CLENBQUE7QUFDSCxDQUFDLENBQUE7QUFFRCxrQkFBZSxTQUFTLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgKiBhcyBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCBNYWluIGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvZGF0YXNldHMvZG9jdW1lbnRzJ1xuXG5leHBvcnQgdHlwZSBJUHJvcHMgPSB7XG4gIHBhcmFtczogUHJvbWlzZTx7IGRhdGFzZXRJZDogc3RyaW5nIH0+XG59XG5cbmNvbnN0IERvY3VtZW50cyA9IGFzeW5jIChwcm9wczogSVByb3BzKSA9PiB7XG4gIGNvbnN0IHBhcmFtcyA9IGF3YWl0IHByb3BzLnBhcmFtc1xuXG4gIGNvbnN0IHtcbiAgICBkYXRhc2V0SWQsXG4gIH0gPSBwYXJhbXNcblxuICByZXR1cm4gKFxuICAgIDxNYWluIGRhdGFzZXRJZD17ZGF0YXNldElkfSAvPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IERvY3VtZW50c1xuIl19

@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const classnames_1 = require("@/utils/classnames");
+const Effect = ({ className, }) => {
+    return (<div className={(0, classnames_1.cn)('absolute size-[112px] rounded-full bg-util-colors-blue-brand-blue-brand-500 blur-[80px]', className)}/>);
+};
+exports.default = React.memo(Effect);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSwrQkFBOEI7QUFDOUIsbURBQXVDO0FBTXZDLE1BQU0sTUFBTSxHQUFHLENBQUMsRUFDZCxTQUFTLEdBQ0csRUFBRSxFQUFFO0lBQ2hCLE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FDRixTQUFTLENBQUMsQ0FBQyxJQUFBLGVBQUUsRUFBQyx5RkFBeUYsRUFBRSxTQUFTLENBQUMsQ0FBQyxFQUNwSCxDQUNILENBQUE7QUFDSCxDQUFDLENBQUE7QUFFRCxrQkFBZSxLQUFLLENBQUMsSUFBSSxDQUFDLE1BQU0sQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgeyBjbiB9IGZyb20gJ0AvdXRpbHMvY2xhc3NuYW1lcydcblxudHlwZSBFZmZlY3RQcm9wcyA9IHtcbiAgY2xhc3NOYW1lPzogc3RyaW5nXG59XG5cbmNvbnN0IEVmZmVjdCA9ICh7XG4gIGNsYXNzTmFtZSxcbn06IEVmZmVjdFByb3BzKSA9PiB7XG4gIHJldHVybiAoXG4gICAgPGRpdlxuICAgICAgY2xhc3NOYW1lPXtjbignYWJzb2x1dGUgc2l6ZS1bMTEycHhdIHJvdW5kZWQtZnVsbCBiZy11dGlsLWNvbG9ycy1ibHVlLWJyYW5kLWJsdWUtYnJhbmQtNTAwIGJsdXItWzgwcHhdJywgY2xhc3NOYW1lKX1cbiAgICAvPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IFJlYWN0Lm1lbW8oRWZmZWN0KVxuIl19

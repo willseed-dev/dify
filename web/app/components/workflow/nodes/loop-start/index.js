@@ -1,0 +1,32 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LoopStartNodeDumb = void 0;
+const react_1 = require("@remixicon/react");
+const react_2 = require("react");
+const react_i18next_1 = require("react-i18next");
+const tooltip_1 = require("@/app/components/base/tooltip");
+const node_handle_1 = require("@/app/components/workflow/nodes/_base/components/node-handle");
+const LoopStartNode = ({ id, data }) => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    return (<div className="nodrag group mt-1 flex h-11 w-11 items-center justify-center rounded-2xl border border-workflow-block-border bg-workflow-block-bg">
+      <tooltip_1.default popupContent={t('blocks.loop-start', { ns: 'workflow' })} asChild={false}>
+        <div className="flex h-6 w-6 items-center justify-center rounded-full border-[0.5px] border-components-panel-border-subtle bg-util-colors-blue-brand-blue-brand-500">
+          <react_1.RiHome5Fill className="h-3 w-3 text-text-primary-on-surface"/>
+        </div>
+      </tooltip_1.default>
+      <node_handle_1.NodeSourceHandle id={id} data={data} handleClassName="!top-1/2 !-right-[9px] !-translate-y-1/2" handleId="source"/>
+    </div>);
+};
+const LoopStartNodeDumb = () => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    return (<div className="nodrag relative left-[17px] top-[21px] z-[11] flex h-11 w-11 items-center justify-center rounded-2xl border border-workflow-block-border bg-workflow-block-bg">
+      <tooltip_1.default popupContent={t('blocks.loop-start', { ns: 'workflow' })} asChild={false}>
+        <div className="flex h-6 w-6 items-center justify-center rounded-full border-[0.5px] border-components-panel-border-subtle bg-util-colors-blue-brand-blue-brand-500">
+          <react_1.RiHome5Fill className="h-3 w-3 text-text-primary-on-surface"/>
+        </div>
+      </tooltip_1.default>
+    </div>);
+};
+exports.LoopStartNodeDumb = LoopStartNodeDumb;
+exports.default = (0, react_2.memo)(LoopStartNode);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQ0EsNENBQThDO0FBQzlDLGlDQUE0QjtBQUM1QixpREFBOEM7QUFDOUMsMkRBQW1EO0FBQ25ELDhGQUErRjtBQUUvRixNQUFNLGFBQWEsR0FBRyxDQUFDLEVBQUUsRUFBRSxFQUFFLElBQUksRUFBYSxFQUFFLEVBQUU7SUFDaEQsTUFBTSxFQUFFLENBQUMsRUFBRSxHQUFHLElBQUEsOEJBQWMsR0FBRSxDQUFBO0lBRTlCLE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsbUlBQW1JLENBQ2hKO01BQUEsQ0FBQyxpQkFBTyxDQUFDLFlBQVksQ0FBQyxDQUFDLENBQUMsQ0FBQyxtQkFBbUIsRUFBRSxFQUFFLEVBQUUsRUFBRSxVQUFVLEVBQUUsQ0FBQyxDQUFDLENBQUMsT0FBTyxDQUFDLENBQUMsS0FBSyxDQUFDLENBQ2hGO1FBQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLHFKQUFxSixDQUNsSztVQUFBLENBQUMsbUJBQVcsQ0FBQyxTQUFTLENBQUMsc0NBQXNDLEVBQy9EO1FBQUEsRUFBRSxHQUFHLENBQ1A7TUFBQSxFQUFFLGlCQUFPLENBQ1Q7TUFBQSxDQUFDLDhCQUFnQixDQUNmLEVBQUUsQ0FBQyxDQUFDLEVBQUUsQ0FBQyxDQUNQLElBQUksQ0FBQyxDQUFDLElBQUksQ0FBQyxDQUNYLGVBQWUsQ0FBQywwQ0FBMEMsQ0FDMUQsUUFBUSxDQUFDLFFBQVEsRUFFckI7SUFBQSxFQUFFLEdBQUcsQ0FBQyxDQUNQLENBQUE7QUFDSCxDQUFDLENBQUE7QUFFTSxNQUFNLGlCQUFpQixHQUFHLEdBQUcsRUFBRTtJQUNwQyxNQUFNLEVBQUUsQ0FBQyxFQUFFLEdBQUcsSUFBQSw4QkFBYyxHQUFFLENBQUE7SUFFOUIsT0FBTyxDQUNMLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQywrSkFBK0osQ0FDNUs7TUFBQSxDQUFDLGlCQUFPLENBQUMsWUFBWSxDQUFDLENBQUMsQ0FBQyxDQUFDLG1CQUFtQixFQUFFLEVBQUUsRUFBRSxFQUFFLFVBQVUsRUFBRSxDQUFDLENBQUMsQ0FBQyxPQUFPLENBQUMsQ0FBQyxLQUFLLENBQUMsQ0FDaEY7UUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMscUpBQXFKLENBQ2xLO1VBQUEsQ0FBQyxtQkFBVyxDQUFDLFNBQVMsQ0FBQyxzQ0FBc0MsRUFDL0Q7UUFBQSxFQUFFLEdBQUcsQ0FDUDtNQUFBLEVBQUUsaUJBQU8sQ0FDWDtJQUFBLEVBQUUsR0FBRyxDQUFDLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQVpZLFFBQUEsaUJBQWlCLHFCQVk3QjtBQUVELGtCQUFlLElBQUEsWUFBSSxFQUFDLGFBQWEsQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHR5cGUgeyBOb2RlUHJvcHMgfSBmcm9tICdyZWFjdGZsb3cnXG5pbXBvcnQgeyBSaUhvbWU1RmlsbCB9IGZyb20gJ0ByZW1peGljb24vcmVhY3QnXG5pbXBvcnQgeyBtZW1vIH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgeyB1c2VUcmFuc2xhdGlvbiB9IGZyb20gJ3JlYWN0LWkxOG5leHQnXG5pbXBvcnQgVG9vbHRpcCBmcm9tICdAL2FwcC9jb21wb25lbnRzL2Jhc2UvdG9vbHRpcCdcbmltcG9ydCB7IE5vZGVTb3VyY2VIYW5kbGUgfSBmcm9tICdAL2FwcC9jb21wb25lbnRzL3dvcmtmbG93L25vZGVzL19iYXNlL2NvbXBvbmVudHMvbm9kZS1oYW5kbGUnXG5cbmNvbnN0IExvb3BTdGFydE5vZGUgPSAoeyBpZCwgZGF0YSB9OiBOb2RlUHJvcHMpID0+IHtcbiAgY29uc3QgeyB0IH0gPSB1c2VUcmFuc2xhdGlvbigpXG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cIm5vZHJhZyBncm91cCBtdC0xIGZsZXggaC0xMSB3LTExIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByb3VuZGVkLTJ4bCBib3JkZXIgYm9yZGVyLXdvcmtmbG93LWJsb2NrLWJvcmRlciBiZy13b3JrZmxvdy1ibG9jay1iZ1wiPlxuICAgICAgPFRvb2x0aXAgcG9wdXBDb250ZW50PXt0KCdibG9ja3MubG9vcC1zdGFydCcsIHsgbnM6ICd3b3JrZmxvdycgfSl9IGFzQ2hpbGQ9e2ZhbHNlfT5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGgtNiB3LTYgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHJvdW5kZWQtZnVsbCBib3JkZXItWzAuNXB4XSBib3JkZXItY29tcG9uZW50cy1wYW5lbC1ib3JkZXItc3VidGxlIGJnLXV0aWwtY29sb3JzLWJsdWUtYnJhbmQtYmx1ZS1icmFuZC01MDBcIj5cbiAgICAgICAgICA8UmlIb21lNUZpbGwgY2xhc3NOYW1lPVwiaC0zIHctMyB0ZXh0LXRleHQtcHJpbWFyeS1vbi1zdXJmYWNlXCIgLz5cbiAgICAgICAgPC9kaXY+XG4gICAgICA8L1Rvb2x0aXA+XG4gICAgICA8Tm9kZVNvdXJjZUhhbmRsZVxuICAgICAgICBpZD17aWR9XG4gICAgICAgIGRhdGE9e2RhdGF9XG4gICAgICAgIGhhbmRsZUNsYXNzTmFtZT1cIiF0b3AtMS8yICEtcmlnaHQtWzlweF0gIS10cmFuc2xhdGUteS0xLzJcIlxuICAgICAgICBoYW5kbGVJZD1cInNvdXJjZVwiXG4gICAgICAvPlxuICAgIDwvZGl2PlxuICApXG59XG5cbmV4cG9ydCBjb25zdCBMb29wU3RhcnROb2RlRHVtYiA9ICgpID0+IHtcbiAgY29uc3QgeyB0IH0gPSB1c2VUcmFuc2xhdGlvbigpXG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cIm5vZHJhZyByZWxhdGl2ZSBsZWZ0LVsxN3B4XSB0b3AtWzIxcHhdIHotWzExXSBmbGV4IGgtMTEgdy0xMSBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgcm91bmRlZC0yeGwgYm9yZGVyIGJvcmRlci13b3JrZmxvdy1ibG9jay1ib3JkZXIgYmctd29ya2Zsb3ctYmxvY2stYmdcIj5cbiAgICAgIDxUb29sdGlwIHBvcHVwQ29udGVudD17dCgnYmxvY2tzLmxvb3Atc3RhcnQnLCB7IG5zOiAnd29ya2Zsb3cnIH0pfSBhc0NoaWxkPXtmYWxzZX0+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBoLTYgdy02IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByb3VuZGVkLWZ1bGwgYm9yZGVyLVswLjVweF0gYm9yZGVyLWNvbXBvbmVudHMtcGFuZWwtYm9yZGVyLXN1YnRsZSBiZy11dGlsLWNvbG9ycy1ibHVlLWJyYW5kLWJsdWUtYnJhbmQtNTAwXCI+XG4gICAgICAgICAgPFJpSG9tZTVGaWxsIGNsYXNzTmFtZT1cImgtMyB3LTMgdGV4dC10ZXh0LXByaW1hcnktb24tc3VyZmFjZVwiIC8+XG4gICAgICAgIDwvZGl2PlxuICAgICAgPC9Ub29sdGlwPlxuICAgIDwvZGl2PlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IG1lbW8oTG9vcFN0YXJ0Tm9kZSlcbiJdfQ==

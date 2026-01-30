@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.isSupportMCP = void 0;
+const semver_1 = require("./semver");
+const SUPPORT_MCP_VERSION = '0.0.2';
+const isSupportMCP = (version) => {
+    if (!version)
+        return false;
+    return (0, semver_1.isEqualOrLaterThanVersion)(version, SUPPORT_MCP_VERSION);
+};
+exports.isSupportMCP = isSupportMCP;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGx1Z2luLXZlcnNpb24tZmVhdHVyZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInBsdWdpbi12ZXJzaW9uLWZlYXR1cmUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEscUNBQW9EO0FBRXBELE1BQU0sbUJBQW1CLEdBQUcsT0FBTyxDQUFBO0FBRTVCLE1BQU0sWUFBWSxHQUFHLENBQUMsT0FBZ0IsRUFBVyxFQUFFO0lBQ3hELElBQUksQ0FBQyxPQUFPO1FBQ1YsT0FBTyxLQUFLLENBQUE7SUFFZCxPQUFPLElBQUEsa0NBQXlCLEVBQUMsT0FBTyxFQUFFLG1CQUFtQixDQUFDLENBQUE7QUFDaEUsQ0FBQyxDQUFBO0FBTFksUUFBQSxZQUFZLGdCQUt4QiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGlzRXF1YWxPckxhdGVyVGhhblZlcnNpb24gfSBmcm9tICcuL3NlbXZlcidcblxuY29uc3QgU1VQUE9SVF9NQ1BfVkVSU0lPTiA9ICcwLjAuMidcblxuZXhwb3J0IGNvbnN0IGlzU3VwcG9ydE1DUCA9ICh2ZXJzaW9uPzogc3RyaW5nKTogYm9vbGVhbiA9PiB7XG4gIGlmICghdmVyc2lvbilcbiAgICByZXR1cm4gZmFsc2VcblxuICByZXR1cm4gaXNFcXVhbE9yTGF0ZXJUaGFuVmVyc2lvbih2ZXJzaW9uLCBTVVBQT1JUX01DUF9WRVJTSU9OKVxufVxuIl19

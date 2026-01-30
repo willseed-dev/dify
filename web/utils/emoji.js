@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.searchEmoji = searchEmoji;
+const emoji_mart_1 = require("emoji-mart");
+async function searchEmoji(value) {
+    const emojis = await emoji_mart_1.SearchIndex.search(value) || [];
+    const results = emojis.map((emoji) => {
+        return emoji.skins[0].native;
+    });
+    return results;
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZW1vamkuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJlbW9qaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUdBLGtDQU9DO0FBVEQsMkNBQXdDO0FBRWpDLEtBQUssVUFBVSxXQUFXLENBQUMsS0FBYTtJQUM3QyxNQUFNLE1BQU0sR0FBWSxNQUFNLHdCQUFXLENBQUMsTUFBTSxDQUFDLEtBQUssQ0FBQyxJQUFJLEVBQUUsQ0FBQTtJQUU3RCxNQUFNLE9BQU8sR0FBRyxNQUFNLENBQUMsR0FBRyxDQUFDLENBQUMsS0FBSyxFQUFFLEVBQUU7UUFDbkMsT0FBTyxLQUFLLENBQUMsS0FBSyxDQUFDLENBQUMsQ0FBQyxDQUFDLE1BQU0sQ0FBQTtJQUM5QixDQUFDLENBQUMsQ0FBQTtJQUNGLE9BQU8sT0FBTyxDQUFBO0FBQ2hCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IEVtb2ppIH0gZnJvbSAnQGVtb2ppLW1hcnQvZGF0YSdcbmltcG9ydCB7IFNlYXJjaEluZGV4IH0gZnJvbSAnZW1vamktbWFydCdcblxuZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIHNlYXJjaEVtb2ppKHZhbHVlOiBzdHJpbmcpIHtcbiAgY29uc3QgZW1vamlzOiBFbW9qaVtdID0gYXdhaXQgU2VhcmNoSW5kZXguc2VhcmNoKHZhbHVlKSB8fCBbXVxuXG4gIGNvbnN0IHJlc3VsdHMgPSBlbW9qaXMubWFwKChlbW9qaSkgPT4ge1xuICAgIHJldHVybiBlbW9qaS5za2luc1swXS5uYXRpdmVcbiAgfSlcbiAgcmV0dXJuIHJlc3VsdHNcbn1cbiJdfQ==

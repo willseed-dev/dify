@@ -1,0 +1,17 @@
+import type { StoryObj } from '@storybook/nextjs';
+declare const meta: Meta<any>;
+export default meta;
+type Story = StoryObj<typeof meta>;
+export declare const Default: Story;
+export declare const DefaultOn: Story;
+export declare const DisabledOff: Story;
+export declare const DisabledOn: Story;
+export declare const SizeComparison: Story;
+export declare const WithLabels: Story;
+export declare const SettingsPanel: Story;
+export declare const PrivacyControls: Story;
+export declare const FeatureToggles: Story;
+export declare const NotificationPreferences: Story;
+export declare const APIAccessControl: Story;
+export declare const CompactList: Story;
+export declare const Playground: Story;

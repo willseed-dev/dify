@@ -1,0 +1,23 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * @fileoverview VideoBlock component for rendering video elements in Markdown.
+ * Extracted from the main markdown renderer for modularity.
+ * Uses the VideoGallery component to display videos.
+ */
+const React = require("react");
+const react_1 = require("react");
+const video_gallery_1 = require("@/app/components/base/video-gallery");
+const VideoBlock = (0, react_1.memo)(({ node }) => {
+    const srcs = node.children.filter((child) => 'properties' in child).map((child) => child.properties.src);
+    if (srcs.length === 0) {
+        const src = node.properties?.src;
+        if (src)
+            return <video_gallery_1.default key={src} srcs={[src]}/>;
+        return null;
+    }
+    return <video_gallery_1.default key={srcs.join()} srcs={srcs}/>;
+});
+VideoBlock.displayName = 'VideoBlock';
+exports.default = VideoBlock;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidmlkZW8tYmxvY2suanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ2aWRlby1ibG9jay50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQTs7OztHQUlHO0FBQ0gsK0JBQThCO0FBQzlCLGlDQUE0QjtBQUM1Qix1RUFBOEQ7QUFFOUQsTUFBTSxVQUFVLEdBQVEsSUFBQSxZQUFJLEVBQUMsQ0FBQyxFQUFFLElBQUksRUFBTyxFQUFFLEVBQUU7SUFDN0MsTUFBTSxJQUFJLEdBQUcsSUFBSSxDQUFDLFFBQVEsQ0FBQyxNQUFNLENBQUMsQ0FBQyxLQUFVLEVBQUUsRUFBRSxDQUFDLFlBQVksSUFBSSxLQUFLLENBQUMsQ0FBQyxHQUFHLENBQUMsQ0FBQyxLQUFVLEVBQUUsRUFBRSxDQUFFLEtBQWEsQ0FBQyxVQUFVLENBQUMsR0FBRyxDQUFDLENBQUE7SUFDM0gsSUFBSSxJQUFJLENBQUMsTUFBTSxLQUFLLENBQUMsRUFBRSxDQUFDO1FBQ3RCLE1BQU0sR0FBRyxHQUFHLElBQUksQ0FBQyxVQUFVLEVBQUUsR0FBRyxDQUFBO1FBQ2hDLElBQUksR0FBRztZQUNMLE9BQU8sQ0FBQyx1QkFBWSxDQUFDLEdBQUcsQ0FBQyxDQUFDLEdBQUcsQ0FBQyxDQUFDLElBQUksQ0FBQyxDQUFDLENBQUMsR0FBRyxDQUFDLENBQUMsRUFBRyxDQUFBO1FBQ2hELE9BQU8sSUFBSSxDQUFBO0lBQ2IsQ0FBQztJQUNELE9BQU8sQ0FBQyx1QkFBWSxDQUFDLEdBQUcsQ0FBQyxDQUFDLElBQUksQ0FBQyxJQUFJLEVBQUUsQ0FBQyxDQUFDLElBQUksQ0FBQyxDQUFDLElBQUksQ0FBQyxFQUFHLENBQUE7QUFDdkQsQ0FBQyxDQUFDLENBQUE7QUFDRixVQUFVLENBQUMsV0FBVyxHQUFHLFlBQVksQ0FBQTtBQUVyQyxrQkFBZSxVQUFVLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEBmaWxlb3ZlcnZpZXcgVmlkZW9CbG9jayBjb21wb25lbnQgZm9yIHJlbmRlcmluZyB2aWRlbyBlbGVtZW50cyBpbiBNYXJrZG93bi5cbiAqIEV4dHJhY3RlZCBmcm9tIHRoZSBtYWluIG1hcmtkb3duIHJlbmRlcmVyIGZvciBtb2R1bGFyaXR5LlxuICogVXNlcyB0aGUgVmlkZW9HYWxsZXJ5IGNvbXBvbmVudCB0byBkaXNwbGF5IHZpZGVvcy5cbiAqL1xuaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgeyBtZW1vIH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgVmlkZW9HYWxsZXJ5IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS92aWRlby1nYWxsZXJ5J1xuXG5jb25zdCBWaWRlb0Jsb2NrOiBhbnkgPSBtZW1vKCh7IG5vZGUgfTogYW55KSA9PiB7XG4gIGNvbnN0IHNyY3MgPSBub2RlLmNoaWxkcmVuLmZpbHRlcigoY2hpbGQ6IGFueSkgPT4gJ3Byb3BlcnRpZXMnIGluIGNoaWxkKS5tYXAoKGNoaWxkOiBhbnkpID0+IChjaGlsZCBhcyBhbnkpLnByb3BlcnRpZXMuc3JjKVxuICBpZiAoc3Jjcy5sZW5ndGggPT09IDApIHtcbiAgICBjb25zdCBzcmMgPSBub2RlLnByb3BlcnRpZXM/LnNyY1xuICAgIGlmIChzcmMpXG4gICAgICByZXR1cm4gPFZpZGVvR2FsbGVyeSBrZXk9e3NyY30gc3Jjcz17W3NyY119IC8+XG4gICAgcmV0dXJuIG51bGxcbiAgfVxuICByZXR1cm4gPFZpZGVvR2FsbGVyeSBrZXk9e3NyY3Muam9pbigpfSBzcmNzPXtzcmNzfSAvPlxufSlcblZpZGVvQmxvY2suZGlzcGxheU5hbWUgPSAnVmlkZW9CbG9jaydcblxuZXhwb3J0IGRlZmF1bHQgVmlkZW9CbG9ja1xuIl19

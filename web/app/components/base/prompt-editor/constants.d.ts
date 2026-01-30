@@ -1,0 +1,15 @@
+import type { ValueSelector } from '../../workflow/types';
+export declare const CONTEXT_PLACEHOLDER_TEXT = "{{#context#}}";
+export declare const HISTORY_PLACEHOLDER_TEXT = "{{#histories#}}";
+export declare const QUERY_PLACEHOLDER_TEXT = "{{#query#}}";
+export declare const CURRENT_PLACEHOLDER_TEXT = "{{#current#}}";
+export declare const ERROR_MESSAGE_PLACEHOLDER_TEXT = "{{#error_message#}}";
+export declare const LAST_RUN_PLACEHOLDER_TEXT = "{{#last_run#}}";
+export declare const PRE_PROMPT_PLACEHOLDER_TEXT = "{{#pre_prompt#}}";
+export declare const UPDATE_DATASETS_EVENT_EMITTER = "prompt-editor-context-block-update-datasets";
+export declare const UPDATE_HISTORY_EVENT_EMITTER = "prompt-editor-history-block-update-role";
+export declare const checkHasContextBlock: (text: string) => boolean;
+export declare const checkHasHistoryBlock: (text: string) => boolean;
+export declare const checkHasQueryBlock: (text: string) => boolean;
+export declare const getInputVars: (text: string) => ValueSelector[];
+export declare const FILE_EXTS: Record<string, string[]>;

@@ -1,0 +1,42 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const React = require("react");
+const react_i18next_1 = require("react-i18next");
+const button_1 = require("@/app/components/base/button");
+const tooltip_1 = require("@/app/components/base/tooltip");
+const utils_1 = require("@/app/components/plugins/utils");
+const i18n_1 = require("@/context/i18n");
+const use_plugins_1 = require("@/service/use-plugins");
+const key_value_item_1 = require("../base/key-value-item");
+const i18nPrefix = 'debugInfo';
+const DebugInfo = () => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    const locale = (0, i18n_1.useLocale)();
+    const { data: info, isLoading } = (0, use_plugins_1.useDebugKey)();
+    // info.key likes 4580bdb7-b878-471c-a8a4-bfd760263a53 mask the middle part using *.
+    const maskedKey = info?.key?.replace(/(.{8})(.*)(.{8})/, '$1********$3');
+    if (isLoading)
+        return null;
+    return (<tooltip_1.default triggerMethod="click" disabled={!info} popupContent={(<>
+          <div className="flex items-center gap-1 self-stretch">
+            <span className="system-sm-semibold flex shrink-0 grow basis-0 flex-col items-start justify-center text-text-secondary">{t(`${i18nPrefix}.title`, { ns: 'plugin' })}</span>
+            <a href={(0, utils_1.getDocsUrl)(locale, '/plugins/quick-start/debug-plugin')} target="_blank" className="flex cursor-pointer items-center gap-0.5 text-text-accent-light-mode-only">
+              <span className="system-xs-medium">{t(`${i18nPrefix}.viewDocs`, { ns: 'plugin' })}</span>
+              <react_1.RiArrowRightUpLine className="h-3 w-3"/>
+            </a>
+          </div>
+          <div className="space-y-0.5">
+            <key_value_item_1.default label="URL" value={`${info?.host}:${info?.port}`}/>
+            <key_value_item_1.default label="Key" value={info?.key || ''} maskedValue={maskedKey}/>
+          </div>
+        </>)} popupClassName="flex flex-col items-start w-[256px] px-4 py-3.5 gap-1 border border-components-panel-border
+        rounded-xl bg-components-tooltip-bg shadows-shadow-lg z-50" asChild={false} position="bottom">
+      <button_1.default className="h-full w-full p-2 text-components-button-secondary-text">
+        <react_1.RiBugLine className="h-4 w-4"/>
+      </button_1.default>
+    </tooltip_1.default>);
+};
+exports.default = React.memo(DebugInfo);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGVidWctaW5mby5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImRlYnVnLWluZm8udHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxZQUFZLENBQUE7O0FBRVosNENBR3lCO0FBQ3pCLCtCQUE4QjtBQUM5QixpREFBOEM7QUFDOUMseURBQWlEO0FBQ2pELDJEQUFtRDtBQUNuRCwwREFBMkQ7QUFDM0QseUNBQTBDO0FBQzFDLHVEQUFtRDtBQUNuRCwyREFBaUQ7QUFFakQsTUFBTSxVQUFVLEdBQUcsV0FBVyxDQUFBO0FBRTlCLE1BQU0sU0FBUyxHQUFPLEdBQUcsRUFBRTtJQUN6QixNQUFNLEVBQUUsQ0FBQyxFQUFFLEdBQUcsSUFBQSw4QkFBYyxHQUFFLENBQUE7SUFDOUIsTUFBTSxNQUFNLEdBQUcsSUFBQSxnQkFBUyxHQUFFLENBQUE7SUFDMUIsTUFBTSxFQUFFLElBQUksRUFBRSxJQUFJLEVBQUUsU0FBUyxFQUFFLEdBQUcsSUFBQSx5QkFBVyxHQUFFLENBQUE7SUFFL0Msb0ZBQW9GO0lBQ3BGLE1BQU0sU0FBUyxHQUFHLElBQUksRUFBRSxHQUFHLEVBQUUsT0FBTyxDQUFDLGtCQUFrQixFQUFFLGNBQWMsQ0FBQyxDQUFBO0lBRXhFLElBQUksU0FBUztRQUNYLE9BQU8sSUFBSSxDQUFBO0lBRWIsT0FBTyxDQUNMLENBQUMsaUJBQU8sQ0FDTixhQUFhLENBQUMsT0FBTyxDQUNyQixRQUFRLENBQUMsQ0FBQyxDQUFDLElBQUksQ0FBQyxDQUNoQixZQUFZLENBQUMsQ0FBQyxDQUNaLEVBQ0U7VUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsc0NBQXNDLENBQ25EO1lBQUEsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLHVHQUF1RyxDQUFDLENBQUMsQ0FBQyxDQUFDLEdBQUcsVUFBVSxRQUFRLEVBQUUsRUFBRSxFQUFFLEVBQUUsUUFBUSxFQUFFLENBQUMsQ0FBQyxFQUFFLElBQUksQ0FDMUs7WUFBQSxDQUFDLENBQUMsQ0FBQyxJQUFJLENBQUMsQ0FBQyxJQUFBLGtCQUFVLEVBQUMsTUFBTSxFQUFFLG1DQUFtQyxDQUFDLENBQUMsQ0FBQyxNQUFNLENBQUMsUUFBUSxDQUFDLFNBQVMsQ0FBQywyRUFBMkUsQ0FDcks7Y0FBQSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsa0JBQWtCLENBQUMsQ0FBQyxDQUFDLENBQUMsR0FBRyxVQUFVLFdBQVcsRUFBRSxFQUFFLEVBQUUsRUFBRSxRQUFRLEVBQUUsQ0FBQyxDQUFDLEVBQUUsSUFBSSxDQUN4RjtjQUFBLENBQUMsMEJBQWtCLENBQUMsU0FBUyxDQUFDLFNBQVMsRUFDekM7WUFBQSxFQUFFLENBQUMsQ0FDTDtVQUFBLEVBQUUsR0FBRyxDQUNMO1VBQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLGFBQWEsQ0FDMUI7WUFBQSxDQUFDLHdCQUFZLENBQ1gsS0FBSyxDQUFDLEtBQUssQ0FDWCxLQUFLLENBQUMsQ0FBQyxHQUFHLElBQUksRUFBRSxJQUFJLElBQUksSUFBSSxFQUFFLElBQUksRUFBRSxDQUFDLEVBRXZDO1lBQUEsQ0FBQyx3QkFBWSxDQUNYLEtBQUssQ0FBQyxLQUFLLENBQ1gsS0FBSyxDQUFDLENBQUMsSUFBSSxFQUFFLEdBQUcsSUFBSSxFQUFFLENBQUMsQ0FDdkIsV0FBVyxDQUFDLENBQUMsU0FBUyxDQUFDLEVBRTNCO1VBQUEsRUFBRSxHQUFHLENBQ1A7UUFBQSxHQUFHLENBQ0osQ0FBQyxDQUNGLGNBQWMsQ0FBQzttRUFDOEMsQ0FDN0QsT0FBTyxDQUFDLENBQUMsS0FBSyxDQUFDLENBQ2YsUUFBUSxDQUFDLFFBQVEsQ0FFakI7TUFBQSxDQUFDLGdCQUFNLENBQUMsU0FBUyxDQUFDLHlEQUF5RCxDQUN6RTtRQUFBLENBQUMsaUJBQVMsQ0FBQyxTQUFTLENBQUMsU0FBUyxFQUNoQztNQUFBLEVBQUUsZ0JBQU0sQ0FDVjtJQUFBLEVBQUUsaUJBQU8sQ0FBQyxDQUNYLENBQUE7QUFDSCxDQUFDLENBQUE7QUFFRCxrQkFBZSxLQUFLLENBQUMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBjbGllbnQnXG5pbXBvcnQgdHlwZSB7IEZDIH0gZnJvbSAncmVhY3QnXG5pbXBvcnQge1xuICBSaUFycm93UmlnaHRVcExpbmUsXG4gIFJpQnVnTGluZSxcbn0gZnJvbSAnQHJlbWl4aWNvbi9yZWFjdCdcbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgdXNlVHJhbnNsYXRpb24gfSBmcm9tICdyZWFjdC1pMThuZXh0J1xuaW1wb3J0IEJ1dHRvbiBmcm9tICdAL2FwcC9jb21wb25lbnRzL2Jhc2UvYnV0dG9uJ1xuaW1wb3J0IFRvb2x0aXAgZnJvbSAnQC9hcHAvY29tcG9uZW50cy9iYXNlL3Rvb2x0aXAnXG5pbXBvcnQgeyBnZXREb2NzVXJsIH0gZnJvbSAnQC9hcHAvY29tcG9uZW50cy9wbHVnaW5zL3V0aWxzJ1xuaW1wb3J0IHsgdXNlTG9jYWxlIH0gZnJvbSAnQC9jb250ZXh0L2kxOG4nXG5pbXBvcnQgeyB1c2VEZWJ1Z0tleSB9IGZyb20gJ0Avc2VydmljZS91c2UtcGx1Z2lucydcbmltcG9ydCBLZXlWYWx1ZUl0ZW0gZnJvbSAnLi4vYmFzZS9rZXktdmFsdWUtaXRlbSdcblxuY29uc3QgaTE4blByZWZpeCA9ICdkZWJ1Z0luZm8nXG5cbmNvbnN0IERlYnVnSW5mbzogRkMgPSAoKSA9PiB7XG4gIGNvbnN0IHsgdCB9ID0gdXNlVHJhbnNsYXRpb24oKVxuICBjb25zdCBsb2NhbGUgPSB1c2VMb2NhbGUoKVxuICBjb25zdCB7IGRhdGE6IGluZm8sIGlzTG9hZGluZyB9ID0gdXNlRGVidWdLZXkoKVxuXG4gIC8vIGluZm8ua2V5IGxpa2VzIDQ1ODBiZGI3LWI4NzgtNDcxYy1hOGE0LWJmZDc2MDI2M2E1MyBtYXNrIHRoZSBtaWRkbGUgcGFydCB1c2luZyAqLlxuICBjb25zdCBtYXNrZWRLZXkgPSBpbmZvPy5rZXk/LnJlcGxhY2UoLyguezh9KSguKikoLns4fSkvLCAnJDEqKioqKioqKiQzJylcblxuICBpZiAoaXNMb2FkaW5nKVxuICAgIHJldHVybiBudWxsXG5cbiAgcmV0dXJuIChcbiAgICA8VG9vbHRpcFxuICAgICAgdHJpZ2dlck1ldGhvZD1cImNsaWNrXCJcbiAgICAgIGRpc2FibGVkPXshaW5mb31cbiAgICAgIHBvcHVwQ29udGVudD17KFxuICAgICAgICA8PlxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTEgc2VsZi1zdHJldGNoXCI+XG4gICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJzeXN0ZW0tc20tc2VtaWJvbGQgZmxleCBzaHJpbmstMCBncm93IGJhc2lzLTAgZmxleC1jb2wgaXRlbXMtc3RhcnQganVzdGlmeS1jZW50ZXIgdGV4dC10ZXh0LXNlY29uZGFyeVwiPnt0KGAke2kxOG5QcmVmaXh9LnRpdGxlYCwgeyBuczogJ3BsdWdpbicgfSl9PC9zcGFuPlxuICAgICAgICAgICAgPGEgaHJlZj17Z2V0RG9jc1VybChsb2NhbGUsICcvcGx1Z2lucy9xdWljay1zdGFydC9kZWJ1Zy1wbHVnaW4nKX0gdGFyZ2V0PVwiX2JsYW5rXCIgY2xhc3NOYW1lPVwiZmxleCBjdXJzb3ItcG9pbnRlciBpdGVtcy1jZW50ZXIgZ2FwLTAuNSB0ZXh0LXRleHQtYWNjZW50LWxpZ2h0LW1vZGUtb25seVwiPlxuICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJzeXN0ZW0teHMtbWVkaXVtXCI+e3QoYCR7aTE4blByZWZpeH0udmlld0RvY3NgLCB7IG5zOiAncGx1Z2luJyB9KX08L3NwYW4+XG4gICAgICAgICAgICAgIDxSaUFycm93UmlnaHRVcExpbmUgY2xhc3NOYW1lPVwiaC0zIHctM1wiIC8+XG4gICAgICAgICAgICA8L2E+XG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJzcGFjZS15LTAuNVwiPlxuICAgICAgICAgICAgPEtleVZhbHVlSXRlbVxuICAgICAgICAgICAgICBsYWJlbD1cIlVSTFwiXG4gICAgICAgICAgICAgIHZhbHVlPXtgJHtpbmZvPy5ob3N0fToke2luZm8/LnBvcnR9YH1cbiAgICAgICAgICAgIC8+XG4gICAgICAgICAgICA8S2V5VmFsdWVJdGVtXG4gICAgICAgICAgICAgIGxhYmVsPVwiS2V5XCJcbiAgICAgICAgICAgICAgdmFsdWU9e2luZm8/LmtleSB8fCAnJ31cbiAgICAgICAgICAgICAgbWFza2VkVmFsdWU9e21hc2tlZEtleX1cbiAgICAgICAgICAgIC8+XG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgIDwvPlxuICAgICAgKX1cbiAgICAgIHBvcHVwQ2xhc3NOYW1lPVwiZmxleCBmbGV4LWNvbCBpdGVtcy1zdGFydCB3LVsyNTZweF0gcHgtNCBweS0zLjUgZ2FwLTEgYm9yZGVyIGJvcmRlci1jb21wb25lbnRzLXBhbmVsLWJvcmRlclxuICAgICAgICByb3VuZGVkLXhsIGJnLWNvbXBvbmVudHMtdG9vbHRpcC1iZyBzaGFkb3dzLXNoYWRvdy1sZyB6LTUwXCJcbiAgICAgIGFzQ2hpbGQ9e2ZhbHNlfVxuICAgICAgcG9zaXRpb249XCJib3R0b21cIlxuICAgID5cbiAgICAgIDxCdXR0b24gY2xhc3NOYW1lPVwiaC1mdWxsIHctZnVsbCBwLTIgdGV4dC1jb21wb25lbnRzLWJ1dHRvbi1zZWNvbmRhcnktdGV4dFwiPlxuICAgICAgICA8UmlCdWdMaW5lIGNsYXNzTmFtZT1cImgtNCB3LTRcIiAvPlxuICAgICAgPC9CdXR0b24+XG4gICAgPC9Ub29sdGlwPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IFJlYWN0Lm1lbW8oRGVidWdJbmZvKVxuIl19

@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useStore = void 0;
+const zustand_1 = require("zustand");
+exports.useStore = (0, zustand_1.create)(set => ({
+    dependencies: [],
+    setDependencies: dependencies => set({ dependencies }),
+}));
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3RvcmUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJzdG9yZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFDQSxxQ0FBZ0M7QUFNbkIsUUFBQSxRQUFRLEdBQUcsSUFBQSxnQkFBTSxFQUFRLEdBQUcsQ0FBQyxFQUFFLENBQUMsQ0FBQztJQUM1QyxZQUFZLEVBQUUsRUFBRTtJQUNoQixlQUFlLEVBQUUsWUFBWSxDQUFDLEVBQUUsQ0FBQyxHQUFHLENBQUMsRUFBRSxZQUFZLEVBQUUsQ0FBQztDQUN2RCxDQUFDLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB0eXBlIHsgRGVwZW5kZW5jeSB9IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvcGx1Z2lucy90eXBlcydcbmltcG9ydCB7IGNyZWF0ZSB9IGZyb20gJ3p1c3RhbmQnXG5cbnR5cGUgU2hhcGUgPSB7XG4gIGRlcGVuZGVuY2llczogRGVwZW5kZW5jeVtdXG4gIHNldERlcGVuZGVuY2llczogKGRlcGVuZGVuY2llczogRGVwZW5kZW5jeVtdKSA9PiB2b2lkXG59XG5leHBvcnQgY29uc3QgdXNlU3RvcmUgPSBjcmVhdGU8U2hhcGU+KHNldCA9PiAoe1xuICBkZXBlbmRlbmNpZXM6IFtdLFxuICBzZXREZXBlbmRlbmNpZXM6IGRlcGVuZGVuY2llcyA9PiBzZXQoeyBkZXBlbmRlbmNpZXMgfSksXG59KSlcbiJdfQ==

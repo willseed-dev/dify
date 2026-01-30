@@ -1,0 +1,33 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const function_1 = require("es-toolkit/function");
+const react_i18next_1 = require("react-i18next");
+const button_1 = require("@/app/components/base/button");
+const alertsAndFeedback_1 = require("@/app/components/base/icons/src/vender/solid/alertsAndFeedback");
+const modal_1 = require("@/app/components/base/modal");
+const classnames_1 = require("@/utils/classnames");
+const ConfirmModal = ({ show, onConfirm, onClose }) => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    return (<modal_1.default className={(0, classnames_1.cn)('w-[600px] max-w-[600px] p-8')} isShow={show} onClose={function_1.noop}>
+      <div className="absolute right-4 top-4 cursor-pointer p-2" onClick={onClose}>
+        <react_1.RiCloseLine className="h-4 w-4 text-text-tertiary"/>
+      </div>
+      <div className="h-12 w-12 rounded-xl border-[0.5px] border-divider-regular bg-background-section p-3 shadow-xl">
+        <alertsAndFeedback_1.AlertTriangle className="h-6 w-6 text-[rgb(247,144,9)]"/>
+      </div>
+      <div className="relative mt-3 text-xl font-semibold leading-[30px] text-text-primary">{t('createTool.confirmTitle', { ns: 'tools' })}</div>
+      <div className="my-1 text-sm leading-5 text-text-tertiary">
+        {t('createTool.confirmTip', { ns: 'tools' })}
+      </div>
+      <div className="flex items-center justify-end pt-6">
+        <div className="flex items-center">
+          <button_1.default className="mr-2" onClick={onClose}>{t('operation.cancel', { ns: 'common' })}</button_1.default>
+          <button_1.default variant="warning" onClick={onConfirm}>{t('operation.confirm', { ns: 'common' })}</button_1.default>
+        </div>
+      </div>
+    </modal_1.default>);
+};
+exports.default = ConfirmModal;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFlBQVksQ0FBQTs7QUFFWiw0Q0FBOEM7QUFDOUMsa0RBQTBDO0FBQzFDLGlEQUE4QztBQUM5Qyx5REFBaUQ7QUFDakQsc0dBQThGO0FBQzlGLHVEQUErQztBQUMvQyxtREFBdUM7QUFRdkMsTUFBTSxZQUFZLEdBQUcsQ0FBQyxFQUFFLElBQUksRUFBRSxTQUFTLEVBQUUsT0FBTyxFQUFxQixFQUFFLEVBQUU7SUFDdkUsTUFBTSxFQUFFLENBQUMsRUFBRSxHQUFHLElBQUEsOEJBQWMsR0FBRSxDQUFBO0lBRTlCLE9BQU8sQ0FDTCxDQUFDLGVBQUssQ0FDSixTQUFTLENBQUMsQ0FBQyxJQUFBLGVBQUUsRUFBQyw2QkFBNkIsQ0FBQyxDQUFDLENBQzdDLE1BQU0sQ0FBQyxDQUFDLElBQUksQ0FBQyxDQUNiLE9BQU8sQ0FBQyxDQUFDLGVBQUksQ0FBQyxDQUVkO01BQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLDJDQUEyQyxDQUFDLE9BQU8sQ0FBQyxDQUFDLE9BQU8sQ0FBQyxDQUMxRTtRQUFBLENBQUMsbUJBQVcsQ0FBQyxTQUFTLENBQUMsNEJBQTRCLEVBQ3JEO01BQUEsRUFBRSxHQUFHLENBQ0w7TUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsZ0dBQWdHLENBQzdHO1FBQUEsQ0FBQyxpQ0FBYSxDQUFDLFNBQVMsQ0FBQywrQkFBK0IsRUFDMUQ7TUFBQSxFQUFFLEdBQUcsQ0FDTDtNQUFBLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxzRUFBc0UsQ0FBQyxDQUFDLENBQUMsQ0FBQyx5QkFBeUIsRUFBRSxFQUFFLEVBQUUsRUFBRSxPQUFPLEVBQUUsQ0FBQyxDQUFDLEVBQUUsR0FBRyxDQUMxSTtNQUFBLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQywyQ0FBMkMsQ0FDeEQ7UUFBQSxDQUFDLENBQUMsQ0FBQyx1QkFBdUIsRUFBRSxFQUFFLEVBQUUsRUFBRSxPQUFPLEVBQUUsQ0FBQyxDQUM5QztNQUFBLEVBQUUsR0FBRyxDQUNMO01BQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLG9DQUFvQyxDQUNqRDtRQUFBLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxtQkFBbUIsQ0FDaEM7VUFBQSxDQUFDLGdCQUFNLENBQUMsU0FBUyxDQUFDLE1BQU0sQ0FBQyxPQUFPLENBQUMsQ0FBQyxPQUFPLENBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQyxrQkFBa0IsRUFBRSxFQUFFLEVBQUUsRUFBRSxRQUFRLEVBQUUsQ0FBQyxDQUFDLEVBQUUsZ0JBQU0sQ0FDNUY7VUFBQSxDQUFDLGdCQUFNLENBQUMsT0FBTyxDQUFDLFNBQVMsQ0FBQyxPQUFPLENBQUMsQ0FBQyxTQUFTLENBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQyxtQkFBbUIsRUFBRSxFQUFFLEVBQUUsRUFBRSxRQUFRLEVBQUUsQ0FBQyxDQUFDLEVBQUUsZ0JBQU0sQ0FDbEc7UUFBQSxFQUFFLEdBQUcsQ0FDUDtNQUFBLEVBQUUsR0FBRyxDQUNQO0lBQUEsRUFBRSxlQUFLLENBQUMsQ0FDVCxDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsWUFBWSxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBjbGllbnQnXG5cbmltcG9ydCB7IFJpQ2xvc2VMaW5lIH0gZnJvbSAnQHJlbWl4aWNvbi9yZWFjdCdcbmltcG9ydCB7IG5vb3AgfSBmcm9tICdlcy10b29sa2l0L2Z1bmN0aW9uJ1xuaW1wb3J0IHsgdXNlVHJhbnNsYXRpb24gfSBmcm9tICdyZWFjdC1pMThuZXh0J1xuaW1wb3J0IEJ1dHRvbiBmcm9tICdAL2FwcC9jb21wb25lbnRzL2Jhc2UvYnV0dG9uJ1xuaW1wb3J0IHsgQWxlcnRUcmlhbmdsZSB9IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS9pY29ucy9zcmMvdmVuZGVyL3NvbGlkL2FsZXJ0c0FuZEZlZWRiYWNrJ1xuaW1wb3J0IE1vZGFsIGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS9tb2RhbCdcbmltcG9ydCB7IGNuIH0gZnJvbSAnQC91dGlscy9jbGFzc25hbWVzJ1xuXG50eXBlIENvbmZpcm1Nb2RhbFByb3BzID0ge1xuICBzaG93OiBib29sZWFuXG4gIG9uQ29uZmlybT86ICgpID0+IHZvaWRcbiAgb25DbG9zZTogKCkgPT4gdm9pZFxufVxuXG5jb25zdCBDb25maXJtTW9kYWwgPSAoeyBzaG93LCBvbkNvbmZpcm0sIG9uQ2xvc2UgfTogQ29uZmlybU1vZGFsUHJvcHMpID0+IHtcbiAgY29uc3QgeyB0IH0gPSB1c2VUcmFuc2xhdGlvbigpXG5cbiAgcmV0dXJuIChcbiAgICA8TW9kYWxcbiAgICAgIGNsYXNzTmFtZT17Y24oJ3ctWzYwMHB4XSBtYXgtdy1bNjAwcHhdIHAtOCcpfVxuICAgICAgaXNTaG93PXtzaG93fVxuICAgICAgb25DbG9zZT17bm9vcH1cbiAgICA+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImFic29sdXRlIHJpZ2h0LTQgdG9wLTQgY3Vyc29yLXBvaW50ZXIgcC0yXCIgb25DbGljaz17b25DbG9zZX0+XG4gICAgICAgIDxSaUNsb3NlTGluZSBjbGFzc05hbWU9XCJoLTQgdy00IHRleHQtdGV4dC10ZXJ0aWFyeVwiIC8+XG4gICAgICA8L2Rpdj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaC0xMiB3LTEyIHJvdW5kZWQteGwgYm9yZGVyLVswLjVweF0gYm9yZGVyLWRpdmlkZXItcmVndWxhciBiZy1iYWNrZ3JvdW5kLXNlY3Rpb24gcC0zIHNoYWRvdy14bFwiPlxuICAgICAgICA8QWxlcnRUcmlhbmdsZSBjbGFzc05hbWU9XCJoLTYgdy02IHRleHQtW3JnYigyNDcsMTQ0LDkpXVwiIC8+XG4gICAgICA8L2Rpdj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwicmVsYXRpdmUgbXQtMyB0ZXh0LXhsIGZvbnQtc2VtaWJvbGQgbGVhZGluZy1bMzBweF0gdGV4dC10ZXh0LXByaW1hcnlcIj57dCgnY3JlYXRlVG9vbC5jb25maXJtVGl0bGUnLCB7IG5zOiAndG9vbHMnIH0pfTwvZGl2PlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJteS0xIHRleHQtc20gbGVhZGluZy01IHRleHQtdGV4dC10ZXJ0aWFyeVwiPlxuICAgICAgICB7dCgnY3JlYXRlVG9vbC5jb25maXJtVGlwJywgeyBuczogJ3Rvb2xzJyB9KX1cbiAgICAgIDwvZGl2PlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWVuZCBwdC02XCI+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXJcIj5cbiAgICAgICAgICA8QnV0dG9uIGNsYXNzTmFtZT1cIm1yLTJcIiBvbkNsaWNrPXtvbkNsb3NlfT57dCgnb3BlcmF0aW9uLmNhbmNlbCcsIHsgbnM6ICdjb21tb24nIH0pfTwvQnV0dG9uPlxuICAgICAgICAgIDxCdXR0b24gdmFyaWFudD1cIndhcm5pbmdcIiBvbkNsaWNrPXtvbkNvbmZpcm19Pnt0KCdvcGVyYXRpb24uY29uZmlybScsIHsgbnM6ICdjb21tb24nIH0pfTwvQnV0dG9uPlxuICAgICAgICA8L2Rpdj5cbiAgICAgIDwvZGl2PlxuICAgIDwvTW9kYWw+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgQ29uZmlybU1vZGFsXG4iXX0=

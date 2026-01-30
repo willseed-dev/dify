@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FormattedText = void 0;
+const classnames_1 = require("@/utils/classnames");
+const FormattedText = (props) => {
+    const { className, ...rest } = props;
+    return (<p {...rest} className={(0, classnames_1.cn)('leading-7', className)}>
+      {props.children}
+    </p>);
+};
+exports.FormattedText = FormattedText;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZm9ybWF0dGVkLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiZm9ybWF0dGVkLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFDQSxtREFBdUM7QUFJaEMsTUFBTSxhQUFhLEdBQTJCLENBQUMsS0FBSyxFQUFFLEVBQUU7SUFDN0QsTUFBTSxFQUFFLFNBQVMsRUFBRSxHQUFHLElBQUksRUFBRSxHQUFHLEtBQUssQ0FBQTtJQUNwQyxPQUFPLENBQ0wsQ0FBQyxDQUFDLENBQ0EsSUFBSSxJQUFJLENBQUMsQ0FDVCxTQUFTLENBQUMsQ0FBQyxJQUFBLGVBQUUsRUFBQyxXQUFXLEVBQUUsU0FBUyxDQUFDLENBQUMsQ0FFdEM7TUFBQSxDQUFDLEtBQUssQ0FBQyxRQUFRLENBQ2pCO0lBQUEsRUFBRSxDQUFDLENBQUMsQ0FDTCxDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBVlksUUFBQSxhQUFhLGlCQVV6QiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB0eXBlIHsgQ29tcG9uZW50UHJvcHMsIEZDIH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgeyBjbiB9IGZyb20gJ0AvdXRpbHMvY2xhc3NuYW1lcydcblxuZXhwb3J0IHR5cGUgRm9ybWF0dGVkVGV4dFByb3BzID0gQ29tcG9uZW50UHJvcHM8J3AnPlxuXG5leHBvcnQgY29uc3QgRm9ybWF0dGVkVGV4dDogRkM8Rm9ybWF0dGVkVGV4dFByb3BzPiA9IChwcm9wcykgPT4ge1xuICBjb25zdCB7IGNsYXNzTmFtZSwgLi4ucmVzdCB9ID0gcHJvcHNcbiAgcmV0dXJuIChcbiAgICA8cFxuICAgICAgey4uLnJlc3R9XG4gICAgICBjbGFzc05hbWU9e2NuKCdsZWFkaW5nLTcnLCBjbGFzc05hbWUpfVxuICAgID5cbiAgICAgIHtwcm9wcy5jaGlsZHJlbn1cbiAgICA8L3A+XG4gIClcbn1cbiJdfQ==

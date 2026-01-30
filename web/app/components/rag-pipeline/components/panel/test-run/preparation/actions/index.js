@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const react_i18next_1 = require("react-i18next");
+const button_1 = require("@/app/components/base/button");
+const Actions = ({ disabled, handleNextStep, }) => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    return (<div className="flex justify-end p-4 pt-2">
+      <button_1.default disabled={disabled} variant="primary" onClick={handleNextStep}>
+        <span className="px-0.5">{t('stepOne.button', { ns: 'datasetCreation' })}</span>
+      </button_1.default>
+    </div>);
+};
+exports.default = React.memo(Actions);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSwrQkFBOEI7QUFDOUIsaURBQThDO0FBQzlDLHlEQUFpRDtBQU9qRCxNQUFNLE9BQU8sR0FBRyxDQUFDLEVBQ2YsUUFBUSxFQUNSLGNBQWMsR0FDRCxFQUFFLEVBQUU7SUFDakIsTUFBTSxFQUFFLENBQUMsRUFBRSxHQUFHLElBQUEsOEJBQWMsR0FBRSxDQUFBO0lBRTlCLE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsMkJBQTJCLENBQ3hDO01BQUEsQ0FBQyxnQkFBTSxDQUFDLFFBQVEsQ0FBQyxDQUFDLFFBQVEsQ0FBQyxDQUFDLE9BQU8sQ0FBQyxTQUFTLENBQUMsT0FBTyxDQUFDLENBQUMsY0FBYyxDQUFDLENBQ3BFO1FBQUEsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLFFBQVEsQ0FBQyxDQUFDLENBQUMsQ0FBQyxnQkFBZ0IsRUFBRSxFQUFFLEVBQUUsRUFBRSxpQkFBaUIsRUFBRSxDQUFDLENBQUMsRUFBRSxJQUFJLENBQ2pGO01BQUEsRUFBRSxnQkFBTSxDQUNWO0lBQUEsRUFBRSxHQUFHLENBQUMsQ0FDUCxDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsS0FBSyxDQUFDLElBQUksQ0FBQyxPQUFPLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgdXNlVHJhbnNsYXRpb24gfSBmcm9tICdyZWFjdC1pMThuZXh0J1xuaW1wb3J0IEJ1dHRvbiBmcm9tICdAL2FwcC9jb21wb25lbnRzL2Jhc2UvYnV0dG9uJ1xuXG50eXBlIEFjdGlvbnNQcm9wcyA9IHtcbiAgZGlzYWJsZWQ/OiBib29sZWFuXG4gIGhhbmRsZU5leHRTdGVwOiAoKSA9PiB2b2lkXG59XG5cbmNvbnN0IEFjdGlvbnMgPSAoe1xuICBkaXNhYmxlZCxcbiAgaGFuZGxlTmV4dFN0ZXAsXG59OiBBY3Rpb25zUHJvcHMpID0+IHtcbiAgY29uc3QgeyB0IH0gPSB1c2VUcmFuc2xhdGlvbigpXG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXgganVzdGlmeS1lbmQgcC00IHB0LTJcIj5cbiAgICAgIDxCdXR0b24gZGlzYWJsZWQ9e2Rpc2FibGVkfSB2YXJpYW50PVwicHJpbWFyeVwiIG9uQ2xpY2s9e2hhbmRsZU5leHRTdGVwfT5cbiAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwicHgtMC41XCI+e3QoJ3N0ZXBPbmUuYnV0dG9uJywgeyBuczogJ2RhdGFzZXRDcmVhdGlvbicgfSl9PC9zcGFuPlxuICAgICAgPC9CdXR0b24+XG4gICAgPC9kaXY+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgUmVhY3QubWVtbyhBY3Rpb25zKVxuIl19

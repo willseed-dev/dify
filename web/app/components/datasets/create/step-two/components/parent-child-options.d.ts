@@ -1,0 +1,23 @@
+import type { FC } from 'react';
+import type { ParentChildConfig } from '../hooks';
+import type { ParentMode, PreProcessingRule } from '@/models/datasets';
+import { ChunkingMode } from '@/models/datasets';
+type ParentChildOptionsProps = {
+    parentChildConfig: ParentChildConfig;
+    rules: PreProcessingRule[];
+    currentDocForm: ChunkingMode;
+    isActive: boolean;
+    isInUpload: boolean;
+    isNotUploadInEmptyDataset: boolean;
+    onDocFormChange: (form: ChunkingMode) => void;
+    onChunkForContextChange: (mode: ParentMode) => void;
+    onParentDelimiterChange: (value: string) => void;
+    onParentMaxLengthChange: (value: number) => void;
+    onChildDelimiterChange: (value: string) => void;
+    onChildMaxLengthChange: (value: number) => void;
+    onRuleToggle: (id: string) => void;
+    onPreview: () => void;
+    onReset: () => void;
+};
+export declare const ParentChildOptions: FC<ParentChildOptionsProps>;
+export {};

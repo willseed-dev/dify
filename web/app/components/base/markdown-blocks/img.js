@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * @fileoverview Img component for rendering <img> tags in Markdown.
+ * Extracted from the main markdown renderer for modularity.
+ * Uses the ImageGallery component to display images.
+ */
+const React = require("react");
+const image_gallery_1 = require("@/app/components/base/image-gallery");
+const Img = ({ src }) => {
+    return <div className="markdown-img-wrapper"><image_gallery_1.default srcs={[src]}/></div>;
+};
+exports.default = Img;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW1nLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiaW1nLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBOzs7O0dBSUc7QUFDSCwrQkFBOEI7QUFDOUIsdUVBQThEO0FBRTlELE1BQU0sR0FBRyxHQUFHLENBQUMsRUFBRSxHQUFHLEVBQU8sRUFBRSxFQUFFO0lBQzNCLE9BQU8sQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLHNCQUFzQixDQUFDLENBQUMsdUJBQVksQ0FBQyxJQUFJLENBQUMsQ0FBQyxDQUFDLEdBQUcsQ0FBQyxDQUFDLEVBQUcsRUFBRSxHQUFHLENBQUMsQ0FBQTtBQUNsRixDQUFDLENBQUE7QUFFRCxrQkFBZSxHQUFHLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEBmaWxlb3ZlcnZpZXcgSW1nIGNvbXBvbmVudCBmb3IgcmVuZGVyaW5nIDxpbWc+IHRhZ3MgaW4gTWFya2Rvd24uXG4gKiBFeHRyYWN0ZWQgZnJvbSB0aGUgbWFpbiBtYXJrZG93biByZW5kZXJlciBmb3IgbW9kdWxhcml0eS5cbiAqIFVzZXMgdGhlIEltYWdlR2FsbGVyeSBjb21wb25lbnQgdG8gZGlzcGxheSBpbWFnZXMuXG4gKi9cbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IEltYWdlR2FsbGVyeSBmcm9tICdAL2FwcC9jb21wb25lbnRzL2Jhc2UvaW1hZ2UtZ2FsbGVyeSdcblxuY29uc3QgSW1nID0gKHsgc3JjIH06IGFueSkgPT4ge1xuICByZXR1cm4gPGRpdiBjbGFzc05hbWU9XCJtYXJrZG93bi1pbWctd3JhcHBlclwiPjxJbWFnZUdhbGxlcnkgc3Jjcz17W3NyY119IC8+PC9kaXY+XG59XG5cbmV4cG9ydCBkZWZhdWx0IEltZ1xuIl19

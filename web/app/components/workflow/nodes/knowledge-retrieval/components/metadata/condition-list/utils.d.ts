@@ -1,0 +1,12 @@
+import { ComparisonOperator, MetadataFilteringVariableType } from '@/app/components/workflow/nodes/knowledge-retrieval/types';
+export declare const isEmptyRelatedOperator: (operator: ComparisonOperator) => boolean;
+declare const notTranslateKey: readonly [any, any, any, any, any, any];
+type NotTranslateOperator = typeof notTranslateKey[number];
+export type TranslatableComparisonOperator = Exclude<ComparisonOperator, NotTranslateOperator>;
+export declare function isComparisonOperatorNeedTranslate(operator: ComparisonOperator): operator is TranslatableComparisonOperator;
+export declare function isComparisonOperatorNeedTranslate(operator?: ComparisonOperator): operator is TranslatableComparisonOperator;
+export declare const getOperators: (type?: MetadataFilteringVariableType) => any[];
+export declare const comparisonOperatorNotRequireValue: (operator?: ComparisonOperator) => boolean;
+export declare const VARIABLE_REGEX: RegExp;
+export declare const COMMON_VARIABLE_REGEX: RegExp;
+export {};

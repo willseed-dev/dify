@@ -1,0 +1,23 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const string_1 = require("es-toolkit/string");
+const react_1 = require("react");
+const others_1 = require("@/app/components/base/icons/src/vender/line/others");
+const classnames_1 = require("@/utils/classnames");
+const Item = ({ payload, }) => {
+    return (<div className={(0, classnames_1.cn)('radius-md mb-1 border border-components-panel-border-subtle bg-components-panel-on-panel-item-bg px-2.5 py-2 shadow-xs hover:bg-components-panel-on-panel-item-bg-hover')}>
+      <div className="flex items-center justify-between">
+        <div className="flex grow items-center gap-1">
+          <others_1.GlobalVariable className="h-4 w-4 text-util-colors-orange-orange-600"/>
+          <div className="system-sm-medium text-text-primary">
+            <span className="text-text-tertiary">sys.</span>
+            {payload.name}
+          </div>
+          <div className="system-xs-medium text-text-tertiary">{(0, string_1.capitalize)(payload.value_type)}</div>
+        </div>
+      </div>
+      <div className="system-xs-regular mt-1.5 truncate text-text-tertiary">{payload.description}</div>
+    </div>);
+};
+exports.default = (0, react_1.memo)(Item);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaXRlbS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIml0ZW0udHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQ0EsOENBQThDO0FBQzlDLGlDQUE0QjtBQUU1QiwrRUFBeUc7QUFDekcsbURBQXVDO0FBTXZDLE1BQU0sSUFBSSxHQUFHLENBQUMsRUFDWixPQUFPLEdBQ0QsRUFBRSxFQUFFO0lBQ1YsT0FBTyxDQUNMLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxDQUFDLElBQUEsZUFBRSxFQUNoQix5S0FBeUssQ0FDMUssQ0FBQyxDQUVBO01BQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLG1DQUFtQyxDQUNoRDtRQUFBLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyw4QkFBOEIsQ0FDM0M7VUFBQSxDQUFDLHVCQUFrQixDQUFDLFNBQVMsQ0FBQyw0Q0FBNEMsRUFDMUU7VUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsb0NBQW9DLENBQ2pEO1lBQUEsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLG9CQUFvQixDQUFDLElBQUksRUFBRSxJQUFJLENBQy9DO1lBQUEsQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUNmO1VBQUEsRUFBRSxHQUFHLENBQ0w7VUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMscUNBQXFDLENBQUMsQ0FBQyxJQUFBLG1CQUFVLEVBQUMsT0FBTyxDQUFDLFVBQVUsQ0FBQyxDQUFDLEVBQUUsR0FBRyxDQUM1RjtRQUFBLEVBQUUsR0FBRyxDQUNQO01BQUEsRUFBRSxHQUFHLENBQ0w7TUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsc0RBQXNELENBQUMsQ0FBQyxPQUFPLENBQUMsV0FBVyxDQUFDLEVBQUUsR0FBRyxDQUNsRztJQUFBLEVBQUUsR0FBRyxDQUFDLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELGtCQUFlLElBQUEsWUFBSSxFQUFDLElBQUksQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHR5cGUgeyBHbG9iYWxWYXJpYWJsZSB9IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvd29ya2Zsb3cvdHlwZXMnXG5pbXBvcnQgeyBjYXBpdGFsaXplIH0gZnJvbSAnZXMtdG9vbGtpdC9zdHJpbmcnXG5pbXBvcnQgeyBtZW1vIH0gZnJvbSAncmVhY3QnXG5cbmltcG9ydCB7IEdsb2JhbFZhcmlhYmxlIGFzIEdsb2JhbFZhcmlhYmxlSWNvbiB9IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS9pY29ucy9zcmMvdmVuZGVyL2xpbmUvb3RoZXJzJ1xuaW1wb3J0IHsgY24gfSBmcm9tICdAL3V0aWxzL2NsYXNzbmFtZXMnXG5cbnR5cGUgUHJvcHMgPSB7XG4gIHBheWxvYWQ6IEdsb2JhbFZhcmlhYmxlXG59XG5cbmNvbnN0IEl0ZW0gPSAoe1xuICBwYXlsb2FkLFxufTogUHJvcHMpID0+IHtcbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT17Y24oXG4gICAgICAncmFkaXVzLW1kIG1iLTEgYm9yZGVyIGJvcmRlci1jb21wb25lbnRzLXBhbmVsLWJvcmRlci1zdWJ0bGUgYmctY29tcG9uZW50cy1wYW5lbC1vbi1wYW5lbC1pdGVtLWJnIHB4LTIuNSBweS0yIHNoYWRvdy14cyBob3ZlcjpiZy1jb21wb25lbnRzLXBhbmVsLW9uLXBhbmVsLWl0ZW0tYmctaG92ZXInLFxuICAgICl9XG4gICAgPlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW5cIj5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGdyb3cgaXRlbXMtY2VudGVyIGdhcC0xXCI+XG4gICAgICAgICAgPEdsb2JhbFZhcmlhYmxlSWNvbiBjbGFzc05hbWU9XCJoLTQgdy00IHRleHQtdXRpbC1jb2xvcnMtb3JhbmdlLW9yYW5nZS02MDBcIiAvPlxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwic3lzdGVtLXNtLW1lZGl1bSB0ZXh0LXRleHQtcHJpbWFyeVwiPlxuICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwidGV4dC10ZXh0LXRlcnRpYXJ5XCI+c3lzLjwvc3Bhbj5cbiAgICAgICAgICAgIHtwYXlsb2FkLm5hbWV9XG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJzeXN0ZW0teHMtbWVkaXVtIHRleHQtdGV4dC10ZXJ0aWFyeVwiPntjYXBpdGFsaXplKHBheWxvYWQudmFsdWVfdHlwZSl9PC9kaXY+XG4gICAgICAgIDwvZGl2PlxuICAgICAgPC9kaXY+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInN5c3RlbS14cy1yZWd1bGFyIG10LTEuNSB0cnVuY2F0ZSB0ZXh0LXRleHQtdGVydGlhcnlcIj57cGF5bG9hZC5kZXNjcmlwdGlvbn08L2Rpdj5cbiAgICA8L2Rpdj5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBtZW1vKEl0ZW0pXG4iXX0=

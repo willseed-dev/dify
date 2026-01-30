@@ -1,0 +1,13 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const embedded_chatbot_1 = require("@/app/components/base/chat/embedded-chatbot");
+const authenticated_layout_1 = require("../../components/authenticated-layout");
+const Chatbot = () => {
+    return (<authenticated_layout_1.default>
+      <embedded_chatbot_1.default />
+    </authenticated_layout_1.default>);
+};
+exports.default = React.memo(Chatbot);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFnZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInBhZ2UudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxZQUFZLENBQUE7O0FBQ1osK0JBQThCO0FBQzlCLGtGQUF5RTtBQUN6RSxnRkFBdUU7QUFFdkUsTUFBTSxPQUFPLEdBQUcsR0FBRyxFQUFFO0lBQ25CLE9BQU8sQ0FDTCxDQUFDLDhCQUFtQixDQUNsQjtNQUFBLENBQUMsMEJBQWUsQ0FBQyxBQUFELEVBQ2xCO0lBQUEsRUFBRSw4QkFBbUIsQ0FBQyxDQUN2QixDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsS0FBSyxDQUFDLElBQUksQ0FBQyxPQUFPLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbIid1c2UgY2xpZW50J1xuaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgRW1iZWRkZWRDaGF0Ym90IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS9jaGF0L2VtYmVkZGVkLWNoYXRib3QnXG5pbXBvcnQgQXV0aGVudGljYXRlZExheW91dCBmcm9tICcuLi8uLi9jb21wb25lbnRzL2F1dGhlbnRpY2F0ZWQtbGF5b3V0J1xuXG5jb25zdCBDaGF0Ym90ID0gKCkgPT4ge1xuICByZXR1cm4gKFxuICAgIDxBdXRoZW50aWNhdGVkTGF5b3V0PlxuICAgICAgPEVtYmVkZGVkQ2hhdGJvdCAvPlxuICAgIDwvQXV0aGVudGljYXRlZExheW91dD5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBSZWFjdC5tZW1vKENoYXRib3QpXG4iXX0=

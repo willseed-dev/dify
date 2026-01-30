@@ -1,0 +1,30 @@
+import type { ParameterExtractorNodeType } from './types';
+declare const useConfig: (id: string, payload: ParameterExtractorNodeType) => {
+    readOnly: boolean;
+    handleInputVarChange: any;
+    filterVar: any;
+    isChatMode: boolean;
+    inputs: any;
+    isChatModel: boolean;
+    isCompletionModel: boolean;
+    handleModelChanged: any;
+    handleCompletionParamsChange: any;
+    handleImportFromTool: any;
+    handleExactParamsChange: any;
+    addExtractParameter: any;
+    handleInstructionChange: any;
+    hasSetBlockStatus: {
+        history: boolean;
+        query: any;
+        context: boolean;
+    };
+    availableVars: any;
+    availableNodesWithParent: any;
+    isSupportFunctionCall: any;
+    handleReasoningModeChange: any;
+    handleMemoryChange: any;
+    isVisionModel: any;
+    handleVisionResolutionEnabledChange: any;
+    handleVisionResolutionChange: any;
+};
+export default useConfig;

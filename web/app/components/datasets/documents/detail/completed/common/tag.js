@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const classnames_1 = require("@/utils/classnames");
+const Tag = ({ text, className }) => {
+    return (<div className={(0, classnames_1.cn)('inline-flex items-center gap-x-0.5', className)}>
+      <span className="text-xs font-medium text-text-quaternary">#</span>
+      <span className="max-w-12 shrink-0 truncate text-xs text-text-tertiary">{text}</span>
+    </div>);
+};
+Tag.displayName = 'Tag';
+exports.default = React.memo(Tag);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGFnLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidGFnLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLCtCQUE4QjtBQUM5QixtREFBdUM7QUFFdkMsTUFBTSxHQUFHLEdBQUcsQ0FBQyxFQUFFLElBQUksRUFBRSxTQUFTLEVBQXdDLEVBQUUsRUFBRTtJQUN4RSxPQUFPLENBQ0wsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLENBQUMsSUFBQSxlQUFFLEVBQUMsb0NBQW9DLEVBQUUsU0FBUyxDQUFDLENBQUMsQ0FDbEU7TUFBQSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsMENBQTBDLENBQUMsQ0FBQyxFQUFFLElBQUksQ0FDbEU7TUFBQSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsdURBQXVELENBQUMsQ0FBQyxJQUFJLENBQUMsRUFBRSxJQUFJLENBQ3RGO0lBQUEsRUFBRSxHQUFHLENBQUMsQ0FDUCxDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsR0FBRyxDQUFDLFdBQVcsR0FBRyxLQUFLLENBQUE7QUFFdkIsa0JBQWUsS0FBSyxDQUFDLElBQUksQ0FBQyxHQUFHLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgY24gfSBmcm9tICdAL3V0aWxzL2NsYXNzbmFtZXMnXG5cbmNvbnN0IFRhZyA9ICh7IHRleHQsIGNsYXNzTmFtZSB9OiB7IHRleHQ6IHN0cmluZywgY2xhc3NOYW1lPzogc3RyaW5nIH0pID0+IHtcbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT17Y24oJ2lubGluZS1mbGV4IGl0ZW1zLWNlbnRlciBnYXAteC0wLjUnLCBjbGFzc05hbWUpfT5cbiAgICAgIDxzcGFuIGNsYXNzTmFtZT1cInRleHQteHMgZm9udC1tZWRpdW0gdGV4dC10ZXh0LXF1YXRlcm5hcnlcIj4jPC9zcGFuPlxuICAgICAgPHNwYW4gY2xhc3NOYW1lPVwibWF4LXctMTIgc2hyaW5rLTAgdHJ1bmNhdGUgdGV4dC14cyB0ZXh0LXRleHQtdGVydGlhcnlcIj57dGV4dH08L3NwYW4+XG4gICAgPC9kaXY+XG4gIClcbn1cblxuVGFnLmRpc3BsYXlOYW1lID0gJ1RhZydcblxuZXhwb3J0IGRlZmF1bHQgUmVhY3QubWVtbyhUYWcpXG4iXX0=

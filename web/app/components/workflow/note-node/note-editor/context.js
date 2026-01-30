@@ -1,0 +1,44 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NoteEditorContextProvider = void 0;
+const link_1 = require("@lexical/link");
+const list_1 = require("@lexical/list");
+const LexicalComposer_1 = require("@lexical/react/LexicalComposer");
+const react_1 = require("react");
+const store_1 = require("./store");
+const theme_1 = require("./theme");
+const NoteEditorContext = (0, react_1.createContext)(null);
+exports.NoteEditorContextProvider = (0, react_1.memo)(({ value, children, editable = true, }) => {
+    const storeRef = (0, react_1.useRef)(undefined);
+    if (!storeRef.current)
+        storeRef.current = (0, store_1.createNoteEditorStore)();
+    let initialValue = null;
+    try {
+        initialValue = JSON.parse(value);
+    }
+    catch {
+    }
+    const initialConfig = {
+        namespace: 'note-editor',
+        nodes: [
+            link_1.LinkNode,
+            list_1.ListNode,
+            list_1.ListItemNode,
+        ],
+        editorState: !initialValue?.root.children.length ? null : JSON.stringify(initialValue),
+        onError: (error) => {
+            throw error;
+        },
+        theme: theme_1.default,
+        editable,
+    };
+    return (<NoteEditorContext.Provider value={storeRef.current}>
+      <LexicalComposer_1.LexicalComposer initialConfig={{ ...initialConfig }}>
+        {children}
+      </LexicalComposer_1.LexicalComposer>
+    </NoteEditorContext.Provider>);
+});
+exports.NoteEditorContextProvider.displayName = 'NoteEditorContextProvider';
+exports.default = NoteEditorContext;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29udGV4dC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImNvbnRleHQudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxZQUFZLENBQUE7OztBQUVaLHdDQUF3QztBQUN4Qyx3Q0FHc0I7QUFDdEIsb0VBQWdFO0FBQ2hFLGlDQUljO0FBQ2QsbUNBQStDO0FBQy9DLG1DQUEyQjtBQUczQixNQUFNLGlCQUFpQixHQUFHLElBQUEscUJBQWEsRUFBeUIsSUFBSSxDQUFDLENBQUE7QUFPeEQsUUFBQSx5QkFBeUIsR0FBRyxJQUFBLFlBQUksRUFBQyxDQUFDLEVBQzdDLEtBQUssRUFDTCxRQUFRLEVBQ1IsUUFBUSxHQUFHLElBQUksR0FDZ0IsRUFBRSxFQUFFO0lBQ25DLE1BQU0sUUFBUSxHQUFHLElBQUEsY0FBTSxFQUE4QixTQUFTLENBQUMsQ0FBQTtJQUUvRCxJQUFJLENBQUMsUUFBUSxDQUFDLE9BQU87UUFDbkIsUUFBUSxDQUFDLE9BQU8sR0FBRyxJQUFBLDZCQUFxQixHQUFFLENBQUE7SUFFNUMsSUFBSSxZQUFZLEdBQUcsSUFBSSxDQUFBO0lBQ3ZCLElBQUksQ0FBQztRQUNILFlBQVksR0FBRyxJQUFJLENBQUMsS0FBSyxDQUFDLEtBQUssQ0FBQyxDQUFBO0lBQ2xDLENBQUM7SUFDRCxNQUFNLENBQUM7SUFFUCxDQUFDO0lBRUQsTUFBTSxhQUFhLEdBQUc7UUFDcEIsU0FBUyxFQUFFLGFBQWE7UUFDeEIsS0FBSyxFQUFFO1lBQ0wsZUFBUTtZQUNSLGVBQVE7WUFDUixtQkFBWTtTQUNiO1FBQ0QsV0FBVyxFQUFFLENBQUMsWUFBWSxFQUFFLElBQUksQ0FBQyxRQUFRLENBQUMsTUFBTSxDQUFDLENBQUMsQ0FBQyxJQUFJLENBQUMsQ0FBQyxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsWUFBWSxDQUFDO1FBQ3RGLE9BQU8sRUFBRSxDQUFDLEtBQVksRUFBRSxFQUFFO1lBQ3hCLE1BQU0sS0FBSyxDQUFBO1FBQ2IsQ0FBQztRQUNELEtBQUssRUFBTCxlQUFLO1FBQ0wsUUFBUTtLQUNULENBQUE7SUFFRCxPQUFPLENBQ0wsQ0FBQyxpQkFBaUIsQ0FBQyxRQUFRLENBQUMsS0FBSyxDQUFDLENBQUMsUUFBUSxDQUFDLE9BQU8sQ0FBQyxDQUNsRDtNQUFBLENBQUMsaUNBQWUsQ0FBQyxhQUFhLENBQUMsQ0FBQyxFQUFFLEdBQUcsYUFBYSxFQUFFLENBQUMsQ0FDbkQ7UUFBQSxDQUFDLFFBQVEsQ0FDWDtNQUFBLEVBQUUsaUNBQWUsQ0FDbkI7SUFBQSxFQUFFLGlCQUFpQixDQUFDLFFBQVEsQ0FBQyxDQUM5QixDQUFBO0FBQ0gsQ0FBQyxDQUFDLENBQUE7QUFDRixpQ0FBeUIsQ0FBQyxXQUFXLEdBQUcsMkJBQTJCLENBQUE7QUFFbkUsa0JBQWUsaUJBQWlCLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIGNsaWVudCdcblxuaW1wb3J0IHsgTGlua05vZGUgfSBmcm9tICdAbGV4aWNhbC9saW5rJ1xuaW1wb3J0IHtcbiAgTGlzdEl0ZW1Ob2RlLFxuICBMaXN0Tm9kZSxcbn0gZnJvbSAnQGxleGljYWwvbGlzdCdcbmltcG9ydCB7IExleGljYWxDb21wb3NlciB9IGZyb20gJ0BsZXhpY2FsL3JlYWN0L0xleGljYWxDb21wb3NlcidcbmltcG9ydCB7XG4gIGNyZWF0ZUNvbnRleHQsXG4gIG1lbW8sXG4gIHVzZVJlZixcbn0gZnJvbSAncmVhY3QnXG5pbXBvcnQgeyBjcmVhdGVOb3RlRWRpdG9yU3RvcmUgfSBmcm9tICcuL3N0b3JlJ1xuaW1wb3J0IHRoZW1lIGZyb20gJy4vdGhlbWUnXG5cbnR5cGUgTm90ZUVkaXRvclN0b3JlID0gUmV0dXJuVHlwZTx0eXBlb2YgY3JlYXRlTm90ZUVkaXRvclN0b3JlPlxuY29uc3QgTm90ZUVkaXRvckNvbnRleHQgPSBjcmVhdGVDb250ZXh0PE5vdGVFZGl0b3JTdG9yZSB8IG51bGw+KG51bGwpXG5cbnR5cGUgTm90ZUVkaXRvckNvbnRleHRQcm92aWRlclByb3BzID0ge1xuICB2YWx1ZTogc3RyaW5nXG4gIGNoaWxkcmVuOiBSZWFjdC5KU1guRWxlbWVudCB8IHN0cmluZyB8IChSZWFjdC5KU1guRWxlbWVudCB8IHN0cmluZylbXVxuICBlZGl0YWJsZT86IGJvb2xlYW5cbn1cbmV4cG9ydCBjb25zdCBOb3RlRWRpdG9yQ29udGV4dFByb3ZpZGVyID0gbWVtbygoe1xuICB2YWx1ZSxcbiAgY2hpbGRyZW4sXG4gIGVkaXRhYmxlID0gdHJ1ZSxcbn06IE5vdGVFZGl0b3JDb250ZXh0UHJvdmlkZXJQcm9wcykgPT4ge1xuICBjb25zdCBzdG9yZVJlZiA9IHVzZVJlZjxOb3RlRWRpdG9yU3RvcmUgfCB1bmRlZmluZWQ+KHVuZGVmaW5lZClcblxuICBpZiAoIXN0b3JlUmVmLmN1cnJlbnQpXG4gICAgc3RvcmVSZWYuY3VycmVudCA9IGNyZWF0ZU5vdGVFZGl0b3JTdG9yZSgpXG5cbiAgbGV0IGluaXRpYWxWYWx1ZSA9IG51bGxcbiAgdHJ5IHtcbiAgICBpbml0aWFsVmFsdWUgPSBKU09OLnBhcnNlKHZhbHVlKVxuICB9XG4gIGNhdGNoIHtcblxuICB9XG5cbiAgY29uc3QgaW5pdGlhbENvbmZpZyA9IHtcbiAgICBuYW1lc3BhY2U6ICdub3RlLWVkaXRvcicsXG4gICAgbm9kZXM6IFtcbiAgICAgIExpbmtOb2RlLFxuICAgICAgTGlzdE5vZGUsXG4gICAgICBMaXN0SXRlbU5vZGUsXG4gICAgXSxcbiAgICBlZGl0b3JTdGF0ZTogIWluaXRpYWxWYWx1ZT8ucm9vdC5jaGlsZHJlbi5sZW5ndGggPyBudWxsIDogSlNPTi5zdHJpbmdpZnkoaW5pdGlhbFZhbHVlKSxcbiAgICBvbkVycm9yOiAoZXJyb3I6IEVycm9yKSA9PiB7XG4gICAgICB0aHJvdyBlcnJvclxuICAgIH0sXG4gICAgdGhlbWUsXG4gICAgZWRpdGFibGUsXG4gIH1cblxuICByZXR1cm4gKFxuICAgIDxOb3RlRWRpdG9yQ29udGV4dC5Qcm92aWRlciB2YWx1ZT17c3RvcmVSZWYuY3VycmVudH0+XG4gICAgICA8TGV4aWNhbENvbXBvc2VyIGluaXRpYWxDb25maWc9e3sgLi4uaW5pdGlhbENvbmZpZyB9fT5cbiAgICAgICAge2NoaWxkcmVufVxuICAgICAgPC9MZXhpY2FsQ29tcG9zZXI+XG4gICAgPC9Ob3RlRWRpdG9yQ29udGV4dC5Qcm92aWRlcj5cbiAgKVxufSlcbk5vdGVFZGl0b3JDb250ZXh0UHJvdmlkZXIuZGlzcGxheU5hbWUgPSAnTm90ZUVkaXRvckNvbnRleHRQcm92aWRlcidcblxuZXhwb3J0IGRlZmF1bHQgTm90ZUVkaXRvckNvbnRleHRcbiJdfQ==

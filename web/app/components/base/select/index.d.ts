@@ -1,0 +1,51 @@
+import type { FC } from 'react';
+import * as React from 'react';
+export type Item = {
+    value: number | string;
+    name: string;
+    isGroup?: boolean;
+    disabled?: boolean;
+    extra?: React.ReactNode;
+} & Record<string, any>;
+export type ISelectProps = {
+    className?: string;
+    wrapperClassName?: string;
+    renderTrigger?: (value: Item | null, isOpen: boolean) => React.JSX.Element | null;
+    items?: Item[];
+    defaultValue?: number | string;
+    disabled?: boolean;
+    onSelect: (value: Item) => void;
+    allowSearch?: boolean;
+    bgClassName?: string;
+    placeholder?: string;
+    overlayClassName?: string;
+    optionWrapClassName?: string;
+    optionClassName?: string;
+    hideChecked?: boolean;
+    notClearable?: boolean;
+    renderOption?: ({ item, selected, }: {
+        item: Item;
+        selected: boolean;
+    }) => React.ReactNode;
+    isLoading?: boolean;
+    onOpenChange?: (open: boolean) => void;
+};
+declare const SimpleSelect: FC<ISelectProps>;
+type PortalSelectProps = {
+    value: string | number;
+    onSelect: (value: Item) => void;
+    items: Item[];
+    placeholder?: string;
+    installedValue?: string | number;
+    renderTrigger?: (value?: Item) => React.JSX.Element | null;
+    triggerClassName?: string;
+    triggerClassNameFn?: (open: boolean) => string;
+    popupClassName?: string;
+    popupInnerClassName?: string;
+    readonly?: boolean;
+    hideChecked?: boolean;
+};
+declare const PortalSelect: FC<PortalSelectProps>;
+export { PortalSelect, SimpleSelect };
+declare const _default: any;
+export default _default;

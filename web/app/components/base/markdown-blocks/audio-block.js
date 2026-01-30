@@ -1,0 +1,23 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * @fileoverview AudioBlock component for rendering audio elements in Markdown.
+ * Extracted from the main markdown renderer for modularity.
+ * Uses the AudioGallery component to display audio players.
+ */
+const React = require("react");
+const react_1 = require("react");
+const audio_gallery_1 = require("@/app/components/base/audio-gallery");
+const AudioBlock = (0, react_1.memo)(({ node }) => {
+    const srcs = node.children.filter((child) => 'properties' in child).map((child) => child.properties.src);
+    if (srcs.length === 0) {
+        const src = node.properties?.src;
+        if (src)
+            return <audio_gallery_1.default key={src} srcs={[src]}/>;
+        return null;
+    }
+    return <audio_gallery_1.default key={srcs.join()} srcs={srcs}/>;
+});
+AudioBlock.displayName = 'AudioBlock';
+exports.default = AudioBlock;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXVkaW8tYmxvY2suanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJhdWRpby1ibG9jay50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQTs7OztHQUlHO0FBQ0gsK0JBQThCO0FBQzlCLGlDQUE0QjtBQUM1Qix1RUFBOEQ7QUFFOUQsTUFBTSxVQUFVLEdBQVEsSUFBQSxZQUFJLEVBQUMsQ0FBQyxFQUFFLElBQUksRUFBTyxFQUFFLEVBQUU7SUFDN0MsTUFBTSxJQUFJLEdBQUcsSUFBSSxDQUFDLFFBQVEsQ0FBQyxNQUFNLENBQUMsQ0FBQyxLQUFVLEVBQUUsRUFBRSxDQUFDLFlBQVksSUFBSSxLQUFLLENBQUMsQ0FBQyxHQUFHLENBQUMsQ0FBQyxLQUFVLEVBQUUsRUFBRSxDQUFFLEtBQWEsQ0FBQyxVQUFVLENBQUMsR0FBRyxDQUFDLENBQUE7SUFDM0gsSUFBSSxJQUFJLENBQUMsTUFBTSxLQUFLLENBQUMsRUFBRSxDQUFDO1FBQ3RCLE1BQU0sR0FBRyxHQUFHLElBQUksQ0FBQyxVQUFVLEVBQUUsR0FBRyxDQUFBO1FBQ2hDLElBQUksR0FBRztZQUNMLE9BQU8sQ0FBQyx1QkFBWSxDQUFDLEdBQUcsQ0FBQyxDQUFDLEdBQUcsQ0FBQyxDQUFDLElBQUksQ0FBQyxDQUFDLENBQUMsR0FBRyxDQUFDLENBQUMsRUFBRyxDQUFBO1FBQ2hELE9BQU8sSUFBSSxDQUFBO0lBQ2IsQ0FBQztJQUNELE9BQU8sQ0FBQyx1QkFBWSxDQUFDLEdBQUcsQ0FBQyxDQUFDLElBQUksQ0FBQyxJQUFJLEVBQUUsQ0FBQyxDQUFDLElBQUksQ0FBQyxDQUFDLElBQUksQ0FBQyxFQUFHLENBQUE7QUFDdkQsQ0FBQyxDQUFDLENBQUE7QUFDRixVQUFVLENBQUMsV0FBVyxHQUFHLFlBQVksQ0FBQTtBQUVyQyxrQkFBZSxVQUFVLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEBmaWxlb3ZlcnZpZXcgQXVkaW9CbG9jayBjb21wb25lbnQgZm9yIHJlbmRlcmluZyBhdWRpbyBlbGVtZW50cyBpbiBNYXJrZG93bi5cbiAqIEV4dHJhY3RlZCBmcm9tIHRoZSBtYWluIG1hcmtkb3duIHJlbmRlcmVyIGZvciBtb2R1bGFyaXR5LlxuICogVXNlcyB0aGUgQXVkaW9HYWxsZXJ5IGNvbXBvbmVudCB0byBkaXNwbGF5IGF1ZGlvIHBsYXllcnMuXG4gKi9cbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgbWVtbyB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IEF1ZGlvR2FsbGVyeSBmcm9tICdAL2FwcC9jb21wb25lbnRzL2Jhc2UvYXVkaW8tZ2FsbGVyeSdcblxuY29uc3QgQXVkaW9CbG9jazogYW55ID0gbWVtbygoeyBub2RlIH06IGFueSkgPT4ge1xuICBjb25zdCBzcmNzID0gbm9kZS5jaGlsZHJlbi5maWx0ZXIoKGNoaWxkOiBhbnkpID0+ICdwcm9wZXJ0aWVzJyBpbiBjaGlsZCkubWFwKChjaGlsZDogYW55KSA9PiAoY2hpbGQgYXMgYW55KS5wcm9wZXJ0aWVzLnNyYylcbiAgaWYgKHNyY3MubGVuZ3RoID09PSAwKSB7XG4gICAgY29uc3Qgc3JjID0gbm9kZS5wcm9wZXJ0aWVzPy5zcmNcbiAgICBpZiAoc3JjKVxuICAgICAgcmV0dXJuIDxBdWRpb0dhbGxlcnkga2V5PXtzcmN9IHNyY3M9e1tzcmNdfSAvPlxuICAgIHJldHVybiBudWxsXG4gIH1cbiAgcmV0dXJuIDxBdWRpb0dhbGxlcnkga2V5PXtzcmNzLmpvaW4oKX0gc3Jjcz17c3Jjc30gLz5cbn0pXG5BdWRpb0Jsb2NrLmRpc3BsYXlOYW1lID0gJ0F1ZGlvQmxvY2snXG5cbmV4cG9ydCBkZWZhdWx0IEF1ZGlvQmxvY2tcbiJdfQ==

@@ -1,0 +1,20 @@
+import type { ReactNode } from 'react';
+type OptionCardProps<T> = {
+    id?: T;
+    selectedId?: T;
+    enableSelect?: boolean;
+    enableHighlightBorder?: boolean;
+    enableRadio?: boolean;
+    wrapperClassName?: string | ((isActive: boolean) => string);
+    className?: string | ((isActive: boolean) => string);
+    icon?: ReactNode | ((isActive: boolean) => ReactNode);
+    title: string;
+    description?: string;
+    isRecommended?: boolean;
+    children?: ReactNode;
+    effectColor?: string;
+    onClick?: (id: T) => void;
+    readonly?: boolean;
+};
+declare const OptionCard: <T>(props: OptionCardProps<T>) => React.ReactElement;
+export default OptionCard;

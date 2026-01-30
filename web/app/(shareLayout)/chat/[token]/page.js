@@ -1,0 +1,13 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const chat_with_history_1 = require("@/app/components/base/chat/chat-with-history");
+const authenticated_layout_1 = require("../../components/authenticated-layout");
+const Chat = () => {
+    return (<authenticated_layout_1.default>
+      <chat_with_history_1.default />
+    </authenticated_layout_1.default>);
+};
+exports.default = React.memo(Chat);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFnZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInBhZ2UudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxZQUFZLENBQUE7O0FBQ1osK0JBQThCO0FBQzlCLG9GQUE4RTtBQUM5RSxnRkFBdUU7QUFFdkUsTUFBTSxJQUFJLEdBQUcsR0FBRyxFQUFFO0lBQ2hCLE9BQU8sQ0FDTCxDQUFDLDhCQUFtQixDQUNsQjtNQUFBLENBQUMsMkJBQW1CLENBQUMsQUFBRCxFQUN0QjtJQUFBLEVBQUUsOEJBQW1CLENBQUMsQ0FDdkIsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELGtCQUFlLEtBQUssQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIGNsaWVudCdcbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IENoYXRXaXRoSGlzdG9yeVdyYXAgZnJvbSAnQC9hcHAvY29tcG9uZW50cy9iYXNlL2NoYXQvY2hhdC13aXRoLWhpc3RvcnknXG5pbXBvcnQgQXV0aGVudGljYXRlZExheW91dCBmcm9tICcuLi8uLi9jb21wb25lbnRzL2F1dGhlbnRpY2F0ZWQtbGF5b3V0J1xuXG5jb25zdCBDaGF0ID0gKCkgPT4ge1xuICByZXR1cm4gKFxuICAgIDxBdXRoZW50aWNhdGVkTGF5b3V0PlxuICAgICAgPENoYXRXaXRoSGlzdG9yeVdyYXAgLz5cbiAgICA8L0F1dGhlbnRpY2F0ZWRMYXlvdXQ+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgUmVhY3QubWVtbyhDaGF0KVxuIl19

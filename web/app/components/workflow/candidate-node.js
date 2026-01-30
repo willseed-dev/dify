@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
+const candidate_node_main_1 = require("./candidate-node-main");
+const store_1 = require("./store");
+const CandidateNode = () => {
+    const candidateNode = (0, store_1.useStore)(s => s.candidateNode);
+    if (!candidateNode)
+        return null;
+    return (<candidate_node_main_1.default candidateNode={candidateNode}/>);
+};
+exports.default = (0, react_1.memo)(CandidateNode);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY2FuZGlkYXRlLW5vZGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJjYW5kaWRhdGUtbm9kZS50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxpQ0FFYztBQUVkLCtEQUFxRDtBQUNyRCxtQ0FFZ0I7QUFFaEIsTUFBTSxhQUFhLEdBQUcsR0FBRyxFQUFFO0lBQ3pCLE1BQU0sYUFBYSxHQUFHLElBQUEsZ0JBQVEsRUFBQyxDQUFDLENBQUMsRUFBRSxDQUFDLENBQUMsQ0FBQyxhQUFhLENBQUMsQ0FBQTtJQUNwRCxJQUFJLENBQUMsYUFBYTtRQUNoQixPQUFPLElBQUksQ0FBQTtJQUViLE9BQU8sQ0FDTCxDQUFDLDZCQUFpQixDQUFDLGFBQWEsQ0FBQyxDQUFDLGFBQWEsQ0FBQyxFQUFHLENBQ3BELENBQUE7QUFDSCxDQUFDLENBQUE7QUFFRCxrQkFBZSxJQUFBLFlBQUksRUFBQyxhQUFhLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7XG4gIG1lbW8sXG59IGZyb20gJ3JlYWN0J1xuXG5pbXBvcnQgQ2FuZGlkYXRlTm9kZU1haW4gZnJvbSAnLi9jYW5kaWRhdGUtbm9kZS1tYWluJ1xuaW1wb3J0IHtcbiAgdXNlU3RvcmUsXG59IGZyb20gJy4vc3RvcmUnXG5cbmNvbnN0IENhbmRpZGF0ZU5vZGUgPSAoKSA9PiB7XG4gIGNvbnN0IGNhbmRpZGF0ZU5vZGUgPSB1c2VTdG9yZShzID0+IHMuY2FuZGlkYXRlTm9kZSlcbiAgaWYgKCFjYW5kaWRhdGVOb2RlKVxuICAgIHJldHVybiBudWxsXG5cbiAgcmV0dXJuIChcbiAgICA8Q2FuZGlkYXRlTm9kZU1haW4gY2FuZGlkYXRlTm9kZT17Y2FuZGlkYXRlTm9kZX0gLz5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBtZW1vKENhbmRpZGF0ZU5vZGUpXG4iXX0=

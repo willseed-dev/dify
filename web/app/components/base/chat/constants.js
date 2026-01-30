@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UUID_NIL = exports.CONVERSATION_ID_INFO = void 0;
+exports.CONVERSATION_ID_INFO = 'conversationIdInfo';
+exports.UUID_NIL = '00000000-0000-0000-0000-000000000000';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29uc3RhbnRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiY29uc3RhbnRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFhLFFBQUEsb0JBQW9CLEdBQUcsb0JBQW9CLENBQUE7QUFDM0MsUUFBQSxRQUFRLEdBQUcsc0NBQXNDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgQ09OVkVSU0FUSU9OX0lEX0lORk8gPSAnY29udmVyc2F0aW9uSWRJbmZvJ1xuZXhwb3J0IGNvbnN0IFVVSURfTklMID0gJzAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMCdcbiJdfQ==

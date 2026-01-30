@@ -1,0 +1,23 @@
+type Props = {
+    icon?: any;
+    providerName?: string;
+    isMCPTool?: boolean;
+    providerShowName?: string;
+    toolLabel?: string;
+    showSwitch?: boolean;
+    switchValue?: boolean;
+    onSwitchChange?: (value: boolean) => void;
+    onDelete?: () => void;
+    noAuth?: boolean;
+    isError?: boolean;
+    errorTip?: any;
+    uninstalled?: boolean;
+    installInfo?: string;
+    onInstall?: () => void;
+    versionMismatch?: boolean;
+    open: boolean;
+    authRemoved?: boolean;
+    canChooseMCPTool?: boolean;
+};
+declare const ToolItem: ({ open, icon, isMCPTool, providerShowName, providerName, toolLabel, showSwitch, switchValue, onSwitchChange, onDelete, noAuth, uninstalled, installInfo, onInstall, isError, errorTip, versionMismatch, authRemoved, canChooseMCPTool, }: Props) => any;
+export default ToolItem;

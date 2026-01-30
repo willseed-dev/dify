@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useIsChatMode = void 0;
+const store_1 = require("@/app/components/app/store");
+const app_1 = require("@/types/app");
+const useIsChatMode = () => {
+    const appDetail = (0, store_1.useStore)(s => s.appDetail);
+    return appDetail?.mode === app_1.AppModeEnum.ADVANCED_CHAT;
+};
+exports.useIsChatMode = useIsChatMode;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXNlLWlzLWNoYXQtbW9kZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInVzZS1pcy1jaGF0LW1vZGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEsc0RBQW9FO0FBQ3BFLHFDQUF5QztBQUVsQyxNQUFNLGFBQWEsR0FBRyxHQUFHLEVBQUU7SUFDaEMsTUFBTSxTQUFTLEdBQUcsSUFBQSxnQkFBVyxFQUFDLENBQUMsQ0FBQyxFQUFFLENBQUMsQ0FBQyxDQUFDLFNBQVMsQ0FBQyxDQUFBO0lBRS9DLE9BQU8sU0FBUyxFQUFFLElBQUksS0FBSyxpQkFBVyxDQUFDLGFBQWEsQ0FBQTtBQUN0RCxDQUFDLENBQUE7QUFKWSxRQUFBLGFBQWEsaUJBSXpCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdXNlU3RvcmUgYXMgdXNlQXBwU3RvcmUgfSBmcm9tICdAL2FwcC9jb21wb25lbnRzL2FwcC9zdG9yZSdcbmltcG9ydCB7IEFwcE1vZGVFbnVtIH0gZnJvbSAnQC90eXBlcy9hcHAnXG5cbmV4cG9ydCBjb25zdCB1c2VJc0NoYXRNb2RlID0gKCkgPT4ge1xuICBjb25zdCBhcHBEZXRhaWwgPSB1c2VBcHBTdG9yZShzID0+IHMuYXBwRGV0YWlsKVxuXG4gIHJldHVybiBhcHBEZXRhaWw/Lm1vZGUgPT09IEFwcE1vZGVFbnVtLkFEVkFOQ0VEX0NIQVRcbn1cbiJdfQ==

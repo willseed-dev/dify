@@ -1,0 +1,23 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
+const react_i18next_1 = require("react-i18next");
+const time_1 = require("@/app/components/base/icons/src/vender/line/time");
+const hooks_1 = require("../hooks");
+const store_1 = require("../store");
+const utils_1 = require("../utils");
+const RunningTitle = () => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    const isChatMode = (0, hooks_1.useIsChatMode)();
+    const historyWorkflowData = (0, store_1.useStore)(s => s.historyWorkflowData);
+    return (<div className="flex h-[18px] items-center text-xs text-gray-500">
+      <time_1.ClockPlay className="mr-1 h-3 w-3 text-gray-500"/>
+      <span>{isChatMode ? `Test Chat${(0, utils_1.formatWorkflowRunIdentifier)(historyWorkflowData?.finished_at)}` : `Test Run${(0, utils_1.formatWorkflowRunIdentifier)(historyWorkflowData?.finished_at)}`}</span>
+      <span className="mx-1">·</span>
+      <span className="ml-1 flex h-[18px] items-center rounded-[5px] border border-indigo-300 bg-white/[0.48] px-1 text-[10px] font-semibold uppercase text-indigo-600">
+        {t('common.viewOnly', { ns: 'workflow' })}
+      </span>
+    </div>);
+};
+exports.default = (0, react_1.memo)(RunningTitle);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicnVubmluZy10aXRsZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInJ1bm5pbmctdGl0bGUudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsaUNBQTRCO0FBQzVCLGlEQUE4QztBQUM5QywyRUFBNEU7QUFDNUUsb0NBQXdDO0FBQ3hDLG9DQUFtQztBQUNuQyxvQ0FBc0Q7QUFFdEQsTUFBTSxZQUFZLEdBQUcsR0FBRyxFQUFFO0lBQ3hCLE1BQU0sRUFBRSxDQUFDLEVBQUUsR0FBRyxJQUFBLDhCQUFjLEdBQUUsQ0FBQTtJQUM5QixNQUFNLFVBQVUsR0FBRyxJQUFBLHFCQUFhLEdBQUUsQ0FBQTtJQUNsQyxNQUFNLG1CQUFtQixHQUFHLElBQUEsZ0JBQVEsRUFBQyxDQUFDLENBQUMsRUFBRSxDQUFDLENBQUMsQ0FBQyxtQkFBbUIsQ0FBQyxDQUFBO0lBRWhFLE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsa0RBQWtELENBQy9EO01BQUEsQ0FBQyxnQkFBUyxDQUFDLFNBQVMsQ0FBQyw0QkFBNEIsRUFDakQ7TUFBQSxDQUFDLElBQUksQ0FBQyxDQUFDLFVBQVUsQ0FBQyxDQUFDLENBQUMsWUFBWSxJQUFBLG1DQUEyQixFQUFDLG1CQUFtQixFQUFFLFdBQVcsQ0FBQyxFQUFFLENBQUMsQ0FBQyxDQUFDLFdBQVcsSUFBQSxtQ0FBMkIsRUFBQyxtQkFBbUIsRUFBRSxXQUFXLENBQUMsRUFBRSxDQUFDLEVBQUUsSUFBSSxDQUNuTDtNQUFBLENBQUMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxNQUFNLENBQUMsQ0FBQyxFQUFFLElBQUksQ0FDOUI7TUFBQSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsaUpBQWlKLENBQy9KO1FBQUEsQ0FBQyxDQUFDLENBQUMsaUJBQWlCLEVBQUUsRUFBRSxFQUFFLEVBQUUsVUFBVSxFQUFFLENBQUMsQ0FDM0M7TUFBQSxFQUFFLElBQUksQ0FDUjtJQUFBLEVBQUUsR0FBRyxDQUFDLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELGtCQUFlLElBQUEsWUFBSSxFQUFDLFlBQVksQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgbWVtbyB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgdXNlVHJhbnNsYXRpb24gfSBmcm9tICdyZWFjdC1pMThuZXh0J1xuaW1wb3J0IHsgQ2xvY2tQbGF5IH0gZnJvbSAnQC9hcHAvY29tcG9uZW50cy9iYXNlL2ljb25zL3NyYy92ZW5kZXIvbGluZS90aW1lJ1xuaW1wb3J0IHsgdXNlSXNDaGF0TW9kZSB9IGZyb20gJy4uL2hvb2tzJ1xuaW1wb3J0IHsgdXNlU3RvcmUgfSBmcm9tICcuLi9zdG9yZSdcbmltcG9ydCB7IGZvcm1hdFdvcmtmbG93UnVuSWRlbnRpZmllciB9IGZyb20gJy4uL3V0aWxzJ1xuXG5jb25zdCBSdW5uaW5nVGl0bGUgPSAoKSA9PiB7XG4gIGNvbnN0IHsgdCB9ID0gdXNlVHJhbnNsYXRpb24oKVxuICBjb25zdCBpc0NoYXRNb2RlID0gdXNlSXNDaGF0TW9kZSgpXG4gIGNvbnN0IGhpc3RvcnlXb3JrZmxvd0RhdGEgPSB1c2VTdG9yZShzID0+IHMuaGlzdG9yeVdvcmtmbG93RGF0YSlcblxuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBoLVsxOHB4XSBpdGVtcy1jZW50ZXIgdGV4dC14cyB0ZXh0LWdyYXktNTAwXCI+XG4gICAgICA8Q2xvY2tQbGF5IGNsYXNzTmFtZT1cIm1yLTEgaC0zIHctMyB0ZXh0LWdyYXktNTAwXCIgLz5cbiAgICAgIDxzcGFuPntpc0NoYXRNb2RlID8gYFRlc3QgQ2hhdCR7Zm9ybWF0V29ya2Zsb3dSdW5JZGVudGlmaWVyKGhpc3RvcnlXb3JrZmxvd0RhdGE/LmZpbmlzaGVkX2F0KX1gIDogYFRlc3QgUnVuJHtmb3JtYXRXb3JrZmxvd1J1bklkZW50aWZpZXIoaGlzdG9yeVdvcmtmbG93RGF0YT8uZmluaXNoZWRfYXQpfWB9PC9zcGFuPlxuICAgICAgPHNwYW4gY2xhc3NOYW1lPVwibXgtMVwiPsK3PC9zcGFuPlxuICAgICAgPHNwYW4gY2xhc3NOYW1lPVwibWwtMSBmbGV4IGgtWzE4cHhdIGl0ZW1zLWNlbnRlciByb3VuZGVkLVs1cHhdIGJvcmRlciBib3JkZXItaW5kaWdvLTMwMCBiZy13aGl0ZS9bMC40OF0gcHgtMSB0ZXh0LVsxMHB4XSBmb250LXNlbWlib2xkIHVwcGVyY2FzZSB0ZXh0LWluZGlnby02MDBcIj5cbiAgICAgICAge3QoJ2NvbW1vbi52aWV3T25seScsIHsgbnM6ICd3b3JrZmxvdycgfSl9XG4gICAgICA8L3NwYW4+XG4gICAgPC9kaXY+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgbWVtbyhSdW5uaW5nVGl0bGUpXG4iXX0=

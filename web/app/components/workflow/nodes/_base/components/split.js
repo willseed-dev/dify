@@ -1,0 +1,11 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const classnames_1 = require("@/utils/classnames");
+const Split = ({ className, }) => {
+    return (<div className={(0, classnames_1.cn)(className, 'h-[0.5px] bg-divider-subtle')}>
+    </div>);
+};
+exports.default = React.memo(Split);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3BsaXQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJzcGxpdC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFlBQVksQ0FBQTs7QUFFWiwrQkFBOEI7QUFDOUIsbURBQXVDO0FBTXZDLE1BQU0sS0FBSyxHQUFjLENBQUMsRUFDeEIsU0FBUyxHQUNWLEVBQUUsRUFBRTtJQUNILE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsQ0FBQyxJQUFBLGVBQUUsRUFBQyxTQUFTLEVBQUUsNkJBQTZCLENBQUMsQ0FBQyxDQUM3RDtJQUFBLEVBQUUsR0FBRyxDQUFDLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUNELGtCQUFlLEtBQUssQ0FBQyxJQUFJLENBQUMsS0FBSyxDQUFDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIGNsaWVudCdcbmltcG9ydCB0eXBlIHsgRkMgfSBmcm9tICdyZWFjdCdcbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgY24gfSBmcm9tICdAL3V0aWxzL2NsYXNzbmFtZXMnXG5cbnR5cGUgUHJvcHMgPSB7XG4gIGNsYXNzTmFtZT86IHN0cmluZ1xufVxuXG5jb25zdCBTcGxpdDogRkM8UHJvcHM+ID0gKHtcbiAgY2xhc3NOYW1lLFxufSkgPT4ge1xuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPXtjbihjbGFzc05hbWUsICdoLVswLjVweF0gYmctZGl2aWRlci1zdWJ0bGUnKX0+XG4gICAgPC9kaXY+XG4gIClcbn1cbmV4cG9ydCBkZWZhdWx0IFJlYWN0Lm1lbW8oU3BsaXQpXG4iXX0=

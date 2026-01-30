@@ -1,0 +1,35 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ReadmeEntrance = void 0;
+const react_1 = require("@remixicon/react");
+const React = require("react");
+const react_i18next_1 = require("react-i18next");
+const classnames_1 = require("@/utils/classnames");
+const constants_1 = require("./constants");
+const store_1 = require("./store");
+const ReadmeEntrance = ({ pluginDetail, showType = store_1.ReadmeShowType.drawer, className, showShortTip = false, }) => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    const { setCurrentPluginDetail } = (0, store_1.useReadmePanelStore)();
+    const handleReadmeClick = () => {
+        if (pluginDetail)
+            setCurrentPluginDetail(pluginDetail, showType);
+    };
+    if (!pluginDetail || !pluginDetail?.plugin_unique_identifier || constants_1.BUILTIN_TOOLS_ARRAY.includes(pluginDetail.id))
+        return null;
+    return (<div className={(0, classnames_1.cn)('flex flex-col items-start justify-center gap-2 pb-4 pt-0', showType === store_1.ReadmeShowType.drawer && 'px-4', className)}>
+      {!showShortTip && (<div className="relative h-1 w-8 shrink-0">
+          <div className="h-px w-full bg-divider-regular"></div>
+        </div>)}
+
+      <button onClick={handleReadmeClick} className="flex w-full items-center justify-start gap-1 text-text-tertiary transition-opacity hover:text-text-accent-light-mode-only">
+        <div className="relative flex h-3 w-3 items-center justify-center overflow-hidden">
+          <react_1.RiBookReadLine className="h-3 w-3"/>
+        </div>
+        <span className="text-xs font-normal leading-4">
+          {!showShortTip ? t('readmeInfo.needHelpCheckReadme', { ns: 'plugin' }) : t('readmeInfo.title', { ns: 'plugin' })}
+        </span>
+      </button>
+    </div>);
+};
+exports.ReadmeEntrance = ReadmeEntrance;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZW50cmFuY2UuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJlbnRyYW5jZS50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQ0EsNENBQWlEO0FBQ2pELCtCQUE4QjtBQUM5QixpREFBOEM7QUFDOUMsbURBQXVDO0FBQ3ZDLDJDQUFpRDtBQUNqRCxtQ0FBNkQ7QUFFdEQsTUFBTSxjQUFjLEdBQUcsQ0FBQyxFQUM3QixZQUFZLEVBQ1osUUFBUSxHQUFHLHNCQUFjLENBQUMsTUFBTSxFQUNoQyxTQUFTLEVBQ1QsWUFBWSxHQUFHLEtBQUssR0FNckIsRUFBRSxFQUFFO0lBQ0gsTUFBTSxFQUFFLENBQUMsRUFBRSxHQUFHLElBQUEsOEJBQWMsR0FBRSxDQUFBO0lBQzlCLE1BQU0sRUFBRSxzQkFBc0IsRUFBRSxHQUFHLElBQUEsMkJBQW1CLEdBQUUsQ0FBQTtJQUV4RCxNQUFNLGlCQUFpQixHQUFHLEdBQUcsRUFBRTtRQUM3QixJQUFJLFlBQVk7WUFDZCxzQkFBc0IsQ0FBQyxZQUFZLEVBQUUsUUFBUSxDQUFDLENBQUE7SUFDbEQsQ0FBQyxDQUFBO0lBQ0QsSUFBSSxDQUFDLFlBQVksSUFBSSxDQUFDLFlBQVksRUFBRSx3QkFBd0IsSUFBSSwrQkFBbUIsQ0FBQyxRQUFRLENBQUMsWUFBWSxDQUFDLEVBQUUsQ0FBQztRQUMzRyxPQUFPLElBQUksQ0FBQTtJQUViLE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsQ0FBQyxJQUFBLGVBQUUsRUFBQywwREFBMEQsRUFBRSxRQUFRLEtBQUssc0JBQWMsQ0FBQyxNQUFNLElBQUksTUFBTSxFQUFFLFNBQVMsQ0FBQyxDQUFDLENBQ3RJO01BQUEsQ0FBQyxDQUFDLFlBQVksSUFBSSxDQUNoQixDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsMkJBQTJCLENBQ3hDO1VBQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLGdDQUFnQyxDQUFDLEVBQUUsR0FBRyxDQUN2RDtRQUFBLEVBQUUsR0FBRyxDQUFDLENBQ1AsQ0FFRDs7TUFBQSxDQUFDLE1BQU0sQ0FDTCxPQUFPLENBQUMsQ0FBQyxpQkFBaUIsQ0FBQyxDQUMzQixTQUFTLENBQUMsMkhBQTJILENBRXJJO1FBQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLG1FQUFtRSxDQUNoRjtVQUFBLENBQUMsc0JBQWMsQ0FBQyxTQUFTLENBQUMsU0FBUyxFQUNyQztRQUFBLEVBQUUsR0FBRyxDQUNMO1FBQUEsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLCtCQUErQixDQUM3QztVQUFBLENBQUMsQ0FBQyxZQUFZLENBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQyxnQ0FBZ0MsRUFBRSxFQUFFLEVBQUUsRUFBRSxRQUFRLEVBQUUsQ0FBQyxDQUFDLENBQUMsQ0FBQyxDQUFDLENBQUMsa0JBQWtCLEVBQUUsRUFBRSxFQUFFLEVBQUUsUUFBUSxFQUFFLENBQUMsQ0FDbEg7UUFBQSxFQUFFLElBQUksQ0FDUjtNQUFBLEVBQUUsTUFBTSxDQUNWO0lBQUEsRUFBRSxHQUFHLENBQUMsQ0FDUCxDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBMUNZLFFBQUEsY0FBYyxrQkEwQzFCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHR5cGUgeyBQbHVnaW5EZXRhaWwgfSBmcm9tICcuLi90eXBlcydcbmltcG9ydCB7IFJpQm9va1JlYWRMaW5lIH0gZnJvbSAnQHJlbWl4aWNvbi9yZWFjdCdcbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgdXNlVHJhbnNsYXRpb24gfSBmcm9tICdyZWFjdC1pMThuZXh0J1xuaW1wb3J0IHsgY24gfSBmcm9tICdAL3V0aWxzL2NsYXNzbmFtZXMnXG5pbXBvcnQgeyBCVUlMVElOX1RPT0xTX0FSUkFZIH0gZnJvbSAnLi9jb25zdGFudHMnXG5pbXBvcnQgeyBSZWFkbWVTaG93VHlwZSwgdXNlUmVhZG1lUGFuZWxTdG9yZSB9IGZyb20gJy4vc3RvcmUnXG5cbmV4cG9ydCBjb25zdCBSZWFkbWVFbnRyYW5jZSA9ICh7XG4gIHBsdWdpbkRldGFpbCxcbiAgc2hvd1R5cGUgPSBSZWFkbWVTaG93VHlwZS5kcmF3ZXIsXG4gIGNsYXNzTmFtZSxcbiAgc2hvd1Nob3J0VGlwID0gZmFsc2UsXG59OiB7XG4gIHBsdWdpbkRldGFpbDogUGx1Z2luRGV0YWlsXG4gIHNob3dUeXBlPzogUmVhZG1lU2hvd1R5cGVcbiAgY2xhc3NOYW1lPzogc3RyaW5nXG4gIHNob3dTaG9ydFRpcD86IGJvb2xlYW5cbn0pID0+IHtcbiAgY29uc3QgeyB0IH0gPSB1c2VUcmFuc2xhdGlvbigpXG4gIGNvbnN0IHsgc2V0Q3VycmVudFBsdWdpbkRldGFpbCB9ID0gdXNlUmVhZG1lUGFuZWxTdG9yZSgpXG5cbiAgY29uc3QgaGFuZGxlUmVhZG1lQ2xpY2sgPSAoKSA9PiB7XG4gICAgaWYgKHBsdWdpbkRldGFpbClcbiAgICAgIHNldEN1cnJlbnRQbHVnaW5EZXRhaWwocGx1Z2luRGV0YWlsLCBzaG93VHlwZSlcbiAgfVxuICBpZiAoIXBsdWdpbkRldGFpbCB8fCAhcGx1Z2luRGV0YWlsPy5wbHVnaW5fdW5pcXVlX2lkZW50aWZpZXIgfHwgQlVJTFRJTl9UT09MU19BUlJBWS5pbmNsdWRlcyhwbHVnaW5EZXRhaWwuaWQpKVxuICAgIHJldHVybiBudWxsXG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT17Y24oJ2ZsZXggZmxleC1jb2wgaXRlbXMtc3RhcnQganVzdGlmeS1jZW50ZXIgZ2FwLTIgcGItNCBwdC0wJywgc2hvd1R5cGUgPT09IFJlYWRtZVNob3dUeXBlLmRyYXdlciAmJiAncHgtNCcsIGNsYXNzTmFtZSl9PlxuICAgICAgeyFzaG93U2hvcnRUaXAgJiYgKFxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInJlbGF0aXZlIGgtMSB3LTggc2hyaW5rLTBcIj5cbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImgtcHggdy1mdWxsIGJnLWRpdmlkZXItcmVndWxhclwiPjwvZGl2PlxuICAgICAgICA8L2Rpdj5cbiAgICAgICl9XG5cbiAgICAgIDxidXR0b25cbiAgICAgICAgb25DbGljaz17aGFuZGxlUmVhZG1lQ2xpY2t9XG4gICAgICAgIGNsYXNzTmFtZT1cImZsZXggdy1mdWxsIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LXN0YXJ0IGdhcC0xIHRleHQtdGV4dC10ZXJ0aWFyeSB0cmFuc2l0aW9uLW9wYWNpdHkgaG92ZXI6dGV4dC10ZXh0LWFjY2VudC1saWdodC1tb2RlLW9ubHlcIlxuICAgICAgPlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInJlbGF0aXZlIGZsZXggaC0zIHctMyBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgb3ZlcmZsb3ctaGlkZGVuXCI+XG4gICAgICAgICAgPFJpQm9va1JlYWRMaW5lIGNsYXNzTmFtZT1cImgtMyB3LTNcIiAvPlxuICAgICAgICA8L2Rpdj5cbiAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwidGV4dC14cyBmb250LW5vcm1hbCBsZWFkaW5nLTRcIj5cbiAgICAgICAgICB7IXNob3dTaG9ydFRpcCA/IHQoJ3JlYWRtZUluZm8ubmVlZEhlbHBDaGVja1JlYWRtZScsIHsgbnM6ICdwbHVnaW4nIH0pIDogdCgncmVhZG1lSW5mby50aXRsZScsIHsgbnM6ICdwbHVnaW4nIH0pfVxuICAgICAgICA8L3NwYW4+XG4gICAgICA8L2J1dHRvbj5cbiAgICA8L2Rpdj5cbiAgKVxufVxuIl19

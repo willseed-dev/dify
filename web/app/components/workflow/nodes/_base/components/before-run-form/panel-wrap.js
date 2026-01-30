@@ -1,0 +1,29 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const React = require("react");
+const react_i18next_1 = require("react-i18next");
+const i18nPrefix = 'singleRun';
+const PanelWrap = ({ nodeName, onHide, children, }) => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    return (<div className="absolute inset-0 z-10 rounded-2xl bg-background-overlay-alt">
+      <div className="flex h-full flex-col rounded-2xl bg-components-panel-bg">
+        <div className="flex h-8 shrink-0 items-center justify-between pl-4 pr-3 pt-3">
+          <div className="truncate text-base font-semibold text-text-primary">
+            {t(`${i18nPrefix}.testRun`, { ns: 'workflow' })}
+            {' '}
+            {nodeName}
+          </div>
+          <div className="ml-2 shrink-0 cursor-pointer p-1" onClick={() => {
+            onHide();
+        }}>
+            <react_1.RiCloseLine className="h-4 w-4 text-text-tertiary "/>
+          </div>
+        </div>
+        {children}
+      </div>
+    </div>);
+};
+exports.default = React.memo(PanelWrap);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFuZWwtd3JhcC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInBhbmVsLXdyYXAudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxZQUFZLENBQUE7O0FBRVosNENBRXlCO0FBQ3pCLCtCQUE4QjtBQUM5QixpREFBOEM7QUFFOUMsTUFBTSxVQUFVLEdBQUcsV0FBVyxDQUFBO0FBUTlCLE1BQU0sU0FBUyxHQUFjLENBQUMsRUFDNUIsUUFBUSxFQUNSLE1BQU0sRUFDTixRQUFRLEdBQ1QsRUFBRSxFQUFFO0lBQ0gsTUFBTSxFQUFFLENBQUMsRUFBRSxHQUFHLElBQUEsOEJBQWMsR0FBRSxDQUFBO0lBQzlCLE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsNkRBQTZELENBQzFFO01BQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLHlEQUF5RCxDQUN0RTtRQUFBLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQywrREFBK0QsQ0FDNUU7VUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsb0RBQW9ELENBQ2pFO1lBQUEsQ0FBQyxDQUFDLENBQUMsR0FBRyxVQUFVLFVBQVUsRUFBRSxFQUFFLEVBQUUsRUFBRSxVQUFVLEVBQUUsQ0FBQyxDQUMvQztZQUFBLENBQUMsR0FBRyxDQUNKO1lBQUEsQ0FBQyxRQUFRLENBQ1g7VUFBQSxFQUFFLEdBQUcsQ0FDTDtVQUFBLENBQUMsR0FBRyxDQUNGLFNBQVMsQ0FBQyxrQ0FBa0MsQ0FDNUMsT0FBTyxDQUFDLENBQUMsR0FBRyxFQUFFO1lBQ1osTUFBTSxFQUFFLENBQUE7UUFDVixDQUFDLENBQUMsQ0FFRjtZQUFBLENBQUMsbUJBQVcsQ0FBQyxTQUFTLENBQUMsNkJBQTZCLEVBQ3REO1VBQUEsRUFBRSxHQUFHLENBQ1A7UUFBQSxFQUFFLEdBQUcsQ0FDTDtRQUFBLENBQUMsUUFBUSxDQUNYO01BQUEsRUFBRSxHQUFHLENBQ1A7SUFBQSxFQUFFLEdBQUcsQ0FBQyxDQUNQLENBQUE7QUFDSCxDQUFDLENBQUE7QUFDRCxrQkFBZSxLQUFLLENBQUMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBjbGllbnQnXG5pbXBvcnQgdHlwZSB7IEZDIH0gZnJvbSAncmVhY3QnXG5pbXBvcnQge1xuICBSaUNsb3NlTGluZSxcbn0gZnJvbSAnQHJlbWl4aWNvbi9yZWFjdCdcbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgdXNlVHJhbnNsYXRpb24gfSBmcm9tICdyZWFjdC1pMThuZXh0J1xuXG5jb25zdCBpMThuUHJlZml4ID0gJ3NpbmdsZVJ1bidcblxuZXhwb3J0IHR5cGUgUHJvcHMgPSB7XG4gIG5vZGVOYW1lOiBzdHJpbmdcbiAgb25IaWRlOiAoKSA9PiB2b2lkXG4gIGNoaWxkcmVuOiBSZWFjdC5SZWFjdE5vZGVcbn1cblxuY29uc3QgUGFuZWxXcmFwOiBGQzxQcm9wcz4gPSAoe1xuICBub2RlTmFtZSxcbiAgb25IaWRlLFxuICBjaGlsZHJlbixcbn0pID0+IHtcbiAgY29uc3QgeyB0IH0gPSB1c2VUcmFuc2xhdGlvbigpXG4gIHJldHVybiAoXG4gICAgPGRpdiBjbGFzc05hbWU9XCJhYnNvbHV0ZSBpbnNldC0wIHotMTAgcm91bmRlZC0yeGwgYmctYmFja2dyb3VuZC1vdmVybGF5LWFsdFwiPlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGgtZnVsbCBmbGV4LWNvbCByb3VuZGVkLTJ4bCBiZy1jb21wb25lbnRzLXBhbmVsLWJnXCI+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBoLTggc2hyaW5rLTAgaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiBwbC00IHByLTMgcHQtM1wiPlxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwidHJ1bmNhdGUgdGV4dC1iYXNlIGZvbnQtc2VtaWJvbGQgdGV4dC10ZXh0LXByaW1hcnlcIj5cbiAgICAgICAgICAgIHt0KGAke2kxOG5QcmVmaXh9LnRlc3RSdW5gLCB7IG5zOiAnd29ya2Zsb3cnIH0pfVxuICAgICAgICAgICAgeycgJ31cbiAgICAgICAgICAgIHtub2RlTmFtZX1cbiAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICBjbGFzc05hbWU9XCJtbC0yIHNocmluay0wIGN1cnNvci1wb2ludGVyIHAtMVwiXG4gICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiB7XG4gICAgICAgICAgICAgIG9uSGlkZSgpXG4gICAgICAgICAgICB9fVxuICAgICAgICAgID5cbiAgICAgICAgICAgIDxSaUNsb3NlTGluZSBjbGFzc05hbWU9XCJoLTQgdy00IHRleHQtdGV4dC10ZXJ0aWFyeSBcIiAvPlxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICA8L2Rpdj5cbiAgICAgICAge2NoaWxkcmVufVxuICAgICAgPC9kaXY+XG4gICAgPC9kaXY+XG4gIClcbn1cbmV4cG9ydCBkZWZhdWx0IFJlYWN0Lm1lbW8oUGFuZWxXcmFwKVxuIl19

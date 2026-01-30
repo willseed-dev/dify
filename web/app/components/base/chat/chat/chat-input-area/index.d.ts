@@ -1,0 +1,21 @@
+import type { Theme } from '../../embedded-chatbot/theme/theme-context';
+import type { EnableType, OnSend } from '../../types';
+import type { InputForm } from '../type';
+import type { FileUpload } from '@/app/components/base/features/types';
+type ChatInputAreaProps = {
+    botName?: string;
+    showFeatureBar?: boolean;
+    showFileUpload?: boolean;
+    featureBarDisabled?: boolean;
+    onFeatureBarClick?: (state: boolean) => void;
+    visionConfig?: FileUpload;
+    speechToTextConfig?: EnableType;
+    onSend?: OnSend;
+    inputs?: Record<string, any>;
+    inputsForm?: InputForm[];
+    theme?: Theme | null;
+    isResponding?: boolean;
+    disabled?: boolean;
+};
+declare const ChatInputAreaWrapper: (props: ChatInputAreaProps) => any;
+export default ChatInputAreaWrapper;

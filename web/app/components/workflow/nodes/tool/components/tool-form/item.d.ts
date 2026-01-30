@@ -1,0 +1,21 @@
+import type { FC } from 'react';
+import type { ToolVarInputs } from '../../types';
+import type { CredentialFormSchema } from '@/app/components/header/account-setting/model-provider-page/declarations';
+import type { Tool } from '@/app/components/tools/types';
+import type { ToolWithProvider } from '@/app/components/workflow/types';
+type Props = {
+    readOnly: boolean;
+    nodeId: string;
+    schema: CredentialFormSchema;
+    value: ToolVarInputs;
+    onChange: (value: ToolVarInputs) => void;
+    inPanel?: boolean;
+    currentTool?: Tool;
+    currentProvider?: ToolWithProvider;
+    showManageInputField?: boolean;
+    onManageInputField?: () => void;
+    extraParams?: Record<string, any>;
+    providerType?: 'tool' | 'trigger';
+};
+declare const ToolFormItem: FC<Props>;
+export default ToolFormItem;

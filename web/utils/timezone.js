@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.timezones = void 0;
+const timezone_json_1 = require("./timezone.json");
+exports.timezones = timezone_json_1.default;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGltZXpvbmUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ0aW1lem9uZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSxtREFBZ0M7QUFNbkIsUUFBQSxTQUFTLEdBQVcsdUJBQUUsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB0eiBmcm9tICcuL3RpbWV6b25lLmpzb24nXG5cbnR5cGUgSXRlbSA9IHtcbiAgdmFsdWU6IG51bWJlciB8IHN0cmluZ1xuICBuYW1lOiBzdHJpbmdcbn1cbmV4cG9ydCBjb25zdCB0aW1lem9uZXM6IEl0ZW1bXSA9IHR6XG4iXX0=

@@ -1,0 +1,24 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const React = require("react");
+const react_i18next_1 = require("react-i18next");
+const badge_1 = require("@/app/components/base/badge");
+const classnames_1 = require("@/utils/classnames");
+const Trigger = ({ option, open, }) => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    return (<>
+      {option
+            ? (<>
+              <option.Icon className="h-4 w-4 shrink-0 text-text-tertiary"/>
+              <span className="grow p-1">{option.label}</span>
+              <div className="pr-0.5">
+                <badge_1.default text={option.type} uppercase={false}/>
+              </div>
+            </>)
+            : (<span className="grow p-1">{t('placeholder.select', { ns: 'common' })}</span>)}
+      <react_1.RiArrowDownSLine className={(0, classnames_1.cn)('h-4 w-4 shrink-0 text-text-quaternary group-hover:text-text-secondary', open && 'text-text-secondary')}/>
+    </>);
+};
+exports.default = React.memo(Trigger);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidHJpZ2dlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInRyaWdnZXIudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQ0EsNENBQW1EO0FBQ25ELCtCQUE4QjtBQUM5QixpREFBOEM7QUFDOUMsdURBQStDO0FBQy9DLG1EQUF1QztBQU92QyxNQUFNLE9BQU8sR0FBRyxDQUFDLEVBQ2YsTUFBTSxFQUNOLElBQUksR0FDUyxFQUFFLEVBQUU7SUFDakIsTUFBTSxFQUFFLENBQUMsRUFBRSxHQUFHLElBQUEsOEJBQWMsR0FBRSxDQUFBO0lBRTlCLE9BQU8sQ0FDTCxFQUNFO01BQUEsQ0FBQyxNQUFNO1lBQ0wsQ0FBQyxDQUFDLENBQ0UsRUFDRTtjQUFBLENBQUMsTUFBTSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMscUNBQXFDLEVBQzVEO2NBQUEsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLFVBQVUsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxLQUFLLENBQUMsRUFBRSxJQUFJLENBQy9DO2NBQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLFFBQVEsQ0FDckI7Z0JBQUEsQ0FBQyxlQUFLLENBQUMsSUFBSSxDQUFDLENBQUMsTUFBTSxDQUFDLElBQUksQ0FBQyxDQUFDLFNBQVMsQ0FBQyxDQUFDLEtBQUssQ0FBQyxFQUM3QztjQUFBLEVBQUUsR0FBRyxDQUNQO1lBQUEsR0FBRyxDQUNKO1lBQ0gsQ0FBQyxDQUFDLENBQ0UsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLFVBQVUsQ0FBQyxDQUFDLENBQUMsQ0FBQyxvQkFBb0IsRUFBRSxFQUFFLEVBQUUsRUFBRSxRQUFRLEVBQUUsQ0FBQyxDQUFDLEVBQUUsSUFBSSxDQUFDLENBQzlFLENBQ0w7TUFBQSxDQUFDLHdCQUFnQixDQUNmLFNBQVMsQ0FBQyxDQUFDLElBQUEsZUFBRSxFQUNYLHVFQUF1RSxFQUN2RSxJQUFJLElBQUkscUJBQXFCLENBQzlCLENBQUMsRUFFTjtJQUFBLEdBQUcsQ0FDSixDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsS0FBSyxDQUFDLElBQUksQ0FBQyxPQUFPLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB0eXBlIHsgRmlsZVR5cGVTZWxlY3RPcHRpb24gfSBmcm9tICcuL3R5cGVzJ1xuaW1wb3J0IHsgUmlBcnJvd0Rvd25TTGluZSB9IGZyb20gJ0ByZW1peGljb24vcmVhY3QnXG5pbXBvcnQgKiBhcyBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCB7IHVzZVRyYW5zbGF0aW9uIH0gZnJvbSAncmVhY3QtaTE4bmV4dCdcbmltcG9ydCBCYWRnZSBmcm9tICdAL2FwcC9jb21wb25lbnRzL2Jhc2UvYmFkZ2UnXG5pbXBvcnQgeyBjbiB9IGZyb20gJ0AvdXRpbHMvY2xhc3NuYW1lcydcblxudHlwZSBUcmlnZ2VyUHJvcHMgPSB7XG4gIG9wdGlvbjogRmlsZVR5cGVTZWxlY3RPcHRpb24gfCB1bmRlZmluZWRcbiAgb3BlbjogYm9vbGVhblxufVxuXG5jb25zdCBUcmlnZ2VyID0gKHtcbiAgb3B0aW9uLFxuICBvcGVuLFxufTogVHJpZ2dlclByb3BzKSA9PiB7XG4gIGNvbnN0IHsgdCB9ID0gdXNlVHJhbnNsYXRpb24oKVxuXG4gIHJldHVybiAoXG4gICAgPD5cbiAgICAgIHtvcHRpb25cbiAgICAgICAgPyAoXG4gICAgICAgICAgICA8PlxuICAgICAgICAgICAgICA8b3B0aW9uLkljb24gY2xhc3NOYW1lPVwiaC00IHctNCBzaHJpbmstMCB0ZXh0LXRleHQtdGVydGlhcnlcIiAvPlxuICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJncm93IHAtMVwiPntvcHRpb24ubGFiZWx9PC9zcGFuPlxuICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInByLTAuNVwiPlxuICAgICAgICAgICAgICAgIDxCYWRnZSB0ZXh0PXtvcHRpb24udHlwZX0gdXBwZXJjYXNlPXtmYWxzZX0gLz5cbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8Lz5cbiAgICAgICAgICApXG4gICAgICAgIDogKFxuICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwiZ3JvdyBwLTFcIj57dCgncGxhY2Vob2xkZXIuc2VsZWN0JywgeyBuczogJ2NvbW1vbicgfSl9PC9zcGFuPlxuICAgICAgICAgICl9XG4gICAgICA8UmlBcnJvd0Rvd25TTGluZVxuICAgICAgICBjbGFzc05hbWU9e2NuKFxuICAgICAgICAgICdoLTQgdy00IHNocmluay0wIHRleHQtdGV4dC1xdWF0ZXJuYXJ5IGdyb3VwLWhvdmVyOnRleHQtdGV4dC1zZWNvbmRhcnknLFxuICAgICAgICAgIG9wZW4gJiYgJ3RleHQtdGV4dC1zZWNvbmRhcnknLFxuICAgICAgICApfVxuICAgICAgLz5cbiAgICA8Lz5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBSZWFjdC5tZW1vKFRyaWdnZXIpXG4iXX0=

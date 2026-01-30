@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useStore = void 0;
+const zustand_1 = require("zustand");
+exports.useStore = (0, zustand_1.create)(set => ({
+    labelList: [],
+    setLabelList: labelList => set(() => ({ labelList })),
+}));
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3RvcmUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJzdG9yZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFDQSxxQ0FBZ0M7QUFVbkIsUUFBQSxRQUFRLEdBQUcsSUFBQSxnQkFBTSxFQUFpQixHQUFHLENBQUMsRUFBRSxDQUFDLENBQUM7SUFDckQsU0FBUyxFQUFFLEVBQUU7SUFDYixZQUFZLEVBQUUsU0FBUyxDQUFDLEVBQUUsQ0FBQyxHQUFHLENBQUMsR0FBRyxFQUFFLENBQUMsQ0FBQyxFQUFFLFNBQVMsRUFBRSxDQUFDLENBQUM7Q0FDdEQsQ0FBQyxDQUFDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IExhYmVsIH0gZnJvbSAnLi9jb25zdGFudCdcbmltcG9ydCB7IGNyZWF0ZSB9IGZyb20gJ3p1c3RhbmQnXG5cbnR5cGUgU3RhdGUgPSB7XG4gIGxhYmVsTGlzdDogTGFiZWxbXVxufVxuXG50eXBlIEFjdGlvbiA9IHtcbiAgc2V0TGFiZWxMaXN0OiAobGFiZWxMaXN0PzogTGFiZWxbXSkgPT4gdm9pZFxufVxuXG5leHBvcnQgY29uc3QgdXNlU3RvcmUgPSBjcmVhdGU8U3RhdGUgJiBBY3Rpb24+KHNldCA9PiAoe1xuICBsYWJlbExpc3Q6IFtdLFxuICBzZXRMYWJlbExpc3Q6IGxhYmVsTGlzdCA9PiBzZXQoKCkgPT4gKHsgbGFiZWxMaXN0IH0pKSxcbn0pKVxuIl19

@@ -1,0 +1,13 @@
+import type { StoryObj } from '@storybook/nextjs';
+declare const meta: Meta<any>;
+export default meta;
+type Story = StoryObj<typeof meta>;
+export declare const WarningDialog: Story;
+export declare const InfoDialog: Story;
+export declare const CustomButtonText: Story;
+export declare const LoadingState: Story;
+export declare const DisabledState: Story;
+export declare const AlertStyle: Story;
+export declare const DangerousAction: Story;
+export declare const NotMaskClosable: Story;
+export declare const Playground: Story;

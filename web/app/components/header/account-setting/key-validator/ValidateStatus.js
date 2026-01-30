@@ -1,0 +1,30 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ValidatedErrorMessage = exports.ValidatingTip = exports.ValidatedSuccessIcon = exports.ValidatedErrorIcon = void 0;
+const react_1 = require("@remixicon/react");
+const react_i18next_1 = require("react-i18next");
+const general_1 = require("@/app/components/base/icons/src/vender/solid/general");
+const ValidatedErrorIcon = () => {
+    return <react_1.RiErrorWarningFill className="h-4 w-4 text-[#D92D20]"/>;
+};
+exports.ValidatedErrorIcon = ValidatedErrorIcon;
+const ValidatedSuccessIcon = () => {
+    return <general_1.CheckCircle className="h-4 w-4 text-[#039855]"/>;
+};
+exports.ValidatedSuccessIcon = ValidatedSuccessIcon;
+const ValidatingTip = () => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    return (<div className="mt-2 text-xs font-normal text-primary-600">
+      {t('provider.validating', { ns: 'common' })}
+    </div>);
+};
+exports.ValidatingTip = ValidatingTip;
+const ValidatedErrorMessage = ({ errorMessage }) => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    return (<div className="mt-2 text-xs font-normal text-[#D92D20]">
+      {t('provider.validatedError', { ns: 'common' })}
+      {errorMessage}
+    </div>);
+};
+exports.ValidatedErrorMessage = ValidatedErrorMessage;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVmFsaWRhdGVTdGF0dXMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJWYWxpZGF0ZVN0YXR1cy50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEsNENBRXlCO0FBQ3pCLGlEQUE4QztBQUM5QyxrRkFBa0Y7QUFFM0UsTUFBTSxrQkFBa0IsR0FBRyxHQUFHLEVBQUU7SUFDckMsT0FBTyxDQUFDLDBCQUFrQixDQUFDLFNBQVMsQ0FBQyx3QkFBd0IsRUFBRyxDQUFBO0FBQ2xFLENBQUMsQ0FBQTtBQUZZLFFBQUEsa0JBQWtCLHNCQUU5QjtBQUVNLE1BQU0sb0JBQW9CLEdBQUcsR0FBRyxFQUFFO0lBQ3ZDLE9BQU8sQ0FBQyxxQkFBVyxDQUFDLFNBQVMsQ0FBQyx3QkFBd0IsRUFBRyxDQUFBO0FBQzNELENBQUMsQ0FBQTtBQUZZLFFBQUEsb0JBQW9CLHdCQUVoQztBQUVNLE1BQU0sYUFBYSxHQUFHLEdBQUcsRUFBRTtJQUNoQyxNQUFNLEVBQUUsQ0FBQyxFQUFFLEdBQUcsSUFBQSw4QkFBYyxHQUFFLENBQUE7SUFDOUIsT0FBTyxDQUNMLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQywyQ0FBMkMsQ0FDeEQ7TUFBQSxDQUFDLENBQUMsQ0FBQyxxQkFBcUIsRUFBRSxFQUFFLEVBQUUsRUFBRSxRQUFRLEVBQUUsQ0FBQyxDQUM3QztJQUFBLEVBQUUsR0FBRyxDQUFDLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQVBZLFFBQUEsYUFBYSxpQkFPekI7QUFFTSxNQUFNLHFCQUFxQixHQUFHLENBQUMsRUFBRSxZQUFZLEVBQTRCLEVBQUUsRUFBRTtJQUNsRixNQUFNLEVBQUUsQ0FBQyxFQUFFLEdBQUcsSUFBQSw4QkFBYyxHQUFFLENBQUE7SUFFOUIsT0FBTyxDQUNMLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyx5Q0FBeUMsQ0FDdEQ7TUFBQSxDQUFDLENBQUMsQ0FBQyx5QkFBeUIsRUFBRSxFQUFFLEVBQUUsRUFBRSxRQUFRLEVBQUUsQ0FBQyxDQUMvQztNQUFBLENBQUMsWUFBWSxDQUNmO0lBQUEsRUFBRSxHQUFHLENBQUMsQ0FDUCxDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBVFksUUFBQSxxQkFBcUIseUJBU2pDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtcbiAgUmlFcnJvcldhcm5pbmdGaWxsLFxufSBmcm9tICdAcmVtaXhpY29uL3JlYWN0J1xuaW1wb3J0IHsgdXNlVHJhbnNsYXRpb24gfSBmcm9tICdyZWFjdC1pMThuZXh0J1xuaW1wb3J0IHsgQ2hlY2tDaXJjbGUgfSBmcm9tICdAL2FwcC9jb21wb25lbnRzL2Jhc2UvaWNvbnMvc3JjL3ZlbmRlci9zb2xpZC9nZW5lcmFsJ1xuXG5leHBvcnQgY29uc3QgVmFsaWRhdGVkRXJyb3JJY29uID0gKCkgPT4ge1xuICByZXR1cm4gPFJpRXJyb3JXYXJuaW5nRmlsbCBjbGFzc05hbWU9XCJoLTQgdy00IHRleHQtWyNEOTJEMjBdXCIgLz5cbn1cblxuZXhwb3J0IGNvbnN0IFZhbGlkYXRlZFN1Y2Nlc3NJY29uID0gKCkgPT4ge1xuICByZXR1cm4gPENoZWNrQ2lyY2xlIGNsYXNzTmFtZT1cImgtNCB3LTQgdGV4dC1bIzAzOTg1NV1cIiAvPlxufVxuXG5leHBvcnQgY29uc3QgVmFsaWRhdGluZ1RpcCA9ICgpID0+IHtcbiAgY29uc3QgeyB0IH0gPSB1c2VUcmFuc2xhdGlvbigpXG4gIHJldHVybiAoXG4gICAgPGRpdiBjbGFzc05hbWU9XCJtdC0yIHRleHQteHMgZm9udC1ub3JtYWwgdGV4dC1wcmltYXJ5LTYwMFwiPlxuICAgICAge3QoJ3Byb3ZpZGVyLnZhbGlkYXRpbmcnLCB7IG5zOiAnY29tbW9uJyB9KX1cbiAgICA8L2Rpdj5cbiAgKVxufVxuXG5leHBvcnQgY29uc3QgVmFsaWRhdGVkRXJyb3JNZXNzYWdlID0gKHsgZXJyb3JNZXNzYWdlIH06IHsgZXJyb3JNZXNzYWdlOiBzdHJpbmcgfSkgPT4ge1xuICBjb25zdCB7IHQgfSA9IHVzZVRyYW5zbGF0aW9uKClcblxuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPVwibXQtMiB0ZXh0LXhzIGZvbnQtbm9ybWFsIHRleHQtWyNEOTJEMjBdXCI+XG4gICAgICB7dCgncHJvdmlkZXIudmFsaWRhdGVkRXJyb3InLCB7IG5zOiAnY29tbW9uJyB9KX1cbiAgICAgIHtlcnJvck1lc3NhZ2V9XG4gICAgPC9kaXY+XG4gIClcbn1cbiJdfQ==

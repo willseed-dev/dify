@@ -1,0 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.checkNodeValid = void 0;
+const checkNodeValid = (_payload) => {
+    return true;
+};
+exports.checkNodeValid = checkNodeValid;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXRpbHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ1dGlscy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFFTyxNQUFNLGNBQWMsR0FBRyxDQUFDLFFBQXNCLEVBQUUsRUFBRTtJQUN2RCxPQUFPLElBQUksQ0FBQTtBQUNiLENBQUMsQ0FBQTtBQUZZLFFBQUEsY0FBYyxrQkFFMUIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IFRvb2xOb2RlVHlwZSB9IGZyb20gJy4vdHlwZXMnXG5cbmV4cG9ydCBjb25zdCBjaGVja05vZGVWYWxpZCA9IChfcGF5bG9hZDogVG9vbE5vZGVUeXBlKSA9PiB7XG4gIHJldHVybiB0cnVlXG59XG4iXX0=

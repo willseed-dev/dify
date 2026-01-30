@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.inputVarTypeToVarType = void 0;
+const types_1 = require("@/app/components/workflow/types");
+const pipeline_1 = require("@/models/pipeline");
+const inputVarTypeToVarType = (type) => {
+    return {
+        [pipeline_1.PipelineInputVarType.number]: types_1.VarType.number,
+        [pipeline_1.PipelineInputVarType.singleFile]: types_1.VarType.file,
+        [pipeline_1.PipelineInputVarType.multiFiles]: types_1.VarType.arrayFile,
+        [pipeline_1.PipelineInputVarType.checkbox]: types_1.VarType.boolean,
+    }[type] || types_1.VarType.string;
+};
+exports.inputVarTypeToVarType = inputVarTypeToVarType;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXRpbHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ1dGlscy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSwyREFBeUQ7QUFDekQsZ0RBQXdEO0FBRWpELE1BQU0scUJBQXFCLEdBQUcsQ0FBQyxJQUEwQixFQUFXLEVBQUU7SUFDM0UsT0FBUTtRQUNOLENBQUMsK0JBQW9CLENBQUMsTUFBTSxDQUFDLEVBQUUsZUFBTyxDQUFDLE1BQU07UUFDN0MsQ0FBQywrQkFBb0IsQ0FBQyxVQUFVLENBQUMsRUFBRSxlQUFPLENBQUMsSUFBSTtRQUMvQyxDQUFDLCtCQUFvQixDQUFDLFVBQVUsQ0FBQyxFQUFFLGVBQU8sQ0FBQyxTQUFTO1FBQ3BELENBQUMsK0JBQW9CLENBQUMsUUFBUSxDQUFDLEVBQUUsZUFBTyxDQUFDLE9BQU87S0FDekMsQ0FBQyxJQUFJLENBQUMsSUFBSSxlQUFPLENBQUMsTUFBTSxDQUFBO0FBQ25DLENBQUMsQ0FBQTtBQVBZLFFBQUEscUJBQXFCLHlCQU9qQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFZhclR5cGUgfSBmcm9tICdAL2FwcC9jb21wb25lbnRzL3dvcmtmbG93L3R5cGVzJ1xuaW1wb3J0IHsgUGlwZWxpbmVJbnB1dFZhclR5cGUgfSBmcm9tICdAL21vZGVscy9waXBlbGluZSdcblxuZXhwb3J0IGNvbnN0IGlucHV0VmFyVHlwZVRvVmFyVHlwZSA9ICh0eXBlOiBQaXBlbGluZUlucHV0VmFyVHlwZSk6IFZhclR5cGUgPT4ge1xuICByZXR1cm4gKHtcbiAgICBbUGlwZWxpbmVJbnB1dFZhclR5cGUubnVtYmVyXTogVmFyVHlwZS5udW1iZXIsXG4gICAgW1BpcGVsaW5lSW5wdXRWYXJUeXBlLnNpbmdsZUZpbGVdOiBWYXJUeXBlLmZpbGUsXG4gICAgW1BpcGVsaW5lSW5wdXRWYXJUeXBlLm11bHRpRmlsZXNdOiBWYXJUeXBlLmFycmF5RmlsZSxcbiAgICBbUGlwZWxpbmVJbnB1dFZhclR5cGUuY2hlY2tib3hdOiBWYXJUeXBlLmJvb2xlYW4sXG4gIH0gYXMgYW55KVt0eXBlXSB8fCBWYXJUeXBlLnN0cmluZ1xufVxuIl19

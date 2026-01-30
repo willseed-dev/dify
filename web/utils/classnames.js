@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.cn = cn;
+const clsx_1 = require("clsx");
+const tailwind_merge_1 = require("tailwind-merge");
+function cn(...inputs) {
+    return (0, tailwind_merge_1.twMerge)((0, clsx_1.clsx)(inputs));
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY2xhc3NuYW1lcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImNsYXNzbmFtZXMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFJQSxnQkFFQztBQUxELCtCQUEyQjtBQUMzQixtREFBd0M7QUFFeEMsU0FBZ0IsRUFBRSxDQUFDLEdBQUcsTUFBb0I7SUFDeEMsT0FBTyxJQUFBLHdCQUFPLEVBQUMsSUFBQSxXQUFJLEVBQUMsTUFBTSxDQUFDLENBQUMsQ0FBQTtBQUM5QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHR5cGUgeyBDbGFzc1ZhbHVlIH0gZnJvbSAnY2xzeCdcbmltcG9ydCB7IGNsc3ggfSBmcm9tICdjbHN4J1xuaW1wb3J0IHsgdHdNZXJnZSB9IGZyb20gJ3RhaWx3aW5kLW1lcmdlJ1xuXG5leHBvcnQgZnVuY3Rpb24gY24oLi4uaW5wdXRzOiBDbGFzc1ZhbHVlW10pIHtcbiAgcmV0dXJuIHR3TWVyZ2UoY2xzeChpbnB1dHMpKVxufVxuIl19

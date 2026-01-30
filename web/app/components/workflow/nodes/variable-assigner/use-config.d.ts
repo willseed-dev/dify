@@ -1,0 +1,20 @@
+import type { Var } from '../../types';
+import type { VariableAssignerNodeType } from './types';
+import { VarType } from '../../types';
+declare const useConfig: (id: string, payload: VariableAssignerNodeType) => {
+    readOnly: any;
+    inputs: any;
+    handleListOrTypeChange: any;
+    isEnableGroup: boolean;
+    handleGroupEnabledChange: any;
+    handleAddGroup: any;
+    handleListOrTypeChangeInGroup: any;
+    handleGroupRemoved: any;
+    handleVarGroupNameChange: any;
+    isShowRemoveVarConfirm: any;
+    hideRemoveVarConfirm: any;
+    onRemoveVarConfirm: any;
+    getAvailableVars: any;
+    filterVar: (varType: VarType) => (v: Var) => boolean;
+};
+export default useConfig;

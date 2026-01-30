@@ -1,0 +1,20 @@
+import type { UseMutateAsyncFunction } from '@tanstack/react-query';
+import type { ExternalKnowledgeBaseHitTestingRequest, ExternalKnowledgeBaseHitTestingResponse, HitTestingRequest, HitTestingResponse, Query } from '@/models/datasets';
+import type { RetrievalConfig } from '@/types/app';
+type QueryInputProps = {
+    onUpdateList: () => void;
+    setHitResult: (res: HitTestingResponse) => void;
+    setExternalHitResult: (res: ExternalKnowledgeBaseHitTestingResponse) => void;
+    loading: boolean;
+    queries: Query[];
+    setQueries: (v: Query[]) => void;
+    isExternal?: boolean;
+    onClickRetrievalMethod: () => void;
+    retrievalConfig: RetrievalConfig;
+    isEconomy: boolean;
+    onSubmit?: () => void;
+    hitTestingMutation: UseMutateAsyncFunction<HitTestingResponse, Error, HitTestingRequest, unknown>;
+    externalKnowledgeBaseHitTestingMutation: UseMutateAsyncFunction<ExternalKnowledgeBaseHitTestingResponse, Error, ExternalKnowledgeBaseHitTestingRequest, unknown>;
+};
+declare const QueryInput: ({ onUpdateList, setHitResult, setExternalHitResult, loading, queries, setQueries, isExternal, onClickRetrievalMethod, retrievalConfig, isEconomy, onSubmit: _onSubmit, hitTestingMutation, externalKnowledgeBaseHitTestingMutation, }: QueryInputProps) => any;
+export default QueryInput;

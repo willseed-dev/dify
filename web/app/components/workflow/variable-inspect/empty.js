@@ -1,0 +1,21 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_i18next_1 = require("react-i18next");
+const development_1 = require("@/app/components/base/icons/src/vender/solid/development");
+const Empty = () => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    return (<div className="flex h-full flex-col gap-3 rounded-xl bg-background-section p-8">
+      <div className="flex h-10 w-10 items-center justify-center rounded-[10px] border-[0.5px] border-components-card-border bg-components-card-bg shadow-lg backdrop-blur-sm">
+        <development_1.Variable02 className="h-5 w-5 text-text-accent"/>
+      </div>
+      <div className="flex flex-col gap-1">
+        <div className="system-sm-semibold text-text-secondary">{t('debug.variableInspect.title', { ns: 'workflow' })}</div>
+        <div className="system-xs-regular text-text-tertiary">{t('debug.variableInspect.emptyTip', { ns: 'workflow' })}</div>
+        <a className="system-xs-regular cursor-pointer text-text-accent" href="https://docs.dify.ai/en/guides/workflow/debug-and-preview/variable-inspect" target="_blank" rel="noopener noreferrer">
+          {t('debug.variableInspect.emptyLink', { ns: 'workflow' })}
+        </a>
+      </div>
+    </div>);
+};
+exports.default = Empty;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZW1wdHkuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJlbXB0eS50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFDQSxpREFBOEM7QUFDOUMsMEZBQXFGO0FBRXJGLE1BQU0sS0FBSyxHQUFPLEdBQUcsRUFBRTtJQUNyQixNQUFNLEVBQUUsQ0FBQyxFQUFFLEdBQUcsSUFBQSw4QkFBYyxHQUFFLENBQUE7SUFFOUIsT0FBTyxDQUNMLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxpRUFBaUUsQ0FDOUU7TUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMseUpBQXlKLENBQ3RLO1FBQUEsQ0FBQyx3QkFBVSxDQUFDLFNBQVMsQ0FBQywwQkFBMEIsRUFDbEQ7TUFBQSxFQUFFLEdBQUcsQ0FDTDtNQUFBLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxxQkFBcUIsQ0FDbEM7UUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsd0NBQXdDLENBQUMsQ0FBQyxDQUFDLENBQUMsNkJBQTZCLEVBQUUsRUFBRSxFQUFFLEVBQUUsVUFBVSxFQUFFLENBQUMsQ0FBQyxFQUFFLEdBQUcsQ0FDbkg7UUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsc0NBQXNDLENBQUMsQ0FBQyxDQUFDLENBQUMsZ0NBQWdDLEVBQUUsRUFBRSxFQUFFLEVBQUUsVUFBVSxFQUFFLENBQUMsQ0FBQyxFQUFFLEdBQUcsQ0FDcEg7UUFBQSxDQUFDLENBQUMsQ0FDQSxTQUFTLENBQUMsbURBQW1ELENBQzdELElBQUksQ0FBQyw0RUFBNEUsQ0FDakYsTUFBTSxDQUFDLFFBQVEsQ0FDZixHQUFHLENBQUMscUJBQXFCLENBRXpCO1VBQUEsQ0FBQyxDQUFDLENBQUMsaUNBQWlDLEVBQUUsRUFBRSxFQUFFLEVBQUUsVUFBVSxFQUFFLENBQUMsQ0FDM0Q7UUFBQSxFQUFFLENBQUMsQ0FDTDtNQUFBLEVBQUUsR0FBRyxDQUNQO0lBQUEsRUFBRSxHQUFHLENBQUMsQ0FDUCxDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsS0FBSyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHR5cGUgeyBGQyB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgdXNlVHJhbnNsYXRpb24gfSBmcm9tICdyZWFjdC1pMThuZXh0J1xuaW1wb3J0IHsgVmFyaWFibGUwMiB9IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS9pY29ucy9zcmMvdmVuZGVyL3NvbGlkL2RldmVsb3BtZW50J1xuXG5jb25zdCBFbXB0eTogRkMgPSAoKSA9PiB7XG4gIGNvbnN0IHsgdCB9ID0gdXNlVHJhbnNsYXRpb24oKVxuXG4gIHJldHVybiAoXG4gICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGgtZnVsbCBmbGV4LWNvbCBnYXAtMyByb3VuZGVkLXhsIGJnLWJhY2tncm91bmQtc2VjdGlvbiBwLThcIj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBoLTEwIHctMTAgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHJvdW5kZWQtWzEwcHhdIGJvcmRlci1bMC41cHhdIGJvcmRlci1jb21wb25lbnRzLWNhcmQtYm9yZGVyIGJnLWNvbXBvbmVudHMtY2FyZC1iZyBzaGFkb3ctbGcgYmFja2Ryb3AtYmx1ci1zbVwiPlxuICAgICAgICA8VmFyaWFibGUwMiBjbGFzc05hbWU9XCJoLTUgdy01IHRleHQtdGV4dC1hY2NlbnRcIiAvPlxuICAgICAgPC9kaXY+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggZmxleC1jb2wgZ2FwLTFcIj5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJzeXN0ZW0tc20tc2VtaWJvbGQgdGV4dC10ZXh0LXNlY29uZGFyeVwiPnt0KCdkZWJ1Zy52YXJpYWJsZUluc3BlY3QudGl0bGUnLCB7IG5zOiAnd29ya2Zsb3cnIH0pfTwvZGl2PlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInN5c3RlbS14cy1yZWd1bGFyIHRleHQtdGV4dC10ZXJ0aWFyeVwiPnt0KCdkZWJ1Zy52YXJpYWJsZUluc3BlY3QuZW1wdHlUaXAnLCB7IG5zOiAnd29ya2Zsb3cnIH0pfTwvZGl2PlxuICAgICAgICA8YVxuICAgICAgICAgIGNsYXNzTmFtZT1cInN5c3RlbS14cy1yZWd1bGFyIGN1cnNvci1wb2ludGVyIHRleHQtdGV4dC1hY2NlbnRcIlxuICAgICAgICAgIGhyZWY9XCJodHRwczovL2RvY3MuZGlmeS5haS9lbi9ndWlkZXMvd29ya2Zsb3cvZGVidWctYW5kLXByZXZpZXcvdmFyaWFibGUtaW5zcGVjdFwiXG4gICAgICAgICAgdGFyZ2V0PVwiX2JsYW5rXCJcbiAgICAgICAgICByZWw9XCJub29wZW5lciBub3JlZmVycmVyXCJcbiAgICAgICAgPlxuICAgICAgICAgIHt0KCdkZWJ1Zy52YXJpYWJsZUluc3BlY3QuZW1wdHlMaW5rJywgeyBuczogJ3dvcmtmbG93JyB9KX1cbiAgICAgICAgPC9hPlxuICAgICAgPC9kaXY+XG4gICAgPC9kaXY+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgRW1wdHlcbiJdfQ==

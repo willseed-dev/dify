@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const hit_testing_1 = require("@/app/components/datasets/hit-testing");
+const HitTesting = async (props) => {
+    const params = await props.params;
+    const { datasetId, } = params;
+    return (<hit_testing_1.default datasetId={datasetId}/>);
+};
+exports.default = HitTesting;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFnZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInBhZ2UudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsK0JBQThCO0FBQzlCLHVFQUF3RDtBQU14RCxNQUFNLFVBQVUsR0FBRyxLQUFLLEVBQUUsS0FBWSxFQUFFLEVBQUU7SUFDeEMsTUFBTSxNQUFNLEdBQUcsTUFBTSxLQUFLLENBQUMsTUFBTSxDQUFBO0lBRWpDLE1BQU0sRUFDSixTQUFTLEdBQ1YsR0FBRyxNQUFNLENBQUE7SUFFVixPQUFPLENBQ0wsQ0FBQyxxQkFBSSxDQUFDLFNBQVMsQ0FBQyxDQUFDLFNBQVMsQ0FBQyxFQUFHLENBQy9CLENBQUE7QUFDSCxDQUFDLENBQUE7QUFFRCxrQkFBZSxVQUFVLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgKiBhcyBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCBNYWluIGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvZGF0YXNldHMvaGl0LXRlc3RpbmcnXG5cbnR5cGUgUHJvcHMgPSB7XG4gIHBhcmFtczogUHJvbWlzZTx7IGRhdGFzZXRJZDogc3RyaW5nIH0+XG59XG5cbmNvbnN0IEhpdFRlc3RpbmcgPSBhc3luYyAocHJvcHM6IFByb3BzKSA9PiB7XG4gIGNvbnN0IHBhcmFtcyA9IGF3YWl0IHByb3BzLnBhcmFtc1xuXG4gIGNvbnN0IHtcbiAgICBkYXRhc2V0SWQsXG4gIH0gPSBwYXJhbXNcblxuICByZXR1cm4gKFxuICAgIDxNYWluIGRhdGFzZXRJZD17ZGF0YXNldElkfSAvPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IEhpdFRlc3RpbmdcbiJdfQ==

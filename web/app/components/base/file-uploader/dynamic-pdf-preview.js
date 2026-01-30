@@ -1,0 +1,10 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const dynamic_1 = require("next/dynamic");
+const DynamicPdfPreview = (0, dynamic_1.default)((() => {
+    if (typeof window !== 'undefined')
+        return Promise.resolve().then(() => require('./pdf-preview'));
+}), { ssr: false });
+exports.default = DynamicPdfPreview;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZHluYW1pYy1wZGYtcHJldmlldy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImR5bmFtaWMtcGRmLXByZXZpZXcudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxZQUFZLENBQUE7O0FBRVosMENBQWtDO0FBTWxDLE1BQU0saUJBQWlCLEdBQUcsSUFBQSxpQkFBTyxFQUMvQixDQUFDLEdBQUcsRUFBRTtJQUNKLElBQUksT0FBTyxNQUFNLEtBQUssV0FBVztRQUMvQiw0Q0FBYyxlQUFlLEdBQUM7QUFDbEMsQ0FBQyxDQUFRLEVBQ1QsRUFBRSxHQUFHLEVBQUUsS0FBSyxFQUFFLENBQ2YsQ0FBQTtBQUVELGtCQUFlLGlCQUFpQixDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBjbGllbnQnXG5cbmltcG9ydCBkeW5hbWljIGZyb20gJ25leHQvZHluYW1pYydcblxudHlwZSBEeW5hbWljUGRmUHJldmlld1Byb3BzID0ge1xuICB1cmw6IHN0cmluZ1xuICBvbkNhbmNlbDogKCkgPT4gdm9pZFxufVxuY29uc3QgRHluYW1pY1BkZlByZXZpZXcgPSBkeW5hbWljPER5bmFtaWNQZGZQcmV2aWV3UHJvcHM+KFxuICAoKCkgPT4ge1xuICAgIGlmICh0eXBlb2Ygd2luZG93ICE9PSAndW5kZWZpbmVkJylcbiAgICAgIHJldHVybiBpbXBvcnQoJy4vcGRmLXByZXZpZXcnKVxuICB9KSBhcyBhbnksXG4gIHsgc3NyOiBmYWxzZSB9LCAvLyBUaGlzIHdpbGwgcHJldmVudCB0aGUgbW9kdWxlIGZyb20gYmVpbmcgbG9hZGVkIG9uIHRoZSBzZXJ2ZXItc2lkZVxuKVxuXG5leHBvcnQgZGVmYXVsdCBEeW5hbWljUGRmUHJldmlld1xuIl19

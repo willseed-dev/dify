@@ -1,0 +1,28 @@
+import type { DataSourceAuth } from '@/app/components/header/account-setting/data-source-page-new/types';
+import type { DataSourceProvider, NotionPage } from '@/models/common';
+import type { CrawlOptions, CrawlResultItem, FileItem } from '@/models/datasets';
+import { DataSourceType } from '@/models/datasets';
+type IStepOneProps = {
+    datasetId?: string;
+    dataSourceType?: DataSourceType;
+    dataSourceTypeDisable: boolean;
+    onSetting: () => void;
+    files: FileItem[];
+    updateFileList: (files: FileItem[]) => void;
+    updateFile: (fileItem: FileItem, progress: number, list: FileItem[]) => void;
+    notionPages?: NotionPage[];
+    notionCredentialId: string;
+    updateNotionPages: (value: NotionPage[]) => void;
+    updateNotionCredentialId: (credentialId: string) => void;
+    onStepChange: () => void;
+    changeType: (type: DataSourceType) => void;
+    websitePages?: CrawlResultItem[];
+    updateWebsitePages: (value: CrawlResultItem[]) => void;
+    onWebsiteCrawlProviderChange: (provider: DataSourceProvider) => void;
+    onWebsiteCrawlJobIdChange: (jobId: string) => void;
+    crawlOptions: CrawlOptions;
+    onCrawlOptionsChange: (payload: CrawlOptions) => void;
+    authedDataSourceList: DataSourceAuth[];
+};
+declare const StepOne: ({ datasetId, dataSourceType: inCreatePageDataSourceType, dataSourceTypeDisable, changeType, onSetting, onStepChange: doOnStepChange, files, updateFileList, updateFile, notionPages, notionCredentialId, updateNotionPages, updateNotionCredentialId, websitePages, updateWebsitePages, onWebsiteCrawlProviderChange, onWebsiteCrawlJobIdChange, crawlOptions, onCrawlOptionsChange, authedDataSourceList, }: IStepOneProps) => any;
+export default StepOne;

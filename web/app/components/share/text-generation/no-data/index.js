@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const React = require("react");
+const react_i18next_1 = require("react-i18next");
+const NoData = () => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    return (<div className="flex h-full w-full flex-col items-center justify-center">
+      <react_1.RiSparklingFill className="h-12 w-12 text-text-empty-state-icon"/>
+      <div className="system-sm-regular mt-2 text-text-quaternary">
+        {t('generation.noData', { ns: 'share' })}
+      </div>
+    </div>);
+};
+exports.default = React.memo(NoData);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFDQSw0Q0FFeUI7QUFDekIsK0JBQThCO0FBQzlCLGlEQUE4QztBQUc5QyxNQUFNLE1BQU0sR0FBcUIsR0FBRyxFQUFFO0lBQ3BDLE1BQU0sRUFBRSxDQUFDLEVBQUUsR0FBRyxJQUFBLDhCQUFjLEdBQUUsQ0FBQTtJQUM5QixPQUFPLENBQ0wsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLHlEQUF5RCxDQUN0RTtNQUFBLENBQUMsdUJBQWUsQ0FBQyxTQUFTLENBQUMsc0NBQXNDLEVBQ2pFO01BQUEsQ0FBQyxHQUFHLENBQ0YsU0FBUyxDQUFDLDZDQUE2QyxDQUV2RDtRQUFBLENBQUMsQ0FBQyxDQUFDLG1CQUFtQixFQUFFLEVBQUUsRUFBRSxFQUFFLE9BQU8sRUFBRSxDQUFDLENBQzFDO01BQUEsRUFBRSxHQUFHLENBQ1A7SUFBQSxFQUFFLEdBQUcsQ0FBQyxDQUNQLENBQUE7QUFDSCxDQUFDLENBQUE7QUFDRCxrQkFBZSxLQUFLLENBQUMsSUFBSSxDQUFDLE1BQU0sQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHR5cGUgeyBGQyB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHtcbiAgUmlTcGFya2xpbmdGaWxsLFxufSBmcm9tICdAcmVtaXhpY29uL3JlYWN0J1xuaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgeyB1c2VUcmFuc2xhdGlvbiB9IGZyb20gJ3JlYWN0LWkxOG5leHQnXG5cbmV4cG9ydCB0eXBlIElOb0RhdGFQcm9wcyA9IHt9XG5jb25zdCBOb0RhdGE6IEZDPElOb0RhdGFQcm9wcz4gPSAoKSA9PiB7XG4gIGNvbnN0IHsgdCB9ID0gdXNlVHJhbnNsYXRpb24oKVxuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBoLWZ1bGwgdy1mdWxsIGZsZXgtY29sIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlclwiPlxuICAgICAgPFJpU3BhcmtsaW5nRmlsbCBjbGFzc05hbWU9XCJoLTEyIHctMTIgdGV4dC10ZXh0LWVtcHR5LXN0YXRlLWljb25cIiAvPlxuICAgICAgPGRpdlxuICAgICAgICBjbGFzc05hbWU9XCJzeXN0ZW0tc20tcmVndWxhciBtdC0yIHRleHQtdGV4dC1xdWF0ZXJuYXJ5XCJcbiAgICAgID5cbiAgICAgICAge3QoJ2dlbmVyYXRpb24ubm9EYXRhJywgeyBuczogJ3NoYXJlJyB9KX1cbiAgICAgIDwvZGl2PlxuICAgIDwvZGl2PlxuICApXG59XG5leHBvcnQgZGVmYXVsdCBSZWFjdC5tZW1vKE5vRGF0YSlcbiJdfQ==

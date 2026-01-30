@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getIconFromMarketPlace = void 0;
+const config_1 = require("@/config");
+const getIconFromMarketPlace = (plugin_id) => {
+    return `${config_1.MARKETPLACE_API_PREFIX}/plugins/${plugin_id}/icon`;
+};
+exports.getIconFromMarketPlace = getIconFromMarketPlace;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2V0LWljb24uanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJnZXQtaWNvbi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSxxQ0FBaUQ7QUFFMUMsTUFBTSxzQkFBc0IsR0FBRyxDQUFDLFNBQWlCLEVBQUUsRUFBRTtJQUMxRCxPQUFPLEdBQUcsK0JBQXNCLFlBQVksU0FBUyxPQUFPLENBQUE7QUFDOUQsQ0FBQyxDQUFBO0FBRlksUUFBQSxzQkFBc0IsMEJBRWxDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTUFSS0VUUExBQ0VfQVBJX1BSRUZJWCB9IGZyb20gJ0AvY29uZmlnJ1xuXG5leHBvcnQgY29uc3QgZ2V0SWNvbkZyb21NYXJrZXRQbGFjZSA9IChwbHVnaW5faWQ6IHN0cmluZykgPT4ge1xuICByZXR1cm4gYCR7TUFSS0VUUExBQ0VfQVBJX1BSRUZJWH0vcGx1Z2lucy8ke3BsdWdpbl9pZH0vaWNvbmBcbn1cbiJdfQ==

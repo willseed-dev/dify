@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.fetchStrategyDetail = exports.fetchStrategyList = void 0;
+const base_1 = require("./base");
+const fetchStrategyList = () => {
+    return (0, base_1.get)('/workspaces/current/agent-providers');
+};
+exports.fetchStrategyList = fetchStrategyList;
+const fetchStrategyDetail = (agentProvider) => {
+    return (0, base_1.get)(`/workspaces/current/agent-provider/${agentProvider}`);
+};
+exports.fetchStrategyDetail = fetchStrategyDetail;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3RyYXRlZ3kuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJzdHJhdGVneS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFDQSxpQ0FBNEI7QUFFckIsTUFBTSxpQkFBaUIsR0FBRyxHQUFHLEVBQUU7SUFDcEMsT0FBTyxJQUFBLFVBQUcsRUFBeUIscUNBQXFDLENBQUMsQ0FBQTtBQUMzRSxDQUFDLENBQUE7QUFGWSxRQUFBLGlCQUFpQixxQkFFN0I7QUFFTSxNQUFNLG1CQUFtQixHQUFHLENBQUMsYUFBcUIsRUFBRSxFQUFFO0lBQzNELE9BQU8sSUFBQSxVQUFHLEVBQXVCLHNDQUFzQyxhQUFhLEVBQUUsQ0FBQyxDQUFBO0FBQ3pGLENBQUMsQ0FBQTtBQUZZLFFBQUEsbUJBQW1CLHVCQUUvQiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB0eXBlIHsgU3RyYXRlZ3lQbHVnaW5EZXRhaWwgfSBmcm9tICdAL2FwcC9jb21wb25lbnRzL3BsdWdpbnMvdHlwZXMnXG5pbXBvcnQgeyBnZXQgfSBmcm9tICcuL2Jhc2UnXG5cbmV4cG9ydCBjb25zdCBmZXRjaFN0cmF0ZWd5TGlzdCA9ICgpID0+IHtcbiAgcmV0dXJuIGdldDxTdHJhdGVneVBsdWdpbkRldGFpbFtdPignL3dvcmtzcGFjZXMvY3VycmVudC9hZ2VudC1wcm92aWRlcnMnKVxufVxuXG5leHBvcnQgY29uc3QgZmV0Y2hTdHJhdGVneURldGFpbCA9IChhZ2VudFByb3ZpZGVyOiBzdHJpbmcpID0+IHtcbiAgcmV0dXJuIGdldDxTdHJhdGVneVBsdWdpbkRldGFpbD4oYC93b3Jrc3BhY2VzL2N1cnJlbnQvYWdlbnQtcHJvdmlkZXIvJHthZ2VudFByb3ZpZGVyfWApXG59XG4iXX0=

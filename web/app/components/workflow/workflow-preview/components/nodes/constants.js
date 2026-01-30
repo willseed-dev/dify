@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NodeComponentMap = void 0;
+const types_1 = require("@/app/components/workflow/types");
+const node_1 = require("./if-else/node");
+const node_2 = require("./iteration/node");
+const node_3 = require("./loop/node");
+const node_4 = require("./question-classifier/node");
+exports.NodeComponentMap = {
+    [types_1.BlockEnum.QuestionClassifier]: node_4.default,
+    [types_1.BlockEnum.IfElse]: node_1.default,
+    [types_1.BlockEnum.Iteration]: node_2.default,
+    [types_1.BlockEnum.Loop]: node_3.default,
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29uc3RhbnRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiY29uc3RhbnRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBLDJEQUEyRDtBQUMzRCx5Q0FBdUM7QUFDdkMsMkNBQTRDO0FBQzVDLHNDQUFrQztBQUNsQyxxREFBK0Q7QUFFbEQsUUFBQSxnQkFBZ0IsR0FBd0I7SUFDbkQsQ0FBQyxpQkFBUyxDQUFDLGtCQUFrQixDQUFDLEVBQUUsY0FBc0I7SUFDdEQsQ0FBQyxpQkFBUyxDQUFDLE1BQU0sQ0FBQyxFQUFFLGNBQVU7SUFDOUIsQ0FBQyxpQkFBUyxDQUFDLFNBQVMsQ0FBQyxFQUFFLGNBQWE7SUFDcEMsQ0FBQyxpQkFBUyxDQUFDLElBQUksQ0FBQyxFQUFFLGNBQVE7Q0FDM0IsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEJsb2NrRW51bSB9IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvd29ya2Zsb3cvdHlwZXMnXG5pbXBvcnQgSWZFbHNlTm9kZSBmcm9tICcuL2lmLWVsc2Uvbm9kZSdcbmltcG9ydCBJdGVyYXRpb25Ob2RlIGZyb20gJy4vaXRlcmF0aW9uL25vZGUnXG5pbXBvcnQgTG9vcE5vZGUgZnJvbSAnLi9sb29wL25vZGUnXG5pbXBvcnQgUXVlc3Rpb25DbGFzc2lmaWVyTm9kZSBmcm9tICcuL3F1ZXN0aW9uLWNsYXNzaWZpZXIvbm9kZSdcblxuZXhwb3J0IGNvbnN0IE5vZGVDb21wb25lbnRNYXA6IFJlY29yZDxzdHJpbmcsIGFueT4gPSB7XG4gIFtCbG9ja0VudW0uUXVlc3Rpb25DbGFzc2lmaWVyXTogUXVlc3Rpb25DbGFzc2lmaWVyTm9kZSxcbiAgW0Jsb2NrRW51bS5JZkVsc2VdOiBJZkVsc2VOb2RlLFxuICBbQmxvY2tFbnVtLkl0ZXJhdGlvbl06IEl0ZXJhdGlvbk5vZGUsXG4gIFtCbG9ja0VudW0uTG9vcF06IExvb3BOb2RlLFxufVxuIl19

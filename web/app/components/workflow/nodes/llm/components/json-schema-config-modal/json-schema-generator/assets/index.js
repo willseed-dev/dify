@@ -1,0 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SchemaGeneratorLight = exports.SchemaGeneratorDark = void 0;
+const schema_generator_dark_1 = require("./schema-generator-dark");
+exports.SchemaGeneratorDark = schema_generator_dark_1.default;
+const schema_generator_light_1 = require("./schema-generator-light");
+exports.SchemaGeneratorLight = schema_generator_light_1.default;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEsbUVBQXlEO0FBSXZELDhCQUpLLCtCQUFtQixDQUlMO0FBSHJCLHFFQUEyRDtBQUl6RCwrQkFKSyxnQ0FBb0IsQ0FJTCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBTY2hlbWFHZW5lcmF0b3JEYXJrIGZyb20gJy4vc2NoZW1hLWdlbmVyYXRvci1kYXJrJ1xuaW1wb3J0IFNjaGVtYUdlbmVyYXRvckxpZ2h0IGZyb20gJy4vc2NoZW1hLWdlbmVyYXRvci1saWdodCdcblxuZXhwb3J0IHtcbiAgU2NoZW1hR2VuZXJhdG9yRGFyayxcbiAgU2NoZW1hR2VuZXJhdG9yTGlnaHQsXG59XG4iXX0=

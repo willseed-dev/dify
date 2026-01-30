@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.isHighQualitySearchMethod = void 0;
+const types_1 = require("./types");
+const isHighQualitySearchMethod = (searchMethod) => {
+    return searchMethod === types_1.RetrievalSearchMethodEnum.semantic
+        || searchMethod === types_1.RetrievalSearchMethodEnum.hybrid
+        || searchMethod === types_1.RetrievalSearchMethodEnum.fullText;
+};
+exports.isHighQualitySearchMethod = isHighQualitySearchMethod;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXRpbHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ1dGlscy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSxtQ0FFZ0I7QUFFVCxNQUFNLHlCQUF5QixHQUFHLENBQUMsWUFBdUMsRUFBRSxFQUFFO0lBQ25GLE9BQU8sWUFBWSxLQUFLLGlDQUF5QixDQUFDLFFBQVE7V0FDckQsWUFBWSxLQUFLLGlDQUF5QixDQUFDLE1BQU07V0FDakQsWUFBWSxLQUFLLGlDQUF5QixDQUFDLFFBQVEsQ0FBQTtBQUMxRCxDQUFDLENBQUE7QUFKWSxRQUFBLHlCQUF5Qiw2QkFJckMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge1xuICBSZXRyaWV2YWxTZWFyY2hNZXRob2RFbnVtLFxufSBmcm9tICcuL3R5cGVzJ1xuXG5leHBvcnQgY29uc3QgaXNIaWdoUXVhbGl0eVNlYXJjaE1ldGhvZCA9IChzZWFyY2hNZXRob2Q6IFJldHJpZXZhbFNlYXJjaE1ldGhvZEVudW0pID0+IHtcbiAgcmV0dXJuIHNlYXJjaE1ldGhvZCA9PT0gUmV0cmlldmFsU2VhcmNoTWV0aG9kRW51bS5zZW1hbnRpY1xuICAgIHx8IHNlYXJjaE1ldGhvZCA9PT0gUmV0cmlldmFsU2VhcmNoTWV0aG9kRW51bS5oeWJyaWRcbiAgICB8fCBzZWFyY2hNZXRob2QgPT09IFJldHJpZXZhbFNlYXJjaE1ldGhvZEVudW0uZnVsbFRleHRcbn1cbiJdfQ==

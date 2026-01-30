@@ -1,0 +1,11 @@
+import type { StoryObj } from '@storybook/nextjs';
+declare const meta: Meta<({ onConverted, onCancel }: any) => any>;
+export default meta;
+type Story = StoryObj<typeof meta>;
+export declare const Default: Story;
+export declare const RecordingState: Story;
+export declare const ChatInputWithVoice: Story;
+export declare const SearchWithVoice: Story;
+export declare const NoteTaking: Story;
+export declare const FormWithVoice: Story;
+export declare const FeaturesShowcase: Story;

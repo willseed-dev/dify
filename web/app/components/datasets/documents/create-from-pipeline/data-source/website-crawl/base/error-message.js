@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const React = require("react");
+const classnames_1 = require("@/utils/classnames");
+const ErrorMessage = ({ className, title, errorMsg, }) => {
+    return (
+    // eslint-disable-next-line tailwindcss/migration-from-tailwind-2
+    <div className={(0, classnames_1.cn)('flex gap-x-0.5 rounded-xl border-[0.5px] border-components-panel-border bg-opacity-40 bg-toast-error-bg p-2 shadow-xs shadow-shadow-shadow-3', className)}>
+      <div className="flex size-6 items-center justify-center">
+        <react_1.RiErrorWarningFill className="h-4 w-4 text-text-destructive"/>
+      </div>
+      <div className="flex flex-col gap-y-0.5 py-1">
+        <div className="system-xs-medium text-text-primary">{title}</div>
+        {errorMsg && (<div className="system-xs-regular text-text-secondary">{errorMsg}</div>)}
+      </div>
+    </div>);
+};
+exports.default = React.memo(ErrorMessage);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZXJyb3ItbWVzc2FnZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImVycm9yLW1lc3NhZ2UudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNENBQXFEO0FBQ3JELCtCQUE4QjtBQUM5QixtREFBdUM7QUFRdkMsTUFBTSxZQUFZLEdBQUcsQ0FBQyxFQUNwQixTQUFTLEVBQ1QsS0FBSyxFQUNMLFFBQVEsR0FDVSxFQUFFLEVBQUU7SUFDdEIsT0FBTztJQUNMLGlFQUFpRTtJQUNqRSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsQ0FBQyxJQUFBLGVBQUUsRUFDaEIsOElBQThJLEVBQzlJLFNBQVMsQ0FDVixDQUFDLENBRUE7TUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMseUNBQXlDLENBQ3REO1FBQUEsQ0FBQywwQkFBa0IsQ0FBQyxTQUFTLENBQUMsK0JBQStCLEVBQy9EO01BQUEsRUFBRSxHQUFHLENBQ0w7TUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsOEJBQThCLENBQzNDO1FBQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLG9DQUFvQyxDQUFDLENBQUMsS0FBSyxDQUFDLEVBQUUsR0FBRyxDQUNoRTtRQUFBLENBQUMsUUFBUSxJQUFJLENBQ1gsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLHVDQUF1QyxDQUFDLENBQUMsUUFBUSxDQUFDLEVBQUUsR0FBRyxDQUFDLENBQ3hFLENBQ0g7TUFBQSxFQUFFLEdBQUcsQ0FDUDtJQUFBLEVBQUUsR0FBRyxDQUFDLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUNELGtCQUFlLEtBQUssQ0FBQyxJQUFJLENBQUMsWUFBWSxDQUFDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBSaUVycm9yV2FybmluZ0ZpbGwgfSBmcm9tICdAcmVtaXhpY29uL3JlYWN0J1xuaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgeyBjbiB9IGZyb20gJ0AvdXRpbHMvY2xhc3NuYW1lcydcblxudHlwZSBFcnJvck1lc3NhZ2VQcm9wcyA9IHtcbiAgY2xhc3NOYW1lPzogc3RyaW5nXG4gIHRpdGxlOiBzdHJpbmdcbiAgZXJyb3JNc2c/OiBzdHJpbmdcbn1cblxuY29uc3QgRXJyb3JNZXNzYWdlID0gKHtcbiAgY2xhc3NOYW1lLFxuICB0aXRsZSxcbiAgZXJyb3JNc2csXG59OiBFcnJvck1lc3NhZ2VQcm9wcykgPT4ge1xuICByZXR1cm4gKFxuICAgIC8vIGVzbGludC1kaXNhYmxlLW5leHQtbGluZSB0YWlsd2luZGNzcy9taWdyYXRpb24tZnJvbS10YWlsd2luZC0yXG4gICAgPGRpdiBjbGFzc05hbWU9e2NuKFxuICAgICAgJ2ZsZXggZ2FwLXgtMC41IHJvdW5kZWQteGwgYm9yZGVyLVswLjVweF0gYm9yZGVyLWNvbXBvbmVudHMtcGFuZWwtYm9yZGVyIGJnLW9wYWNpdHktNDAgYmctdG9hc3QtZXJyb3ItYmcgcC0yIHNoYWRvdy14cyBzaGFkb3ctc2hhZG93LXNoYWRvdy0zJyxcbiAgICAgIGNsYXNzTmFtZSxcbiAgICApfVxuICAgID5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBzaXplLTYgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyXCI+XG4gICAgICAgIDxSaUVycm9yV2FybmluZ0ZpbGwgY2xhc3NOYW1lPVwiaC00IHctNCB0ZXh0LXRleHQtZGVzdHJ1Y3RpdmVcIiAvPlxuICAgICAgPC9kaXY+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggZmxleC1jb2wgZ2FwLXktMC41IHB5LTFcIj5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJzeXN0ZW0teHMtbWVkaXVtIHRleHQtdGV4dC1wcmltYXJ5XCI+e3RpdGxlfTwvZGl2PlxuICAgICAgICB7ZXJyb3JNc2cgJiYgKFxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwic3lzdGVtLXhzLXJlZ3VsYXIgdGV4dC10ZXh0LXNlY29uZGFyeVwiPntlcnJvck1zZ308L2Rpdj5cbiAgICAgICAgKX1cbiAgICAgIDwvZGl2PlxuICAgIDwvZGl2PlxuICApXG59XG5leHBvcnQgZGVmYXVsdCBSZWFjdC5tZW1vKEVycm9yTWVzc2FnZSlcbiJdfQ==

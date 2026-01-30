@@ -1,0 +1,44 @@
+import type { DefaultModel, Model } from '@/app/components/header/account-setting/model-provider-page/declarations';
+import type { NotionPage } from '@/models/common';
+import type { CrawlOptions, CrawlResultItem, createDocumentResponse, CustomFile, FullDocumentDetail } from '@/models/datasets';
+import type { RetrievalConfig, RETRIEVE_METHOD } from '@/types/app';
+import { DataSourceProvider } from '@/models/common';
+import { DataSourceType } from '@/models/datasets';
+import { IndexingType } from './use-indexing-config';
+export type UseDocumentCreationOptions = {
+    datasetId?: string;
+    isSetting?: boolean;
+    documentDetail?: FullDocumentDetail;
+    dataSourceType: DataSourceType;
+    files: CustomFile[];
+    notionPages: NotionPage[];
+    notionCredentialId: string;
+    websitePages: CrawlResultItem[];
+    crawlOptions?: CrawlOptions;
+    websiteCrawlProvider?: DataSourceProvider;
+    websiteCrawlJobId?: string;
+    onStepChange?: (delta: number) => void;
+    updateIndexingTypeCache?: (type: string) => void;
+    updateResultCache?: (res: createDocumentResponse) => void;
+    updateRetrievalMethodCache?: (method: RETRIEVE_METHOD | '') => void;
+    onSave?: () => void;
+    mutateDatasetRes?: () => void;
+};
+export type ValidationParams = {
+    segmentationType: string;
+    maxChunkLength: number;
+    limitMaxChunkLength: number;
+    overlap: number;
+    indexType: IndexingType;
+    embeddingModel: DefaultModel;
+    rerankModelList: Model[];
+    retrievalConfig: RetrievalConfig;
+};
+export declare const useDocumentCreation: (options: UseDocumentCreationOptions) => {
+    isCreating: any;
+    validateParams: any;
+    buildCreationParams: any;
+    executeCreation: any;
+    validatePreviewParams: any;
+};
+export type DocumentCreation = ReturnType<typeof useDocumentCreation>;

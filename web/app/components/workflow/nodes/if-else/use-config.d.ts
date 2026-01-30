@@ -1,0 +1,24 @@
+import type { IfElseNodeType } from './types';
+declare const useConfig: (id: string, payload: IfElseNodeType) => {
+    readOnly: any;
+    inputs: any;
+    filterVar: any;
+    filterNumberVar: any;
+    handleAddCase: any;
+    handleRemoveCase: any;
+    handleSortCase: any;
+    handleAddCondition: any;
+    handleRemoveCondition: any;
+    handleUpdateCondition: any;
+    handleToggleConditionLogicalOperator: any;
+    handleAddSubVariableCondition: any;
+    handleUpdateSubVariableCondition: any;
+    handleRemoveSubVariableCondition: any;
+    handleToggleSubVariableConditionLogicalOperator: any;
+    nodesOutputVars: any;
+    availableNodes: any;
+    nodesOutputNumberVars: any;
+    availableNumberNodes: any;
+    varsIsVarFileAttribute: any;
+};
+export default useConfig;

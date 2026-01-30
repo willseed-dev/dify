@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const store_1 = require("@/app/components/workflow/store");
+const useWorkflowNodes = () => (0, store_1.useStore)(s => s.nodes);
+exports.default = useWorkflowNodes;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXNlLW5vZGVzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidXNlLW5vZGVzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsMkRBRXdDO0FBRXhDLE1BQU0sZ0JBQWdCLEdBQUcsR0FBRyxFQUFFLENBQUMsSUFBQSxnQkFBUSxFQUFDLENBQUMsQ0FBQyxFQUFFLENBQUMsQ0FBQyxDQUFDLEtBQUssQ0FBQyxDQUFBO0FBRXJELGtCQUFlLGdCQUFnQixDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtcbiAgdXNlU3RvcmUsXG59IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvd29ya2Zsb3cvc3RvcmUnXG5cbmNvbnN0IHVzZVdvcmtmbG93Tm9kZXMgPSAoKSA9PiB1c2VTdG9yZShzID0+IHMubm9kZXMpXG5cbmV4cG9ydCBkZWZhdWx0IHVzZVdvcmtmbG93Tm9kZXNcbiJdfQ==

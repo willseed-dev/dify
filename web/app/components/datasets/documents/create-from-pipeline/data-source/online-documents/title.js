@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const react_i18next_1 = require("react-i18next");
+const Title = ({ name, }) => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    return (<div className="system-sm-medium px-[5px] py-1 text-text-secondary">
+      {t('onlineDocument.pageSelectorTitle', { ns: 'datasetPipeline', name })}
+    </div>);
+};
+exports.default = React.memo(Title);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGl0bGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ0aXRsZS50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSwrQkFBOEI7QUFDOUIsaURBQThDO0FBTTlDLE1BQU0sS0FBSyxHQUFHLENBQUMsRUFDYixJQUFJLEdBQ08sRUFBRSxFQUFFO0lBQ2YsTUFBTSxFQUFFLENBQUMsRUFBRSxHQUFHLElBQUEsOEJBQWMsR0FBRSxDQUFBO0lBRTlCLE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsb0RBQW9ELENBQ2pFO01BQUEsQ0FBQyxDQUFDLENBQUMsa0NBQWtDLEVBQUUsRUFBRSxFQUFFLEVBQUUsaUJBQWlCLEVBQUUsSUFBSSxFQUFFLENBQUMsQ0FDekU7SUFBQSxFQUFFLEdBQUcsQ0FBQyxDQUNQLENBQUE7QUFDSCxDQUFDLENBQUE7QUFFRCxrQkFBZSxLQUFLLENBQUMsSUFBSSxDQUFDLEtBQUssQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgeyB1c2VUcmFuc2xhdGlvbiB9IGZyb20gJ3JlYWN0LWkxOG5leHQnXG5cbnR5cGUgVGl0bGVQcm9wcyA9IHtcbiAgbmFtZTogc3RyaW5nXG59XG5cbmNvbnN0IFRpdGxlID0gKHtcbiAgbmFtZSxcbn06IFRpdGxlUHJvcHMpID0+IHtcbiAgY29uc3QgeyB0IH0gPSB1c2VUcmFuc2xhdGlvbigpXG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cInN5c3RlbS1zbS1tZWRpdW0gcHgtWzVweF0gcHktMSB0ZXh0LXRleHQtc2Vjb25kYXJ5XCI+XG4gICAgICB7dCgnb25saW5lRG9jdW1lbnQucGFnZVNlbGVjdG9yVGl0bGUnLCB7IG5zOiAnZGF0YXNldFBpcGVsaW5lJywgbmFtZSB9KX1cbiAgICA8L2Rpdj5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBSZWFjdC5tZW1vKFRpdGxlKVxuIl19

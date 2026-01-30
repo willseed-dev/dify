@@ -1,0 +1,30 @@
+import type { IndexingType } from './use-indexing-config';
+import type { NotionPage } from '@/models/common';
+import type { ChunkingMode, CrawlOptions, CrawlResultItem, CustomFile, ProcessRule } from '@/models/datasets';
+import { DataSourceProvider } from '@/models/common';
+import { DataSourceType } from '@/models/datasets';
+export type UseIndexingEstimateOptions = {
+    dataSourceType: DataSourceType;
+    datasetId?: string;
+    currentDocForm: ChunkingMode;
+    docLanguage: string;
+    files: CustomFile[];
+    previewFileName?: string;
+    previewNotionPage: NotionPage;
+    notionCredentialId: string;
+    previewWebsitePage: CrawlResultItem;
+    crawlOptions?: CrawlOptions;
+    websiteCrawlProvider?: DataSourceProvider;
+    websiteCrawlJobId?: string;
+    indexingTechnique: IndexingType;
+    processRule: ProcessRule;
+};
+export declare const useIndexingEstimate: (options: UseIndexingEstimateOptions) => {
+    currentMutation: any;
+    estimate: any;
+    isIdle: any;
+    isPending: any;
+    fetchEstimate: any;
+    reset: any;
+};
+export type IndexingEstimate = ReturnType<typeof useIndexingEstimate>;

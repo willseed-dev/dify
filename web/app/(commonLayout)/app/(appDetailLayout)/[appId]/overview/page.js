@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const apikey_info_panel_1 = require("@/app/components/app/overview/apikey-info-panel");
+const chart_view_1 = require("./chart-view");
+const panel_1 = require("./tracing/panel");
+const Overview = async (props) => {
+    const params = await props.params;
+    const { appId, } = params;
+    return (<div className="h-full overflow-y-auto bg-chatbot-bg px-4 py-6 sm:px-12">
+      <apikey_info_panel_1.default />
+      <chart_view_1.default appId={appId} headerRight={<panel_1.default />}/>
+    </div>);
+};
+exports.default = Overview;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFnZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInBhZ2UudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsK0JBQThCO0FBQzlCLHVGQUE2RTtBQUM3RSw2Q0FBb0M7QUFDcEMsMkNBQTBDO0FBTTFDLE1BQU0sUUFBUSxHQUFHLEtBQUssRUFBRSxLQUFvQixFQUFFLEVBQUU7SUFDOUMsTUFBTSxNQUFNLEdBQUcsTUFBTSxLQUFLLENBQUMsTUFBTSxDQUFBO0lBRWpDLE1BQU0sRUFDSixLQUFLLEdBQ04sR0FBRyxNQUFNLENBQUE7SUFFVixPQUFPLENBQ0wsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLHlEQUF5RCxDQUN0RTtNQUFBLENBQUMsMkJBQWUsQ0FBQyxBQUFELEVBQ2hCO01BQUEsQ0FBQyxvQkFBUyxDQUNSLEtBQUssQ0FBQyxDQUFDLEtBQUssQ0FBQyxDQUNiLFdBQVcsQ0FBQyxDQUFDLENBQUMsZUFBWSxDQUFDLEFBQUQsRUFBRyxDQUFDLEVBRWxDO0lBQUEsRUFBRSxHQUFHLENBQUMsQ0FDUCxDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsUUFBUSxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgQXBpa2V5SW5mb1BhbmVsIGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYXBwL292ZXJ2aWV3L2FwaWtleS1pbmZvLXBhbmVsJ1xuaW1wb3J0IENoYXJ0VmlldyBmcm9tICcuL2NoYXJ0LXZpZXcnXG5pbXBvcnQgVHJhY2luZ1BhbmVsIGZyb20gJy4vdHJhY2luZy9wYW5lbCdcblxuZXhwb3J0IHR5cGUgSURldmVsb3BQcm9wcyA9IHtcbiAgcGFyYW1zOiBQcm9taXNlPHsgYXBwSWQ6IHN0cmluZyB9PlxufVxuXG5jb25zdCBPdmVydmlldyA9IGFzeW5jIChwcm9wczogSURldmVsb3BQcm9wcykgPT4ge1xuICBjb25zdCBwYXJhbXMgPSBhd2FpdCBwcm9wcy5wYXJhbXNcblxuICBjb25zdCB7XG4gICAgYXBwSWQsXG4gIH0gPSBwYXJhbXNcblxuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPVwiaC1mdWxsIG92ZXJmbG93LXktYXV0byBiZy1jaGF0Ym90LWJnIHB4LTQgcHktNiBzbTpweC0xMlwiPlxuICAgICAgPEFwaWtleUluZm9QYW5lbCAvPlxuICAgICAgPENoYXJ0Vmlld1xuICAgICAgICBhcHBJZD17YXBwSWR9XG4gICAgICAgIGhlYWRlclJpZ2h0PXs8VHJhY2luZ1BhbmVsIC8+fVxuICAgICAgLz5cbiAgICA8L2Rpdj5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBPdmVydmlld1xuIl19

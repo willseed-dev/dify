@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const tooltip_1 = require("./tooltip");
+const Item = ({ label, tooltip, }) => {
+    return (<div className="flex items-center">
+      <span className="system-sm-regular grow text-text-secondary">{label}</span>
+      {tooltip && (<tooltip_1.default content={tooltip}/>)}
+    </div>);
+};
+exports.default = React.memo(Item);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSwrQkFBOEI7QUFDOUIsdUNBQStCO0FBTy9CLE1BQU0sSUFBSSxHQUFHLENBQUMsRUFDWixLQUFLLEVBQ0wsT0FBTyxHQUNHLEVBQUUsRUFBRTtJQUNkLE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsbUJBQW1CLENBQ2hDO01BQUEsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLDRDQUE0QyxDQUFDLENBQUMsS0FBSyxDQUFDLEVBQUUsSUFBSSxDQUMxRTtNQUFBLENBQUMsT0FBTyxJQUFJLENBQ1YsQ0FBQyxpQkFBTyxDQUNOLE9BQU8sQ0FBQyxDQUFDLE9BQU8sQ0FBQyxFQUNqQixDQUNILENBQ0g7SUFBQSxFQUFFLEdBQUcsQ0FBQyxDQUNQLENBQUE7QUFDSCxDQUFDLENBQUE7QUFFRCxrQkFBZSxLQUFLLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgVG9vbHRpcCBmcm9tICcuL3Rvb2x0aXAnXG5cbnR5cGUgSXRlbVByb3BzID0ge1xuICBsYWJlbDogc3RyaW5nXG4gIHRvb2x0aXA/OiBzdHJpbmdcbn1cblxuY29uc3QgSXRlbSA9ICh7XG4gIGxhYmVsLFxuICB0b29sdGlwLFxufTogSXRlbVByb3BzKSA9PiB7XG4gIHJldHVybiAoXG4gICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlclwiPlxuICAgICAgPHNwYW4gY2xhc3NOYW1lPVwic3lzdGVtLXNtLXJlZ3VsYXIgZ3JvdyB0ZXh0LXRleHQtc2Vjb25kYXJ5XCI+e2xhYmVsfTwvc3Bhbj5cbiAgICAgIHt0b29sdGlwICYmIChcbiAgICAgICAgPFRvb2x0aXBcbiAgICAgICAgICBjb250ZW50PXt0b29sdGlwfVxuICAgICAgICAvPlxuICAgICAgKX1cbiAgICA8L2Rpdj5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBSZWFjdC5tZW1vKEl0ZW0pXG4iXX0=

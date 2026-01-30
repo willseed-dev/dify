@@ -1,0 +1,24 @@
+import type { CaseItem, HandleAddSubVariableCondition, HandleRemoveCondition, handleRemoveSubVariableCondition, HandleToggleConditionLogicalOperator, HandleToggleSubVariableConditionLogicalOperator, HandleUpdateCondition, HandleUpdateSubVariableCondition } from '../../types';
+import type { Node, NodeOutPutVar, Var } from '@/app/components/workflow/types';
+type ConditionListProps = {
+    isSubVariable?: boolean;
+    disabled?: boolean;
+    caseId: string;
+    conditionId?: string;
+    caseItem: CaseItem;
+    onRemoveCondition?: HandleRemoveCondition;
+    onUpdateCondition?: HandleUpdateCondition;
+    onToggleConditionLogicalOperator?: HandleToggleConditionLogicalOperator;
+    nodeId: string;
+    nodesOutputVars: NodeOutPutVar[];
+    availableNodes: Node[];
+    numberVariables: NodeOutPutVar[];
+    filterVar: (varPayload: Var) => boolean;
+    varsIsVarFileAttribute: Record<string, boolean>;
+    onAddSubVariableCondition?: HandleAddSubVariableCondition;
+    onRemoveSubVariableCondition?: handleRemoveSubVariableCondition;
+    onUpdateSubVariableCondition?: HandleUpdateSubVariableCondition;
+    onToggleSubVariableConditionLogicalOperator?: HandleToggleSubVariableConditionLogicalOperator;
+};
+declare const ConditionList: ({ isSubVariable, disabled, caseId, conditionId, caseItem, onUpdateCondition, onRemoveCondition, onToggleConditionLogicalOperator, onAddSubVariableCondition, onRemoveSubVariableCondition, onUpdateSubVariableCondition, onToggleSubVariableConditionLogicalOperator, nodeId, nodesOutputVars, availableNodes, numberVariables, varsIsVarFileAttribute, filterVar, }: ConditionListProps) => any;
+export default ConditionList;

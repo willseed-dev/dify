@@ -1,0 +1,17 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const classnames_1 = require("@/utils/classnames");
+const Label = ({ label, description, }) => {
+    return (<div>
+      <div className={(0, classnames_1.cn)('flex h-6 items-center', description && 'h-4')}>
+        <span className="system-sm-semibold text-text-secondary">{label}</span>
+      </div>
+      {description && (<div className="body-xs-regular mt-1 text-text-tertiary">
+          {description}
+        </div>)}
+    </div>);
+};
+exports.default = React.memo(Label);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGFiZWwuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJsYWJlbC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFlBQVksQ0FBQTs7QUFFWiwrQkFBOEI7QUFDOUIsbURBQXVDO0FBT3ZDLE1BQU0sS0FBSyxHQUFjLENBQUMsRUFDeEIsS0FBSyxFQUNMLFdBQVcsR0FDWixFQUFFLEVBQUU7SUFDSCxPQUFPLENBQ0wsQ0FBQyxHQUFHLENBQ0Y7TUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsQ0FBQyxJQUFBLGVBQUUsRUFBQyx1QkFBdUIsRUFBRSxXQUFXLElBQUksS0FBSyxDQUFDLENBQUMsQ0FDaEU7UUFBQSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsd0NBQXdDLENBQUMsQ0FBQyxLQUFLLENBQUMsRUFBRSxJQUFJLENBQ3hFO01BQUEsRUFBRSxHQUFHLENBQ0w7TUFBQSxDQUFDLFdBQVcsSUFBSSxDQUNkLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyx5Q0FBeUMsQ0FDdEQ7VUFBQSxDQUFDLFdBQVcsQ0FDZDtRQUFBLEVBQUUsR0FBRyxDQUFDLENBQ1AsQ0FDSDtJQUFBLEVBQUUsR0FBRyxDQUFDLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUNELGtCQUFlLEtBQUssQ0FBQyxJQUFJLENBQUMsS0FBSyxDQUFDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIGNsaWVudCdcbmltcG9ydCB0eXBlIHsgRkMgfSBmcm9tICdyZWFjdCdcbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgY24gfSBmcm9tICdAL3V0aWxzL2NsYXNzbmFtZXMnXG5cbnR5cGUgUHJvcHMgPSB7XG4gIGxhYmVsOiBzdHJpbmdcbiAgZGVzY3JpcHRpb24/OiBzdHJpbmdcbn1cblxuY29uc3QgTGFiZWw6IEZDPFByb3BzPiA9ICh7XG4gIGxhYmVsLFxuICBkZXNjcmlwdGlvbixcbn0pID0+IHtcbiAgcmV0dXJuIChcbiAgICA8ZGl2PlxuICAgICAgPGRpdiBjbGFzc05hbWU9e2NuKCdmbGV4IGgtNiBpdGVtcy1jZW50ZXInLCBkZXNjcmlwdGlvbiAmJiAnaC00Jyl9PlxuICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJzeXN0ZW0tc20tc2VtaWJvbGQgdGV4dC10ZXh0LXNlY29uZGFyeVwiPntsYWJlbH08L3NwYW4+XG4gICAgICA8L2Rpdj5cbiAgICAgIHtkZXNjcmlwdGlvbiAmJiAoXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiYm9keS14cy1yZWd1bGFyIG10LTEgdGV4dC10ZXh0LXRlcnRpYXJ5XCI+XG4gICAgICAgICAge2Rlc2NyaXB0aW9ufVxuICAgICAgICA8L2Rpdj5cbiAgICAgICl9XG4gICAgPC9kaXY+XG4gIClcbn1cbmV4cG9ydCBkZWZhdWx0IFJlYWN0Lm1lbW8oTGFiZWwpXG4iXX0=

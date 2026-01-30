@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CUSTOM_LOOP_START_NODE = void 0;
+exports.CUSTOM_LOOP_START_NODE = 'custom-loop-start';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29uc3RhbnRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiY29uc3RhbnRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFhLFFBQUEsc0JBQXNCLEdBQUcsbUJBQW1CLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgQ1VTVE9NX0xPT1BfU1RBUlRfTk9ERSA9ICdjdXN0b20tbG9vcC1zdGFydCdcbiJdfQ==

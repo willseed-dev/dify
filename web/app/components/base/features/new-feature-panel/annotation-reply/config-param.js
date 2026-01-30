@@ -1,0 +1,17 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Item = void 0;
+const React = require("react");
+const tooltip_1 = require("@/app/components/base/tooltip");
+const Item = ({ title, tooltip, children, }) => {
+    return (<div>
+      <div className="mb-1 flex items-center space-x-1">
+        <div className="system-sm-semibold py-1 text-text-secondary">{title}</div>
+        <tooltip_1.default popupContent={<div className="system-sm-regular max-w-[200px] text-text-secondary">{tooltip}</div>}/>
+      </div>
+      <div>{children}</div>
+    </div>);
+};
+exports.Item = Item;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29uZmlnLXBhcmFtLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiY29uZmlnLXBhcmFtLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsWUFBWSxDQUFBOzs7QUFFWiwrQkFBOEI7QUFDOUIsMkRBQW1EO0FBRTVDLE1BQU0sSUFBSSxHQUF3RSxDQUFDLEVBQ3hGLEtBQUssRUFDTCxPQUFPLEVBQ1AsUUFBUSxHQUNULEVBQUUsRUFBRTtJQUNILE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FDRjtNQUFBLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxrQ0FBa0MsQ0FDL0M7UUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsNkNBQTZDLENBQUMsQ0FBQyxLQUFLLENBQUMsRUFBRSxHQUFHLENBQ3pFO1FBQUEsQ0FBQyxpQkFBTyxDQUNOLFlBQVksQ0FBQyxDQUNYLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxxREFBcUQsQ0FBQyxDQUFDLE9BQU8sQ0FBQyxFQUFFLEdBQUcsQ0FDckYsQ0FBQyxFQUVMO01BQUEsRUFBRSxHQUFHLENBQ0w7TUFBQSxDQUFDLEdBQUcsQ0FBQyxDQUFDLFFBQVEsQ0FBQyxFQUFFLEdBQUcsQ0FDdEI7SUFBQSxFQUFFLEdBQUcsQ0FBQyxDQUNQLENBQUE7QUFDSCxDQUFDLENBQUE7QUFsQlksUUFBQSxJQUFJLFFBa0JoQiIsInNvdXJjZXNDb250ZW50IjpbIid1c2UgY2xpZW50J1xuaW1wb3J0IHR5cGUgeyBGQyB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgVG9vbHRpcCBmcm9tICdAL2FwcC9jb21wb25lbnRzL2Jhc2UvdG9vbHRpcCdcblxuZXhwb3J0IGNvbnN0IEl0ZW06IEZDPHsgdGl0bGU6IHN0cmluZywgdG9vbHRpcDogc3RyaW5nLCBjaGlsZHJlbjogUmVhY3QuSlNYLkVsZW1lbnQgfT4gPSAoe1xuICB0aXRsZSxcbiAgdG9vbHRpcCxcbiAgY2hpbGRyZW4sXG59KSA9PiB7XG4gIHJldHVybiAoXG4gICAgPGRpdj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwibWItMSBmbGV4IGl0ZW1zLWNlbnRlciBzcGFjZS14LTFcIj5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJzeXN0ZW0tc20tc2VtaWJvbGQgcHktMSB0ZXh0LXRleHQtc2Vjb25kYXJ5XCI+e3RpdGxlfTwvZGl2PlxuICAgICAgICA8VG9vbHRpcFxuICAgICAgICAgIHBvcHVwQ29udGVudD17XG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInN5c3RlbS1zbS1yZWd1bGFyIG1heC13LVsyMDBweF0gdGV4dC10ZXh0LXNlY29uZGFyeVwiPnt0b29sdGlwfTwvZGl2PlxuICAgICAgICAgIH1cbiAgICAgICAgLz5cbiAgICAgIDwvZGl2PlxuICAgICAgPGRpdj57Y2hpbGRyZW59PC9kaXY+XG4gICAgPC9kaXY+XG4gIClcbn1cbiJdfQ==

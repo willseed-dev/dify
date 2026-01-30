@@ -1,0 +1,36 @@
+import type { PromptConfig } from '@/models/debug';
+import type { InstalledApp } from '@/models/explore';
+import type { SiteInfo } from '@/models/share';
+import type { VisionFile, VisionSettings } from '@/types/app';
+export type IResultProps = {
+    isWorkflow: boolean;
+    isCallBatchAPI: boolean;
+    isPC: boolean;
+    isMobile: boolean;
+    isInstalledApp: boolean;
+    appId: string;
+    installedAppInfo?: InstalledApp;
+    isError: boolean;
+    isShowTextToSpeech: boolean;
+    promptConfig: PromptConfig | null;
+    moreLikeThisEnabled: boolean;
+    inputs: Record<string, any>;
+    controlSend?: number;
+    controlRetry?: number;
+    controlStopResponding?: number;
+    onShowRes: () => void;
+    handleSaveMessage: (messageId: string) => void;
+    taskId?: number;
+    onCompleted: (completionRes: string, taskId?: number, success?: boolean) => void;
+    visionConfig: VisionSettings;
+    completionFiles: VisionFile[];
+    siteInfo: SiteInfo | null;
+    onRunStart: () => void;
+    onRunControlChange?: (control: {
+        onStop: () => Promise<void> | void;
+        isStopping: boolean;
+    } | null) => void;
+    hideInlineStopButton?: boolean;
+};
+declare const _default: any;
+export default _default;

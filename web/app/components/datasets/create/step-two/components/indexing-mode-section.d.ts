@@ -1,0 +1,24 @@
+import type { FC } from 'react';
+import type { DefaultModel, Model } from '@/app/components/header/account-setting/model-provider-page/declarations';
+import type { RetrievalConfig } from '@/types/app';
+import { ChunkingMode } from '@/models/datasets';
+import { IndexingType } from '../hooks';
+type IndexingModeSectionProps = {
+    indexType: IndexingType;
+    hasSetIndexType: boolean;
+    docForm: ChunkingMode;
+    embeddingModel: DefaultModel;
+    embeddingModelList?: Model[];
+    retrievalConfig: RetrievalConfig;
+    showMultiModalTip: boolean;
+    isModelAndRetrievalConfigDisabled: boolean;
+    datasetId?: string;
+    isQAConfirmDialogOpen: boolean;
+    onIndexTypeChange: (type: IndexingType) => void;
+    onEmbeddingModelChange: (model: DefaultModel) => void;
+    onRetrievalConfigChange: (config: RetrievalConfig) => void;
+    onQAConfirmDialogClose: () => void;
+    onQAConfirmDialogConfirm: () => void;
+};
+export declare const IndexingModeSection: FC<IndexingModeSectionProps>;
+export {};

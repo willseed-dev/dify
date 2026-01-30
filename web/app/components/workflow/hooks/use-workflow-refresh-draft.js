@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useWorkflowRefreshDraft = void 0;
+const hooks_store_1 = require("@/app/components/workflow/hooks-store");
+const useWorkflowRefreshDraft = () => {
+    const handleRefreshWorkflowDraft = (0, hooks_store_1.useHooksStore)(s => s.handleRefreshWorkflowDraft);
+    return {
+        handleRefreshWorkflowDraft,
+    };
+};
+exports.useWorkflowRefreshDraft = useWorkflowRefreshDraft;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXNlLXdvcmtmbG93LXJlZnJlc2gtZHJhZnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ1c2Utd29ya2Zsb3ctcmVmcmVzaC1kcmFmdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSx1RUFBcUU7QUFFOUQsTUFBTSx1QkFBdUIsR0FBRyxHQUFHLEVBQUU7SUFDMUMsTUFBTSwwQkFBMEIsR0FBRyxJQUFBLDJCQUFhLEVBQUMsQ0FBQyxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUMsMEJBQTBCLENBQUMsQ0FBQTtJQUVuRixPQUFPO1FBQ0wsMEJBQTBCO0tBQzNCLENBQUE7QUFDSCxDQUFDLENBQUE7QUFOWSxRQUFBLHVCQUF1QiwyQkFNbkMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyB1c2VIb29rc1N0b3JlIH0gZnJvbSAnQC9hcHAvY29tcG9uZW50cy93b3JrZmxvdy9ob29rcy1zdG9yZSdcblxuZXhwb3J0IGNvbnN0IHVzZVdvcmtmbG93UmVmcmVzaERyYWZ0ID0gKCkgPT4ge1xuICBjb25zdCBoYW5kbGVSZWZyZXNoV29ya2Zsb3dEcmFmdCA9IHVzZUhvb2tzU3RvcmUocyA9PiBzLmhhbmRsZVJlZnJlc2hXb3JrZmxvd0RyYWZ0KVxuXG4gIHJldHVybiB7XG4gICAgaGFuZGxlUmVmcmVzaFdvcmtmbG93RHJhZnQsXG4gIH1cbn1cbiJdfQ==

@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CUSTOM_SIMPLE_NODE = void 0;
+exports.CUSTOM_SIMPLE_NODE = 'custom-simple';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29uc3RhbnRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiY29uc3RhbnRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFhLFFBQUEsa0JBQWtCLEdBQUcsZUFBZSxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IENVU1RPTV9TSU1QTEVfTk9ERSA9ICdjdXN0b20tc2ltcGxlJ1xuIl19

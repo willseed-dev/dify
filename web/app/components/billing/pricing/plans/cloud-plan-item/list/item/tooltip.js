@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const React = require("react");
+const Tooltip = ({ content, }) => {
+    if (!content)
+        return null;
+    return (<div className="group relative z-10 size-[18px] overflow-visible">
+      <div className="system-xs-regular absolute bottom-0 right-0 -z-10 hidden w-[260px] bg-saas-dify-blue-static px-5 py-[18px] text-text-primary-on-surface group-hover:block">
+        {content}
+      </div>
+      <div className="flex h-full w-full items-center justify-center rounded-[4px] bg-state-base-hover transition-all duration-500 ease-in-out group-hover:rounded-none group-hover:bg-saas-dify-blue-static">
+        <react_1.RiInfoI className="size-3.5 text-text-tertiary group-hover:text-text-primary-on-surface" data-testid="tooltip-icon"/>
+      </div>
+    </div>);
+};
+exports.default = React.memo(Tooltip);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidG9vbHRpcC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInRvb2x0aXAudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNENBQTBDO0FBQzFDLCtCQUE4QjtBQU05QixNQUFNLE9BQU8sR0FBRyxDQUFDLEVBQ2YsT0FBTyxHQUNNLEVBQUUsRUFBRTtJQUNqQixJQUFJLENBQUMsT0FBTztRQUNWLE9BQU8sSUFBSSxDQUFBO0lBQ2IsT0FBTyxDQUNMLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxrREFBa0QsQ0FDL0Q7TUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsMkpBQTJKLENBQ3hLO1FBQUEsQ0FBQyxPQUFPLENBQ1Y7TUFBQSxFQUFFLEdBQUcsQ0FDTDtNQUFBLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyx3TEFBd0wsQ0FDck07UUFBQSxDQUFDLGVBQU8sQ0FBQyxTQUFTLENBQUMsc0VBQXNFLENBQUMsV0FBVyxDQUFDLGNBQWMsRUFDdEg7TUFBQSxFQUFFLEdBQUcsQ0FDUDtJQUFBLEVBQUUsR0FBRyxDQUFDLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELGtCQUFlLEtBQUssQ0FBQyxJQUFJLENBQUMsT0FBTyxDQUFDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBSaUluZm9JIH0gZnJvbSAnQHJlbWl4aWNvbi9yZWFjdCdcbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuXG50eXBlIFRvb2x0aXBQcm9wcyA9IHtcbiAgY29udGVudDogc3RyaW5nXG59XG5cbmNvbnN0IFRvb2x0aXAgPSAoe1xuICBjb250ZW50LFxufTogVG9vbHRpcFByb3BzKSA9PiB7XG4gIGlmICghY29udGVudClcbiAgICByZXR1cm4gbnVsbFxuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPVwiZ3JvdXAgcmVsYXRpdmUgei0xMCBzaXplLVsxOHB4XSBvdmVyZmxvdy12aXNpYmxlXCI+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInN5c3RlbS14cy1yZWd1bGFyIGFic29sdXRlIGJvdHRvbS0wIHJpZ2h0LTAgLXotMTAgaGlkZGVuIHctWzI2MHB4XSBiZy1zYWFzLWRpZnktYmx1ZS1zdGF0aWMgcHgtNSBweS1bMThweF0gdGV4dC10ZXh0LXByaW1hcnktb24tc3VyZmFjZSBncm91cC1ob3ZlcjpibG9ja1wiPlxuICAgICAgICB7Y29udGVudH1cbiAgICAgIDwvZGl2PlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGgtZnVsbCB3LWZ1bGwgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHJvdW5kZWQtWzRweF0gYmctc3RhdGUtYmFzZS1ob3ZlciB0cmFuc2l0aW9uLWFsbCBkdXJhdGlvbi01MDAgZWFzZS1pbi1vdXQgZ3JvdXAtaG92ZXI6cm91bmRlZC1ub25lIGdyb3VwLWhvdmVyOmJnLXNhYXMtZGlmeS1ibHVlLXN0YXRpY1wiPlxuICAgICAgICA8UmlJbmZvSSBjbGFzc05hbWU9XCJzaXplLTMuNSB0ZXh0LXRleHQtdGVydGlhcnkgZ3JvdXAtaG92ZXI6dGV4dC10ZXh0LXByaW1hcnktb24tc3VyZmFjZVwiIGRhdGEtdGVzdGlkPVwidG9vbHRpcC1pY29uXCIgLz5cbiAgICAgIDwvZGl2PlxuICAgIDwvZGl2PlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IFJlYWN0Lm1lbW8oVG9vbHRpcClcbiJdfQ==

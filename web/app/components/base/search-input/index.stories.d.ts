@@ -1,0 +1,21 @@
+import type { StoryObj } from '@storybook/nextjs';
+declare const meta: Meta<FC<{
+    placeholder?: string;
+    className?: string;
+    value: string;
+    onChange: (v: string) => void;
+    white?: boolean;
+}>>;
+export default meta;
+type Story = StoryObj<typeof meta>;
+export declare const Default: Story;
+export declare const WhiteBackground: Story;
+export declare const WithInitialValue: Story;
+export declare const CustomPlaceholder: Story;
+export declare const UserListSearch: Story;
+export declare const ProductSearch: Story;
+export declare const DocumentationSearch: Story;
+export declare const CommandPalette: Story;
+export declare const LiveSearchWithCount: Story;
+export declare const SizeVariations: Story;
+export declare const Playground: Story;

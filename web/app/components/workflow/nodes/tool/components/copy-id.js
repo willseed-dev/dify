@@ -1,0 +1,36 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const copy_to_clipboard_1 = require("copy-to-clipboard");
+const compat_1 = require("es-toolkit/compat");
+const React = require("react");
+const react_2 = require("react");
+const react_i18next_1 = require("react-i18next");
+const tooltip_1 = require("@/app/components/base/tooltip");
+const prefixEmbedded = 'overview.appInfo.embedded';
+const CopyFeedbackNew = ({ content }) => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    const [isCopied, setIsCopied] = (0, react_2.useState)(false);
+    const onClickCopy = (0, compat_1.debounce)(() => {
+        (0, copy_to_clipboard_1.default)(content);
+        setIsCopied(true);
+    }, 100);
+    const onMouseLeave = (0, compat_1.debounce)(() => {
+        setIsCopied(false);
+    }, 100);
+    return (<div className="inline-flex w-full pb-0.5" onClick={e => e.stopPropagation()} onMouseLeave={onMouseLeave}>
+      <tooltip_1.default popupContent={(isCopied
+            ? t(`${prefixEmbedded}.copied`, { ns: 'appOverview' })
+            : t(`${prefixEmbedded}.copy`, { ns: 'appOverview' })) || ''}>
+        <div className="group/copy flex w-full items-center gap-0.5 " onClick={onClickCopy}>
+          <div className="system-2xs-regular w-0 grow cursor-pointer truncate text-text-quaternary group-hover:text-text-tertiary">
+            {content}
+          </div>
+          <react_1.RiFileCopyLine className="h-3 w-3 shrink-0 text-text-tertiary opacity-0 group-hover/copy:opacity-100"/>
+        </div>
+      </tooltip_1.default>
+    </div>);
+};
+exports.default = CopyFeedbackNew;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29weS1pZC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImNvcHktaWQudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxZQUFZLENBQUE7O0FBQ1osNENBQWlEO0FBQ2pELHlEQUFvQztBQUNwQyw4Q0FBNEM7QUFDNUMsK0JBQThCO0FBQzlCLGlDQUFnQztBQUNoQyxpREFBOEM7QUFDOUMsMkRBQW1EO0FBTW5ELE1BQU0sY0FBYyxHQUFHLDJCQUEyQixDQUFBO0FBRWxELE1BQU0sZUFBZSxHQUFHLENBQUMsRUFBRSxPQUFPLEVBQVMsRUFBRSxFQUFFO0lBQzdDLE1BQU0sRUFBRSxDQUFDLEVBQUUsR0FBRyxJQUFBLDhCQUFjLEdBQUUsQ0FBQTtJQUM5QixNQUFNLENBQUMsUUFBUSxFQUFFLFdBQVcsQ0FBQyxHQUFHLElBQUEsZ0JBQVEsRUFBVSxLQUFLLENBQUMsQ0FBQTtJQUV4RCxNQUFNLFdBQVcsR0FBRyxJQUFBLGlCQUFRLEVBQUMsR0FBRyxFQUFFO1FBQ2hDLElBQUEsMkJBQUksRUFBQyxPQUFPLENBQUMsQ0FBQTtRQUNiLFdBQVcsQ0FBQyxJQUFJLENBQUMsQ0FBQTtJQUNuQixDQUFDLEVBQUUsR0FBRyxDQUFDLENBQUE7SUFFUCxNQUFNLFlBQVksR0FBRyxJQUFBLGlCQUFRLEVBQUMsR0FBRyxFQUFFO1FBQ2pDLFdBQVcsQ0FBQyxLQUFLLENBQUMsQ0FBQTtJQUNwQixDQUFDLEVBQUUsR0FBRyxDQUFDLENBQUE7SUFFUCxPQUFPLENBQ0wsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLDJCQUEyQixDQUFDLE9BQU8sQ0FBQyxDQUFDLENBQUMsQ0FBQyxFQUFFLENBQUMsQ0FBQyxDQUFDLGVBQWUsRUFBRSxDQUFDLENBQUMsWUFBWSxDQUFDLENBQUMsWUFBWSxDQUFDLENBQ3ZHO01BQUEsQ0FBQyxpQkFBTyxDQUNOLFlBQVksQ0FBQyxDQUNYLENBQUMsUUFBUTtZQUNQLENBQUMsQ0FBQyxDQUFDLENBQUMsR0FBRyxjQUFjLFNBQVMsRUFBRSxFQUFFLEVBQUUsRUFBRSxhQUFhLEVBQUUsQ0FBQztZQUN0RCxDQUFDLENBQUMsQ0FBQyxDQUFDLEdBQUcsY0FBYyxPQUFPLEVBQUUsRUFBRSxFQUFFLEVBQUUsYUFBYSxFQUFFLENBQUMsQ0FBQyxJQUFJLEVBQzdELENBQUMsQ0FFRDtRQUFBLENBQUMsR0FBRyxDQUNGLFNBQVMsQ0FBQyw4Q0FBOEMsQ0FDeEQsT0FBTyxDQUFDLENBQUMsV0FBVyxDQUFDLENBRXJCO1VBQUEsQ0FBQyxHQUFHLENBQ0YsU0FBUyxDQUFDLHlHQUF5RyxDQUVuSDtZQUFBLENBQUMsT0FBTyxDQUNWO1VBQUEsRUFBRSxHQUFHLENBQ0w7VUFBQSxDQUFDLHNCQUFjLENBQUMsU0FBUyxDQUFDLDRFQUE0RSxFQUN4RztRQUFBLEVBQUUsR0FBRyxDQUNQO01BQUEsRUFBRSxpQkFBTyxDQUNYO0lBQUEsRUFBRSxHQUFHLENBQUMsQ0FDUCxDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsZUFBZSxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBjbGllbnQnXG5pbXBvcnQgeyBSaUZpbGVDb3B5TGluZSB9IGZyb20gJ0ByZW1peGljb24vcmVhY3QnXG5pbXBvcnQgY29weSBmcm9tICdjb3B5LXRvLWNsaXBib2FyZCdcbmltcG9ydCB7IGRlYm91bmNlIH0gZnJvbSAnZXMtdG9vbGtpdC9jb21wYXQnXG5pbXBvcnQgKiBhcyBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgeyB1c2VUcmFuc2xhdGlvbiB9IGZyb20gJ3JlYWN0LWkxOG5leHQnXG5pbXBvcnQgVG9vbHRpcCBmcm9tICdAL2FwcC9jb21wb25lbnRzL2Jhc2UvdG9vbHRpcCdcblxudHlwZSBQcm9wcyA9IHtcbiAgY29udGVudDogc3RyaW5nXG59XG5cbmNvbnN0IHByZWZpeEVtYmVkZGVkID0gJ292ZXJ2aWV3LmFwcEluZm8uZW1iZWRkZWQnXG5cbmNvbnN0IENvcHlGZWVkYmFja05ldyA9ICh7IGNvbnRlbnQgfTogUHJvcHMpID0+IHtcbiAgY29uc3QgeyB0IH0gPSB1c2VUcmFuc2xhdGlvbigpXG4gIGNvbnN0IFtpc0NvcGllZCwgc2V0SXNDb3BpZWRdID0gdXNlU3RhdGU8Ym9vbGVhbj4oZmFsc2UpXG5cbiAgY29uc3Qgb25DbGlja0NvcHkgPSBkZWJvdW5jZSgoKSA9PiB7XG4gICAgY29weShjb250ZW50KVxuICAgIHNldElzQ29waWVkKHRydWUpXG4gIH0sIDEwMClcblxuICBjb25zdCBvbk1vdXNlTGVhdmUgPSBkZWJvdW5jZSgoKSA9PiB7XG4gICAgc2V0SXNDb3BpZWQoZmFsc2UpXG4gIH0sIDEwMClcblxuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPVwiaW5saW5lLWZsZXggdy1mdWxsIHBiLTAuNVwiIG9uQ2xpY2s9e2UgPT4gZS5zdG9wUHJvcGFnYXRpb24oKX0gb25Nb3VzZUxlYXZlPXtvbk1vdXNlTGVhdmV9PlxuICAgICAgPFRvb2x0aXBcbiAgICAgICAgcG9wdXBDb250ZW50PXtcbiAgICAgICAgICAoaXNDb3BpZWRcbiAgICAgICAgICAgID8gdChgJHtwcmVmaXhFbWJlZGRlZH0uY29waWVkYCwgeyBuczogJ2FwcE92ZXJ2aWV3JyB9KVxuICAgICAgICAgICAgOiB0KGAke3ByZWZpeEVtYmVkZGVkfS5jb3B5YCwgeyBuczogJ2FwcE92ZXJ2aWV3JyB9KSkgfHwgJydcbiAgICAgICAgfVxuICAgICAgPlxuICAgICAgICA8ZGl2XG4gICAgICAgICAgY2xhc3NOYW1lPVwiZ3JvdXAvY29weSBmbGV4IHctZnVsbCBpdGVtcy1jZW50ZXIgZ2FwLTAuNSBcIlxuICAgICAgICAgIG9uQ2xpY2s9e29uQ2xpY2tDb3B5fVxuICAgICAgICA+XG4gICAgICAgICAgPGRpdlxuICAgICAgICAgICAgY2xhc3NOYW1lPVwic3lzdGVtLTJ4cy1yZWd1bGFyIHctMCBncm93IGN1cnNvci1wb2ludGVyIHRydW5jYXRlIHRleHQtdGV4dC1xdWF0ZXJuYXJ5IGdyb3VwLWhvdmVyOnRleHQtdGV4dC10ZXJ0aWFyeVwiXG4gICAgICAgICAgPlxuICAgICAgICAgICAge2NvbnRlbnR9XG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgPFJpRmlsZUNvcHlMaW5lIGNsYXNzTmFtZT1cImgtMyB3LTMgc2hyaW5rLTAgdGV4dC10ZXh0LXRlcnRpYXJ5IG9wYWNpdHktMCBncm91cC1ob3Zlci9jb3B5Om9wYWNpdHktMTAwXCIgLz5cbiAgICAgICAgPC9kaXY+XG4gICAgICA8L1Rvb2x0aXA+XG4gICAgPC9kaXY+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgQ29weUZlZWRiYWNrTmV3XG4iXX0=

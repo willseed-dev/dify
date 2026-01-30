@@ -1,0 +1,35 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const react_2 = require("react");
+const react_i18next_1 = require("react-i18next");
+const button_1 = require("@/app/components/base/button");
+const portal_to_follow_elem_1 = require("@/app/components/base/portal-to-follow-elem");
+const hooks_1 = require("@/app/components/workflow/hooks");
+const popup_1 = require("./popup");
+const Publisher = () => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    const [open, setOpen] = (0, react_2.useState)(false);
+    const { handleSyncWorkflowDraft } = (0, hooks_1.useNodesSyncDraft)();
+    const handleOpenChange = (0, react_2.useCallback)((newOpen) => {
+        if (newOpen)
+            handleSyncWorkflowDraft(true);
+        setOpen(newOpen);
+    }, [handleSyncWorkflowDraft]);
+    return (<portal_to_follow_elem_1.PortalToFollowElem open={open} onOpenChange={setOpen} placement="bottom-end" offset={{
+            mainAxis: 4,
+            crossAxis: 40,
+        }}>
+      <portal_to_follow_elem_1.PortalToFollowElemTrigger onClick={() => handleOpenChange(!open)}>
+        <button_1.default className="px-2" variant="primary">
+          <span className="pl-1">{t('common.publish', { ns: 'workflow' })}</span>
+          <react_1.RiArrowDownSLine className="h-4 w-4"/>
+        </button_1.default>
+      </portal_to_follow_elem_1.PortalToFollowElemTrigger>
+      <portal_to_follow_elem_1.PortalToFollowElemContent className="z-[11]">
+        <popup_1.default />
+      </portal_to_follow_elem_1.PortalToFollowElemContent>
+    </portal_to_follow_elem_1.PortalToFollowElem>);
+};
+exports.default = (0, react_2.memo)(Publisher);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSw0Q0FBbUQ7QUFDbkQsaUNBSWM7QUFDZCxpREFBOEM7QUFDOUMseURBQWlEO0FBQ2pELHVGQUlvRDtBQUNwRCwyREFBbUU7QUFDbkUsbUNBQTJCO0FBRTNCLE1BQU0sU0FBUyxHQUFHLEdBQUcsRUFBRTtJQUNyQixNQUFNLEVBQUUsQ0FBQyxFQUFFLEdBQUcsSUFBQSw4QkFBYyxHQUFFLENBQUE7SUFDOUIsTUFBTSxDQUFDLElBQUksRUFBRSxPQUFPLENBQUMsR0FBRyxJQUFBLGdCQUFRLEVBQUMsS0FBSyxDQUFDLENBQUE7SUFDdkMsTUFBTSxFQUFFLHVCQUF1QixFQUFFLEdBQUcsSUFBQSx5QkFBaUIsR0FBRSxDQUFBO0lBRXZELE1BQU0sZ0JBQWdCLEdBQUcsSUFBQSxtQkFBVyxFQUFDLENBQUMsT0FBZ0IsRUFBRSxFQUFFO1FBQ3hELElBQUksT0FBTztZQUNULHVCQUF1QixDQUFDLElBQUksQ0FBQyxDQUFBO1FBQy9CLE9BQU8sQ0FBQyxPQUFPLENBQUMsQ0FBQTtJQUNsQixDQUFDLEVBQUUsQ0FBQyx1QkFBdUIsQ0FBQyxDQUFDLENBQUE7SUFFN0IsT0FBTyxDQUNMLENBQUMsMENBQWtCLENBQ2pCLElBQUksQ0FBQyxDQUFDLElBQUksQ0FBQyxDQUNYLFlBQVksQ0FBQyxDQUFDLE9BQU8sQ0FBQyxDQUN0QixTQUFTLENBQUMsWUFBWSxDQUN0QixNQUFNLENBQUMsQ0FBQztZQUNOLFFBQVEsRUFBRSxDQUFDO1lBQ1gsU0FBUyxFQUFFLEVBQUU7U0FDZCxDQUFDLENBRUY7TUFBQSxDQUFDLGlEQUF5QixDQUFDLE9BQU8sQ0FBQyxDQUFDLEdBQUcsRUFBRSxDQUFDLGdCQUFnQixDQUFDLENBQUMsSUFBSSxDQUFDLENBQUMsQ0FDaEU7UUFBQSxDQUFDLGdCQUFNLENBQ0wsU0FBUyxDQUFDLE1BQU0sQ0FDaEIsT0FBTyxDQUFDLFNBQVMsQ0FFakI7VUFBQSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsTUFBTSxDQUFDLENBQUMsQ0FBQyxDQUFDLGdCQUFnQixFQUFFLEVBQUUsRUFBRSxFQUFFLFVBQVUsRUFBRSxDQUFDLENBQUMsRUFBRSxJQUFJLENBQ3RFO1VBQUEsQ0FBQyx3QkFBZ0IsQ0FBQyxTQUFTLENBQUMsU0FBUyxFQUN2QztRQUFBLEVBQUUsZ0JBQU0sQ0FDVjtNQUFBLEVBQUUsaURBQXlCLENBQzNCO01BQUEsQ0FBQyxpREFBeUIsQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUMzQztRQUFBLENBQUMsZUFBSyxDQUFDLEFBQUQsRUFDUjtNQUFBLEVBQUUsaURBQXlCLENBQzdCO0lBQUEsRUFBRSwwQ0FBa0IsQ0FBQyxDQUN0QixDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsSUFBQSxZQUFJLEVBQUMsU0FBUyxDQUFDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBSaUFycm93RG93blNMaW5lIH0gZnJvbSAnQHJlbWl4aWNvbi9yZWFjdCdcbmltcG9ydCB7XG4gIG1lbW8sXG4gIHVzZUNhbGxiYWNrLFxuICB1c2VTdGF0ZSxcbn0gZnJvbSAncmVhY3QnXG5pbXBvcnQgeyB1c2VUcmFuc2xhdGlvbiB9IGZyb20gJ3JlYWN0LWkxOG5leHQnXG5pbXBvcnQgQnV0dG9uIGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS9idXR0b24nXG5pbXBvcnQge1xuICBQb3J0YWxUb0ZvbGxvd0VsZW0sXG4gIFBvcnRhbFRvRm9sbG93RWxlbUNvbnRlbnQsXG4gIFBvcnRhbFRvRm9sbG93RWxlbVRyaWdnZXIsXG59IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS9wb3J0YWwtdG8tZm9sbG93LWVsZW0nXG5pbXBvcnQgeyB1c2VOb2Rlc1N5bmNEcmFmdCB9IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvd29ya2Zsb3cvaG9va3MnXG5pbXBvcnQgUG9wdXAgZnJvbSAnLi9wb3B1cCdcblxuY29uc3QgUHVibGlzaGVyID0gKCkgPT4ge1xuICBjb25zdCB7IHQgfSA9IHVzZVRyYW5zbGF0aW9uKClcbiAgY29uc3QgW29wZW4sIHNldE9wZW5dID0gdXNlU3RhdGUoZmFsc2UpXG4gIGNvbnN0IHsgaGFuZGxlU3luY1dvcmtmbG93RHJhZnQgfSA9IHVzZU5vZGVzU3luY0RyYWZ0KClcblxuICBjb25zdCBoYW5kbGVPcGVuQ2hhbmdlID0gdXNlQ2FsbGJhY2soKG5ld09wZW46IGJvb2xlYW4pID0+IHtcbiAgICBpZiAobmV3T3BlbilcbiAgICAgIGhhbmRsZVN5bmNXb3JrZmxvd0RyYWZ0KHRydWUpXG4gICAgc2V0T3BlbihuZXdPcGVuKVxuICB9LCBbaGFuZGxlU3luY1dvcmtmbG93RHJhZnRdKVxuXG4gIHJldHVybiAoXG4gICAgPFBvcnRhbFRvRm9sbG93RWxlbVxuICAgICAgb3Blbj17b3Blbn1cbiAgICAgIG9uT3BlbkNoYW5nZT17c2V0T3Blbn1cbiAgICAgIHBsYWNlbWVudD1cImJvdHRvbS1lbmRcIlxuICAgICAgb2Zmc2V0PXt7XG4gICAgICAgIG1haW5BeGlzOiA0LFxuICAgICAgICBjcm9zc0F4aXM6IDQwLFxuICAgICAgfX1cbiAgICA+XG4gICAgICA8UG9ydGFsVG9Gb2xsb3dFbGVtVHJpZ2dlciBvbkNsaWNrPXsoKSA9PiBoYW5kbGVPcGVuQ2hhbmdlKCFvcGVuKX0+XG4gICAgICAgIDxCdXR0b25cbiAgICAgICAgICBjbGFzc05hbWU9XCJweC0yXCJcbiAgICAgICAgICB2YXJpYW50PVwicHJpbWFyeVwiXG4gICAgICAgID5cbiAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJwbC0xXCI+e3QoJ2NvbW1vbi5wdWJsaXNoJywgeyBuczogJ3dvcmtmbG93JyB9KX08L3NwYW4+XG4gICAgICAgICAgPFJpQXJyb3dEb3duU0xpbmUgY2xhc3NOYW1lPVwiaC00IHctNFwiIC8+XG4gICAgICAgIDwvQnV0dG9uPlxuICAgICAgPC9Qb3J0YWxUb0ZvbGxvd0VsZW1UcmlnZ2VyPlxuICAgICAgPFBvcnRhbFRvRm9sbG93RWxlbUNvbnRlbnQgY2xhc3NOYW1lPVwiei1bMTFdXCI+XG4gICAgICAgIDxQb3B1cCAvPlxuICAgICAgPC9Qb3J0YWxUb0ZvbGxvd0VsZW1Db250ZW50PlxuICAgIDwvUG9ydGFsVG9Gb2xsb3dFbGVtPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IG1lbW8oUHVibGlzaGVyKVxuIl19

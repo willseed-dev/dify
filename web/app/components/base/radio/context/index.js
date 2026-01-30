@@ -1,0 +1,7 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const use_context_selector_1 = require("use-context-selector");
+const RadioGroupContext = (0, use_context_selector_1.createContext)(null);
+exports.default = RadioGroupContext;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFlBQVksQ0FBQTs7QUFFWiwrREFBb0Q7QUFFcEQsTUFBTSxpQkFBaUIsR0FBRyxJQUFBLG9DQUFhLEVBQU0sSUFBSSxDQUFDLENBQUE7QUFDbEQsa0JBQWUsaUJBQWlCLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIGNsaWVudCdcblxuaW1wb3J0IHsgY3JlYXRlQ29udGV4dCB9IGZyb20gJ3VzZS1jb250ZXh0LXNlbGVjdG9yJ1xuXG5jb25zdCBSYWRpb0dyb3VwQ29udGV4dCA9IGNyZWF0ZUNvbnRleHQ8YW55PihudWxsKVxuZXhwb3J0IGRlZmF1bHQgUmFkaW9Hcm91cENvbnRleHRcbiJdfQ==

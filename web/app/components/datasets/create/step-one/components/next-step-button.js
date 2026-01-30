@@ -1,0 +1,22 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const react_i18next_1 = require("react-i18next");
+const button_1 = require("@/app/components/base/button");
+/**
+ * Reusable next step button component for dataset creation flow.
+ */
+function NextStepButton({ disabled, onClick }) {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    return (<div className="flex max-w-[640px] justify-end gap-2">
+      <button_1.default disabled={disabled} variant="primary" onClick={onClick}>
+        <span className="flex gap-0.5 px-[10px]">
+          <span className="px-0.5">{t('stepOne.button', { ns: 'datasetCreation' })}</span>
+          <react_1.RiArrowRightLine className="size-4"/>
+        </span>
+      </button_1.default>
+    </div>);
+}
+exports.default = NextStepButton;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmV4dC1zdGVwLWJ1dHRvbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5leHQtc3RlcC1idXR0b24udHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxZQUFZLENBQUE7O0FBRVosNENBQW1EO0FBQ25ELGlEQUE4QztBQUM5Qyx5REFBaUQ7QUFPakQ7O0dBRUc7QUFDSCxTQUFTLGNBQWMsQ0FBQyxFQUFFLFFBQVEsRUFBRSxPQUFPLEVBQXVCO0lBQ2hFLE1BQU0sRUFBRSxDQUFDLEVBQUUsR0FBRyxJQUFBLDhCQUFjLEdBQUUsQ0FBQTtJQUU5QixPQUFPLENBQ0wsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLHNDQUFzQyxDQUNuRDtNQUFBLENBQUMsZ0JBQU0sQ0FBQyxRQUFRLENBQUMsQ0FBQyxRQUFRLENBQUMsQ0FBQyxPQUFPLENBQUMsU0FBUyxDQUFDLE9BQU8sQ0FBQyxDQUFDLE9BQU8sQ0FBQyxDQUM3RDtRQUFBLENBQUMsSUFBSSxDQUFDLFNBQVMsQ0FBQyx3QkFBd0IsQ0FDdEM7VUFBQSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQyxDQUFDLGdCQUFnQixFQUFFLEVBQUUsRUFBRSxFQUFFLGlCQUFpQixFQUFFLENBQUMsQ0FBQyxFQUFFLElBQUksQ0FDL0U7VUFBQSxDQUFDLHdCQUFnQixDQUFDLFNBQVMsQ0FBQyxRQUFRLEVBQ3RDO1FBQUEsRUFBRSxJQUFJLENBQ1I7TUFBQSxFQUFFLGdCQUFNLENBQ1Y7SUFBQSxFQUFFLEdBQUcsQ0FBQyxDQUNQLENBQUE7QUFDSCxDQUFDO0FBRUQsa0JBQWUsY0FBYyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBjbGllbnQnXG5cbmltcG9ydCB7IFJpQXJyb3dSaWdodExpbmUgfSBmcm9tICdAcmVtaXhpY29uL3JlYWN0J1xuaW1wb3J0IHsgdXNlVHJhbnNsYXRpb24gfSBmcm9tICdyZWFjdC1pMThuZXh0J1xuaW1wb3J0IEJ1dHRvbiBmcm9tICdAL2FwcC9jb21wb25lbnRzL2Jhc2UvYnV0dG9uJ1xuXG50eXBlIE5leHRTdGVwQnV0dG9uUHJvcHMgPSB7XG4gIGRpc2FibGVkOiBib29sZWFuXG4gIG9uQ2xpY2s6ICgpID0+IHZvaWRcbn1cblxuLyoqXG4gKiBSZXVzYWJsZSBuZXh0IHN0ZXAgYnV0dG9uIGNvbXBvbmVudCBmb3IgZGF0YXNldCBjcmVhdGlvbiBmbG93LlxuICovXG5mdW5jdGlvbiBOZXh0U3RlcEJ1dHRvbih7IGRpc2FibGVkLCBvbkNsaWNrIH06IE5leHRTdGVwQnV0dG9uUHJvcHMpIHtcbiAgY29uc3QgeyB0IH0gPSB1c2VUcmFuc2xhdGlvbigpXG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggbWF4LXctWzY0MHB4XSBqdXN0aWZ5LWVuZCBnYXAtMlwiPlxuICAgICAgPEJ1dHRvbiBkaXNhYmxlZD17ZGlzYWJsZWR9IHZhcmlhbnQ9XCJwcmltYXJ5XCIgb25DbGljaz17b25DbGlja30+XG4gICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cImZsZXggZ2FwLTAuNSBweC1bMTBweF1cIj5cbiAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJweC0wLjVcIj57dCgnc3RlcE9uZS5idXR0b24nLCB7IG5zOiAnZGF0YXNldENyZWF0aW9uJyB9KX08L3NwYW4+XG4gICAgICAgICAgPFJpQXJyb3dSaWdodExpbmUgY2xhc3NOYW1lPVwic2l6ZS00XCIgLz5cbiAgICAgICAgPC9zcGFuPlxuICAgICAgPC9CdXR0b24+XG4gICAgPC9kaXY+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgTmV4dFN0ZXBCdXR0b25cbiJdfQ==

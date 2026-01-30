@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const connector_1 = require("@/app/components/datasets/external-knowledge-base/connector");
+const ExternalKnowledgeBaseCreation = () => {
+    return <connector_1.default />;
+};
+exports.default = ExternalKnowledgeBaseCreation;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFnZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInBhZ2UudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsK0JBQThCO0FBQzlCLDJGQUF3RztBQUV4RyxNQUFNLDZCQUE2QixHQUFHLEdBQUcsRUFBRTtJQUN6QyxPQUFPLENBQUMsbUJBQThCLENBQUMsQUFBRCxFQUFHLENBQUE7QUFDM0MsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsNkJBQTZCLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgKiBhcyBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCBFeHRlcm5hbEtub3dsZWRnZUJhc2VDb25uZWN0b3IgZnJvbSAnQC9hcHAvY29tcG9uZW50cy9kYXRhc2V0cy9leHRlcm5hbC1rbm93bGVkZ2UtYmFzZS9jb25uZWN0b3InXG5cbmNvbnN0IEV4dGVybmFsS25vd2xlZGdlQmFzZUNyZWF0aW9uID0gKCkgPT4ge1xuICByZXR1cm4gPEV4dGVybmFsS25vd2xlZGdlQmFzZUNvbm5lY3RvciAvPlxufVxuXG5leHBvcnQgZGVmYXVsdCBFeHRlcm5hbEtub3dsZWRnZUJhc2VDcmVhdGlvblxuIl19

@@ -1,0 +1,32 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const link_1 = require("next/link");
+const navigation_1 = require("next/navigation");
+const React = require("react");
+const button_1 = require("@/app/components/base/button");
+const effect_1 = require("@/app/components/base/effect");
+const step_indicator_1 = require("./step-indicator");
+const LeftHeader = ({ steps, title, currentStep, }) => {
+    const { datasetId } = (0, navigation_1.useParams)();
+    return (<div className="relative flex flex-col gap-y-0.5 pb-2 pt-4">
+      <div className="flex items-center gap-x-2">
+        <span className="system-2xs-semibold-uppercase bg-pipeline-add-documents-title-bg bg-clip-text text-transparent">
+          {title}
+        </span>
+        <span className="system-2xs-regular text-divider-regular">/</span>
+        <step_indicator_1.default steps={steps} currentStep={currentStep}/>
+      </div>
+      <div className="system-md-semibold text-text-primary">
+        {steps[currentStep - 1]?.label}
+      </div>
+      {currentStep !== steps.length && (<link_1.default href={`/datasets/${datasetId}/documents`} replace>
+          <button_1.default variant="secondary-accent" className="absolute -left-11 top-3.5 size-9 rounded-full p-0">
+            <react_1.RiArrowLeftLine className="size-5 "/>
+          </button_1.default>
+        </link_1.default>)}
+      <effect_1.default className="left-8 top-[-34px] opacity-20"/>
+    </div>);
+};
+exports.default = React.memo(LeftHeader);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGVmdC1oZWFkZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJsZWZ0LWhlYWRlci50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFDQSw0Q0FBa0Q7QUFDbEQsb0NBQTRCO0FBQzVCLGdEQUEyQztBQUMzQywrQkFBOEI7QUFDOUIseURBQWlEO0FBQ2pELHlEQUFpRDtBQUNqRCxxREFBNEM7QUFRNUMsTUFBTSxVQUFVLEdBQUcsQ0FBQyxFQUNsQixLQUFLLEVBQ0wsS0FBSyxFQUNMLFdBQVcsR0FDSyxFQUFFLEVBQUU7SUFDcEIsTUFBTSxFQUFFLFNBQVMsRUFBRSxHQUFHLElBQUEsc0JBQVMsR0FBRSxDQUFBO0lBRWpDLE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsNENBQTRDLENBQ3pEO01BQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLDJCQUEyQixDQUN4QztRQUFBLENBQUMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxnR0FBZ0csQ0FDOUc7VUFBQSxDQUFDLEtBQUssQ0FDUjtRQUFBLEVBQUUsSUFBSSxDQUNOO1FBQUEsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLHlDQUF5QyxDQUFDLENBQUMsRUFBRSxJQUFJLENBQ2pFO1FBQUEsQ0FBQyx3QkFBYSxDQUFDLEtBQUssQ0FBQyxDQUFDLEtBQUssQ0FBQyxDQUFDLFdBQVcsQ0FBQyxDQUFDLFdBQVcsQ0FBQyxFQUN4RDtNQUFBLEVBQUUsR0FBRyxDQUNMO01BQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLHNDQUFzQyxDQUNuRDtRQUFBLENBQUMsS0FBSyxDQUFDLFdBQVcsR0FBRyxDQUFDLENBQUMsRUFBRSxLQUFLLENBQ2hDO01BQUEsRUFBRSxHQUFHLENBQ0w7TUFBQSxDQUFDLFdBQVcsS0FBSyxLQUFLLENBQUMsTUFBTSxJQUFJLENBQy9CLENBQUMsY0FBSSxDQUNILElBQUksQ0FBQyxDQUFDLGFBQWEsU0FBUyxZQUFZLENBQUMsQ0FDekMsT0FBTyxDQUVQO1VBQUEsQ0FBQyxnQkFBTSxDQUNMLE9BQU8sQ0FBQyxrQkFBa0IsQ0FDMUIsU0FBUyxDQUFDLG1EQUFtRCxDQUU3RDtZQUFBLENBQUMsdUJBQWUsQ0FBQyxTQUFTLENBQUMsU0FBUyxFQUN0QztVQUFBLEVBQUUsZ0JBQU0sQ0FDVjtRQUFBLEVBQUUsY0FBSSxDQUFDLENBQ1IsQ0FDRDtNQUFBLENBQUMsZ0JBQU0sQ0FBQyxTQUFTLENBQUMsK0JBQStCLEVBQ25EO0lBQUEsRUFBRSxHQUFHLENBQUMsQ0FDUCxDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsS0FBSyxDQUFDLElBQUksQ0FBQyxVQUFVLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB0eXBlIHsgU3RlcCB9IGZyb20gJy4vc3RlcC1pbmRpY2F0b3InXG5pbXBvcnQgeyBSaUFycm93TGVmdExpbmUgfSBmcm9tICdAcmVtaXhpY29uL3JlYWN0J1xuaW1wb3J0IExpbmsgZnJvbSAnbmV4dC9saW5rJ1xuaW1wb3J0IHsgdXNlUGFyYW1zIH0gZnJvbSAnbmV4dC9uYXZpZ2F0aW9uJ1xuaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgQnV0dG9uIGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS9idXR0b24nXG5pbXBvcnQgRWZmZWN0IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS9lZmZlY3QnXG5pbXBvcnQgU3RlcEluZGljYXRvciBmcm9tICcuL3N0ZXAtaW5kaWNhdG9yJ1xuXG50eXBlIExlZnRIZWFkZXJQcm9wcyA9IHtcbiAgc3RlcHM6IEFycmF5PFN0ZXA+XG4gIHRpdGxlOiBzdHJpbmdcbiAgY3VycmVudFN0ZXA6IG51bWJlclxufVxuXG5jb25zdCBMZWZ0SGVhZGVyID0gKHtcbiAgc3RlcHMsXG4gIHRpdGxlLFxuICBjdXJyZW50U3RlcCxcbn06IExlZnRIZWFkZXJQcm9wcykgPT4ge1xuICBjb25zdCB7IGRhdGFzZXRJZCB9ID0gdXNlUGFyYW1zKClcblxuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPVwicmVsYXRpdmUgZmxleCBmbGV4LWNvbCBnYXAteS0wLjUgcGItMiBwdC00XCI+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggaXRlbXMtY2VudGVyIGdhcC14LTJcIj5cbiAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwic3lzdGVtLTJ4cy1zZW1pYm9sZC11cHBlcmNhc2UgYmctcGlwZWxpbmUtYWRkLWRvY3VtZW50cy10aXRsZS1iZyBiZy1jbGlwLXRleHQgdGV4dC10cmFuc3BhcmVudFwiPlxuICAgICAgICAgIHt0aXRsZX1cbiAgICAgICAgPC9zcGFuPlxuICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJzeXN0ZW0tMnhzLXJlZ3VsYXIgdGV4dC1kaXZpZGVyLXJlZ3VsYXJcIj4vPC9zcGFuPlxuICAgICAgICA8U3RlcEluZGljYXRvciBzdGVwcz17c3RlcHN9IGN1cnJlbnRTdGVwPXtjdXJyZW50U3RlcH0gLz5cbiAgICAgIDwvZGl2PlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJzeXN0ZW0tbWQtc2VtaWJvbGQgdGV4dC10ZXh0LXByaW1hcnlcIj5cbiAgICAgICAge3N0ZXBzW2N1cnJlbnRTdGVwIC0gMV0/LmxhYmVsfVxuICAgICAgPC9kaXY+XG4gICAgICB7Y3VycmVudFN0ZXAgIT09IHN0ZXBzLmxlbmd0aCAmJiAoXG4gICAgICAgIDxMaW5rXG4gICAgICAgICAgaHJlZj17YC9kYXRhc2V0cy8ke2RhdGFzZXRJZH0vZG9jdW1lbnRzYH1cbiAgICAgICAgICByZXBsYWNlXG4gICAgICAgID5cbiAgICAgICAgICA8QnV0dG9uXG4gICAgICAgICAgICB2YXJpYW50PVwic2Vjb25kYXJ5LWFjY2VudFwiXG4gICAgICAgICAgICBjbGFzc05hbWU9XCJhYnNvbHV0ZSAtbGVmdC0xMSB0b3AtMy41IHNpemUtOSByb3VuZGVkLWZ1bGwgcC0wXCJcbiAgICAgICAgICA+XG4gICAgICAgICAgICA8UmlBcnJvd0xlZnRMaW5lIGNsYXNzTmFtZT1cInNpemUtNSBcIiAvPlxuICAgICAgICAgIDwvQnV0dG9uPlxuICAgICAgICA8L0xpbms+XG4gICAgICApfVxuICAgICAgPEVmZmVjdCBjbGFzc05hbWU9XCJsZWZ0LTggdG9wLVstMzRweF0gb3BhY2l0eS0yMFwiIC8+XG4gICAgPC9kaXY+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgUmVhY3QubWVtbyhMZWZ0SGVhZGVyKVxuIl19

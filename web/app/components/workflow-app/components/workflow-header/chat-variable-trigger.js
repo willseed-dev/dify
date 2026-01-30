@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
+const chat_variable_button_1 = require("@/app/components/workflow/header/chat-variable-button");
+const hooks_1 = require("@/app/components/workflow/hooks");
+const hooks_2 = require("../../hooks");
+const ChatVariableTrigger = () => {
+    const { nodesReadOnly } = (0, hooks_1.useNodesReadOnly)();
+    const isChatMode = (0, hooks_2.useIsChatMode)();
+    if (!isChatMode)
+        return null;
+    return <chat_variable_button_1.default disabled={nodesReadOnly}/>;
+};
+exports.default = (0, react_1.memo)(ChatVariableTrigger);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY2hhdC12YXJpYWJsZS10cmlnZ2VyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiY2hhdC12YXJpYWJsZS10cmlnZ2VyLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLGlDQUE0QjtBQUM1QixnR0FBc0Y7QUFDdEYsMkRBRXdDO0FBQ3hDLHVDQUEyQztBQUUzQyxNQUFNLG1CQUFtQixHQUFHLEdBQUcsRUFBRTtJQUMvQixNQUFNLEVBQUUsYUFBYSxFQUFFLEdBQUcsSUFBQSx3QkFBZ0IsR0FBRSxDQUFBO0lBQzVDLE1BQU0sVUFBVSxHQUFHLElBQUEscUJBQWEsR0FBRSxDQUFBO0lBRWxDLElBQUksQ0FBQyxVQUFVO1FBQ2IsT0FBTyxJQUFJLENBQUE7SUFFYixPQUFPLENBQUMsOEJBQWtCLENBQUMsUUFBUSxDQUFDLENBQUMsYUFBYSxDQUFDLEVBQUcsQ0FBQTtBQUN4RCxDQUFDLENBQUE7QUFDRCxrQkFBZSxJQUFBLFlBQUksRUFBQyxtQkFBbUIsQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgbWVtbyB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IENoYXRWYXJpYWJsZUJ1dHRvbiBmcm9tICdAL2FwcC9jb21wb25lbnRzL3dvcmtmbG93L2hlYWRlci9jaGF0LXZhcmlhYmxlLWJ1dHRvbidcbmltcG9ydCB7XG4gIHVzZU5vZGVzUmVhZE9ubHksXG59IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvd29ya2Zsb3cvaG9va3MnXG5pbXBvcnQgeyB1c2VJc0NoYXRNb2RlIH0gZnJvbSAnLi4vLi4vaG9va3MnXG5cbmNvbnN0IENoYXRWYXJpYWJsZVRyaWdnZXIgPSAoKSA9PiB7XG4gIGNvbnN0IHsgbm9kZXNSZWFkT25seSB9ID0gdXNlTm9kZXNSZWFkT25seSgpXG4gIGNvbnN0IGlzQ2hhdE1vZGUgPSB1c2VJc0NoYXRNb2RlKClcblxuICBpZiAoIWlzQ2hhdE1vZGUpXG4gICAgcmV0dXJuIG51bGxcblxuICByZXR1cm4gPENoYXRWYXJpYWJsZUJ1dHRvbiBkaXNhYmxlZD17bm9kZXNSZWFkT25seX0gLz5cbn1cbmV4cG9ydCBkZWZhdWx0IG1lbW8oQ2hhdFZhcmlhYmxlVHJpZ2dlcilcbiJdfQ==

@@ -1,0 +1,21 @@
+import type { Credential, CustomModel, CustomModelCredential, ModelProvider } from '../../declarations';
+type AuthorizedItemProps = {
+    provider: ModelProvider;
+    model?: CustomModelCredential;
+    title?: string;
+    disabled?: boolean;
+    onDelete?: (credential?: Credential, model?: CustomModel) => void;
+    onEdit?: (credential?: Credential, model?: CustomModel) => void;
+    showItemSelectedIcon?: boolean;
+    selectedCredentialId?: string;
+    credentials: Credential[];
+    onItemClick?: (credential: Credential, model?: CustomModel) => void;
+    enableAddModelCredential?: boolean;
+    notAllowCustomCredential?: boolean;
+    showModelTitle?: boolean;
+    disableDeleteButShowAction?: boolean;
+    disableDeleteTip?: string;
+};
+export declare const AuthorizedItem: ({ provider, model, title, credentials, disabled, onDelete, onEdit, showItemSelectedIcon, selectedCredentialId, onItemClick, showModelTitle, disableDeleteButShowAction, disableDeleteTip, }: AuthorizedItemProps) => any;
+declare const _default: any;
+export default _default;

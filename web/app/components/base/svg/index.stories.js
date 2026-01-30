@@ -1,0 +1,33 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Playground = void 0;
+const react_1 = require("react");
+const _1 = require(".");
+const SvgToggleDemo = () => {
+    const [isSVG, setIsSVG] = (0, react_1.useState)(false);
+    return (<div className="flex w-full max-w-xs flex-col items-center gap-4 rounded-2xl border border-divider-subtle bg-components-panel-bg p-6">
+      <p className="text-xs uppercase tracking-[0.18em] text-text-tertiary">SVG toggle</p>
+      <_1.default isSVG={isSVG} setIsSVG={setIsSVG}/>
+      <span className="text-xs text-text-secondary">
+        Mode:
+        {' '}
+        <code className="rounded bg-background-default px-2 py-1 text-[11px]">{isSVG ? 'SVG' : 'PNG'}</code>
+      </span>
+    </div>);
+};
+const meta = {
+    title: 'Base/General/SVGBtn',
+    component: SvgToggleDemo,
+    parameters: {
+        layout: 'centered',
+        docs: {
+            description: {
+                component: 'Small toggle used in icon pickers to switch between SVG and bitmap assets.',
+            },
+        },
+    },
+    tags: ['autodocs'],
+};
+exports.default = meta;
+exports.Playground = {};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguc3Rvcmllcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImluZGV4LnN0b3JpZXMudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUNBLGlDQUFnQztBQUNoQyx3QkFBc0I7QUFFdEIsTUFBTSxhQUFhLEdBQUcsR0FBRyxFQUFFO0lBQ3pCLE1BQU0sQ0FBQyxLQUFLLEVBQUUsUUFBUSxDQUFDLEdBQUcsSUFBQSxnQkFBUSxFQUFDLEtBQUssQ0FBQyxDQUFBO0lBRXpDLE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsc0hBQXNILENBQ25JO01BQUEsQ0FBQyxDQUFDLENBQUMsU0FBUyxDQUFDLHdEQUF3RCxDQUFDLFVBQVUsRUFBRSxDQUFDLENBQ25GO01BQUEsQ0FBQyxVQUFNLENBQUMsS0FBSyxDQUFDLENBQUMsS0FBSyxDQUFDLENBQUMsUUFBUSxDQUFDLENBQUMsUUFBUSxDQUFDLEVBQ3pDO01BQUEsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLDZCQUE2QixDQUMzQzs7UUFDQSxDQUFDLEdBQUcsQ0FDSjtRQUFBLENBQUMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxxREFBcUQsQ0FBQyxDQUFDLEtBQUssQ0FBQyxDQUFDLENBQUMsS0FBSyxDQUFDLENBQUMsQ0FBQyxLQUFLLENBQUMsRUFBRSxJQUFJLENBQ3JHO01BQUEsRUFBRSxJQUFJLENBQ1I7SUFBQSxFQUFFLEdBQUcsQ0FBQyxDQUNQLENBQUE7QUFDSCxDQUFDLENBQUE7QUFFRCxNQUFNLElBQUksR0FBRztJQUNYLEtBQUssRUFBRSxxQkFBcUI7SUFDNUIsU0FBUyxFQUFFLGFBQWE7SUFDeEIsVUFBVSxFQUFFO1FBQ1YsTUFBTSxFQUFFLFVBQVU7UUFDbEIsSUFBSSxFQUFFO1lBQ0osV0FBVyxFQUFFO2dCQUNYLFNBQVMsRUFBRSw0RUFBNEU7YUFDeEY7U0FDRjtLQUNGO0lBQ0QsSUFBSSxFQUFFLENBQUMsVUFBVSxDQUFDO0NBQ2tCLENBQUE7QUFFdEMsa0JBQWUsSUFBSSxDQUFBO0FBR04sUUFBQSxVQUFVLEdBQVUsRUFBRSxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHR5cGUgeyBNZXRhLCBTdG9yeU9iaiB9IGZyb20gJ0BzdG9yeWJvb2svbmV4dGpzJ1xuaW1wb3J0IHsgdXNlU3RhdGUgfSBmcm9tICdyZWFjdCdcbmltcG9ydCBTVkdCdG4gZnJvbSAnLidcblxuY29uc3QgU3ZnVG9nZ2xlRGVtbyA9ICgpID0+IHtcbiAgY29uc3QgW2lzU1ZHLCBzZXRJc1NWR10gPSB1c2VTdGF0ZShmYWxzZSlcblxuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCB3LWZ1bGwgbWF4LXcteHMgZmxleC1jb2wgaXRlbXMtY2VudGVyIGdhcC00IHJvdW5kZWQtMnhsIGJvcmRlciBib3JkZXItZGl2aWRlci1zdWJ0bGUgYmctY29tcG9uZW50cy1wYW5lbC1iZyBwLTZcIj5cbiAgICAgIDxwIGNsYXNzTmFtZT1cInRleHQteHMgdXBwZXJjYXNlIHRyYWNraW5nLVswLjE4ZW1dIHRleHQtdGV4dC10ZXJ0aWFyeVwiPlNWRyB0b2dnbGU8L3A+XG4gICAgICA8U1ZHQnRuIGlzU1ZHPXtpc1NWR30gc2V0SXNTVkc9e3NldElzU1ZHfSAvPlxuICAgICAgPHNwYW4gY2xhc3NOYW1lPVwidGV4dC14cyB0ZXh0LXRleHQtc2Vjb25kYXJ5XCI+XG4gICAgICAgIE1vZGU6XG4gICAgICAgIHsnICd9XG4gICAgICAgIDxjb2RlIGNsYXNzTmFtZT1cInJvdW5kZWQgYmctYmFja2dyb3VuZC1kZWZhdWx0IHB4LTIgcHktMSB0ZXh0LVsxMXB4XVwiPntpc1NWRyA/ICdTVkcnIDogJ1BORyd9PC9jb2RlPlxuICAgICAgPC9zcGFuPlxuICAgIDwvZGl2PlxuICApXG59XG5cbmNvbnN0IG1ldGEgPSB7XG4gIHRpdGxlOiAnQmFzZS9HZW5lcmFsL1NWR0J0bicsXG4gIGNvbXBvbmVudDogU3ZnVG9nZ2xlRGVtbyxcbiAgcGFyYW1ldGVyczoge1xuICAgIGxheW91dDogJ2NlbnRlcmVkJyxcbiAgICBkb2NzOiB7XG4gICAgICBkZXNjcmlwdGlvbjoge1xuICAgICAgICBjb21wb25lbnQ6ICdTbWFsbCB0b2dnbGUgdXNlZCBpbiBpY29uIHBpY2tlcnMgdG8gc3dpdGNoIGJldHdlZW4gU1ZHIGFuZCBiaXRtYXAgYXNzZXRzLicsXG4gICAgICB9LFxuICAgIH0sXG4gIH0sXG4gIHRhZ3M6IFsnYXV0b2RvY3MnXSxcbn0gc2F0aXNmaWVzIE1ldGE8dHlwZW9mIFN2Z1RvZ2dsZURlbW8+XG5cbmV4cG9ydCBkZWZhdWx0IG1ldGFcbnR5cGUgU3RvcnkgPSBTdG9yeU9iajx0eXBlb2YgbWV0YT5cblxuZXhwb3J0IGNvbnN0IFBsYXlncm91bmQ6IFN0b3J5ID0ge31cbiJdfQ==

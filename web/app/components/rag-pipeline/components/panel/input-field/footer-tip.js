@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const React = require("react");
+const FooterTip = () => {
+    return (<div className="flex shrink-0 items-center justify-center gap-x-2 py-4 text-text-quaternary">
+      <react_1.RiDragDropLine className="size-4"/>
+      <span className="system-xs-regular">Drag to adjust grouping</span>
+    </div>);
+};
+exports.default = React.memo(FooterTip);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZm9vdGVyLXRpcC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImZvb3Rlci10aXAudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNENBQWlEO0FBQ2pELCtCQUE4QjtBQUU5QixNQUFNLFNBQVMsR0FBRyxHQUFHLEVBQUU7SUFDckIsT0FBTyxDQUNMLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyw2RUFBNkUsQ0FDMUY7TUFBQSxDQUFDLHNCQUFjLENBQUMsU0FBUyxDQUFDLFFBQVEsRUFDbEM7TUFBQSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsbUJBQW1CLENBQUMsdUJBQXVCLEVBQUUsSUFBSSxDQUNuRTtJQUFBLEVBQUUsR0FBRyxDQUFDLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELGtCQUFlLEtBQUssQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBSaURyYWdEcm9wTGluZSB9IGZyb20gJ0ByZW1peGljb24vcmVhY3QnXG5pbXBvcnQgKiBhcyBSZWFjdCBmcm9tICdyZWFjdCdcblxuY29uc3QgRm9vdGVyVGlwID0gKCkgPT4ge1xuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBzaHJpbmstMCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgZ2FwLXgtMiBweS00IHRleHQtdGV4dC1xdWF0ZXJuYXJ5XCI+XG4gICAgICA8UmlEcmFnRHJvcExpbmUgY2xhc3NOYW1lPVwic2l6ZS00XCIgLz5cbiAgICAgIDxzcGFuIGNsYXNzTmFtZT1cInN5c3RlbS14cy1yZWd1bGFyXCI+RHJhZyB0byBhZGp1c3QgZ3JvdXBpbmc8L3NwYW4+XG4gICAgPC9kaXY+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgUmVhY3QubWVtbyhGb290ZXJUaXApXG4iXX0=

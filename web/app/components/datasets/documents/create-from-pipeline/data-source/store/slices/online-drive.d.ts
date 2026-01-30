@@ -1,0 +1,24 @@
+import type { StateCreator } from 'zustand';
+import type { OnlineDriveFile } from '@/models/pipeline';
+export type OnlineDriveSliceShape = {
+    breadcrumbs: string[];
+    setBreadcrumbs: (breadcrumbs: string[]) => void;
+    prefix: string[];
+    setPrefix: (prefix: string[]) => void;
+    keywords: string;
+    setKeywords: (keywords: string) => void;
+    selectedFileIds: string[];
+    setSelectedFileIds: (selectedFileIds: string[]) => void;
+    onlineDriveFileList: OnlineDriveFile[];
+    setOnlineDriveFileList: (onlineDriveFileList: OnlineDriveFile[]) => void;
+    bucket: string;
+    setBucket: (bucket: string) => void;
+    nextPageParameters: Record<string, any>;
+    currentNextPageParametersRef: React.RefObject<Record<string, any>>;
+    setNextPageParameters: (nextPageParameters: Record<string, any>) => void;
+    isTruncated: React.RefObject<boolean>;
+    previewOnlineDriveFileRef: React.RefObject<OnlineDriveFile | undefined>;
+    hasBucket: boolean;
+    setHasBucket: (hasBucket: boolean) => void;
+};
+export declare const createOnlineDriveSlice: StateCreator<OnlineDriveSliceShape>;

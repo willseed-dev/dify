@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const store_1 = require("./store");
+const SyncingDataModal = () => {
+    const isSyncingWorkflowDraft = (0, store_1.useStore)(s => s.isSyncingWorkflowDraft);
+    if (!isSyncingWorkflowDraft)
+        return null;
+    return (<div className="absolute inset-0 z-[9999]">
+    </div>);
+};
+exports.default = SyncingDataModal;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3luY2luZy1kYXRhLW1vZGFsLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsic3luY2luZy1kYXRhLW1vZGFsLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLG1DQUFrQztBQUVsQyxNQUFNLGdCQUFnQixHQUFHLEdBQUcsRUFBRTtJQUM1QixNQUFNLHNCQUFzQixHQUFHLElBQUEsZ0JBQVEsRUFBQyxDQUFDLENBQUMsRUFBRSxDQUFDLENBQUMsQ0FBQyxzQkFBc0IsQ0FBQyxDQUFBO0lBRXRFLElBQUksQ0FBQyxzQkFBc0I7UUFDekIsT0FBTyxJQUFJLENBQUE7SUFFYixPQUFPLENBQ0wsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLDJCQUEyQixDQUMxQztJQUFBLEVBQUUsR0FBRyxDQUFDLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELGtCQUFlLGdCQUFnQixDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdXNlU3RvcmUgfSBmcm9tICcuL3N0b3JlJ1xuXG5jb25zdCBTeW5jaW5nRGF0YU1vZGFsID0gKCkgPT4ge1xuICBjb25zdCBpc1N5bmNpbmdXb3JrZmxvd0RyYWZ0ID0gdXNlU3RvcmUocyA9PiBzLmlzU3luY2luZ1dvcmtmbG93RHJhZnQpXG5cbiAgaWYgKCFpc1N5bmNpbmdXb3JrZmxvd0RyYWZ0KVxuICAgIHJldHVybiBudWxsXG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cImFic29sdXRlIGluc2V0LTAgei1bOTk5OV1cIj5cbiAgICA8L2Rpdj5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBTeW5jaW5nRGF0YU1vZGFsXG4iXX0=

@@ -1,0 +1,22 @@
+import type { LoopNodeType } from './types';
+declare const useConfig: (id: string, payload: LoopNodeType) => {
+    readOnly: boolean;
+    inputs: CommonNodeType<T>;
+    filterInputVar: any;
+    childrenNodeVars: NodeOutPutVar[];
+    loopChildrenNodes: any[];
+    handleAddCondition: any;
+    handleRemoveCondition: any;
+    handleUpdateCondition: any;
+    handleToggleConditionLogicalOperator: any;
+    handleAddSubVariableCondition: any;
+    handleUpdateSubVariableCondition: any;
+    handleRemoveSubVariableCondition: any;
+    handleToggleSubVariableConditionLogicalOperator: any;
+    handleUpdateLoopCount: any;
+    changeErrorResponseMode: any;
+    handleAddLoopVariable: any;
+    handleRemoveLoopVariable: any;
+    handleUpdateLoopVariable: any;
+};
+export default useConfig;

@@ -1,0 +1,22 @@
+type Shape = {
+    linkAnchorElement: HTMLElement | null;
+    setLinkAnchorElement: (open?: boolean) => void;
+    linkOperatorShow: boolean;
+    setLinkOperatorShow: (linkOperatorShow: boolean) => void;
+    selectedIsBold: boolean;
+    setSelectedIsBold: (selectedIsBold: boolean) => void;
+    selectedIsItalic: boolean;
+    setSelectedIsItalic: (selectedIsItalic: boolean) => void;
+    selectedIsStrikeThrough: boolean;
+    setSelectedIsStrikeThrough: (selectedIsStrikeThrough: boolean) => void;
+    selectedLinkUrl: string;
+    setSelectedLinkUrl: (selectedLinkUrl: string) => void;
+    selectedIsLink: boolean;
+    setSelectedIsLink: (selectedIsLink: boolean) => void;
+    selectedIsBullet: boolean;
+    setSelectedIsBullet: (selectedIsBullet: boolean) => void;
+};
+export declare const createNoteEditorStore: () => any;
+export declare function useStore<T>(selector: (state: Shape) => T): T;
+export declare const useNoteEditorStore: () => any;
+export {};

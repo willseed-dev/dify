@@ -1,0 +1,13 @@
+export declare const useGetPluginCredentialInfo: (url: string) => any;
+export declare const useInvalidPluginCredentialInfo: (url: string) => () => void;
+export declare const useSetPluginDefaultCredential: (url: string) => any;
+export declare const useGetPluginCredentialList: (url: string) => any;
+export declare const useAddPluginCredential: (url: string) => any;
+export declare const useUpdatePluginCredential: (url: string) => any;
+export declare const useDeletePluginCredential: (url: string) => any;
+export declare const useGetPluginCredentialSchema: (url: string) => any;
+export declare const useGetPluginOAuthUrl: (url: string) => any;
+export declare const useGetPluginOAuthClientSchema: (url: string) => any;
+export declare const useInvalidPluginOAuthClientSchema: (url: string) => () => void;
+export declare const useSetPluginOAuthCustomClient: (url: string) => any;
+export declare const useDeletePluginOAuthCustomClient: (url: string) => any;

@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useNodeHelpLink = void 0;
+const react_1 = require("react");
+const hooks_1 = require("@/app/components/workflow/hooks");
+const useNodeHelpLink = (nodeType) => {
+    const availableNodesMetaData = (0, hooks_1.useNodesMetaData)();
+    const link = (0, react_1.useMemo)(() => {
+        const result = availableNodesMetaData?.nodesMap?.[nodeType]?.metaData.helpLinkUri || '';
+        return result;
+    }, [availableNodesMetaData, nodeType]);
+    return link;
+};
+exports.useNodeHelpLink = useNodeHelpLink;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXNlLW5vZGUtaGVscC1saW5rLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidXNlLW5vZGUtaGVscC1saW5rLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUNBLGlDQUErQjtBQUMvQiwyREFBa0U7QUFFM0QsTUFBTSxlQUFlLEdBQUcsQ0FBQyxRQUFtQixFQUFFLEVBQUU7SUFDckQsTUFBTSxzQkFBc0IsR0FBRyxJQUFBLHdCQUFnQixHQUFFLENBQUE7SUFFakQsTUFBTSxJQUFJLEdBQUcsSUFBQSxlQUFPLEVBQUMsR0FBRyxFQUFFO1FBQ3hCLE1BQU0sTUFBTSxHQUFHLHNCQUFzQixFQUFFLFFBQVEsRUFBRSxDQUFDLFFBQVEsQ0FBQyxFQUFFLFFBQVEsQ0FBQyxXQUFXLElBQUksRUFBRSxDQUFBO1FBRXZGLE9BQU8sTUFBTSxDQUFBO0lBQ2YsQ0FBQyxFQUFFLENBQUMsc0JBQXNCLEVBQUUsUUFBUSxDQUFDLENBQUMsQ0FBQTtJQUV0QyxPQUFPLElBQUksQ0FBQTtBQUNiLENBQUMsQ0FBQTtBQVZZLFFBQUEsZUFBZSxtQkFVM0IiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IEJsb2NrRW51bSB9IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvd29ya2Zsb3cvdHlwZXMnXG5pbXBvcnQgeyB1c2VNZW1vIH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgeyB1c2VOb2Rlc01ldGFEYXRhIH0gZnJvbSAnQC9hcHAvY29tcG9uZW50cy93b3JrZmxvdy9ob29rcydcblxuZXhwb3J0IGNvbnN0IHVzZU5vZGVIZWxwTGluayA9IChub2RlVHlwZTogQmxvY2tFbnVtKSA9PiB7XG4gIGNvbnN0IGF2YWlsYWJsZU5vZGVzTWV0YURhdGEgPSB1c2VOb2Rlc01ldGFEYXRhKClcblxuICBjb25zdCBsaW5rID0gdXNlTWVtbygoKSA9PiB7XG4gICAgY29uc3QgcmVzdWx0ID0gYXZhaWxhYmxlTm9kZXNNZXRhRGF0YT8ubm9kZXNNYXA/Lltub2RlVHlwZV0/Lm1ldGFEYXRhLmhlbHBMaW5rVXJpIHx8ICcnXG5cbiAgICByZXR1cm4gcmVzdWx0XG4gIH0sIFthdmFpbGFibGVOb2Rlc01ldGFEYXRhLCBub2RlVHlwZV0pXG5cbiAgcmV0dXJuIGxpbmtcbn1cbiJdfQ==

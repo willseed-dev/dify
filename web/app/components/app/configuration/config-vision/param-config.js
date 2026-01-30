@@ -1,0 +1,31 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const react_2 = require("react");
+const react_i18next_1 = require("react-i18next");
+const button_1 = require("@/app/components/base/button");
+const portal_to_follow_elem_1 = require("@/app/components/base/portal-to-follow-elem");
+const classnames_1 = require("@/utils/classnames");
+const param_config_content_1 = require("./param-config-content");
+const ParamsConfig = () => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    const [open, setOpen] = (0, react_2.useState)(false);
+    return (<portal_to_follow_elem_1.PortalToFollowElem open={open} onOpenChange={setOpen} placement="bottom-end" offset={{
+            mainAxis: 4,
+        }}>
+      <portal_to_follow_elem_1.PortalToFollowElemTrigger onClick={() => setOpen(v => !v)}>
+        <button_1.default variant="ghost" size="small" className={(0, classnames_1.cn)('')}>
+          <react_1.RiSettings2Line className="h-3.5 w-3.5"/>
+          <div className="ml-1">{t('voice.settings', { ns: 'appDebug' })}</div>
+        </button_1.default>
+      </portal_to_follow_elem_1.PortalToFollowElemTrigger>
+      <portal_to_follow_elem_1.PortalToFollowElemContent style={{ zIndex: 50 }}>
+        <div className="w-80 space-y-3 rounded-lg border-[0.5px] border-components-panel-border bg-components-panel-bg p-4 shadow-lg sm:w-[412px]">
+          <param_config_content_1.default />
+        </div>
+      </portal_to_follow_elem_1.PortalToFollowElemContent>
+    </portal_to_follow_elem_1.PortalToFollowElem>);
+};
+exports.default = (0, react_2.memo)(ParamsConfig);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFyYW0tY29uZmlnLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsicGFyYW0tY29uZmlnLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsWUFBWSxDQUFBOztBQUVaLDRDQUFrRDtBQUNsRCxpQ0FBc0M7QUFDdEMsaURBQThDO0FBQzlDLHlEQUFpRDtBQUNqRCx1RkFJb0Q7QUFDcEQsbURBQXVDO0FBQ3ZDLGlFQUF1RDtBQUV2RCxNQUFNLFlBQVksR0FBTyxHQUFHLEVBQUU7SUFDNUIsTUFBTSxFQUFFLENBQUMsRUFBRSxHQUFHLElBQUEsOEJBQWMsR0FBRSxDQUFBO0lBQzlCLE1BQU0sQ0FBQyxJQUFJLEVBQUUsT0FBTyxDQUFDLEdBQUcsSUFBQSxnQkFBUSxFQUFDLEtBQUssQ0FBQyxDQUFBO0lBRXZDLE9BQU8sQ0FDTCxDQUFDLDBDQUFrQixDQUNqQixJQUFJLENBQUMsQ0FBQyxJQUFJLENBQUMsQ0FDWCxZQUFZLENBQUMsQ0FBQyxPQUFPLENBQUMsQ0FDdEIsU0FBUyxDQUFDLFlBQVksQ0FDdEIsTUFBTSxDQUFDLENBQUM7WUFDTixRQUFRLEVBQUUsQ0FBQztTQUNaLENBQUMsQ0FFRjtNQUFBLENBQUMsaURBQXlCLENBQUMsT0FBTyxDQUFDLENBQUMsR0FBRyxFQUFFLENBQUMsT0FBTyxDQUFDLENBQUMsQ0FBQyxFQUFFLENBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQyxDQUN6RDtRQUFBLENBQUMsZ0JBQU0sQ0FBQyxPQUFPLENBQUMsT0FBTyxDQUFDLElBQUksQ0FBQyxPQUFPLENBQUMsU0FBUyxDQUFDLENBQUMsSUFBQSxlQUFFLEVBQUMsRUFBRSxDQUFDLENBQUMsQ0FDckQ7VUFBQSxDQUFDLHVCQUFlLENBQUMsU0FBUyxDQUFDLGFBQWEsRUFDeEM7VUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsTUFBTSxDQUFDLENBQUMsQ0FBQyxDQUFDLGdCQUFnQixFQUFFLEVBQUUsRUFBRSxFQUFFLFVBQVUsRUFBRSxDQUFDLENBQUMsRUFBRSxHQUFHLENBQ3RFO1FBQUEsRUFBRSxnQkFBTSxDQUNWO01BQUEsRUFBRSxpREFBeUIsQ0FDM0I7TUFBQSxDQUFDLGlEQUF5QixDQUFDLEtBQUssQ0FBQyxDQUFDLEVBQUUsTUFBTSxFQUFFLEVBQUUsRUFBRSxDQUFDLENBQy9DO1FBQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLDJIQUEySCxDQUN4STtVQUFBLENBQUMsOEJBQWtCLENBQUMsQUFBRCxFQUNyQjtRQUFBLEVBQUUsR0FBRyxDQUNQO01BQUEsRUFBRSxpREFBeUIsQ0FDN0I7SUFBQSxFQUFFLDBDQUFrQixDQUFDLENBQ3RCLENBQUE7QUFDSCxDQUFDLENBQUE7QUFDRCxrQkFBZSxJQUFBLFlBQUksRUFBQyxZQUFZLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbIid1c2UgY2xpZW50J1xuaW1wb3J0IHR5cGUgeyBGQyB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgUmlTZXR0aW5nczJMaW5lIH0gZnJvbSAnQHJlbWl4aWNvbi9yZWFjdCdcbmltcG9ydCB7IG1lbW8sIHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgeyB1c2VUcmFuc2xhdGlvbiB9IGZyb20gJ3JlYWN0LWkxOG5leHQnXG5pbXBvcnQgQnV0dG9uIGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS9idXR0b24nXG5pbXBvcnQge1xuICBQb3J0YWxUb0ZvbGxvd0VsZW0sXG4gIFBvcnRhbFRvRm9sbG93RWxlbUNvbnRlbnQsXG4gIFBvcnRhbFRvRm9sbG93RWxlbVRyaWdnZXIsXG59IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS9wb3J0YWwtdG8tZm9sbG93LWVsZW0nXG5pbXBvcnQgeyBjbiB9IGZyb20gJ0AvdXRpbHMvY2xhc3NuYW1lcydcbmltcG9ydCBQYXJhbUNvbmZpZ0NvbnRlbnQgZnJvbSAnLi9wYXJhbS1jb25maWctY29udGVudCdcblxuY29uc3QgUGFyYW1zQ29uZmlnOiBGQyA9ICgpID0+IHtcbiAgY29uc3QgeyB0IH0gPSB1c2VUcmFuc2xhdGlvbigpXG4gIGNvbnN0IFtvcGVuLCBzZXRPcGVuXSA9IHVzZVN0YXRlKGZhbHNlKVxuXG4gIHJldHVybiAoXG4gICAgPFBvcnRhbFRvRm9sbG93RWxlbVxuICAgICAgb3Blbj17b3Blbn1cbiAgICAgIG9uT3BlbkNoYW5nZT17c2V0T3Blbn1cbiAgICAgIHBsYWNlbWVudD1cImJvdHRvbS1lbmRcIlxuICAgICAgb2Zmc2V0PXt7XG4gICAgICAgIG1haW5BeGlzOiA0LFxuICAgICAgfX1cbiAgICA+XG4gICAgICA8UG9ydGFsVG9Gb2xsb3dFbGVtVHJpZ2dlciBvbkNsaWNrPXsoKSA9PiBzZXRPcGVuKHYgPT4gIXYpfT5cbiAgICAgICAgPEJ1dHRvbiB2YXJpYW50PVwiZ2hvc3RcIiBzaXplPVwic21hbGxcIiBjbGFzc05hbWU9e2NuKCcnKX0+XG4gICAgICAgICAgPFJpU2V0dGluZ3MyTGluZSBjbGFzc05hbWU9XCJoLTMuNSB3LTMuNVwiIC8+XG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJtbC0xXCI+e3QoJ3ZvaWNlLnNldHRpbmdzJywgeyBuczogJ2FwcERlYnVnJyB9KX08L2Rpdj5cbiAgICAgICAgPC9CdXR0b24+XG4gICAgICA8L1BvcnRhbFRvRm9sbG93RWxlbVRyaWdnZXI+XG4gICAgICA8UG9ydGFsVG9Gb2xsb3dFbGVtQ29udGVudCBzdHlsZT17eyB6SW5kZXg6IDUwIH19PlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInctODAgc3BhY2UteS0zIHJvdW5kZWQtbGcgYm9yZGVyLVswLjVweF0gYm9yZGVyLWNvbXBvbmVudHMtcGFuZWwtYm9yZGVyIGJnLWNvbXBvbmVudHMtcGFuZWwtYmcgcC00IHNoYWRvdy1sZyBzbTp3LVs0MTJweF1cIj5cbiAgICAgICAgICA8UGFyYW1Db25maWdDb250ZW50IC8+XG4gICAgICAgIDwvZGl2PlxuICAgICAgPC9Qb3J0YWxUb0ZvbGxvd0VsZW1Db250ZW50PlxuICAgIDwvUG9ydGFsVG9Gb2xsb3dFbGVtPlxuICApXG59XG5leHBvcnQgZGVmYXVsdCBtZW1vKFBhcmFtc0NvbmZpZylcbiJdfQ==

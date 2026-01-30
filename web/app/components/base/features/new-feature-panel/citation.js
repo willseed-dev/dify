@@ -1,0 +1,32 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const immer_1 = require("immer");
+const React = require("react");
+const react_1 = require("react");
+const react_i18next_1 = require("react-i18next");
+const hooks_1 = require("@/app/components/base/features/hooks");
+const feature_card_1 = require("@/app/components/base/features/new-feature-panel/feature-card");
+const types_1 = require("@/app/components/base/features/types");
+const features_1 = require("@/app/components/base/icons/src/vender/features");
+const Citation = ({ disabled, onChange, }) => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    const features = (0, hooks_1.useFeatures)(s => s.features);
+    const featuresStore = (0, hooks_1.useFeaturesStore)();
+    const handleChange = (0, react_1.useCallback)((type, enabled) => {
+        const { features, setFeatures, } = featuresStore.getState();
+        const newFeatures = (0, immer_1.produce)(features, (draft) => {
+            draft[type] = {
+                ...draft[type],
+                enabled,
+            };
+        });
+        setFeatures(newFeatures);
+        if (onChange)
+            onChange(newFeatures);
+    }, [featuresStore, onChange]);
+    return (<feature_card_1.default icon={(<div className="shrink-0 rounded-lg border-[0.5px] border-divider-subtle bg-util-colors-warning-warning-500 p-1 shadow-xs">
+          <features_1.Citations className="h-4 w-4 text-text-primary-on-surface"/>
+        </div>)} title={t('feature.citation.title', { ns: 'appDebug' })} value={!!features.citation?.enabled} description={t('feature.citation.description', { ns: 'appDebug' })} onChange={state => handleChange(types_1.FeatureEnum.citation, state)} disabled={disabled}/>);
+};
+exports.default = Citation;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY2l0YXRpb24uanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJjaXRhdGlvbi50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFDQSxpQ0FBK0I7QUFDL0IsK0JBQThCO0FBQzlCLGlDQUFtQztBQUNuQyxpREFBOEM7QUFDOUMsZ0VBQW9GO0FBQ3BGLGdHQUF1RjtBQUN2RixnRUFBa0U7QUFDbEUsOEVBQTJFO0FBTzNFLE1BQU0sUUFBUSxHQUFHLENBQUMsRUFDaEIsUUFBUSxFQUNSLFFBQVEsR0FDRixFQUFFLEVBQUU7SUFDVixNQUFNLEVBQUUsQ0FBQyxFQUFFLEdBQUcsSUFBQSw4QkFBYyxHQUFFLENBQUE7SUFDOUIsTUFBTSxRQUFRLEdBQUcsSUFBQSxtQkFBVyxFQUFDLENBQUMsQ0FBQyxFQUFFLENBQUMsQ0FBQyxDQUFDLFFBQVEsQ0FBQyxDQUFBO0lBQzdDLE1BQU0sYUFBYSxHQUFHLElBQUEsd0JBQWdCLEdBQUUsQ0FBQTtJQUV4QyxNQUFNLFlBQVksR0FBRyxJQUFBLG1CQUFXLEVBQUMsQ0FBQyxJQUFpQixFQUFFLE9BQWdCLEVBQUUsRUFBRTtRQUN2RSxNQUFNLEVBQ0osUUFBUSxFQUNSLFdBQVcsR0FDWixHQUFHLGFBQWMsQ0FBQyxRQUFRLEVBQUUsQ0FBQTtRQUU3QixNQUFNLFdBQVcsR0FBRyxJQUFBLGVBQU8sRUFBQyxRQUFRLEVBQUUsQ0FBQyxLQUFLLEVBQUUsRUFBRTtZQUM5QyxLQUFLLENBQUMsSUFBSSxDQUFDLEdBQUc7Z0JBQ1osR0FBRyxLQUFLLENBQUMsSUFBSSxDQUFDO2dCQUNkLE9BQU87YUFDUixDQUFBO1FBQ0gsQ0FBQyxDQUFDLENBQUE7UUFDRixXQUFXLENBQUMsV0FBVyxDQUFDLENBQUE7UUFDeEIsSUFBSSxRQUFRO1lBQ1YsUUFBUSxDQUFDLFdBQVcsQ0FBQyxDQUFBO0lBQ3pCLENBQUMsRUFBRSxDQUFDLGFBQWEsRUFBRSxRQUFRLENBQUMsQ0FBQyxDQUFBO0lBRTdCLE9BQU8sQ0FDTCxDQUFDLHNCQUFXLENBQ1YsSUFBSSxDQUFDLENBQUMsQ0FDSixDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsMkdBQTJHLENBQ3hIO1VBQUEsQ0FBQyxvQkFBUyxDQUFDLFNBQVMsQ0FBQyxzQ0FBc0MsRUFDN0Q7UUFBQSxFQUFFLEdBQUcsQ0FBQyxDQUNQLENBQUMsQ0FDRixLQUFLLENBQUMsQ0FBQyxDQUFDLENBQUMsd0JBQXdCLEVBQUUsRUFBRSxFQUFFLEVBQUUsVUFBVSxFQUFFLENBQUMsQ0FBQyxDQUN2RCxLQUFLLENBQUMsQ0FBQyxDQUFDLENBQUMsUUFBUSxDQUFDLFFBQVEsRUFBRSxPQUFPLENBQUMsQ0FDcEMsV0FBVyxDQUFDLENBQUMsQ0FBQyxDQUFDLDhCQUE4QixFQUFFLEVBQUUsRUFBRSxFQUFFLFVBQVUsRUFBRSxDQUFFLENBQUMsQ0FDcEUsUUFBUSxDQUFDLENBQUMsS0FBSyxDQUFDLEVBQUUsQ0FBQyxZQUFZLENBQUMsbUJBQVcsQ0FBQyxRQUFRLEVBQUUsS0FBSyxDQUFDLENBQUMsQ0FDN0QsUUFBUSxDQUFDLENBQUMsUUFBUSxDQUFDLEVBQ25CLENBQ0gsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELGtCQUFlLFFBQVEsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB0eXBlIHsgT25GZWF0dXJlc0NoYW5nZSB9IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS9mZWF0dXJlcy90eXBlcydcbmltcG9ydCB7IHByb2R1Y2UgfSBmcm9tICdpbW1lcidcbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgdXNlQ2FsbGJhY2sgfSBmcm9tICdyZWFjdCdcbmltcG9ydCB7IHVzZVRyYW5zbGF0aW9uIH0gZnJvbSAncmVhY3QtaTE4bmV4dCdcbmltcG9ydCB7IHVzZUZlYXR1cmVzLCB1c2VGZWF0dXJlc1N0b3JlIH0gZnJvbSAnQC9hcHAvY29tcG9uZW50cy9iYXNlL2ZlYXR1cmVzL2hvb2tzJ1xuaW1wb3J0IEZlYXR1cmVDYXJkIGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS9mZWF0dXJlcy9uZXctZmVhdHVyZS1wYW5lbC9mZWF0dXJlLWNhcmQnXG5pbXBvcnQgeyBGZWF0dXJlRW51bSB9IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS9mZWF0dXJlcy90eXBlcydcbmltcG9ydCB7IENpdGF0aW9ucyB9IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS9pY29ucy9zcmMvdmVuZGVyL2ZlYXR1cmVzJ1xuXG50eXBlIFByb3BzID0ge1xuICBkaXNhYmxlZD86IGJvb2xlYW5cbiAgb25DaGFuZ2U/OiBPbkZlYXR1cmVzQ2hhbmdlXG59XG5cbmNvbnN0IENpdGF0aW9uID0gKHtcbiAgZGlzYWJsZWQsXG4gIG9uQ2hhbmdlLFxufTogUHJvcHMpID0+IHtcbiAgY29uc3QgeyB0IH0gPSB1c2VUcmFuc2xhdGlvbigpXG4gIGNvbnN0IGZlYXR1cmVzID0gdXNlRmVhdHVyZXMocyA9PiBzLmZlYXR1cmVzKVxuICBjb25zdCBmZWF0dXJlc1N0b3JlID0gdXNlRmVhdHVyZXNTdG9yZSgpXG5cbiAgY29uc3QgaGFuZGxlQ2hhbmdlID0gdXNlQ2FsbGJhY2soKHR5cGU6IEZlYXR1cmVFbnVtLCBlbmFibGVkOiBib29sZWFuKSA9PiB7XG4gICAgY29uc3Qge1xuICAgICAgZmVhdHVyZXMsXG4gICAgICBzZXRGZWF0dXJlcyxcbiAgICB9ID0gZmVhdHVyZXNTdG9yZSEuZ2V0U3RhdGUoKVxuXG4gICAgY29uc3QgbmV3RmVhdHVyZXMgPSBwcm9kdWNlKGZlYXR1cmVzLCAoZHJhZnQpID0+IHtcbiAgICAgIGRyYWZ0W3R5cGVdID0ge1xuICAgICAgICAuLi5kcmFmdFt0eXBlXSxcbiAgICAgICAgZW5hYmxlZCxcbiAgICAgIH1cbiAgICB9KVxuICAgIHNldEZlYXR1cmVzKG5ld0ZlYXR1cmVzKVxuICAgIGlmIChvbkNoYW5nZSlcbiAgICAgIG9uQ2hhbmdlKG5ld0ZlYXR1cmVzKVxuICB9LCBbZmVhdHVyZXNTdG9yZSwgb25DaGFuZ2VdKVxuXG4gIHJldHVybiAoXG4gICAgPEZlYXR1cmVDYXJkXG4gICAgICBpY29uPXsoXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwic2hyaW5rLTAgcm91bmRlZC1sZyBib3JkZXItWzAuNXB4XSBib3JkZXItZGl2aWRlci1zdWJ0bGUgYmctdXRpbC1jb2xvcnMtd2FybmluZy13YXJuaW5nLTUwMCBwLTEgc2hhZG93LXhzXCI+XG4gICAgICAgICAgPENpdGF0aW9ucyBjbGFzc05hbWU9XCJoLTQgdy00IHRleHQtdGV4dC1wcmltYXJ5LW9uLXN1cmZhY2VcIiAvPlxuICAgICAgICA8L2Rpdj5cbiAgICAgICl9XG4gICAgICB0aXRsZT17dCgnZmVhdHVyZS5jaXRhdGlvbi50aXRsZScsIHsgbnM6ICdhcHBEZWJ1ZycgfSl9XG4gICAgICB2YWx1ZT17ISFmZWF0dXJlcy5jaXRhdGlvbj8uZW5hYmxlZH1cbiAgICAgIGRlc2NyaXB0aW9uPXt0KCdmZWF0dXJlLmNpdGF0aW9uLmRlc2NyaXB0aW9uJywgeyBuczogJ2FwcERlYnVnJyB9KSF9XG4gICAgICBvbkNoYW5nZT17c3RhdGUgPT4gaGFuZGxlQ2hhbmdlKEZlYXR1cmVFbnVtLmNpdGF0aW9uLCBzdGF0ZSl9XG4gICAgICBkaXNhYmxlZD17ZGlzYWJsZWR9XG4gICAgLz5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBDaXRhdGlvblxuIl19

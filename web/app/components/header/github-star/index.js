@@ -1,0 +1,31 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const react_query_1 = require("@tanstack/react-query");
+const config_1 = require("@/config");
+const defaultData = {
+    stargazers_count: 110918,
+};
+const getStar = async () => {
+    const res = await fetch('https://api.github.com/repos/langgenius/dify');
+    if (!res.ok)
+        throw new Error('Failed to fetch github star');
+    return res.json();
+};
+const GithubStar = (props) => {
+    const { isFetching, isError, data } = (0, react_query_1.useQuery)({
+        queryKey: ['github-star'],
+        queryFn: getStar,
+        enabled: !config_1.IS_DEV,
+        retry: false,
+        placeholderData: defaultData,
+    });
+    if (isFetching)
+        return <react_1.RiLoader2Line className="size-3 shrink-0 animate-spin text-text-tertiary"/>;
+    if (isError)
+        return <span {...props}>{defaultData.stargazers_count.toLocaleString()}</span>;
+    return <span {...props}>{data?.stargazers_count.toLocaleString()}</span>;
+};
+exports.default = GithubStar;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFlBQVksQ0FBQTs7QUFHWiw0Q0FBZ0Q7QUFDaEQsdURBQWdEO0FBQ2hELHFDQUFpQztBQUVqQyxNQUFNLFdBQVcsR0FBRztJQUNsQixnQkFBZ0IsRUFBRSxNQUFNO0NBQ3pCLENBQUE7QUFFRCxNQUFNLE9BQU8sR0FBRyxLQUFLLElBQUksRUFBRTtJQUN6QixNQUFNLEdBQUcsR0FBRyxNQUFNLEtBQUssQ0FBQyw4Q0FBOEMsQ0FBQyxDQUFBO0lBRXZFLElBQUksQ0FBQyxHQUFHLENBQUMsRUFBRTtRQUNULE1BQU0sSUFBSSxLQUFLLENBQUMsNkJBQTZCLENBQUMsQ0FBQTtJQUVoRCxPQUFPLEdBQUcsQ0FBQyxJQUFJLEVBQUUsQ0FBQTtBQUNuQixDQUFDLENBQUE7QUFFRCxNQUFNLFVBQVUsR0FBOEIsQ0FBQyxLQUFLLEVBQUUsRUFBRTtJQUN0RCxNQUFNLEVBQUUsVUFBVSxFQUFFLE9BQU8sRUFBRSxJQUFJLEVBQUUsR0FBRyxJQUFBLHNCQUFRLEVBQWE7UUFDekQsUUFBUSxFQUFFLENBQUMsYUFBYSxDQUFDO1FBQ3pCLE9BQU8sRUFBRSxPQUFPO1FBQ2hCLE9BQU8sRUFBRSxDQUFDLGVBQU07UUFDaEIsS0FBSyxFQUFFLEtBQUs7UUFDWixlQUFlLEVBQUUsV0FBVztLQUM3QixDQUFDLENBQUE7SUFFRixJQUFJLFVBQVU7UUFDWixPQUFPLENBQUMscUJBQWEsQ0FBQyxTQUFTLENBQUMsaURBQWlELEVBQUcsQ0FBQTtJQUV0RixJQUFJLE9BQU87UUFDVCxPQUFPLENBQUMsSUFBSSxDQUFDLElBQUksS0FBSyxDQUFDLENBQUMsQ0FBQyxXQUFXLENBQUMsZ0JBQWdCLENBQUMsY0FBYyxFQUFFLENBQUMsRUFBRSxJQUFJLENBQUMsQ0FBQTtJQUVoRixPQUFPLENBQUMsSUFBSSxDQUFDLElBQUksS0FBSyxDQUFDLENBQUMsQ0FBQyxJQUFJLEVBQUUsZ0JBQWdCLENBQUMsY0FBYyxFQUFFLENBQUMsRUFBRSxJQUFJLENBQUMsQ0FBQTtBQUMxRSxDQUFDLENBQUE7QUFFRCxrQkFBZSxVQUFVLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIGNsaWVudCdcbmltcG9ydCB0eXBlIHsgRkMgfSBmcm9tICdyZWFjdCdcbmltcG9ydCB0eXBlIHsgR2l0aHViUmVwbyB9IGZyb20gJ0AvbW9kZWxzL2NvbW1vbidcbmltcG9ydCB7IFJpTG9hZGVyMkxpbmUgfSBmcm9tICdAcmVtaXhpY29uL3JlYWN0J1xuaW1wb3J0IHsgdXNlUXVlcnkgfSBmcm9tICdAdGFuc3RhY2svcmVhY3QtcXVlcnknXG5pbXBvcnQgeyBJU19ERVYgfSBmcm9tICdAL2NvbmZpZydcblxuY29uc3QgZGVmYXVsdERhdGEgPSB7XG4gIHN0YXJnYXplcnNfY291bnQ6IDExMDkxOCxcbn1cblxuY29uc3QgZ2V0U3RhciA9IGFzeW5jICgpID0+IHtcbiAgY29uc3QgcmVzID0gYXdhaXQgZmV0Y2goJ2h0dHBzOi8vYXBpLmdpdGh1Yi5jb20vcmVwb3MvbGFuZ2dlbml1cy9kaWZ5JylcblxuICBpZiAoIXJlcy5vaylcbiAgICB0aHJvdyBuZXcgRXJyb3IoJ0ZhaWxlZCB0byBmZXRjaCBnaXRodWIgc3RhcicpXG5cbiAgcmV0dXJuIHJlcy5qc29uKClcbn1cblxuY29uc3QgR2l0aHViU3RhcjogRkM8eyBjbGFzc05hbWU6IHN0cmluZyB9PiA9IChwcm9wcykgPT4ge1xuICBjb25zdCB7IGlzRmV0Y2hpbmcsIGlzRXJyb3IsIGRhdGEgfSA9IHVzZVF1ZXJ5PEdpdGh1YlJlcG8+KHtcbiAgICBxdWVyeUtleTogWydnaXRodWItc3RhciddLFxuICAgIHF1ZXJ5Rm46IGdldFN0YXIsXG4gICAgZW5hYmxlZDogIUlTX0RFVixcbiAgICByZXRyeTogZmFsc2UsXG4gICAgcGxhY2Vob2xkZXJEYXRhOiBkZWZhdWx0RGF0YSxcbiAgfSlcblxuICBpZiAoaXNGZXRjaGluZylcbiAgICByZXR1cm4gPFJpTG9hZGVyMkxpbmUgY2xhc3NOYW1lPVwic2l6ZS0zIHNocmluay0wIGFuaW1hdGUtc3BpbiB0ZXh0LXRleHQtdGVydGlhcnlcIiAvPlxuXG4gIGlmIChpc0Vycm9yKVxuICAgIHJldHVybiA8c3BhbiB7Li4ucHJvcHN9PntkZWZhdWx0RGF0YS5zdGFyZ2F6ZXJzX2NvdW50LnRvTG9jYWxlU3RyaW5nKCl9PC9zcGFuPlxuXG4gIHJldHVybiA8c3BhbiB7Li4ucHJvcHN9PntkYXRhPy5zdGFyZ2F6ZXJzX2NvdW50LnRvTG9jYWxlU3RyaW5nKCl9PC9zcGFuPlxufVxuXG5leHBvcnQgZGVmYXVsdCBHaXRodWJTdGFyXG4iXX0=

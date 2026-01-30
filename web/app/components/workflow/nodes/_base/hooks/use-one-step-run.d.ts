@@ -1,0 +1,36 @@
+import type { CommonNodeType, InputVar, ValueSelector, Variable } from '@/app/components/workflow/types';
+import type { FlowType } from '@/types/common';
+export type Params<T> = {
+    id: string;
+    flowId: string;
+    flowType: FlowType;
+    data: CommonNodeType<T>;
+    defaultRunInputData: Record<string, any>;
+    moreDataForCheckValid?: any;
+    iteratorInputKey?: string;
+    loopInputKey?: string;
+    isRunAfterSingleRun: boolean;
+    isPaused: boolean;
+};
+declare const useOneStepRun: <T>({ id, flowId, flowType, data, defaultRunInputData, moreDataForCheckValid, iteratorInputKey, loopInputKey, isRunAfterSingleRun, isPaused, }: Params<T>) => {
+    isShowSingleRun: any;
+    hideSingleRun: () => void;
+    showSingleRun: () => void;
+    toVarInputs: (variables: Variable[]) => InputVar[];
+    varSelectorsToVarInputs: (valueSelectors: ValueSelector[] | string[]) => InputVar[];
+    getInputVars: (textList: string[]) => InputVar[];
+    runningStatus: any;
+    isCompleted: boolean;
+    handleRun: (submitData: Record<string, any>) => Promise<false | undefined>;
+    handleStop: any;
+    runInputData: any;
+    runInputDataRef: any;
+    setRunInputData: any;
+    runResult: any;
+    setRunResult: any;
+    iterationRunResult: any;
+    loopRunResult: any;
+    setNodeRunning: () => void;
+    checkValid: () => any;
+};
+export default useOneStepRun;

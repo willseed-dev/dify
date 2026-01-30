@@ -1,0 +1,15 @@
+import type { StoryObj } from '@storybook/nextjs';
+declare const meta: Meta;
+export default meta;
+type Story = StoryObj<typeof meta>;
+export declare const ValidData: Story;
+export declare const InvalidEmail: Story;
+export declare const InvalidAge: Story;
+export declare const ValidProduct: Story;
+export declare const InvalidPrice: Story;
+export declare const ValidationComparison: Story;
+export declare const FormSubmission: Story;
+export declare const APIResponseValidation: Story;
+export declare const ConfigurationValidation: Story;
+export declare const UsageDocumentation: Story;
+export declare const Playground: Story;

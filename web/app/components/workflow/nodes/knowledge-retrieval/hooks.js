@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useSelectedDatasetsMode = void 0;
+const react_1 = require("react");
+const utils_1 = require("./utils");
+const useSelectedDatasetsMode = (datasets) => {
+    const selectedDatasetsMode = (0, react_1.useMemo)(() => {
+        return (0, utils_1.getSelectedDatasetsMode)(datasets);
+    }, [datasets]);
+    return selectedDatasetsMode;
+};
+exports.useSelectedDatasetsMode = useSelectedDatasetsMode;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaG9va3MuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJob29rcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFJQSxpQ0FBK0I7QUFDL0IsbUNBQWlEO0FBRTFDLE1BQU0sdUJBQXVCLEdBQUcsQ0FBQyxRQUFtQixFQUFFLEVBQUU7SUFDN0QsTUFBTSxvQkFBb0IsR0FBeUIsSUFBQSxlQUFPLEVBQUMsR0FBRyxFQUFFO1FBQzlELE9BQU8sSUFBQSwrQkFBdUIsRUFBQyxRQUFRLENBQUMsQ0FBQTtJQUMxQyxDQUFDLEVBQUUsQ0FBQyxRQUFRLENBQUMsQ0FBQyxDQUFBO0lBRWQsT0FBTyxvQkFBb0IsQ0FBQTtBQUM3QixDQUFDLENBQUE7QUFOWSxRQUFBLHVCQUF1QiwyQkFNbkMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7XG4gIERhdGFTZXQsXG4gIFNlbGVjdGVkRGF0YXNldHNNb2RlLFxufSBmcm9tICdAL21vZGVscy9kYXRhc2V0cydcbmltcG9ydCB7IHVzZU1lbW8gfSBmcm9tICdyZWFjdCdcbmltcG9ydCB7IGdldFNlbGVjdGVkRGF0YXNldHNNb2RlIH0gZnJvbSAnLi91dGlscydcblxuZXhwb3J0IGNvbnN0IHVzZVNlbGVjdGVkRGF0YXNldHNNb2RlID0gKGRhdGFzZXRzOiBEYXRhU2V0W10pID0+IHtcbiAgY29uc3Qgc2VsZWN0ZWREYXRhc2V0c01vZGU6IFNlbGVjdGVkRGF0YXNldHNNb2RlID0gdXNlTWVtbygoKSA9PiB7XG4gICAgcmV0dXJuIGdldFNlbGVjdGVkRGF0YXNldHNNb2RlKGRhdGFzZXRzKVxuICB9LCBbZGF0YXNldHNdKVxuXG4gIHJldHVybiBzZWxlY3RlZERhdGFzZXRzTW9kZVxufVxuIl19

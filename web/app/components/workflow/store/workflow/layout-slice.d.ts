@@ -1,0 +1,24 @@
+import type { StateCreator } from 'zustand';
+export type LayoutSliceShape = {
+    workflowCanvasWidth?: number;
+    workflowCanvasHeight?: number;
+    setWorkflowCanvasWidth: (width: number) => void;
+    setWorkflowCanvasHeight: (height: number) => void;
+    rightPanelWidth?: number;
+    setRightPanelWidth: (width: number) => void;
+    nodePanelWidth: number;
+    setNodePanelWidth: (width: number) => void;
+    previewPanelWidth: number;
+    setPreviewPanelWidth: (width: number) => void;
+    otherPanelWidth: number;
+    setOtherPanelWidth: (width: number) => void;
+    bottomPanelWidth: number;
+    setBottomPanelWidth: (width: number) => void;
+    bottomPanelHeight: number;
+    setBottomPanelHeight: (height: number) => void;
+    variableInspectPanelHeight: number;
+    setVariableInspectPanelHeight: (height: number) => void;
+    maximizeCanvas: boolean;
+    setMaximizeCanvas: (maximize: boolean) => void;
+};
+export declare const createLayoutSlice: StateCreator<LayoutSliceShape>;

@@ -1,0 +1,23 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const link_1 = require("next/link");
+const navigation_1 = require("next/navigation");
+const react_i18next_1 = require("react-i18next");
+const classnames_1 = require("@/utils/classnames");
+const ToolsNav = ({ className, }) => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    const selectedSegment = (0, navigation_1.useSelectedLayoutSegment)();
+    const activated = selectedSegment === 'tools';
+    return (<link_1.default href="/tools" className={(0, classnames_1.cn)('group text-sm font-medium', activated && 'hover:bg-components-main-nav-nav-button-bg-active-hover bg-components-main-nav-nav-button-bg-active font-semibold shadow-md', activated ? 'text-components-main-nav-nav-button-text-active' : 'text-components-main-nav-nav-button-text hover:bg-components-main-nav-nav-button-bg-hover', className)}>
+      {activated
+            ? <react_1.RiHammerFill className="h-4 w-4"/>
+            : <react_1.RiHammerLine className="h-4 w-4"/>}
+      <div className="ml-2 max-[1024px]:hidden">
+        {t('menus.tools', { ns: 'common' })}
+      </div>
+    </link_1.default>);
+};
+exports.default = ToolsNav;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFlBQVksQ0FBQTs7QUFFWiw0Q0FHeUI7QUFDekIsb0NBQTRCO0FBQzVCLGdEQUEwRDtBQUMxRCxpREFBOEM7QUFDOUMsbURBQXVDO0FBTXZDLE1BQU0sUUFBUSxHQUFHLENBQUMsRUFDaEIsU0FBUyxHQUNLLEVBQUUsRUFBRTtJQUNsQixNQUFNLEVBQUUsQ0FBQyxFQUFFLEdBQUcsSUFBQSw4QkFBYyxHQUFFLENBQUE7SUFDOUIsTUFBTSxlQUFlLEdBQUcsSUFBQSxxQ0FBd0IsR0FBRSxDQUFBO0lBQ2xELE1BQU0sU0FBUyxHQUFHLGVBQWUsS0FBSyxPQUFPLENBQUE7SUFFN0MsT0FBTyxDQUNMLENBQUMsY0FBSSxDQUNILElBQUksQ0FBQyxRQUFRLENBQ2IsU0FBUyxDQUFDLENBQUMsSUFBQSxlQUFFLEVBQUMsMkJBQTJCLEVBQUUsU0FBUyxJQUFJLDZIQUE2SCxFQUFFLFNBQVMsQ0FBQyxDQUFDLENBQUMsaURBQWlELENBQUMsQ0FBQyxDQUFDLDJGQUEyRixFQUFFLFNBQVMsQ0FBQyxDQUFDLENBRS9WO01BQUEsQ0FDRSxTQUFTO1lBQ1AsQ0FBQyxDQUFDLENBQUMsb0JBQVksQ0FBQyxTQUFTLENBQUMsU0FBUyxFQUFHO1lBQ3RDLENBQUMsQ0FBQyxDQUFDLG9CQUFZLENBQUMsU0FBUyxDQUFDLFNBQVMsRUFDdkMsQ0FDQTtNQUFBLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQywwQkFBMEIsQ0FDdkM7UUFBQSxDQUFDLENBQUMsQ0FBQyxhQUFhLEVBQUUsRUFBRSxFQUFFLEVBQUUsUUFBUSxFQUFFLENBQUMsQ0FDckM7TUFBQSxFQUFFLEdBQUcsQ0FDUDtJQUFBLEVBQUUsY0FBSSxDQUFDLENBQ1IsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELGtCQUFlLFFBQVEsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbIid1c2UgY2xpZW50J1xuXG5pbXBvcnQge1xuICBSaUhhbW1lckZpbGwsXG4gIFJpSGFtbWVyTGluZSxcbn0gZnJvbSAnQHJlbWl4aWNvbi9yZWFjdCdcbmltcG9ydCBMaW5rIGZyb20gJ25leHQvbGluaydcbmltcG9ydCB7IHVzZVNlbGVjdGVkTGF5b3V0U2VnbWVudCB9IGZyb20gJ25leHQvbmF2aWdhdGlvbidcbmltcG9ydCB7IHVzZVRyYW5zbGF0aW9uIH0gZnJvbSAncmVhY3QtaTE4bmV4dCdcbmltcG9ydCB7IGNuIH0gZnJvbSAnQC91dGlscy9jbGFzc25hbWVzJ1xuXG50eXBlIFRvb2xzTmF2UHJvcHMgPSB7XG4gIGNsYXNzTmFtZT86IHN0cmluZ1xufVxuXG5jb25zdCBUb29sc05hdiA9ICh7XG4gIGNsYXNzTmFtZSxcbn06IFRvb2xzTmF2UHJvcHMpID0+IHtcbiAgY29uc3QgeyB0IH0gPSB1c2VUcmFuc2xhdGlvbigpXG4gIGNvbnN0IHNlbGVjdGVkU2VnbWVudCA9IHVzZVNlbGVjdGVkTGF5b3V0U2VnbWVudCgpXG4gIGNvbnN0IGFjdGl2YXRlZCA9IHNlbGVjdGVkU2VnbWVudCA9PT0gJ3Rvb2xzJ1xuXG4gIHJldHVybiAoXG4gICAgPExpbmtcbiAgICAgIGhyZWY9XCIvdG9vbHNcIlxuICAgICAgY2xhc3NOYW1lPXtjbignZ3JvdXAgdGV4dC1zbSBmb250LW1lZGl1bScsIGFjdGl2YXRlZCAmJiAnaG92ZXI6YmctY29tcG9uZW50cy1tYWluLW5hdi1uYXYtYnV0dG9uLWJnLWFjdGl2ZS1ob3ZlciBiZy1jb21wb25lbnRzLW1haW4tbmF2LW5hdi1idXR0b24tYmctYWN0aXZlIGZvbnQtc2VtaWJvbGQgc2hhZG93LW1kJywgYWN0aXZhdGVkID8gJ3RleHQtY29tcG9uZW50cy1tYWluLW5hdi1uYXYtYnV0dG9uLXRleHQtYWN0aXZlJyA6ICd0ZXh0LWNvbXBvbmVudHMtbWFpbi1uYXYtbmF2LWJ1dHRvbi10ZXh0IGhvdmVyOmJnLWNvbXBvbmVudHMtbWFpbi1uYXYtbmF2LWJ1dHRvbi1iZy1ob3ZlcicsIGNsYXNzTmFtZSl9XG4gICAgPlxuICAgICAge1xuICAgICAgICBhY3RpdmF0ZWRcbiAgICAgICAgICA/IDxSaUhhbW1lckZpbGwgY2xhc3NOYW1lPVwiaC00IHctNFwiIC8+XG4gICAgICAgICAgOiA8UmlIYW1tZXJMaW5lIGNsYXNzTmFtZT1cImgtNCB3LTRcIiAvPlxuICAgICAgfVxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJtbC0yIG1heC1bMTAyNHB4XTpoaWRkZW5cIj5cbiAgICAgICAge3QoJ21lbnVzLnRvb2xzJywgeyBuczogJ2NvbW1vbicgfSl9XG4gICAgICA8L2Rpdj5cbiAgICA8L0xpbms+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgVG9vbHNOYXZcbiJdfQ==

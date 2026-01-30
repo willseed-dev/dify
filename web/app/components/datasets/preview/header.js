@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PreviewHeader = void 0;
+const classnames_1 = require("@/utils/classnames");
+const PreviewHeader = (props) => {
+    const { title, className, children, ...rest } = props;
+    return (<div {...rest} className={(0, classnames_1.cn)(className)}>
+      <div className="system-2xs-semibold-uppercase mb-1 px-1 uppercase text-text-accent">
+        {title}
+      </div>
+      {children}
+    </div>);
+};
+exports.PreviewHeader = PreviewHeader;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaGVhZGVyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiaGVhZGVyLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFDQSxtREFBdUM7QUFNaEMsTUFBTSxhQUFhLEdBQTJCLENBQUMsS0FBSyxFQUFFLEVBQUU7SUFDN0QsTUFBTSxFQUFFLEtBQUssRUFBRSxTQUFTLEVBQUUsUUFBUSxFQUFFLEdBQUcsSUFBSSxFQUFFLEdBQUcsS0FBSyxDQUFBO0lBQ3JELE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FDRixJQUFJLElBQUksQ0FBQyxDQUNULFNBQVMsQ0FBQyxDQUFDLElBQUEsZUFBRSxFQUFDLFNBQVMsQ0FBQyxDQUFDLENBRXpCO01BQUEsQ0FBQyxHQUFHLENBQ0YsU0FBUyxDQUFDLG9FQUFvRSxDQUU5RTtRQUFBLENBQUMsS0FBSyxDQUNSO01BQUEsRUFBRSxHQUFHLENBQ0w7TUFBQSxDQUFDLFFBQVEsQ0FDWDtJQUFBLEVBQUUsR0FBRyxDQUFDLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQWZZLFFBQUEsYUFBYSxpQkFlekIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IENvbXBvbmVudFByb3BzLCBGQyB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgY24gfSBmcm9tICdAL3V0aWxzL2NsYXNzbmFtZXMnXG5cbmV4cG9ydCB0eXBlIFByZXZpZXdIZWFkZXJQcm9wcyA9IE9taXQ8Q29tcG9uZW50UHJvcHM8J2Rpdic+LCAndGl0bGUnPiAmIHtcbiAgdGl0bGU6IHN0cmluZ1xufVxuXG5leHBvcnQgY29uc3QgUHJldmlld0hlYWRlcjogRkM8UHJldmlld0hlYWRlclByb3BzPiA9IChwcm9wcykgPT4ge1xuICBjb25zdCB7IHRpdGxlLCBjbGFzc05hbWUsIGNoaWxkcmVuLCAuLi5yZXN0IH0gPSBwcm9wc1xuICByZXR1cm4gKFxuICAgIDxkaXZcbiAgICAgIHsuLi5yZXN0fVxuICAgICAgY2xhc3NOYW1lPXtjbihjbGFzc05hbWUpfVxuICAgID5cbiAgICAgIDxkaXZcbiAgICAgICAgY2xhc3NOYW1lPVwic3lzdGVtLTJ4cy1zZW1pYm9sZC11cHBlcmNhc2UgbWItMSBweC0xIHVwcGVyY2FzZSB0ZXh0LXRleHQtYWNjZW50XCJcbiAgICAgID5cbiAgICAgICAge3RpdGxlfVxuICAgICAgPC9kaXY+XG4gICAgICB7Y2hpbGRyZW59XG4gICAgPC9kaXY+XG4gIClcbn1cbiJdfQ==

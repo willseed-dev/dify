@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const text_generation_1 = require("@/app/components/share/text-generation");
+const authenticated_layout_1 = require("../../components/authenticated-layout");
+const Workflow = () => {
+    return (<authenticated_layout_1.default>
+      <text_generation_1.default isWorkflow/>
+    </authenticated_layout_1.default>);
+};
+exports.default = React.memo(Workflow);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFnZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInBhZ2UudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsK0JBQThCO0FBRTlCLDRFQUF5RDtBQUN6RCxnRkFBdUU7QUFFdkUsTUFBTSxRQUFRLEdBQUcsR0FBRyxFQUFFO0lBQ3BCLE9BQU8sQ0FDTCxDQUFDLDhCQUFtQixDQUNsQjtNQUFBLENBQUMseUJBQUksQ0FBQyxVQUFVLEVBQ2xCO0lBQUEsRUFBRSw4QkFBbUIsQ0FBQyxDQUN2QixDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsS0FBSyxDQUFDLElBQUksQ0FBQyxRQUFRLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuXG5pbXBvcnQgTWFpbiBmcm9tICdAL2FwcC9jb21wb25lbnRzL3NoYXJlL3RleHQtZ2VuZXJhdGlvbidcbmltcG9ydCBBdXRoZW50aWNhdGVkTGF5b3V0IGZyb20gJy4uLy4uL2NvbXBvbmVudHMvYXV0aGVudGljYXRlZC1sYXlvdXQnXG5cbmNvbnN0IFdvcmtmbG93ID0gKCkgPT4ge1xuICByZXR1cm4gKFxuICAgIDxBdXRoZW50aWNhdGVkTGF5b3V0PlxuICAgICAgPE1haW4gaXNXb3JrZmxvdyAvPlxuICAgIDwvQXV0aGVudGljYXRlZExheW91dD5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBSZWFjdC5tZW1vKFdvcmtmbG93KVxuIl19

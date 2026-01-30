@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GroupField = void 0;
+const react_1 = require("react");
+const _1 = require(".");
+exports.GroupField = (0, react_1.memo)(({ children, fieldProps, groupProps, }) => {
+    return (<_1.Group {...groupProps}>
+      <_1.Field {...fieldProps}>
+        {children}
+      </_1.Field>
+    </_1.Group>);
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ3JvdXAtZmllbGQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJncm91cC1maWVsZC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBS0EsaUNBQTRCO0FBQzVCLHdCQUdVO0FBT0csUUFBQSxVQUFVLEdBQUcsSUFBQSxZQUFJLEVBQUMsQ0FBQyxFQUM5QixRQUFRLEVBQ1IsVUFBVSxFQUNWLFVBQVUsR0FDTSxFQUFFLEVBQUU7SUFDcEIsT0FBTyxDQUNMLENBQUMsUUFBSyxDQUFDLElBQUksVUFBVSxDQUFDLENBQ3BCO01BQUEsQ0FBQyxRQUFLLENBQUMsSUFBSSxVQUFVLENBQUMsQ0FDcEI7UUFBQSxDQUFDLFFBQVEsQ0FDWDtNQUFBLEVBQUUsUUFBSyxDQUNUO0lBQUEsRUFBRSxRQUFLLENBQUMsQ0FDVCxDQUFBO0FBQ0gsQ0FBQyxDQUFDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IFJlYWN0Tm9kZSB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHR5cGUge1xuICBGaWVsZFByb3BzLFxuICBHcm91cFByb3BzLFxufSBmcm9tICcuJ1xuaW1wb3J0IHsgbWVtbyB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHtcbiAgRmllbGQsXG4gIEdyb3VwLFxufSBmcm9tICcuJ1xuXG50eXBlIEdyb3VwRmllbGRQcm9wcyA9IHtcbiAgY2hpbGRyZW4/OiBSZWFjdE5vZGVcbiAgZ3JvdXBQcm9wcz86IE9taXQ8R3JvdXBQcm9wcywgJ2NoaWxkcmVuJz5cbiAgZmllbGRQcm9wcz86IE9taXQ8RmllbGRQcm9wcywgJ2NoaWxkcmVuJz5cbn1cbmV4cG9ydCBjb25zdCBHcm91cEZpZWxkID0gbWVtbygoe1xuICBjaGlsZHJlbixcbiAgZmllbGRQcm9wcyxcbiAgZ3JvdXBQcm9wcyxcbn06IEdyb3VwRmllbGRQcm9wcykgPT4ge1xuICByZXR1cm4gKFxuICAgIDxHcm91cCB7Li4uZ3JvdXBQcm9wc30+XG4gICAgICA8RmllbGQgey4uLmZpZWxkUHJvcHN9PlxuICAgICAgICB7Y2hpbGRyZW59XG4gICAgICA8L0ZpZWxkPlxuICAgIDwvR3JvdXA+XG4gIClcbn0pXG4iXX0=

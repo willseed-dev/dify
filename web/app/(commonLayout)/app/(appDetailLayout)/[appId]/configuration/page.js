@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const configuration_1 = require("@/app/components/app/configuration");
+const IConfiguration = async () => {
+    return (<configuration_1.default />);
+};
+exports.default = IConfiguration;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFnZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInBhZ2UudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsK0JBQThCO0FBQzlCLHNFQUE4RDtBQUU5RCxNQUFNLGNBQWMsR0FBRyxLQUFLLElBQUksRUFBRTtJQUNoQyxPQUFPLENBQ0wsQ0FBQyx1QkFBYSxDQUFDLEFBQUQsRUFBRyxDQUNsQixDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsY0FBYyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgQ29uZmlndXJhdGlvbiBmcm9tICdAL2FwcC9jb21wb25lbnRzL2FwcC9jb25maWd1cmF0aW9uJ1xuXG5jb25zdCBJQ29uZmlndXJhdGlvbiA9IGFzeW5jICgpID0+IHtcbiAgcmV0dXJuIChcbiAgICA8Q29uZmlndXJhdGlvbiAvPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IElDb25maWd1cmF0aW9uXG4iXX0=

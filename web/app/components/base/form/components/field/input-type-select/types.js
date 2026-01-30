@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.InputTypeEnum = void 0;
+const zod_1 = require("zod");
+exports.InputTypeEnum = zod_1.z.enum([
+    'text-input',
+    'paragraph',
+    'number',
+    'select',
+    'checkbox',
+    'file',
+    'file-list',
+]);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidHlwZXMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ0eXBlcy50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQ0EsNkJBQXVCO0FBRVYsUUFBQSxhQUFhLEdBQUcsT0FBQyxDQUFDLElBQUksQ0FBQztJQUNsQyxZQUFZO0lBQ1osV0FBVztJQUNYLFFBQVE7SUFDUixRQUFRO0lBQ1IsVUFBVTtJQUNWLE1BQU07SUFDTixXQUFXO0NBQ1osQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHR5cGUgeyBSZW1peGljb25Db21wb25lbnRUeXBlIH0gZnJvbSAnQHJlbWl4aWNvbi9yZWFjdCdcbmltcG9ydCB7IHogfSBmcm9tICd6b2QnXG5cbmV4cG9ydCBjb25zdCBJbnB1dFR5cGVFbnVtID0gei5lbnVtKFtcbiAgJ3RleHQtaW5wdXQnLFxuICAncGFyYWdyYXBoJyxcbiAgJ251bWJlcicsXG4gICdzZWxlY3QnLFxuICAnY2hlY2tib3gnLFxuICAnZmlsZScsXG4gICdmaWxlLWxpc3QnLFxuXSlcblxuZXhwb3J0IHR5cGUgSW5wdXRUeXBlID0gei5pbmZlcjx0eXBlb2YgSW5wdXRUeXBlRW51bT5cblxuZXhwb3J0IHR5cGUgRmlsZVR5cGVTZWxlY3RPcHRpb24gPSB7XG4gIHZhbHVlOiBJbnB1dFR5cGVcbiAgbGFiZWw6IHN0cmluZ1xuICBJY29uOiBSZW1peGljb25Db21wb25lbnRUeXBlXG4gIHR5cGU6IHN0cmluZ1xufVxuIl19

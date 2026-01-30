@@ -1,0 +1,39 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useFormatTimeFromNow = void 0;
+const dayjs_1 = require("dayjs");
+const relativeTime_1 = require("dayjs/plugin/relativeTime");
+const react_1 = require("react");
+const i18n_1 = require("@/context/i18n");
+const language_1 = require("@/i18n-config/language");
+require("dayjs/locale/de");
+require("dayjs/locale/es");
+require("dayjs/locale/fa");
+require("dayjs/locale/fr");
+require("dayjs/locale/hi");
+require("dayjs/locale/id");
+require("dayjs/locale/it");
+require("dayjs/locale/ja");
+require("dayjs/locale/ko");
+require("dayjs/locale/pl");
+require("dayjs/locale/pt-br");
+require("dayjs/locale/ro");
+require("dayjs/locale/ru");
+require("dayjs/locale/sl");
+require("dayjs/locale/th");
+require("dayjs/locale/tr");
+require("dayjs/locale/uk");
+require("dayjs/locale/vi");
+require("dayjs/locale/zh-cn");
+require("dayjs/locale/zh-tw");
+dayjs_1.default.extend(relativeTime_1.default);
+const useFormatTimeFromNow = () => {
+    const locale = (0, i18n_1.useLocale)();
+    const formatTimeFromNow = (0, react_1.useCallback)((time) => {
+        const dayjsLocale = language_1.localeMap[locale] ?? 'en';
+        return (0, dayjs_1.default)(time).locale(dayjsLocale).fromNow();
+    }, [locale]);
+    return { formatTimeFromNow };
+};
+exports.useFormatTimeFromNow = useFormatTimeFromNow;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXNlLWZvcm1hdC10aW1lLWZyb20tbm93LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidXNlLWZvcm1hdC10aW1lLWZyb20tbm93LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBLGlDQUF5QjtBQUN6Qiw0REFBb0Q7QUFDcEQsaUNBQW1DO0FBQ25DLHlDQUEwQztBQUMxQyxxREFBa0Q7QUFDbEQsMkJBQXdCO0FBQ3hCLDJCQUF3QjtBQUN4QiwyQkFBd0I7QUFDeEIsMkJBQXdCO0FBQ3hCLDJCQUF3QjtBQUN4QiwyQkFBd0I7QUFDeEIsMkJBQXdCO0FBQ3hCLDJCQUF3QjtBQUN4QiwyQkFBd0I7QUFDeEIsMkJBQXdCO0FBQ3hCLDhCQUEyQjtBQUMzQiwyQkFBd0I7QUFDeEIsMkJBQXdCO0FBQ3hCLDJCQUF3QjtBQUN4QiwyQkFBd0I7QUFDeEIsMkJBQXdCO0FBQ3hCLDJCQUF3QjtBQUN4QiwyQkFBd0I7QUFDeEIsOEJBQTJCO0FBQzNCLDhCQUEyQjtBQUUzQixlQUFLLENBQUMsTUFBTSxDQUFDLHNCQUFZLENBQUMsQ0FBQTtBQUVuQixNQUFNLG9CQUFvQixHQUFHLEdBQUcsRUFBRTtJQUN2QyxNQUFNLE1BQU0sR0FBRyxJQUFBLGdCQUFTLEdBQUUsQ0FBQTtJQUMxQixNQUFNLGlCQUFpQixHQUFHLElBQUEsbUJBQVcsRUFBQyxDQUFDLElBQVksRUFBRSxFQUFFO1FBQ3JELE1BQU0sV0FBVyxHQUFHLG9CQUFTLENBQUMsTUFBTSxDQUFDLElBQUksSUFBSSxDQUFBO1FBQzdDLE9BQU8sSUFBQSxlQUFLLEVBQUMsSUFBSSxDQUFDLENBQUMsTUFBTSxDQUFDLFdBQVcsQ0FBQyxDQUFDLE9BQU8sRUFBRSxDQUFBO0lBQ2xELENBQUMsRUFBRSxDQUFDLE1BQU0sQ0FBQyxDQUFDLENBQUE7SUFFWixPQUFPLEVBQUUsaUJBQWlCLEVBQUUsQ0FBQTtBQUM5QixDQUFDLENBQUE7QUFSWSxRQUFBLG9CQUFvQix3QkFRaEMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgZGF5anMgZnJvbSAnZGF5anMnXG5pbXBvcnQgcmVsYXRpdmVUaW1lIGZyb20gJ2RheWpzL3BsdWdpbi9yZWxhdGl2ZVRpbWUnXG5pbXBvcnQgeyB1c2VDYWxsYmFjayB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgdXNlTG9jYWxlIH0gZnJvbSAnQC9jb250ZXh0L2kxOG4nXG5pbXBvcnQgeyBsb2NhbGVNYXAgfSBmcm9tICdAL2kxOG4tY29uZmlnL2xhbmd1YWdlJ1xuaW1wb3J0ICdkYXlqcy9sb2NhbGUvZGUnXG5pbXBvcnQgJ2RheWpzL2xvY2FsZS9lcydcbmltcG9ydCAnZGF5anMvbG9jYWxlL2ZhJ1xuaW1wb3J0ICdkYXlqcy9sb2NhbGUvZnInXG5pbXBvcnQgJ2RheWpzL2xvY2FsZS9oaSdcbmltcG9ydCAnZGF5anMvbG9jYWxlL2lkJ1xuaW1wb3J0ICdkYXlqcy9sb2NhbGUvaXQnXG5pbXBvcnQgJ2RheWpzL2xvY2FsZS9qYSdcbmltcG9ydCAnZGF5anMvbG9jYWxlL2tvJ1xuaW1wb3J0ICdkYXlqcy9sb2NhbGUvcGwnXG5pbXBvcnQgJ2RheWpzL2xvY2FsZS9wdC1icidcbmltcG9ydCAnZGF5anMvbG9jYWxlL3JvJ1xuaW1wb3J0ICdkYXlqcy9sb2NhbGUvcnUnXG5pbXBvcnQgJ2RheWpzL2xvY2FsZS9zbCdcbmltcG9ydCAnZGF5anMvbG9jYWxlL3RoJ1xuaW1wb3J0ICdkYXlqcy9sb2NhbGUvdHInXG5pbXBvcnQgJ2RheWpzL2xvY2FsZS91aydcbmltcG9ydCAnZGF5anMvbG9jYWxlL3ZpJ1xuaW1wb3J0ICdkYXlqcy9sb2NhbGUvemgtY24nXG5pbXBvcnQgJ2RheWpzL2xvY2FsZS96aC10dydcblxuZGF5anMuZXh0ZW5kKHJlbGF0aXZlVGltZSlcblxuZXhwb3J0IGNvbnN0IHVzZUZvcm1hdFRpbWVGcm9tTm93ID0gKCkgPT4ge1xuICBjb25zdCBsb2NhbGUgPSB1c2VMb2NhbGUoKVxuICBjb25zdCBmb3JtYXRUaW1lRnJvbU5vdyA9IHVzZUNhbGxiYWNrKCh0aW1lOiBudW1iZXIpID0+IHtcbiAgICBjb25zdCBkYXlqc0xvY2FsZSA9IGxvY2FsZU1hcFtsb2NhbGVdID8/ICdlbidcbiAgICByZXR1cm4gZGF5anModGltZSkubG9jYWxlKGRheWpzTG9jYWxlKS5mcm9tTm93KClcbiAgfSwgW2xvY2FsZV0pXG5cbiAgcmV0dXJuIHsgZm9ybWF0VGltZUZyb21Ob3cgfVxufVxuIl19

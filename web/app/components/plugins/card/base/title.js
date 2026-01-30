@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Title = ({ title, }) => {
+    return (<div className="system-md-semibold truncate text-text-secondary">
+      {title}
+    </div>);
+};
+exports.default = Title;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGl0bGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ0aXRsZS50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxNQUFNLEtBQUssR0FBRyxDQUFDLEVBQ2IsS0FBSyxHQUdOLEVBQUUsRUFBRTtJQUNILE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsaURBQWlELENBQzlEO01BQUEsQ0FBQyxLQUFLLENBQ1I7SUFBQSxFQUFFLEdBQUcsQ0FBQyxDQUNQLENBQUE7QUFDSCxDQUFDLENBQUE7QUFFRCxrQkFBZSxLQUFLLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBUaXRsZSA9ICh7XG4gIHRpdGxlLFxufToge1xuICB0aXRsZTogc3RyaW5nXG59KSA9PiB7XG4gIHJldHVybiAoXG4gICAgPGRpdiBjbGFzc05hbWU9XCJzeXN0ZW0tbWQtc2VtaWJvbGQgdHJ1bmNhdGUgdGV4dC10ZXh0LXNlY29uZGFyeVwiPlxuICAgICAge3RpdGxlfVxuICAgIDwvZGl2PlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IFRpdGxlXG4iXX0=

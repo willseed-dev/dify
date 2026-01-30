@@ -1,0 +1,20 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const React = require("react");
+const react_i18next_1 = require("react-i18next");
+const button_1 = require("@/app/components/base/button");
+const NoData = ({ onStart, }) => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    return (<div className="rounded-xl bg-gradient-to-r from-workflow-workflow-progress-bg-1 to-workflow-workflow-progress-bg-2 p-4 pt-3">
+      <div className="text-xs font-semibold leading-5 text-text-secondary">{t('metadata.metadata', { ns: 'dataset' })}</div>
+      <div className="system-xs-regular mt-1 text-text-tertiary">{t('metadata.documentMetadata.metadataToolTip', { ns: 'dataset' })}</div>
+      <button_1.default variant="primary" className="mt-2" onClick={onStart}>
+        <div>{t('metadata.documentMetadata.startLabeling', { ns: 'dataset' })}</div>
+        <react_1.RiArrowRightLine className="ml-1 size-4"/>
+      </button_1.default>
+    </div>);
+};
+exports.default = React.memo(NoData);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibm8tZGF0YS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5vLWRhdGEudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQSxZQUFZLENBQUE7O0FBRVosNENBQW1EO0FBQ25ELCtCQUE4QjtBQUM5QixpREFBOEM7QUFDOUMseURBQWlEO0FBTWpELE1BQU0sTUFBTSxHQUFjLENBQUMsRUFDekIsT0FBTyxHQUNSLEVBQUUsRUFBRTtJQUNILE1BQU0sRUFBRSxDQUFDLEVBQUUsR0FBRyxJQUFBLDhCQUFjLEdBQUUsQ0FBQTtJQUM5QixPQUFPLENBQ0wsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLDhHQUE4RyxDQUMzSDtNQUFBLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxxREFBcUQsQ0FBQyxDQUFDLENBQUMsQ0FBQyxtQkFBbUIsRUFBRSxFQUFFLEVBQUUsRUFBRSxTQUFTLEVBQUUsQ0FBQyxDQUFDLEVBQUUsR0FBRyxDQUNySDtNQUFBLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQywyQ0FBMkMsQ0FBQyxDQUFDLENBQUMsQ0FBQywyQ0FBMkMsRUFBRSxFQUFFLEVBQUUsRUFBRSxTQUFTLEVBQUUsQ0FBQyxDQUFDLEVBQUUsR0FBRyxDQUNuSTtNQUFBLENBQUMsZ0JBQU0sQ0FBQyxPQUFPLENBQUMsU0FBUyxDQUFDLFNBQVMsQ0FBQyxNQUFNLENBQUMsT0FBTyxDQUFDLENBQUMsT0FBTyxDQUFDLENBQzFEO1FBQUEsQ0FBQyxHQUFHLENBQUMsQ0FBQyxDQUFDLENBQUMseUNBQXlDLEVBQUUsRUFBRSxFQUFFLEVBQUUsU0FBUyxFQUFFLENBQUMsQ0FBQyxFQUFFLEdBQUcsQ0FDM0U7UUFBQSxDQUFDLHdCQUFnQixDQUFDLFNBQVMsQ0FBQyxhQUFhLEVBQzNDO01BQUEsRUFBRSxnQkFBTSxDQUNWO0lBQUEsRUFBRSxHQUFHLENBQUMsQ0FDUCxDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBQ0Qsa0JBQWUsS0FBSyxDQUFDLElBQUksQ0FBQyxNQUFNLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbIid1c2UgY2xpZW50J1xuaW1wb3J0IHR5cGUgeyBGQyB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgUmlBcnJvd1JpZ2h0TGluZSB9IGZyb20gJ0ByZW1peGljb24vcmVhY3QnXG5pbXBvcnQgKiBhcyBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCB7IHVzZVRyYW5zbGF0aW9uIH0gZnJvbSAncmVhY3QtaTE4bmV4dCdcbmltcG9ydCBCdXR0b24gZnJvbSAnQC9hcHAvY29tcG9uZW50cy9iYXNlL2J1dHRvbidcblxudHlwZSBQcm9wcyA9IHtcbiAgb25TdGFydDogKCkgPT4gdm9pZFxufVxuXG5jb25zdCBOb0RhdGE6IEZDPFByb3BzPiA9ICh7XG4gIG9uU3RhcnQsXG59KSA9PiB7XG4gIGNvbnN0IHsgdCB9ID0gdXNlVHJhbnNsYXRpb24oKVxuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPVwicm91bmRlZC14bCBiZy1ncmFkaWVudC10by1yIGZyb20td29ya2Zsb3ctd29ya2Zsb3ctcHJvZ3Jlc3MtYmctMSB0by13b3JrZmxvdy13b3JrZmxvdy1wcm9ncmVzcy1iZy0yIHAtNCBwdC0zXCI+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInRleHQteHMgZm9udC1zZW1pYm9sZCBsZWFkaW5nLTUgdGV4dC10ZXh0LXNlY29uZGFyeVwiPnt0KCdtZXRhZGF0YS5tZXRhZGF0YScsIHsgbnM6ICdkYXRhc2V0JyB9KX08L2Rpdj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwic3lzdGVtLXhzLXJlZ3VsYXIgbXQtMSB0ZXh0LXRleHQtdGVydGlhcnlcIj57dCgnbWV0YWRhdGEuZG9jdW1lbnRNZXRhZGF0YS5tZXRhZGF0YVRvb2xUaXAnLCB7IG5zOiAnZGF0YXNldCcgfSl9PC9kaXY+XG4gICAgICA8QnV0dG9uIHZhcmlhbnQ9XCJwcmltYXJ5XCIgY2xhc3NOYW1lPVwibXQtMlwiIG9uQ2xpY2s9e29uU3RhcnR9PlxuICAgICAgICA8ZGl2Pnt0KCdtZXRhZGF0YS5kb2N1bWVudE1ldGFkYXRhLnN0YXJ0TGFiZWxpbmcnLCB7IG5zOiAnZGF0YXNldCcgfSl9PC9kaXY+XG4gICAgICAgIDxSaUFycm93UmlnaHRMaW5lIGNsYXNzTmFtZT1cIm1sLTEgc2l6ZS00XCIgLz5cbiAgICAgIDwvQnV0dG9uPlxuICAgIDwvZGl2PlxuICApXG59XG5leHBvcnQgZGVmYXVsdCBSZWFjdC5tZW1vKE5vRGF0YSlcbiJdfQ==

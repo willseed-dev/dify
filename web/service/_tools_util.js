@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.buildProviderQuery = void 0;
+const buildProviderQuery = (collectionName) => {
+    const query = new URLSearchParams();
+    query.set('provider', collectionName);
+    return query.toString();
+};
+exports.buildProviderQuery = buildProviderQuery;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiX3Rvb2xzX3V0aWwuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJfdG9vbHNfdXRpbC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBTyxNQUFNLGtCQUFrQixHQUFHLENBQUMsY0FBc0IsRUFBVSxFQUFFO0lBQ25FLE1BQU0sS0FBSyxHQUFHLElBQUksZUFBZSxFQUFFLENBQUE7SUFDbkMsS0FBSyxDQUFDLEdBQUcsQ0FBQyxVQUFVLEVBQUUsY0FBYyxDQUFDLENBQUE7SUFDckMsT0FBTyxLQUFLLENBQUMsUUFBUSxFQUFFLENBQUE7QUFDekIsQ0FBQyxDQUFBO0FBSlksUUFBQSxrQkFBa0Isc0JBSTlCIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IGJ1aWxkUHJvdmlkZXJRdWVyeSA9IChjb2xsZWN0aW9uTmFtZTogc3RyaW5nKTogc3RyaW5nID0+IHtcbiAgY29uc3QgcXVlcnkgPSBuZXcgVVJMU2VhcmNoUGFyYW1zKClcbiAgcXVlcnkuc2V0KCdwcm92aWRlcicsIGNvbGxlY3Rpb25OYW1lKVxuICByZXR1cm4gcXVlcnkudG9TdHJpbmcoKVxufVxuIl19

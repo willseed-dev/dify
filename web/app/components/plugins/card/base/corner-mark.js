@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const plugin_1 = require("../../../base/icons/src/vender/plugin");
+const CornerMark = ({ text }) => {
+    return (<div className="absolute right-0 top-0 flex pl-[13px] ">
+      <plugin_1.LeftCorner className="text-background-section"/>
+      <div className="system-2xs-medium-uppercase h-5 rounded-tr-xl bg-background-section pr-2 leading-5 text-text-tertiary">{text}</div>
+    </div>);
+};
+exports.default = CornerMark;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29ybmVyLW1hcmsuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJjb3JuZXItbWFyay50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxrRUFBa0U7QUFFbEUsTUFBTSxVQUFVLEdBQUcsQ0FBQyxFQUFFLElBQUksRUFBb0IsRUFBRSxFQUFFO0lBQ2hELE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsd0NBQXdDLENBQ3JEO01BQUEsQ0FBQyxtQkFBVSxDQUFDLFNBQVMsQ0FBQyx5QkFBeUIsRUFDL0M7TUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsdUdBQXVHLENBQUMsQ0FBQyxJQUFJLENBQUMsRUFBRSxHQUFHLENBQ3BJO0lBQUEsRUFBRSxHQUFHLENBQUMsQ0FDUCxDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsVUFBVSxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTGVmdENvcm5lciB9IGZyb20gJy4uLy4uLy4uL2Jhc2UvaWNvbnMvc3JjL3ZlbmRlci9wbHVnaW4nXG5cbmNvbnN0IENvcm5lck1hcmsgPSAoeyB0ZXh0IH06IHsgdGV4dDogc3RyaW5nIH0pID0+IHtcbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cImFic29sdXRlIHJpZ2h0LTAgdG9wLTAgZmxleCBwbC1bMTNweF0gXCI+XG4gICAgICA8TGVmdENvcm5lciBjbGFzc05hbWU9XCJ0ZXh0LWJhY2tncm91bmQtc2VjdGlvblwiIC8+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInN5c3RlbS0yeHMtbWVkaXVtLXVwcGVyY2FzZSBoLTUgcm91bmRlZC10ci14bCBiZy1iYWNrZ3JvdW5kLXNlY3Rpb24gcHItMiBsZWFkaW5nLTUgdGV4dC10ZXh0LXRlcnRpYXJ5XCI+e3RleHR9PC9kaXY+XG4gICAgPC9kaXY+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgQ29ybmVyTWFya1xuIl19

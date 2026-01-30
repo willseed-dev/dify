@@ -1,0 +1,49 @@
+"use strict";
+/**
+ * Field Encoding Utilities
+ * Provides Base64 encoding for sensitive fields (password, verification code)
+ * during transmission from frontend to backend.
+ *
+ * Note: This uses Base64 encoding for obfuscation, not cryptographic encryption.
+ * Real security relies on HTTPS for transport layer encryption.
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.encryptField = encryptField;
+exports.encryptPassword = encryptPassword;
+exports.encryptVerificationCode = encryptVerificationCode;
+/**
+ * Encode sensitive field using Base64
+ * @param plaintext - The plain text to encode
+ * @returns Base64 encoded text
+ */
+function encryptField(plaintext) {
+    try {
+        // Base64 encode the plaintext
+        // btoa works with ASCII, so we need to handle UTF-8 properly
+        const utf8Bytes = new TextEncoder().encode(plaintext);
+        const base64 = btoa(String.fromCharCode(...utf8Bytes));
+        return base64;
+    }
+    catch (error) {
+        console.error('Field encoding failed:', error);
+        // If encoding fails, throw error to prevent sending plaintext
+        throw new Error('Encoding failed. Please check your input.');
+    }
+}
+/**
+ * Encrypt password field for login
+ * @param password - Plain password
+ * @returns Encrypted password or original if encryption disabled
+ */
+function encryptPassword(password) {
+    return encryptField(password);
+}
+/**
+ * Encrypt verification code for email code login
+ * @param code - Plain verification code
+ * @returns Encrypted code or original if encryption disabled
+ */
+function encryptVerificationCode(code) {
+    return encryptField(code);
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZW5jcnlwdGlvbi5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImVuY3J5cHRpb24udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBOzs7Ozs7O0dBT0c7O0FBT0gsb0NBYUM7QUFPRCwwQ0FFQztBQU9ELDBEQUVDO0FBcENEOzs7O0dBSUc7QUFDSCxTQUFnQixZQUFZLENBQUMsU0FBaUI7SUFDNUMsSUFBSSxDQUFDO1FBQ0gsOEJBQThCO1FBQzlCLDZEQUE2RDtRQUM3RCxNQUFNLFNBQVMsR0FBRyxJQUFJLFdBQVcsRUFBRSxDQUFDLE1BQU0sQ0FBQyxTQUFTLENBQUMsQ0FBQTtRQUNyRCxNQUFNLE1BQU0sR0FBRyxJQUFJLENBQUMsTUFBTSxDQUFDLFlBQVksQ0FBQyxHQUFHLFNBQVMsQ0FBQyxDQUFDLENBQUE7UUFDdEQsT0FBTyxNQUFNLENBQUE7SUFDZixDQUFDO0lBQ0QsT0FBTyxLQUFLLEVBQUUsQ0FBQztRQUNiLE9BQU8sQ0FBQyxLQUFLLENBQUMsd0JBQXdCLEVBQUUsS0FBSyxDQUFDLENBQUE7UUFDOUMsOERBQThEO1FBQzlELE1BQU0sSUFBSSxLQUFLLENBQUMsMkNBQTJDLENBQUMsQ0FBQTtJQUM5RCxDQUFDO0FBQ0gsQ0FBQztBQUVEOzs7O0dBSUc7QUFDSCxTQUFnQixlQUFlLENBQUMsUUFBZ0I7SUFDOUMsT0FBTyxZQUFZLENBQUMsUUFBUSxDQUFDLENBQUE7QUFDL0IsQ0FBQztBQUVEOzs7O0dBSUc7QUFDSCxTQUFnQix1QkFBdUIsQ0FBQyxJQUFZO0lBQ2xELE9BQU8sWUFBWSxDQUFDLElBQUksQ0FBQyxDQUFBO0FBQzNCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEZpZWxkIEVuY29kaW5nIFV0aWxpdGllc1xuICogUHJvdmlkZXMgQmFzZTY0IGVuY29kaW5nIGZvciBzZW5zaXRpdmUgZmllbGRzIChwYXNzd29yZCwgdmVyaWZpY2F0aW9uIGNvZGUpXG4gKiBkdXJpbmcgdHJhbnNtaXNzaW9uIGZyb20gZnJvbnRlbmQgdG8gYmFja2VuZC5cbiAqXG4gKiBOb3RlOiBUaGlzIHVzZXMgQmFzZTY0IGVuY29kaW5nIGZvciBvYmZ1c2NhdGlvbiwgbm90IGNyeXB0b2dyYXBoaWMgZW5jcnlwdGlvbi5cbiAqIFJlYWwgc2VjdXJpdHkgcmVsaWVzIG9uIEhUVFBTIGZvciB0cmFuc3BvcnQgbGF5ZXIgZW5jcnlwdGlvbi5cbiAqL1xuXG4vKipcbiAqIEVuY29kZSBzZW5zaXRpdmUgZmllbGQgdXNpbmcgQmFzZTY0XG4gKiBAcGFyYW0gcGxhaW50ZXh0IC0gVGhlIHBsYWluIHRleHQgdG8gZW5jb2RlXG4gKiBAcmV0dXJucyBCYXNlNjQgZW5jb2RlZCB0ZXh0XG4gKi9cbmV4cG9ydCBmdW5jdGlvbiBlbmNyeXB0RmllbGQocGxhaW50ZXh0OiBzdHJpbmcpOiBzdHJpbmcge1xuICB0cnkge1xuICAgIC8vIEJhc2U2NCBlbmNvZGUgdGhlIHBsYWludGV4dFxuICAgIC8vIGJ0b2Egd29ya3Mgd2l0aCBBU0NJSSwgc28gd2UgbmVlZCB0byBoYW5kbGUgVVRGLTggcHJvcGVybHlcbiAgICBjb25zdCB1dGY4Qnl0ZXMgPSBuZXcgVGV4dEVuY29kZXIoKS5lbmNvZGUocGxhaW50ZXh0KVxuICAgIGNvbnN0IGJhc2U2NCA9IGJ0b2EoU3RyaW5nLmZyb21DaGFyQ29kZSguLi51dGY4Qnl0ZXMpKVxuICAgIHJldHVybiBiYXNlNjRcbiAgfVxuICBjYXRjaCAoZXJyb3IpIHtcbiAgICBjb25zb2xlLmVycm9yKCdGaWVsZCBlbmNvZGluZyBmYWlsZWQ6JywgZXJyb3IpXG4gICAgLy8gSWYgZW5jb2RpbmcgZmFpbHMsIHRocm93IGVycm9yIHRvIHByZXZlbnQgc2VuZGluZyBwbGFpbnRleHRcbiAgICB0aHJvdyBuZXcgRXJyb3IoJ0VuY29kaW5nIGZhaWxlZC4gUGxlYXNlIGNoZWNrIHlvdXIgaW5wdXQuJylcbiAgfVxufVxuXG4vKipcbiAqIEVuY3J5cHQgcGFzc3dvcmQgZmllbGQgZm9yIGxvZ2luXG4gKiBAcGFyYW0gcGFzc3dvcmQgLSBQbGFpbiBwYXNzd29yZFxuICogQHJldHVybnMgRW5jcnlwdGVkIHBhc3N3b3JkIG9yIG9yaWdpbmFsIGlmIGVuY3J5cHRpb24gZGlzYWJsZWRcbiAqL1xuZXhwb3J0IGZ1bmN0aW9uIGVuY3J5cHRQYXNzd29yZChwYXNzd29yZDogc3RyaW5nKTogc3RyaW5nIHtcbiAgcmV0dXJuIGVuY3J5cHRGaWVsZChwYXNzd29yZClcbn1cblxuLyoqXG4gKiBFbmNyeXB0IHZlcmlmaWNhdGlvbiBjb2RlIGZvciBlbWFpbCBjb2RlIGxvZ2luXG4gKiBAcGFyYW0gY29kZSAtIFBsYWluIHZlcmlmaWNhdGlvbiBjb2RlXG4gKiBAcmV0dXJucyBFbmNyeXB0ZWQgY29kZSBvciBvcmlnaW5hbCBpZiBlbmNyeXB0aW9uIGRpc2FibGVkXG4gKi9cbmV4cG9ydCBmdW5jdGlvbiBlbmNyeXB0VmVyaWZpY2F0aW9uQ29kZShjb2RlOiBzdHJpbmcpOiBzdHJpbmcge1xuICByZXR1cm4gZW5jcnlwdEZpZWxkKGNvZGUpXG59XG4iXX0=

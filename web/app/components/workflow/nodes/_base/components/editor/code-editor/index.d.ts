@@ -1,0 +1,32 @@
+import * as React from 'react';
+import { CodeLanguage } from '@/app/components/workflow/nodes/code/types';
+import './style.css';
+export type Props = {
+    nodeId?: string;
+    value?: string | object;
+    placeholder?: React.JSX.Element | string;
+    onChange?: (value: string) => void;
+    title?: string | React.JSX.Element;
+    language: CodeLanguage;
+    headerRight?: React.JSX.Element;
+    readOnly?: boolean;
+    isJSONStringifyBeauty?: boolean;
+    height?: number;
+    isInNode?: boolean;
+    onMount?: (editor: any, monaco: any) => void;
+    noWrapper?: boolean;
+    isExpand?: boolean;
+    showFileList?: boolean;
+    onGenerated?: (value: string) => void;
+    showCodeGenerator?: boolean;
+    className?: string;
+    tip?: React.JSX.Element;
+    footer?: React.ReactNode;
+};
+export declare const languageMap: {
+    [CodeLanguage.javascript]: string;
+    [CodeLanguage.python3]: string;
+    [CodeLanguage.json]: string;
+};
+declare const _default: any;
+export default _default;

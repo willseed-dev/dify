@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Mask = void 0;
+const React = require("react");
+const classnames_1 = require("@/utils/classnames");
+const Mask = ({ className, }) => {
+    return (<div className={(0, classnames_1.cn)('h-12 bg-gradient-to-b from-components-panel-bg-transparent to-components-panel-bg', className)}/>);
+};
+exports.Mask = Mask;
+exports.default = React.memo(exports.Mask);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFzay5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm1hc2sudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBLCtCQUE4QjtBQUM5QixtREFBdUM7QUFNaEMsTUFBTSxJQUFJLEdBQUcsQ0FBQyxFQUNuQixTQUFTLEdBQ0MsRUFBRSxFQUFFO0lBQ2QsT0FBTyxDQUNMLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxDQUFDLElBQUEsZUFBRSxFQUNoQixtRkFBbUYsRUFDbkYsU0FBUyxDQUNWLENBQUMsRUFDQSxDQUNILENBQUE7QUFDSCxDQUFDLENBQUE7QUFWWSxRQUFBLElBQUksUUFVaEI7QUFFRCxrQkFBZSxLQUFLLENBQUMsSUFBSSxDQUFDLFlBQUksQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgeyBjbiB9IGZyb20gJ0AvdXRpbHMvY2xhc3NuYW1lcydcblxudHlwZSBNYXNrUHJvcHMgPSB7XG4gIGNsYXNzTmFtZT86IHN0cmluZ1xufVxuXG5leHBvcnQgY29uc3QgTWFzayA9ICh7XG4gIGNsYXNzTmFtZSxcbn06IE1hc2tQcm9wcykgPT4ge1xuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPXtjbihcbiAgICAgICdoLTEyIGJnLWdyYWRpZW50LXRvLWIgZnJvbS1jb21wb25lbnRzLXBhbmVsLWJnLXRyYW5zcGFyZW50IHRvLWNvbXBvbmVudHMtcGFuZWwtYmcnLFxuICAgICAgY2xhc3NOYW1lLFxuICAgICl9XG4gICAgLz5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBSZWFjdC5tZW1vKE1hc2spXG4iXX0=

@@ -1,0 +1,28 @@
+import type { Dispatch, SetStateAction } from 'react';
+import type { Plugin } from '../../plugins/types';
+import type { BlockEnum, ToolWithProvider } from '../types';
+import type { ToolDefaultValue, ToolValue } from './types';
+import type { ListProps } from '@/app/components/workflow/block-selector/market-place-plugin/list';
+type AllToolsProps = {
+    className?: string;
+    toolContentClassName?: string;
+    searchText: string;
+    tags: ListProps['tags'];
+    buildInTools: ToolWithProvider[];
+    customTools: ToolWithProvider[];
+    workflowTools: ToolWithProvider[];
+    mcpTools: ToolWithProvider[];
+    onSelect: (type: BlockEnum, tool: ToolDefaultValue) => void;
+    canNotSelectMultiple?: boolean;
+    onSelectMultiple?: (type: BlockEnum, tools: ToolDefaultValue[]) => void;
+    selectedTools?: ToolValue[];
+    canChooseMCPTool?: boolean;
+    onTagsChange?: Dispatch<SetStateAction<string[]>>;
+    isInRAGPipeline?: boolean;
+    featuredPlugins?: Plugin[];
+    featuredLoading?: boolean;
+    showFeatured?: boolean;
+    onFeaturedInstallSuccess?: () => Promise<void> | void;
+};
+declare const AllTools: ({ className, toolContentClassName, searchText, tags, onSelect, canNotSelectMultiple, onSelectMultiple, buildInTools, workflowTools, customTools, mcpTools, selectedTools, canChooseMCPTool, onTagsChange, isInRAGPipeline, featuredPlugins, featuredLoading, showFeatured, onFeaturedInstallSuccess, }: AllToolsProps) => any;
+export default AllTools;

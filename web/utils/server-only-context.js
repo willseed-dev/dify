@@ -1,0 +1,14 @@
+"use strict";
+// credit: https://github.com/manvalls/server-only-context/blob/main/src/index.ts
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.serverOnlyContext = serverOnlyContext;
+const react_1 = require("react");
+function serverOnlyContext(defaultValue) {
+    const getRef = (0, react_1.cache)(() => ({ current: defaultValue }));
+    const getValue = () => getRef().current;
+    const setValue = (value) => {
+        getRef().current = value;
+    };
+    return [getValue, setValue];
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2VydmVyLW9ubHktY29udGV4dC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInNlcnZlci1vbmx5LWNvbnRleHQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLGlGQUFpRjs7QUFJakYsOENBVUM7QUFaRCxpQ0FBNkI7QUFFN0IsU0FBZ0IsaUJBQWlCLENBQUksWUFBZTtJQUNsRCxNQUFNLE1BQU0sR0FBRyxJQUFBLGFBQUssRUFBQyxHQUFHLEVBQUUsQ0FBQyxDQUFDLEVBQUUsT0FBTyxFQUFFLFlBQVksRUFBRSxDQUFDLENBQUMsQ0FBQTtJQUV2RCxNQUFNLFFBQVEsR0FBRyxHQUFNLEVBQUUsQ0FBQyxNQUFNLEVBQUUsQ0FBQyxPQUFPLENBQUE7SUFFMUMsTUFBTSxRQUFRLEdBQUcsQ0FBQyxLQUFRLEVBQUUsRUFBRTtRQUM1QixNQUFNLEVBQUUsQ0FBQyxPQUFPLEdBQUcsS0FBSyxDQUFBO0lBQzFCLENBQUMsQ0FBQTtJQUVELE9BQU8sQ0FBQyxRQUFRLEVBQUUsUUFBUSxDQUFDLENBQUE7QUFDN0IsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8vIGNyZWRpdDogaHR0cHM6Ly9naXRodWIuY29tL21hbnZhbGxzL3NlcnZlci1vbmx5LWNvbnRleHQvYmxvYi9tYWluL3NyYy9pbmRleC50c1xuXG5pbXBvcnQgeyBjYWNoZSB9IGZyb20gJ3JlYWN0J1xuXG5leHBvcnQgZnVuY3Rpb24gc2VydmVyT25seUNvbnRleHQ8VD4oZGVmYXVsdFZhbHVlOiBUKTogWygpID0+IFQsICh2OiBUKSA9PiB2b2lkXSB7XG4gIGNvbnN0IGdldFJlZiA9IGNhY2hlKCgpID0+ICh7IGN1cnJlbnQ6IGRlZmF1bHRWYWx1ZSB9KSlcblxuICBjb25zdCBnZXRWYWx1ZSA9ICgpOiBUID0+IGdldFJlZigpLmN1cnJlbnRcblxuICBjb25zdCBzZXRWYWx1ZSA9ICh2YWx1ZTogVCkgPT4ge1xuICAgIGdldFJlZigpLmN1cnJlbnQgPSB2YWx1ZVxuICB9XG5cbiAgcmV0dXJuIFtnZXRWYWx1ZSwgc2V0VmFsdWVdXG59XG4iXX0=

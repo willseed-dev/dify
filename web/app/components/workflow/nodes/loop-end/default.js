@@ -1,0 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const types_1 = require("@/app/components/workflow/block-selector/types");
+const types_2 = require("@/app/components/workflow/types");
+const utils_1 = require("@/app/components/workflow/utils");
+const metaData = (0, utils_1.genNodeMetaData)({
+    classification: types_1.BlockClassificationEnum.Logic,
+    sort: 2,
+    type: types_2.BlockEnum.LoopEnd,
+    isSingleton: true,
+});
+const nodeDefault = {
+    metaData,
+    defaultValue: {},
+    checkValid() {
+        return {
+            isValid: true,
+        };
+    },
+};
+exports.default = nodeDefault;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGVmYXVsdC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImRlZmF1bHQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFJQSwwRUFBd0Y7QUFDeEYsMkRBQTJEO0FBQzNELDJEQUFpRTtBQUVqRSxNQUFNLFFBQVEsR0FBRyxJQUFBLHVCQUFlLEVBQUM7SUFDL0IsY0FBYyxFQUFFLCtCQUF1QixDQUFDLEtBQUs7SUFDN0MsSUFBSSxFQUFFLENBQUM7SUFDUCxJQUFJLEVBQUUsaUJBQVMsQ0FBQyxPQUFPO0lBQ3ZCLFdBQVcsRUFBRSxJQUFJO0NBQ2xCLENBQUMsQ0FBQTtBQUNGLE1BQU0sV0FBVyxHQUFnQztJQUMvQyxRQUFRO0lBQ1IsWUFBWSxFQUFFLEVBQUU7SUFDaEIsVUFBVTtRQUNSLE9BQU87WUFDTCxPQUFPLEVBQUUsSUFBSTtTQUNkLENBQUE7SUFDSCxDQUFDO0NBQ0YsQ0FBQTtBQUVELGtCQUFlLFdBQVcsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB0eXBlIHsgTm9kZURlZmF1bHQgfSBmcm9tICcuLi8uLi90eXBlcydcbmltcG9ydCB0eXBlIHtcbiAgU2ltcGxlTm9kZVR5cGUsXG59IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvd29ya2Zsb3cvc2ltcGxlLW5vZGUvdHlwZXMnXG5pbXBvcnQgeyBCbG9ja0NsYXNzaWZpY2F0aW9uRW51bSB9IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvd29ya2Zsb3cvYmxvY2stc2VsZWN0b3IvdHlwZXMnXG5pbXBvcnQgeyBCbG9ja0VudW0gfSBmcm9tICdAL2FwcC9jb21wb25lbnRzL3dvcmtmbG93L3R5cGVzJ1xuaW1wb3J0IHsgZ2VuTm9kZU1ldGFEYXRhIH0gZnJvbSAnQC9hcHAvY29tcG9uZW50cy93b3JrZmxvdy91dGlscydcblxuY29uc3QgbWV0YURhdGEgPSBnZW5Ob2RlTWV0YURhdGEoe1xuICBjbGFzc2lmaWNhdGlvbjogQmxvY2tDbGFzc2lmaWNhdGlvbkVudW0uTG9naWMsXG4gIHNvcnQ6IDIsXG4gIHR5cGU6IEJsb2NrRW51bS5Mb29wRW5kLFxuICBpc1NpbmdsZXRvbjogdHJ1ZSxcbn0pXG5jb25zdCBub2RlRGVmYXVsdDogTm9kZURlZmF1bHQ8U2ltcGxlTm9kZVR5cGU+ID0ge1xuICBtZXRhRGF0YSxcbiAgZGVmYXVsdFZhbHVlOiB7fSxcbiAgY2hlY2tWYWxpZCgpIHtcbiAgICByZXR1cm4ge1xuICAgICAgaXNWYWxpZDogdHJ1ZSxcbiAgICB9XG4gIH0sXG59XG5cbmV4cG9ydCBkZWZhdWx0IG5vZGVEZWZhdWx0XG4iXX0=

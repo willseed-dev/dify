@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const Node = () => {
+    return (
+    // No summary content
+    <div></div>);
+};
+exports.default = React.memo(Node);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibm9kZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5vZGUudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBR0EsK0JBQThCO0FBRTlCLE1BQU0sSUFBSSxHQUFnQyxHQUFHLEVBQUU7SUFDN0MsT0FBTztJQUNMLHFCQUFxQjtJQUNyQixDQUFDLEdBQUcsQ0FBQyxFQUFFLEdBQUcsQ0FBQyxDQUNaLENBQUE7QUFDSCxDQUFDLENBQUE7QUFFRCxrQkFBZSxLQUFLLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHR5cGUgeyBGQyB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHR5cGUgeyBDb2RlTm9kZVR5cGUgfSBmcm9tICcuL3R5cGVzJ1xuaW1wb3J0IHR5cGUgeyBOb2RlUHJvcHMgfSBmcm9tICdAL2FwcC9jb21wb25lbnRzL3dvcmtmbG93L3R5cGVzJ1xuaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnXG5cbmNvbnN0IE5vZGU6IEZDPE5vZGVQcm9wczxDb2RlTm9kZVR5cGU+PiA9ICgpID0+IHtcbiAgcmV0dXJuIChcbiAgICAvLyBObyBzdW1tYXJ5IGNvbnRlbnRcbiAgICA8ZGl2PjwvZGl2PlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IFJlYWN0Lm1lbW8oTm9kZSlcbiJdfQ==

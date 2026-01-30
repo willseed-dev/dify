@@ -1,0 +1,23 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const classnames_1 = require("@/utils/classnames");
+const style_module_css_1 = require("./style.module.css");
+const RadioCard = ({ title, description, isChosen, onChosen, icon, extra, }) => {
+    return (<div className={(0, classnames_1.cn)(style_module_css_1.default.item, isChosen && style_module_css_1.default.active)} onClick={onChosen}>
+      <div className="flex px-3 py-2">
+        {icon}
+        <div>
+          <div className="flex items-center justify-between">
+            <div className="text-sm font-medium leading-5 text-gray-900">{title}</div>
+            <div className={style_module_css_1.default.radio}></div>
+          </div>
+          <div className="text-xs font-normal leading-[18px] text-gray-500">{description}</div>
+        </div>
+      </div>
+      {extra}
+    </div>);
+};
+exports.default = React.memo(RadioCard);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFlBQVksQ0FBQTs7QUFFWiwrQkFBOEI7QUFDOUIsbURBQXVDO0FBQ3ZDLHlEQUFrQztBQWFsQyxNQUFNLFNBQVMsR0FBYyxDQUFDLEVBQzVCLEtBQUssRUFDTCxXQUFXLEVBQ1gsUUFBUSxFQUNSLFFBQVEsRUFDUixJQUFJLEVBQ0osS0FBSyxHQUNOLEVBQUUsRUFBRTtJQUNILE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FDRixTQUFTLENBQUMsQ0FBQyxJQUFBLGVBQUUsRUFBQywwQkFBQyxDQUFDLElBQUksRUFBRSxRQUFRLElBQUksMEJBQUMsQ0FBQyxNQUFNLENBQUMsQ0FBQyxDQUM1QyxPQUFPLENBQUMsQ0FBQyxRQUFRLENBQUMsQ0FFbEI7TUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsZ0JBQWdCLENBQzdCO1FBQUEsQ0FBQyxJQUFJLENBQ0w7UUFBQSxDQUFDLEdBQUcsQ0FDRjtVQUFBLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxtQ0FBbUMsQ0FDaEQ7WUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsNkNBQTZDLENBQUMsQ0FBQyxLQUFLLENBQUMsRUFBRSxHQUFHLENBQ3pFO1lBQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLENBQUMsMEJBQUMsQ0FBQyxLQUFLLENBQUMsQ0FBQyxFQUFFLEdBQUcsQ0FDaEM7VUFBQSxFQUFFLEdBQUcsQ0FDTDtVQUFBLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxrREFBa0QsQ0FBQyxDQUFDLFdBQVcsQ0FBQyxFQUFFLEdBQUcsQ0FDdEY7UUFBQSxFQUFFLEdBQUcsQ0FDUDtNQUFBLEVBQUUsR0FBRyxDQUNMO01BQUEsQ0FBQyxLQUFLLENBQ1I7SUFBQSxFQUFFLEdBQUcsQ0FBQyxDQUNQLENBQUE7QUFDSCxDQUFDLENBQUE7QUFDRCxrQkFBZSxLQUFLLENBQUMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBjbGllbnQnXG5pbXBvcnQgdHlwZSB7IEZDIH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgKiBhcyBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCB7IGNuIH0gZnJvbSAnQC91dGlscy9jbGFzc25hbWVzJ1xuaW1wb3J0IHMgZnJvbSAnLi9zdHlsZS5tb2R1bGUuY3NzJ1xuXG50eXBlIFByb3BzID0ge1xuICBjbGFzc05hbWU/OiBzdHJpbmdcbiAgdGl0bGU6IHN0cmluZyB8IFJlYWN0LkpTWC5FbGVtZW50IHwgbnVsbFxuICBkZXNjcmlwdGlvbjogc3RyaW5nXG4gIGlzQ2hvc2VuOiBib29sZWFuXG4gIG9uQ2hvc2VuOiAoKSA9PiB2b2lkXG4gIGNob3NlbkNvbmZpZz86IFJlYWN0LlJlYWN0Tm9kZVxuICBpY29uPzogUmVhY3QuSlNYLkVsZW1lbnRcbiAgZXh0cmE/OiBSZWFjdC5SZWFjdE5vZGVcbn1cblxuY29uc3QgUmFkaW9DYXJkOiBGQzxQcm9wcz4gPSAoe1xuICB0aXRsZSxcbiAgZGVzY3JpcHRpb24sXG4gIGlzQ2hvc2VuLFxuICBvbkNob3NlbixcbiAgaWNvbixcbiAgZXh0cmEsXG59KSA9PiB7XG4gIHJldHVybiAoXG4gICAgPGRpdlxuICAgICAgY2xhc3NOYW1lPXtjbihzLml0ZW0sIGlzQ2hvc2VuICYmIHMuYWN0aXZlKX1cbiAgICAgIG9uQ2xpY2s9e29uQ2hvc2VufVxuICAgID5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBweC0zIHB5LTJcIj5cbiAgICAgICAge2ljb259XG4gICAgICAgIDxkaXY+XG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW5cIj5cbiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwidGV4dC1zbSBmb250LW1lZGl1bSBsZWFkaW5nLTUgdGV4dC1ncmF5LTkwMFwiPnt0aXRsZX08L2Rpdj5cbiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPXtzLnJhZGlvfT48L2Rpdj5cbiAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInRleHQteHMgZm9udC1ub3JtYWwgbGVhZGluZy1bMThweF0gdGV4dC1ncmF5LTUwMFwiPntkZXNjcmlwdGlvbn08L2Rpdj5cbiAgICAgICAgPC9kaXY+XG4gICAgICA8L2Rpdj5cbiAgICAgIHtleHRyYX1cbiAgICA8L2Rpdj5cbiAgKVxufVxuZXhwb3J0IGRlZmF1bHQgUmVhY3QubWVtbyhSYWRpb0NhcmQpXG4iXX0=

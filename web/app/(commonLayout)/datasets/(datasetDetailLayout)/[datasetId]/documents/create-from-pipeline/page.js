@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const create_from_pipeline_1 = require("@/app/components/datasets/documents/create-from-pipeline");
+const CreateFromPipelinePage = async () => {
+    return (<create_from_pipeline_1.default />);
+};
+exports.default = CreateFromPipelinePage;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFnZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInBhZ2UudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsK0JBQThCO0FBQzlCLG1HQUF5RjtBQUV6RixNQUFNLHNCQUFzQixHQUFHLEtBQUssSUFBSSxFQUFFO0lBQ3hDLE9BQU8sQ0FDTCxDQUFDLDhCQUFrQixDQUFDLEFBQUQsRUFBRyxDQUN2QixDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsc0JBQXNCLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgKiBhcyBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCBDcmVhdGVGcm9tUGlwZWxpbmUgZnJvbSAnQC9hcHAvY29tcG9uZW50cy9kYXRhc2V0cy9kb2N1bWVudHMvY3JlYXRlLWZyb20tcGlwZWxpbmUnXG5cbmNvbnN0IENyZWF0ZUZyb21QaXBlbGluZVBhZ2UgPSBhc3luYyAoKSA9PiB7XG4gIHJldHVybiAoXG4gICAgPENyZWF0ZUZyb21QaXBlbGluZSAvPlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IENyZWF0ZUZyb21QaXBlbGluZVBhZ2VcbiJdfQ==

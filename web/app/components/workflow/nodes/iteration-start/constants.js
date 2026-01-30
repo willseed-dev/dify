@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CUSTOM_ITERATION_START_NODE = void 0;
+exports.CUSTOM_ITERATION_START_NODE = 'custom-iteration-start';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29uc3RhbnRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiY29uc3RhbnRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFhLFFBQUEsMkJBQTJCLEdBQUcsd0JBQXdCLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgQ1VTVE9NX0lURVJBVElPTl9TVEFSVF9OT0RFID0gJ2N1c3RvbS1pdGVyYXRpb24tc3RhcnQnXG4iXX0=

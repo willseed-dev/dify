@@ -1,0 +1,26 @@
+import type { FC } from 'react';
+import type { PreProcessingRule } from '@/models/datasets';
+import { ChunkingMode } from '@/models/datasets';
+type GeneralChunkingOptionsProps = {
+    segmentIdentifier: string;
+    maxChunkLength: number;
+    overlap: number;
+    rules: PreProcessingRule[];
+    currentDocForm: ChunkingMode;
+    docLanguage: string;
+    isActive: boolean;
+    isInUpload: boolean;
+    isNotUploadInEmptyDataset: boolean;
+    hasCurrentDatasetDocForm: boolean;
+    onSegmentIdentifierChange: (value: string) => void;
+    onMaxChunkLengthChange: (value: number) => void;
+    onOverlapChange: (value: number) => void;
+    onRuleToggle: (id: string) => void;
+    onDocFormChange: (form: ChunkingMode) => void;
+    onDocLanguageChange: (lang: string) => void;
+    onPreview: () => void;
+    onReset: () => void;
+    locale: string;
+};
+export declare const GeneralChunkingOptions: FC<GeneralChunkingOptionsProps>;
+export {};

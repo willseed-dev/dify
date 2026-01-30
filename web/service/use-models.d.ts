@@ -1,0 +1,13 @@
+export declare const useModelProviderModelList: (provider: string) => any;
+export declare const useGetProviderCredential: (enabled: boolean, provider: string, credentialId?: string) => any;
+export declare const useAddProviderCredential: (provider: string) => any;
+export declare const useEditProviderCredential: (provider: string) => any;
+export declare const useDeleteProviderCredential: (provider: string) => any;
+export declare const useActiveProviderCredential: (provider: string) => any;
+export declare const useGetModelCredential: (enabled: boolean, provider: string, credentialId?: string, model?: string, modelType?: string, configFrom?: string) => any;
+export declare const useAddModelCredential: (provider: string) => any;
+export declare const useEditModelCredential: (provider: string) => any;
+export declare const useDeleteModelCredential: (provider: string) => any;
+export declare const useDeleteModel: (provider: string) => any;
+export declare const useActiveModelCredential: (provider: string) => any;
+export declare const useUpdateModelLoadBalancingConfig: (provider: string) => any;

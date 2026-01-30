@@ -1,0 +1,10 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const classnames_1 = require("@/utils/classnames");
+const var_1 = require("@/utils/var");
+const LogoSite = ({ className, }) => {
+    return (<img src={`${var_1.basePath}/logo/logo.png`} className={(0, classnames_1.cn)('block h-[24.5px] w-[22.651px]', className)} alt="logo"/>);
+};
+exports.default = LogoSite;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibG9nby1zaXRlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibG9nby1zaXRlLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsWUFBWSxDQUFBOztBQUVaLG1EQUF1QztBQUN2QyxxQ0FBc0M7QUFNdEMsTUFBTSxRQUFRLEdBQXNCLENBQUMsRUFDbkMsU0FBUyxHQUNWLEVBQUUsRUFBRTtJQUNILE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FDRixHQUFHLENBQUMsQ0FBQyxHQUFHLGNBQVEsZ0JBQWdCLENBQUMsQ0FDakMsU0FBUyxDQUFDLENBQUMsSUFBQSxlQUFFLEVBQUMsK0JBQStCLEVBQUUsU0FBUyxDQUFDLENBQUMsQ0FDMUQsR0FBRyxDQUFDLE1BQU0sRUFDVixDQUNILENBQUE7QUFDSCxDQUFDLENBQUE7QUFFRCxrQkFBZSxRQUFRLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIGNsaWVudCdcbmltcG9ydCB0eXBlIHsgRkMgfSBmcm9tICdyZWFjdCdcbmltcG9ydCB7IGNuIH0gZnJvbSAnQC91dGlscy9jbGFzc25hbWVzJ1xuaW1wb3J0IHsgYmFzZVBhdGggfSBmcm9tICdAL3V0aWxzL3ZhcidcblxudHlwZSBMb2dvU2l0ZVByb3BzID0ge1xuICBjbGFzc05hbWU/OiBzdHJpbmdcbn1cblxuY29uc3QgTG9nb1NpdGU6IEZDPExvZ29TaXRlUHJvcHM+ID0gKHtcbiAgY2xhc3NOYW1lLFxufSkgPT4ge1xuICByZXR1cm4gKFxuICAgIDxpbWdcbiAgICAgIHNyYz17YCR7YmFzZVBhdGh9L2xvZ28vbG9nby5wbmdgfVxuICAgICAgY2xhc3NOYW1lPXtjbignYmxvY2sgaC1bMjQuNXB4XSB3LVsyMi42NTFweF0nLCBjbGFzc05hbWUpfVxuICAgICAgYWx0PVwibG9nb1wiXG4gICAgLz5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBMb2dvU2l0ZVxuIl19

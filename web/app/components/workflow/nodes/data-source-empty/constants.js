@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CUSTOM_DATA_SOURCE_EMPTY_NODE = void 0;
+exports.CUSTOM_DATA_SOURCE_EMPTY_NODE = 'custom-data-source-empty';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29uc3RhbnRzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiY29uc3RhbnRzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFhLFFBQUEsNkJBQTZCLEdBQUcsMEJBQTBCLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgQ1VTVE9NX0RBVEFfU09VUkNFX0VNUFRZX05PREUgPSAnY3VzdG9tLWRhdGEtc291cmNlLWVtcHR5J1xuIl19

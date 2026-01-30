@@ -1,0 +1,24 @@
+import type { StoryObj } from '@storybook/nextjs';
+declare const meta: Meta<{
+    ({ className, size, state, styleCss, children, ref, ...props }: import(".").ActionButtonProps): any;
+    displayName: string;
+}>;
+export default meta;
+type Story = StoryObj<typeof meta>;
+export declare const Default: Story;
+export declare const WithText: Story;
+export declare const IconWithText: Story;
+export declare const ExtraSmall: Story;
+export declare const Small: Story;
+export declare const Medium: Story;
+export declare const Large: Story;
+export declare const ExtraLarge: Story;
+export declare const ActiveState: Story;
+export declare const DisabledState: Story;
+export declare const DestructiveState: Story;
+export declare const HoverState: Story;
+export declare const ToolbarActions: Story;
+export declare const InlineActions: Story;
+export declare const SizeComparison: Story;
+export declare const StateComparison: Story;
+export declare const Playground: Story;

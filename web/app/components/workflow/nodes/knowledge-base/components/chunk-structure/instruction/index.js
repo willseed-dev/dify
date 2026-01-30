@@ -1,0 +1,34 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const react_i18next_1 = require("react-i18next");
+const knowledge_1 = require("@/app/components/base/icons/src/vender/knowledge");
+const i18n_1 = require("@/context/i18n");
+const classnames_1 = require("@/utils/classnames");
+const line_1 = require("./line");
+const Instruction = ({ className, }) => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    const docLink = (0, i18n_1.useDocLink)();
+    return (<div className={(0, classnames_1.cn)('flex flex-col gap-y-2 overflow-hidden rounded-[10px] bg-workflow-process-bg p-4', className)}>
+      <div className="relative flex size-10 items-center justify-center rounded-[10px] border-[0.5px] border-components-card-border bg-components-card-bg shadow-lg backdrop-blur-[5px]">
+        <knowledge_1.AddChunks className="size-5 text-text-accent"/>
+        <line_1.default className="absolute -left-px bottom-[-76px]" type="vertical"/>
+        <line_1.default className="absolute -right-px bottom-[-76px]" type="vertical"/>
+        <line_1.default className="absolute -top-px right-[-184px]" type="horizontal"/>
+        <line_1.default className="absolute -bottom-px right-[-184px]" type="horizontal"/>
+      </div>
+      <div className="flex flex-col gap-y-1">
+        <div className="system-sm-medium text-text-secondary">
+          {t('nodes.knowledgeBase.chunkStructureTip.title', { ns: 'workflow' })}
+        </div>
+        <div className="system-xs-regular">
+          <p className="text-text-tertiary">{t('nodes.knowledgeBase.chunkStructureTip.message', { ns: 'workflow' })}</p>
+          <a href={docLink('/guides/knowledge-base/create-knowledge-and-upload-documents/chunking-and-cleaning-text')} target="_blank" rel="noopener noreferrer" className="text-text-accent">
+            {t('nodes.knowledgeBase.chunkStructureTip.learnMore', { ns: 'workflow' })}
+          </a>
+        </div>
+      </div>
+    </div>);
+};
+exports.default = React.memo(Instruction);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSwrQkFBOEI7QUFDOUIsaURBQThDO0FBQzlDLGdGQUE0RTtBQUM1RSx5Q0FBMkM7QUFDM0MsbURBQXVDO0FBQ3ZDLGlDQUF5QjtBQU16QixNQUFNLFdBQVcsR0FBRyxDQUFDLEVBQ25CLFNBQVMsR0FDUSxFQUFFLEVBQUU7SUFDckIsTUFBTSxFQUFFLENBQUMsRUFBRSxHQUFHLElBQUEsOEJBQWMsR0FBRSxDQUFBO0lBQzlCLE1BQU0sT0FBTyxHQUFHLElBQUEsaUJBQVUsR0FBRSxDQUFBO0lBRTVCLE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsQ0FBQyxJQUFBLGVBQUUsRUFBQyxpRkFBaUYsRUFBRSxTQUFTLENBQUMsQ0FBQyxDQUMvRztNQUFBLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxtS0FBbUssQ0FDaEw7UUFBQSxDQUFDLHFCQUFTLENBQUMsU0FBUyxDQUFDLHlCQUF5QixFQUM5QztRQUFBLENBQUMsY0FBSSxDQUFDLFNBQVMsQ0FBQyxrQ0FBa0MsQ0FBQyxJQUFJLENBQUMsVUFBVSxFQUNsRTtRQUFBLENBQUMsY0FBSSxDQUFDLFNBQVMsQ0FBQyxtQ0FBbUMsQ0FBQyxJQUFJLENBQUMsVUFBVSxFQUNuRTtRQUFBLENBQUMsY0FBSSxDQUFDLFNBQVMsQ0FBQyxpQ0FBaUMsQ0FBQyxJQUFJLENBQUMsWUFBWSxFQUNuRTtRQUFBLENBQUMsY0FBSSxDQUFDLFNBQVMsQ0FBQyxvQ0FBb0MsQ0FBQyxJQUFJLENBQUMsWUFBWSxFQUN4RTtNQUFBLEVBQUUsR0FBRyxDQUNMO01BQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLHVCQUF1QixDQUNwQztRQUFBLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxzQ0FBc0MsQ0FDbkQ7VUFBQSxDQUFDLENBQUMsQ0FBQyw2Q0FBNkMsRUFBRSxFQUFFLEVBQUUsRUFBRSxVQUFVLEVBQUUsQ0FBQyxDQUN2RTtRQUFBLEVBQUUsR0FBRyxDQUNMO1FBQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLG1CQUFtQixDQUNoQztVQUFBLENBQUMsQ0FBQyxDQUFDLFNBQVMsQ0FBQyxvQkFBb0IsQ0FBQyxDQUFDLENBQUMsQ0FBQywrQ0FBK0MsRUFBRSxFQUFFLEVBQUUsRUFBRSxVQUFVLEVBQUUsQ0FBQyxDQUFDLEVBQUUsQ0FBQyxDQUM3RztVQUFBLENBQUMsQ0FBQyxDQUNBLElBQUksQ0FBQyxDQUFDLE9BQU8sQ0FBQyx5RkFBeUYsQ0FBQyxDQUFDLENBQ3pHLE1BQU0sQ0FBQyxRQUFRLENBQ2YsR0FBRyxDQUFDLHFCQUFxQixDQUN6QixTQUFTLENBQUMsa0JBQWtCLENBRTVCO1lBQUEsQ0FBQyxDQUFDLENBQUMsaURBQWlELEVBQUUsRUFBRSxFQUFFLEVBQUUsVUFBVSxFQUFFLENBQUMsQ0FDM0U7VUFBQSxFQUFFLENBQUMsQ0FDTDtRQUFBLEVBQUUsR0FBRyxDQUNQO01BQUEsRUFBRSxHQUFHLENBQ1A7SUFBQSxFQUFFLEdBQUcsQ0FBQyxDQUNQLENBQUE7QUFDSCxDQUFDLENBQUE7QUFFRCxrQkFBZSxLQUFLLENBQUMsSUFBSSxDQUFDLFdBQVcsQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgeyB1c2VUcmFuc2xhdGlvbiB9IGZyb20gJ3JlYWN0LWkxOG5leHQnXG5pbXBvcnQgeyBBZGRDaHVua3MgfSBmcm9tICdAL2FwcC9jb21wb25lbnRzL2Jhc2UvaWNvbnMvc3JjL3ZlbmRlci9rbm93bGVkZ2UnXG5pbXBvcnQgeyB1c2VEb2NMaW5rIH0gZnJvbSAnQC9jb250ZXh0L2kxOG4nXG5pbXBvcnQgeyBjbiB9IGZyb20gJ0AvdXRpbHMvY2xhc3NuYW1lcydcbmltcG9ydCBMaW5lIGZyb20gJy4vbGluZSdcblxudHlwZSBJbnN0cnVjdGlvblByb3BzID0ge1xuICBjbGFzc05hbWU/OiBzdHJpbmdcbn1cblxuY29uc3QgSW5zdHJ1Y3Rpb24gPSAoe1xuICBjbGFzc05hbWUsXG59OiBJbnN0cnVjdGlvblByb3BzKSA9PiB7XG4gIGNvbnN0IHsgdCB9ID0gdXNlVHJhbnNsYXRpb24oKVxuICBjb25zdCBkb2NMaW5rID0gdXNlRG9jTGluaygpXG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT17Y24oJ2ZsZXggZmxleC1jb2wgZ2FwLXktMiBvdmVyZmxvdy1oaWRkZW4gcm91bmRlZC1bMTBweF0gYmctd29ya2Zsb3ctcHJvY2Vzcy1iZyBwLTQnLCBjbGFzc05hbWUpfT5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwicmVsYXRpdmUgZmxleCBzaXplLTEwIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByb3VuZGVkLVsxMHB4XSBib3JkZXItWzAuNXB4XSBib3JkZXItY29tcG9uZW50cy1jYXJkLWJvcmRlciBiZy1jb21wb25lbnRzLWNhcmQtYmcgc2hhZG93LWxnIGJhY2tkcm9wLWJsdXItWzVweF1cIj5cbiAgICAgICAgPEFkZENodW5rcyBjbGFzc05hbWU9XCJzaXplLTUgdGV4dC10ZXh0LWFjY2VudFwiIC8+XG4gICAgICAgIDxMaW5lIGNsYXNzTmFtZT1cImFic29sdXRlIC1sZWZ0LXB4IGJvdHRvbS1bLTc2cHhdXCIgdHlwZT1cInZlcnRpY2FsXCIgLz5cbiAgICAgICAgPExpbmUgY2xhc3NOYW1lPVwiYWJzb2x1dGUgLXJpZ2h0LXB4IGJvdHRvbS1bLTc2cHhdXCIgdHlwZT1cInZlcnRpY2FsXCIgLz5cbiAgICAgICAgPExpbmUgY2xhc3NOYW1lPVwiYWJzb2x1dGUgLXRvcC1weCByaWdodC1bLTE4NHB4XVwiIHR5cGU9XCJob3Jpem9udGFsXCIgLz5cbiAgICAgICAgPExpbmUgY2xhc3NOYW1lPVwiYWJzb2x1dGUgLWJvdHRvbS1weCByaWdodC1bLTE4NHB4XVwiIHR5cGU9XCJob3Jpem9udGFsXCIgLz5cbiAgICAgIDwvZGl2PlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGZsZXgtY29sIGdhcC15LTFcIj5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJzeXN0ZW0tc20tbWVkaXVtIHRleHQtdGV4dC1zZWNvbmRhcnlcIj5cbiAgICAgICAgICB7dCgnbm9kZXMua25vd2xlZGdlQmFzZS5jaHVua1N0cnVjdHVyZVRpcC50aXRsZScsIHsgbnM6ICd3b3JrZmxvdycgfSl9XG4gICAgICAgIDwvZGl2PlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInN5c3RlbS14cy1yZWd1bGFyXCI+XG4gICAgICAgICAgPHAgY2xhc3NOYW1lPVwidGV4dC10ZXh0LXRlcnRpYXJ5XCI+e3QoJ25vZGVzLmtub3dsZWRnZUJhc2UuY2h1bmtTdHJ1Y3R1cmVUaXAubWVzc2FnZScsIHsgbnM6ICd3b3JrZmxvdycgfSl9PC9wPlxuICAgICAgICAgIDxhXG4gICAgICAgICAgICBocmVmPXtkb2NMaW5rKCcvZ3VpZGVzL2tub3dsZWRnZS1iYXNlL2NyZWF0ZS1rbm93bGVkZ2UtYW5kLXVwbG9hZC1kb2N1bWVudHMvY2h1bmtpbmctYW5kLWNsZWFuaW5nLXRleHQnKX1cbiAgICAgICAgICAgIHRhcmdldD1cIl9ibGFua1wiXG4gICAgICAgICAgICByZWw9XCJub29wZW5lciBub3JlZmVycmVyXCJcbiAgICAgICAgICAgIGNsYXNzTmFtZT1cInRleHQtdGV4dC1hY2NlbnRcIlxuICAgICAgICAgID5cbiAgICAgICAgICAgIHt0KCdub2Rlcy5rbm93bGVkZ2VCYXNlLmNodW5rU3RydWN0dXJlVGlwLmxlYXJuTW9yZScsIHsgbnM6ICd3b3JrZmxvdycgfSl9XG4gICAgICAgICAgPC9hPlxuICAgICAgICA8L2Rpdj5cbiAgICAgIDwvZGl2PlxuICAgIDwvZGl2PlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IFJlYWN0Lm1lbW8oSW5zdHJ1Y3Rpb24pXG4iXX0=

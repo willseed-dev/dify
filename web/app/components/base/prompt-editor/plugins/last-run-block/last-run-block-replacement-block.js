@@ -1,0 +1,41 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const LexicalComposerContext_1 = require("@lexical/react/LexicalComposerContext");
+const utils_1 = require("@lexical/utils");
+const lexical_1 = require("lexical");
+const react_1 = require("react");
+const constants_1 = require("../../constants");
+const utils_2 = require("../../utils");
+const node_1 = require("../custom-text/node");
+const node_2 = require("./node");
+const REGEX = new RegExp(constants_1.LAST_RUN_PLACEHOLDER_TEXT);
+const LastRunReplacementBlock = ({ onInsert, }) => {
+    const [editor] = (0, LexicalComposerContext_1.useLexicalComposerContext)();
+    (0, react_1.useEffect)(() => {
+        if (!editor.hasNodes([node_2.LastRunBlockNode]))
+            throw new Error('LastRunMessageBlockNodePlugin: LastRunMessageBlockNode not registered on editor');
+    }, [editor]);
+    const createLastRunBlockNode = (0, react_1.useCallback)(() => {
+        if (onInsert)
+            onInsert();
+        return (0, lexical_1.$applyNodeReplacement)((0, node_2.$createLastRunBlockNode)());
+    }, [onInsert]);
+    const getMatch = (0, react_1.useCallback)((text) => {
+        const matchArr = REGEX.exec(text);
+        if (matchArr === null)
+            return null;
+        const startOffset = matchArr.index;
+        const endOffset = startOffset + constants_1.LAST_RUN_PLACEHOLDER_TEXT.length;
+        return {
+            end: endOffset,
+            start: startOffset,
+        };
+    }, []);
+    (0, react_1.useEffect)(() => {
+        REGEX.lastIndex = 0;
+        return (0, utils_1.mergeRegister)(editor.registerNodeTransform(node_1.CustomTextNode, textNode => (0, utils_2.decoratorTransform)(textNode, getMatch, createLastRunBlockNode)));
+    }, []);
+    return null;
+};
+exports.default = (0, react_1.memo)(LastRunReplacementBlock);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGFzdC1ydW4tYmxvY2stcmVwbGFjZW1lbnQtYmxvY2suanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJsYXN0LXJ1bi1ibG9jay1yZXBsYWNlbWVudC1ibG9jay50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFDQSxrRkFBaUY7QUFDakYsMENBQThDO0FBQzlDLHFDQUErQztBQUMvQyxpQ0FJYztBQUNkLCtDQUEyRDtBQUMzRCx1Q0FBZ0Q7QUFDaEQsOENBQW9EO0FBQ3BELGlDQUdlO0FBRWYsTUFBTSxLQUFLLEdBQUcsSUFBSSxNQUFNLENBQUMscUNBQXlCLENBQUMsQ0FBQTtBQUVuRCxNQUFNLHVCQUF1QixHQUFHLENBQUMsRUFDL0IsUUFBUSxHQUNTLEVBQUUsRUFBRTtJQUNyQixNQUFNLENBQUMsTUFBTSxDQUFDLEdBQUcsSUFBQSxrREFBeUIsR0FBRSxDQUFBO0lBRTVDLElBQUEsaUJBQVMsRUFBQyxHQUFHLEVBQUU7UUFDYixJQUFJLENBQUMsTUFBTSxDQUFDLFFBQVEsQ0FBQyxDQUFDLHVCQUFnQixDQUFDLENBQUM7WUFDdEMsTUFBTSxJQUFJLEtBQUssQ0FBQyxpRkFBaUYsQ0FBQyxDQUFBO0lBQ3RHLENBQUMsRUFBRSxDQUFDLE1BQU0sQ0FBQyxDQUFDLENBQUE7SUFFWixNQUFNLHNCQUFzQixHQUFHLElBQUEsbUJBQVcsRUFBQyxHQUFxQixFQUFFO1FBQ2hFLElBQUksUUFBUTtZQUNWLFFBQVEsRUFBRSxDQUFBO1FBQ1osT0FBTyxJQUFBLCtCQUFxQixFQUFDLElBQUEsOEJBQXVCLEdBQUUsQ0FBQyxDQUFBO0lBQ3pELENBQUMsRUFBRSxDQUFDLFFBQVEsQ0FBQyxDQUFDLENBQUE7SUFFZCxNQUFNLFFBQVEsR0FBRyxJQUFBLG1CQUFXLEVBQUMsQ0FBQyxJQUFZLEVBQUUsRUFBRTtRQUM1QyxNQUFNLFFBQVEsR0FBRyxLQUFLLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxDQUFBO1FBRWpDLElBQUksUUFBUSxLQUFLLElBQUk7WUFDbkIsT0FBTyxJQUFJLENBQUE7UUFFYixNQUFNLFdBQVcsR0FBRyxRQUFRLENBQUMsS0FBSyxDQUFBO1FBQ2xDLE1BQU0sU0FBUyxHQUFHLFdBQVcsR0FBRyxxQ0FBeUIsQ0FBQyxNQUFNLENBQUE7UUFDaEUsT0FBTztZQUNMLEdBQUcsRUFBRSxTQUFTO1lBQ2QsS0FBSyxFQUFFLFdBQVc7U0FDbkIsQ0FBQTtJQUNILENBQUMsRUFBRSxFQUFFLENBQUMsQ0FBQTtJQUVOLElBQUEsaUJBQVMsRUFBQyxHQUFHLEVBQUU7UUFDYixLQUFLLENBQUMsU0FBUyxHQUFHLENBQUMsQ0FBQTtRQUNuQixPQUFPLElBQUEscUJBQWEsRUFDbEIsTUFBTSxDQUFDLHFCQUFxQixDQUFDLHFCQUFjLEVBQUUsUUFBUSxDQUFDLEVBQUUsQ0FBQyxJQUFBLDBCQUFrQixFQUFDLFFBQVEsRUFBRSxRQUFRLEVBQUUsc0JBQXNCLENBQUMsQ0FBQyxDQUN6SCxDQUFBO0lBQ0gsQ0FBQyxFQUFFLEVBQUUsQ0FBQyxDQUFBO0lBRU4sT0FBTyxJQUFJLENBQUE7QUFDYixDQUFDLENBQUE7QUFFRCxrQkFBZSxJQUFBLFlBQUksRUFBQyx1QkFBdUIsQ0FBQyxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHR5cGUgeyBMYXN0UnVuQmxvY2tUeXBlIH0gZnJvbSAnLi4vLi4vdHlwZXMnXG5pbXBvcnQgeyB1c2VMZXhpY2FsQ29tcG9zZXJDb250ZXh0IH0gZnJvbSAnQGxleGljYWwvcmVhY3QvTGV4aWNhbENvbXBvc2VyQ29udGV4dCdcbmltcG9ydCB7IG1lcmdlUmVnaXN0ZXIgfSBmcm9tICdAbGV4aWNhbC91dGlscydcbmltcG9ydCB7ICRhcHBseU5vZGVSZXBsYWNlbWVudCB9IGZyb20gJ2xleGljYWwnXG5pbXBvcnQge1xuICBtZW1vLFxuICB1c2VDYWxsYmFjayxcbiAgdXNlRWZmZWN0LFxufSBmcm9tICdyZWFjdCdcbmltcG9ydCB7IExBU1RfUlVOX1BMQUNFSE9MREVSX1RFWFQgfSBmcm9tICcuLi8uLi9jb25zdGFudHMnXG5pbXBvcnQgeyBkZWNvcmF0b3JUcmFuc2Zvcm0gfSBmcm9tICcuLi8uLi91dGlscydcbmltcG9ydCB7IEN1c3RvbVRleHROb2RlIH0gZnJvbSAnLi4vY3VzdG9tLXRleHQvbm9kZSdcbmltcG9ydCB7XG4gICRjcmVhdGVMYXN0UnVuQmxvY2tOb2RlLFxuICBMYXN0UnVuQmxvY2tOb2RlLFxufSBmcm9tICcuL25vZGUnXG5cbmNvbnN0IFJFR0VYID0gbmV3IFJlZ0V4cChMQVNUX1JVTl9QTEFDRUhPTERFUl9URVhUKVxuXG5jb25zdCBMYXN0UnVuUmVwbGFjZW1lbnRCbG9jayA9ICh7XG4gIG9uSW5zZXJ0LFxufTogTGFzdFJ1bkJsb2NrVHlwZSkgPT4ge1xuICBjb25zdCBbZWRpdG9yXSA9IHVzZUxleGljYWxDb21wb3NlckNvbnRleHQoKVxuXG4gIHVzZUVmZmVjdCgoKSA9PiB7XG4gICAgaWYgKCFlZGl0b3IuaGFzTm9kZXMoW0xhc3RSdW5CbG9ja05vZGVdKSlcbiAgICAgIHRocm93IG5ldyBFcnJvcignTGFzdFJ1bk1lc3NhZ2VCbG9ja05vZGVQbHVnaW46IExhc3RSdW5NZXNzYWdlQmxvY2tOb2RlIG5vdCByZWdpc3RlcmVkIG9uIGVkaXRvcicpXG4gIH0sIFtlZGl0b3JdKVxuXG4gIGNvbnN0IGNyZWF0ZUxhc3RSdW5CbG9ja05vZGUgPSB1c2VDYWxsYmFjaygoKTogTGFzdFJ1bkJsb2NrTm9kZSA9PiB7XG4gICAgaWYgKG9uSW5zZXJ0KVxuICAgICAgb25JbnNlcnQoKVxuICAgIHJldHVybiAkYXBwbHlOb2RlUmVwbGFjZW1lbnQoJGNyZWF0ZUxhc3RSdW5CbG9ja05vZGUoKSlcbiAgfSwgW29uSW5zZXJ0XSlcblxuICBjb25zdCBnZXRNYXRjaCA9IHVzZUNhbGxiYWNrKCh0ZXh0OiBzdHJpbmcpID0+IHtcbiAgICBjb25zdCBtYXRjaEFyciA9IFJFR0VYLmV4ZWModGV4dClcblxuICAgIGlmIChtYXRjaEFyciA9PT0gbnVsbClcbiAgICAgIHJldHVybiBudWxsXG5cbiAgICBjb25zdCBzdGFydE9mZnNldCA9IG1hdGNoQXJyLmluZGV4XG4gICAgY29uc3QgZW5kT2Zmc2V0ID0gc3RhcnRPZmZzZXQgKyBMQVNUX1JVTl9QTEFDRUhPTERFUl9URVhULmxlbmd0aFxuICAgIHJldHVybiB7XG4gICAgICBlbmQ6IGVuZE9mZnNldCxcbiAgICAgIHN0YXJ0OiBzdGFydE9mZnNldCxcbiAgICB9XG4gIH0sIFtdKVxuXG4gIHVzZUVmZmVjdCgoKSA9PiB7XG4gICAgUkVHRVgubGFzdEluZGV4ID0gMFxuICAgIHJldHVybiBtZXJnZVJlZ2lzdGVyKFxuICAgICAgZWRpdG9yLnJlZ2lzdGVyTm9kZVRyYW5zZm9ybShDdXN0b21UZXh0Tm9kZSwgdGV4dE5vZGUgPT4gZGVjb3JhdG9yVHJhbnNmb3JtKHRleHROb2RlLCBnZXRNYXRjaCwgY3JlYXRlTGFzdFJ1bkJsb2NrTm9kZSkpLFxuICAgIClcbiAgfSwgW10pXG5cbiAgcmV0dXJuIG51bGxcbn1cblxuZXhwb3J0IGRlZmF1bHQgbWVtbyhMYXN0UnVuUmVwbGFjZW1lbnRCbG9jaylcbiJdfQ==

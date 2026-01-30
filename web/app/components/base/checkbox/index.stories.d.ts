@@ -1,0 +1,23 @@
+import type { StoryObj } from '@storybook/nextjs';
+declare const meta: Meta<({ id, checked, onCheck, className, disabled, indeterminate, }: {
+    id?: string;
+    checked?: boolean;
+    onCheck?: (event: React.MouseEvent<HTMLDivElement>) => void;
+    className?: string;
+    disabled?: boolean;
+    indeterminate?: boolean;
+}) => any>;
+export default meta;
+type Story = StoryObj<typeof meta>;
+export declare const Default: Story;
+export declare const Checked: Story;
+export declare const Indeterminate: Story;
+export declare const DisabledUnchecked: Story;
+export declare const DisabledChecked: Story;
+export declare const DisabledIndeterminate: Story;
+export declare const StateComparison: Story;
+export declare const WithLabels: Story;
+export declare const SelectAllExample: Story;
+export declare const FormExample: Story;
+export declare const TaskListExample: Story;
+export declare const Playground: Story;

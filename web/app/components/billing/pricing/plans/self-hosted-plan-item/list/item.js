@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const React = require("react");
+const Item = ({ label, }) => {
+    return (<div className="flex items-center gap-x-1">
+      <div className="py-px">
+        <react_1.RiCheckLine className="size-4 shrink-0 text-text-tertiary"/>
+      </div>
+      <span className="system-sm-regular grow text-text-secondary">{label}</span>
+    </div>);
+};
+exports.default = React.memo(Item);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaXRlbS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIml0ZW0udHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNENBQThDO0FBQzlDLCtCQUE4QjtBQU05QixNQUFNLElBQUksR0FBRyxDQUFDLEVBQ1osS0FBSyxHQUNLLEVBQUUsRUFBRTtJQUNkLE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsMkJBQTJCLENBQ3hDO01BQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLE9BQU8sQ0FDcEI7UUFBQSxDQUFDLG1CQUFXLENBQUMsU0FBUyxDQUFDLG9DQUFvQyxFQUM3RDtNQUFBLEVBQUUsR0FBRyxDQUNMO01BQUEsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLDRDQUE0QyxDQUFDLENBQUMsS0FBSyxDQUFDLEVBQUUsSUFBSSxDQUM1RTtJQUFBLEVBQUUsR0FBRyxDQUFDLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELGtCQUFlLEtBQUssQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBSaUNoZWNrTGluZSB9IGZyb20gJ0ByZW1peGljb24vcmVhY3QnXG5pbXBvcnQgKiBhcyBSZWFjdCBmcm9tICdyZWFjdCdcblxudHlwZSBJdGVtUHJvcHMgPSB7XG4gIGxhYmVsOiBzdHJpbmdcbn1cblxuY29uc3QgSXRlbSA9ICh7XG4gIGxhYmVsLFxufTogSXRlbVByb3BzKSA9PiB7XG4gIHJldHVybiAoXG4gICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBnYXAteC0xXCI+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInB5LXB4XCI+XG4gICAgICAgIDxSaUNoZWNrTGluZSBjbGFzc05hbWU9XCJzaXplLTQgc2hyaW5rLTAgdGV4dC10ZXh0LXRlcnRpYXJ5XCIgLz5cbiAgICAgIDwvZGl2PlxuICAgICAgPHNwYW4gY2xhc3NOYW1lPVwic3lzdGVtLXNtLXJlZ3VsYXIgZ3JvdyB0ZXh0LXRleHQtc2Vjb25kYXJ5XCI+e2xhYmVsfTwvc3Bhbj5cbiAgICA8L2Rpdj5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBSZWFjdC5tZW1vKEl0ZW0pXG4iXX0=

@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useInputVariables = void 0;
+const store_1 = require("@/app/components/workflow/store");
+const use_pipeline_1 = require("@/service/use-pipeline");
+const useInputVariables = (datasourceNodeId) => {
+    const pipelineId = (0, store_1.useStore)(state => state.pipelineId);
+    const { data: paramsConfig, isFetching: isFetchingParams } = (0, use_pipeline_1.useDraftPipelineProcessingParams)({
+        pipeline_id: pipelineId,
+        node_id: datasourceNodeId,
+    });
+    return {
+        isFetchingParams,
+        paramsConfig,
+    };
+};
+exports.useInputVariables = useInputVariables;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaG9va3MuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJob29rcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSwyREFBMEQ7QUFDMUQseURBQXlFO0FBRWxFLE1BQU0saUJBQWlCLEdBQUcsQ0FBQyxnQkFBd0IsRUFBRSxFQUFFO0lBQzVELE1BQU0sVUFBVSxHQUFHLElBQUEsZ0JBQVEsRUFBQyxLQUFLLENBQUMsRUFBRSxDQUFDLEtBQUssQ0FBQyxVQUFVLENBQUMsQ0FBQTtJQUN0RCxNQUFNLEVBQUUsSUFBSSxFQUFFLFlBQVksRUFBRSxVQUFVLEVBQUUsZ0JBQWdCLEVBQUUsR0FBRyxJQUFBLCtDQUFnQyxFQUFDO1FBQzVGLFdBQVcsRUFBRSxVQUFXO1FBQ3hCLE9BQU8sRUFBRSxnQkFBZ0I7S0FDMUIsQ0FBQyxDQUFBO0lBRUYsT0FBTztRQUNMLGdCQUFnQjtRQUNoQixZQUFZO0tBQ2IsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQVhZLFFBQUEsaUJBQWlCLHFCQVc3QiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZVN0b3JlIH0gZnJvbSAnQC9hcHAvY29tcG9uZW50cy93b3JrZmxvdy9zdG9yZSdcbmltcG9ydCB7IHVzZURyYWZ0UGlwZWxpbmVQcm9jZXNzaW5nUGFyYW1zIH0gZnJvbSAnQC9zZXJ2aWNlL3VzZS1waXBlbGluZSdcblxuZXhwb3J0IGNvbnN0IHVzZUlucHV0VmFyaWFibGVzID0gKGRhdGFzb3VyY2VOb2RlSWQ6IHN0cmluZykgPT4ge1xuICBjb25zdCBwaXBlbGluZUlkID0gdXNlU3RvcmUoc3RhdGUgPT4gc3RhdGUucGlwZWxpbmVJZClcbiAgY29uc3QgeyBkYXRhOiBwYXJhbXNDb25maWcsIGlzRmV0Y2hpbmc6IGlzRmV0Y2hpbmdQYXJhbXMgfSA9IHVzZURyYWZ0UGlwZWxpbmVQcm9jZXNzaW5nUGFyYW1zKHtcbiAgICBwaXBlbGluZV9pZDogcGlwZWxpbmVJZCEsXG4gICAgbm9kZV9pZDogZGF0YXNvdXJjZU5vZGVJZCxcbiAgfSlcblxuICByZXR1cm4ge1xuICAgIGlzRmV0Y2hpbmdQYXJhbXMsXG4gICAgcGFyYW1zQ29uZmlnLFxuICB9XG59XG4iXX0=

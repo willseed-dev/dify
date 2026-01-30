@@ -1,0 +1,37 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useAccountDeleteStore = void 0;
+exports.useSendDeleteAccountEmail = useSendDeleteAccountEmail;
+exports.useConfirmDeleteAccount = useConfirmDeleteAccount;
+exports.useDeleteAccountFeedback = useDeleteAccountFeedback;
+const react_query_1 = require("@tanstack/react-query");
+const zustand_1 = require("zustand");
+const common_1 = require("@/service/common");
+exports.useAccountDeleteStore = (0, zustand_1.create)(set => ({
+    sendEmailToken: '',
+    setSendEmailToken: (token) => set({ sendEmailToken: token }),
+}));
+function useSendDeleteAccountEmail() {
+    const updateEmailToken = (0, exports.useAccountDeleteStore)(state => state.setSendEmailToken);
+    return (0, react_query_1.useMutation)({
+        mutationKey: ['delete-account'],
+        mutationFn: common_1.sendDeleteAccountCode,
+        onSuccess: (ret) => {
+            if (ret.result === 'success')
+                updateEmailToken(ret.data);
+        },
+    });
+}
+function useConfirmDeleteAccount() {
+    return (0, react_query_1.useMutation)({
+        mutationKey: ['confirm-delete-account'],
+        mutationFn: common_1.verifyDeleteAccountCode,
+    });
+}
+function useDeleteAccountFeedback() {
+    return (0, react_query_1.useMutation)({
+        mutationKey: ['delete-account-feedback'],
+        mutationFn: common_1.submitDeleteAccountFeedback,
+    });
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3RhdGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJzdGF0ZS50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBY0EsOERBVUM7QUFFRCwwREFLQztBQUVELDREQUtDO0FBdENELHVEQUFtRDtBQUNuRCxxQ0FBZ0M7QUFDaEMsNkNBQThHO0FBT2pHLFFBQUEscUJBQXFCLEdBQUcsSUFBQSxnQkFBTSxFQUFRLEdBQUcsQ0FBQyxFQUFFLENBQUMsQ0FBQztJQUN6RCxjQUFjLEVBQUUsRUFBRTtJQUNsQixpQkFBaUIsRUFBRSxDQUFDLEtBQWEsRUFBRSxFQUFFLENBQUMsR0FBRyxDQUFDLEVBQUUsY0FBYyxFQUFFLEtBQUssRUFBRSxDQUFDO0NBQ3JFLENBQUMsQ0FBQyxDQUFBO0FBRUgsU0FBZ0IseUJBQXlCO0lBQ3ZDLE1BQU0sZ0JBQWdCLEdBQUcsSUFBQSw2QkFBcUIsRUFBQyxLQUFLLENBQUMsRUFBRSxDQUFDLEtBQUssQ0FBQyxpQkFBaUIsQ0FBQyxDQUFBO0lBQ2hGLE9BQU8sSUFBQSx5QkFBVyxFQUFDO1FBQ2pCLFdBQVcsRUFBRSxDQUFDLGdCQUFnQixDQUFDO1FBQy9CLFVBQVUsRUFBRSw4QkFBcUI7UUFDakMsU0FBUyxFQUFFLENBQUMsR0FBRyxFQUFFLEVBQUU7WUFDakIsSUFBSSxHQUFHLENBQUMsTUFBTSxLQUFLLFNBQVM7Z0JBQzFCLGdCQUFnQixDQUFDLEdBQUcsQ0FBQyxJQUFJLENBQUMsQ0FBQTtRQUM5QixDQUFDO0tBQ0YsQ0FBQyxDQUFBO0FBQ0osQ0FBQztBQUVELFNBQWdCLHVCQUF1QjtJQUNyQyxPQUFPLElBQUEseUJBQVcsRUFBQztRQUNqQixXQUFXLEVBQUUsQ0FBQyx3QkFBd0IsQ0FBQztRQUN2QyxVQUFVLEVBQUUsZ0NBQXVCO0tBQ3BDLENBQUMsQ0FBQTtBQUNKLENBQUM7QUFFRCxTQUFnQix3QkFBd0I7SUFDdEMsT0FBTyxJQUFBLHlCQUFXLEVBQUM7UUFDakIsV0FBVyxFQUFFLENBQUMseUJBQXlCLENBQUM7UUFDeEMsVUFBVSxFQUFFLG9DQUEyQjtLQUN4QyxDQUFDLENBQUE7QUFDSixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdXNlTXV0YXRpb24gfSBmcm9tICdAdGFuc3RhY2svcmVhY3QtcXVlcnknXG5pbXBvcnQgeyBjcmVhdGUgfSBmcm9tICd6dXN0YW5kJ1xuaW1wb3J0IHsgc2VuZERlbGV0ZUFjY291bnRDb2RlLCBzdWJtaXREZWxldGVBY2NvdW50RmVlZGJhY2ssIHZlcmlmeURlbGV0ZUFjY291bnRDb2RlIH0gZnJvbSAnQC9zZXJ2aWNlL2NvbW1vbidcblxudHlwZSBTdGF0ZSA9IHtcbiAgc2VuZEVtYWlsVG9rZW46IHN0cmluZ1xuICBzZXRTZW5kRW1haWxUb2tlbjogKHRva2VuOiBzdHJpbmcpID0+IHZvaWRcbn1cblxuZXhwb3J0IGNvbnN0IHVzZUFjY291bnREZWxldGVTdG9yZSA9IGNyZWF0ZTxTdGF0ZT4oc2V0ID0+ICh7XG4gIHNlbmRFbWFpbFRva2VuOiAnJyxcbiAgc2V0U2VuZEVtYWlsVG9rZW46ICh0b2tlbjogc3RyaW5nKSA9PiBzZXQoeyBzZW5kRW1haWxUb2tlbjogdG9rZW4gfSksXG59KSlcblxuZXhwb3J0IGZ1bmN0aW9uIHVzZVNlbmREZWxldGVBY2NvdW50RW1haWwoKSB7XG4gIGNvbnN0IHVwZGF0ZUVtYWlsVG9rZW4gPSB1c2VBY2NvdW50RGVsZXRlU3RvcmUoc3RhdGUgPT4gc3RhdGUuc2V0U2VuZEVtYWlsVG9rZW4pXG4gIHJldHVybiB1c2VNdXRhdGlvbih7XG4gICAgbXV0YXRpb25LZXk6IFsnZGVsZXRlLWFjY291bnQnXSxcbiAgICBtdXRhdGlvbkZuOiBzZW5kRGVsZXRlQWNjb3VudENvZGUsXG4gICAgb25TdWNjZXNzOiAocmV0KSA9PiB7XG4gICAgICBpZiAocmV0LnJlc3VsdCA9PT0gJ3N1Y2Nlc3MnKVxuICAgICAgICB1cGRhdGVFbWFpbFRva2VuKHJldC5kYXRhKVxuICAgIH0sXG4gIH0pXG59XG5cbmV4cG9ydCBmdW5jdGlvbiB1c2VDb25maXJtRGVsZXRlQWNjb3VudCgpIHtcbiAgcmV0dXJuIHVzZU11dGF0aW9uKHtcbiAgICBtdXRhdGlvbktleTogWydjb25maXJtLWRlbGV0ZS1hY2NvdW50J10sXG4gICAgbXV0YXRpb25GbjogdmVyaWZ5RGVsZXRlQWNjb3VudENvZGUsXG4gIH0pXG59XG5cbmV4cG9ydCBmdW5jdGlvbiB1c2VEZWxldGVBY2NvdW50RmVlZGJhY2soKSB7XG4gIHJldHVybiB1c2VNdXRhdGlvbih7XG4gICAgbXV0YXRpb25LZXk6IFsnZGVsZXRlLWFjY291bnQtZmVlZGJhY2snXSxcbiAgICBtdXRhdGlvbkZuOiBzdWJtaXREZWxldGVBY2NvdW50RmVlZGJhY2ssXG4gIH0pXG59XG4iXX0=

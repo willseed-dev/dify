@@ -1,0 +1,32 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const react_1 = require("react");
+const dayjs_1 = require("@/app/components/base/date-and-time-picker/utils/dayjs");
+const classnames_1 = require("@/utils/classnames");
+/**
+ * TimezoneLabel component displays timezone information in UTC offset format.
+ *
+ * @example
+ * // Standard display
+ * <TimezoneLabel timezone="Asia/Shanghai" />
+ * // Output: UTC+8
+ *
+ * @example
+ * // Inline mode with lighter color
+ * <TimezoneLabel timezone="America/New_York" inline />
+ * // Output: UTC-5
+ *
+ * @example
+ * // Custom styling
+ * <TimezoneLabel timezone="Europe/London" className="text-xs font-bold" />
+ */
+const TimezoneLabel = ({ timezone, className, inline = false, }) => {
+    // Memoize offset calculation to avoid redundant computations
+    const offsetStr = (0, react_1.useMemo)(() => (0, dayjs_1.convertTimezoneToOffsetStr)(timezone), [timezone]);
+    return (<span className={(0, classnames_1.cn)('system-sm-regular text-text-tertiary', inline && 'text-text-quaternary', className)} title={`Timezone: ${timezone} (${offsetStr})`}>
+      {offsetStr}
+    </span>);
+};
+exports.default = React.memo(TimezoneLabel);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSwrQkFBOEI7QUFDOUIsaUNBQStCO0FBQy9CLGtGQUFtRztBQUNuRyxtREFBdUM7QUFXdkM7Ozs7Ozs7Ozs7Ozs7Ozs7R0FnQkc7QUFDSCxNQUFNLGFBQWEsR0FBaUMsQ0FBQyxFQUNuRCxRQUFRLEVBQ1IsU0FBUyxFQUNULE1BQU0sR0FBRyxLQUFLLEdBQ2YsRUFBRSxFQUFFO0lBQ0gsNkRBQTZEO0lBQzdELE1BQU0sU0FBUyxHQUFHLElBQUEsZUFBTyxFQUN2QixHQUFHLEVBQUUsQ0FBQyxJQUFBLGtDQUEwQixFQUFDLFFBQVEsQ0FBQyxFQUMxQyxDQUFDLFFBQVEsQ0FBQyxDQUNYLENBQUE7SUFFRCxPQUFPLENBQ0wsQ0FBQyxJQUFJLENBQ0gsU0FBUyxDQUFDLENBQUMsSUFBQSxlQUFFLEVBQ1gsc0NBQXNDLEVBQ3RDLE1BQU0sSUFBSSxzQkFBc0IsRUFDaEMsU0FBUyxDQUNWLENBQUMsQ0FDRixLQUFLLENBQUMsQ0FBQyxhQUFhLFFBQVEsS0FBSyxTQUFTLEdBQUcsQ0FBQyxDQUU5QztNQUFBLENBQUMsU0FBUyxDQUNaO0lBQUEsRUFBRSxJQUFJLENBQUMsQ0FDUixDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsS0FBSyxDQUFDLElBQUksQ0FBQyxhQUFhLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgdXNlTWVtbyB9IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgY29udmVydFRpbWV6b25lVG9PZmZzZXRTdHIgfSBmcm9tICdAL2FwcC9jb21wb25lbnRzL2Jhc2UvZGF0ZS1hbmQtdGltZS1waWNrZXIvdXRpbHMvZGF5anMnXG5pbXBvcnQgeyBjbiB9IGZyb20gJ0AvdXRpbHMvY2xhc3NuYW1lcydcblxuZXhwb3J0IHR5cGUgVGltZXpvbmVMYWJlbFByb3BzID0ge1xuICAvKiogSUFOQSB0aW1lem9uZSBpZGVudGlmaWVyIChlLmcuLCAnQXNpYS9TaGFuZ2hhaScsICdBbWVyaWNhL05ld19Zb3JrJykgKi9cbiAgdGltZXpvbmU6IHN0cmluZ1xuICAvKiogQWRkaXRpb25hbCBDU1MgY2xhc3NlcyB0byBhcHBseSAqL1xuICBjbGFzc05hbWU/OiBzdHJpbmdcbiAgLyoqIFVzZSBpbmxpbmUgbW9kZSB3aXRoIGxpZ2h0ZXIgdGV4dCBjb2xvciBmb3Igc2Vjb25kYXJ5IGRpc3BsYXkgKi9cbiAgaW5saW5lPzogYm9vbGVhblxufVxuXG4vKipcbiAqIFRpbWV6b25lTGFiZWwgY29tcG9uZW50IGRpc3BsYXlzIHRpbWV6b25lIGluZm9ybWF0aW9uIGluIFVUQyBvZmZzZXQgZm9ybWF0LlxuICpcbiAqIEBleGFtcGxlXG4gKiAvLyBTdGFuZGFyZCBkaXNwbGF5XG4gKiA8VGltZXpvbmVMYWJlbCB0aW1lem9uZT1cIkFzaWEvU2hhbmdoYWlcIiAvPlxuICogLy8gT3V0cHV0OiBVVEMrOFxuICpcbiAqIEBleGFtcGxlXG4gKiAvLyBJbmxpbmUgbW9kZSB3aXRoIGxpZ2h0ZXIgY29sb3JcbiAqIDxUaW1lem9uZUxhYmVsIHRpbWV6b25lPVwiQW1lcmljYS9OZXdfWW9ya1wiIGlubGluZSAvPlxuICogLy8gT3V0cHV0OiBVVEMtNVxuICpcbiAqIEBleGFtcGxlXG4gKiAvLyBDdXN0b20gc3R5bGluZ1xuICogPFRpbWV6b25lTGFiZWwgdGltZXpvbmU9XCJFdXJvcGUvTG9uZG9uXCIgY2xhc3NOYW1lPVwidGV4dC14cyBmb250LWJvbGRcIiAvPlxuICovXG5jb25zdCBUaW1lem9uZUxhYmVsOiBSZWFjdC5GQzxUaW1lem9uZUxhYmVsUHJvcHM+ID0gKHtcbiAgdGltZXpvbmUsXG4gIGNsYXNzTmFtZSxcbiAgaW5saW5lID0gZmFsc2UsXG59KSA9PiB7XG4gIC8vIE1lbW9pemUgb2Zmc2V0IGNhbGN1bGF0aW9uIHRvIGF2b2lkIHJlZHVuZGFudCBjb21wdXRhdGlvbnNcbiAgY29uc3Qgb2Zmc2V0U3RyID0gdXNlTWVtbyhcbiAgICAoKSA9PiBjb252ZXJ0VGltZXpvbmVUb09mZnNldFN0cih0aW1lem9uZSksXG4gICAgW3RpbWV6b25lXSxcbiAgKVxuXG4gIHJldHVybiAoXG4gICAgPHNwYW5cbiAgICAgIGNsYXNzTmFtZT17Y24oXG4gICAgICAgICdzeXN0ZW0tc20tcmVndWxhciB0ZXh0LXRleHQtdGVydGlhcnknLFxuICAgICAgICBpbmxpbmUgJiYgJ3RleHQtdGV4dC1xdWF0ZXJuYXJ5JyxcbiAgICAgICAgY2xhc3NOYW1lLFxuICAgICAgKX1cbiAgICAgIHRpdGxlPXtgVGltZXpvbmU6ICR7dGltZXpvbmV9ICgke29mZnNldFN0cn0pYH1cbiAgICA+XG4gICAgICB7b2Zmc2V0U3RyfVxuICAgIDwvc3Bhbj5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBSZWFjdC5tZW1vKFRpbWV6b25lTGFiZWwpXG4iXX0=

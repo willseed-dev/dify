@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const create_1 = require("@/app/components/datasets/create");
+const DatasetCreation = async () => {
+    return (<create_1.default />);
+};
+exports.default = DatasetCreation;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFnZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInBhZ2UudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsK0JBQThCO0FBQzlCLDZEQUFnRTtBQUVoRSxNQUFNLGVBQWUsR0FBRyxLQUFLLElBQUksRUFBRTtJQUNqQyxPQUFPLENBQ0wsQ0FBQyxnQkFBaUIsQ0FBQyxBQUFELEVBQUcsQ0FDdEIsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELGtCQUFlLGVBQWUsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IERhdGFzZXRVcGRhdGVGb3JtIGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvZGF0YXNldHMvY3JlYXRlJ1xuXG5jb25zdCBEYXRhc2V0Q3JlYXRpb24gPSBhc3luYyAoKSA9PiB7XG4gIHJldHVybiAoXG4gICAgPERhdGFzZXRVcGRhdGVGb3JtIC8+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgRGF0YXNldENyZWF0aW9uXG4iXX0=

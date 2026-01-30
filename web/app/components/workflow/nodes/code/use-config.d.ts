@@ -1,0 +1,20 @@
+import type { CodeNodeType } from './types';
+declare const useConfig: (id: string, payload: CodeNodeType) => {
+    readOnly: any;
+    inputs: any;
+    outputKeyOrders: any;
+    handleVarListChange: any;
+    handleAddVariable: any;
+    handleRemoveVariable: any;
+    handleSyncFunctionSignature: any;
+    handleCodeChange: any;
+    handleCodeLanguageChange: any;
+    handleVarsChange: any;
+    filterVar: any;
+    handleAddOutputVariable: any;
+    isShowRemoveVarConfirm: any;
+    hideRemoveVarConfirm: any;
+    onRemoveVarConfirm: any;
+    handleCodeAndVarsChange: any;
+};
+export default useConfig;

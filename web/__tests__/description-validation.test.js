@@ -1,0 +1,81 @@
+"use strict";
+/**
+ * Description Validation Test
+ *
+ * Tests for the 400-character description validation across App and Dataset
+ * creation and editing workflows to ensure consistent validation behavior.
+ */
+describe('Description Validation Logic', () => {
+    // Simulate backend validation function
+    const validateDescriptionLength = (description) => {
+        if (description && description.length > 400)
+            throw new Error('Description cannot exceed 400 characters.');
+        return description;
+    };
+    describe('Backend Validation Function', () => {
+        it('allows description within 400 characters', () => {
+            const validDescription = 'x'.repeat(400);
+            expect(() => validateDescriptionLength(validDescription)).not.toThrow();
+            expect(validateDescriptionLength(validDescription)).toBe(validDescription);
+        });
+        it('allows empty description', () => {
+            expect(() => validateDescriptionLength('')).not.toThrow();
+            expect(() => validateDescriptionLength(null)).not.toThrow();
+            expect(() => validateDescriptionLength(undefined)).not.toThrow();
+        });
+        it('rejects description exceeding 400 characters', () => {
+            const invalidDescription = 'x'.repeat(401);
+            expect(() => validateDescriptionLength(invalidDescription)).toThrow('Description cannot exceed 400 characters.');
+        });
+    });
+    describe('Backend Validation Consistency', () => {
+        it('App and Dataset have consistent validation limits', () => {
+            const maxLength = 400;
+            const validDescription = 'x'.repeat(maxLength);
+            const invalidDescription = 'x'.repeat(maxLength + 1);
+            // Both should accept exactly 400 characters
+            expect(validDescription.length).toBe(400);
+            expect(() => validateDescriptionLength(validDescription)).not.toThrow();
+            // Both should reject 401 characters
+            expect(invalidDescription.length).toBe(401);
+            expect(() => validateDescriptionLength(invalidDescription)).toThrow();
+        });
+        it('validation error messages are consistent', () => {
+            const expectedErrorMessage = 'Description cannot exceed 400 characters.';
+            // This would be the error message from both App and Dataset backend validation
+            expect(expectedErrorMessage).toBe('Description cannot exceed 400 characters.');
+            const invalidDescription = 'x'.repeat(401);
+            try {
+                validateDescriptionLength(invalidDescription);
+            }
+            catch (error) {
+                expect(error.message).toBe(expectedErrorMessage);
+            }
+        });
+    });
+    describe('Character Length Edge Cases', () => {
+        const testCases = [
+            { length: 0, shouldPass: true, description: 'empty description' },
+            { length: 1, shouldPass: true, description: '1 character' },
+            { length: 399, shouldPass: true, description: '399 characters' },
+            { length: 400, shouldPass: true, description: '400 characters (boundary)' },
+            { length: 401, shouldPass: false, description: '401 characters (over limit)' },
+            { length: 500, shouldPass: false, description: '500 characters' },
+            { length: 1000, shouldPass: false, description: '1000 characters' },
+        ];
+        testCases.forEach(({ length, shouldPass, description }) => {
+            it(`handles ${description} correctly`, () => {
+                const testDescription = length > 0 ? 'x'.repeat(length) : '';
+                expect(testDescription.length).toBe(length);
+                if (shouldPass) {
+                    expect(() => validateDescriptionLength(testDescription)).not.toThrow();
+                    expect(validateDescriptionLength(testDescription)).toBe(testDescription);
+                }
+                else {
+                    expect(() => validateDescriptionLength(testDescription)).toThrow('Description cannot exceed 400 characters.');
+                }
+            });
+        });
+    });
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGVzY3JpcHRpb24tdmFsaWRhdGlvbi50ZXN0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiZGVzY3JpcHRpb24tdmFsaWRhdGlvbi50ZXN0LnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUE7Ozs7O0dBS0c7QUFFSCxRQUFRLENBQUMsOEJBQThCLEVBQUUsR0FBRyxFQUFFO0lBQzVDLHVDQUF1QztJQUN2QyxNQUFNLHlCQUF5QixHQUFHLENBQUMsV0FBMkIsRUFBRSxFQUFFO1FBQ2hFLElBQUksV0FBVyxJQUFJLFdBQVcsQ0FBQyxNQUFNLEdBQUcsR0FBRztZQUN6QyxNQUFNLElBQUksS0FBSyxDQUFDLDJDQUEyQyxDQUFDLENBQUE7UUFFOUQsT0FBTyxXQUFXLENBQUE7SUFDcEIsQ0FBQyxDQUFBO0lBRUQsUUFBUSxDQUFDLDZCQUE2QixFQUFFLEdBQUcsRUFBRTtRQUMzQyxFQUFFLENBQUMsMENBQTBDLEVBQUUsR0FBRyxFQUFFO1lBQ2xELE1BQU0sZ0JBQWdCLEdBQUcsR0FBRyxDQUFDLE1BQU0sQ0FBQyxHQUFHLENBQUMsQ0FBQTtZQUN4QyxNQUFNLENBQUMsR0FBRyxFQUFFLENBQUMseUJBQXlCLENBQUMsZ0JBQWdCLENBQUMsQ0FBQyxDQUFDLEdBQUcsQ0FBQyxPQUFPLEVBQUUsQ0FBQTtZQUN2RSxNQUFNLENBQUMseUJBQXlCLENBQUMsZ0JBQWdCLENBQUMsQ0FBQyxDQUFDLElBQUksQ0FBQyxnQkFBZ0IsQ0FBQyxDQUFBO1FBQzVFLENBQUMsQ0FBQyxDQUFBO1FBRUYsRUFBRSxDQUFDLDBCQUEwQixFQUFFLEdBQUcsRUFBRTtZQUNsQyxNQUFNLENBQUMsR0FBRyxFQUFFLENBQUMseUJBQXlCLENBQUMsRUFBRSxDQUFDLENBQUMsQ0FBQyxHQUFHLENBQUMsT0FBTyxFQUFFLENBQUE7WUFDekQsTUFBTSxDQUFDLEdBQUcsRUFBRSxDQUFDLHlCQUF5QixDQUFDLElBQUksQ0FBQyxDQUFDLENBQUMsR0FBRyxDQUFDLE9BQU8sRUFB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LEtBQUssRUFBRSxXQUFXLEVBQUUsZ0JBQWdCLEVBQUU7WUFDakUsRUFBRSxNQUFNLEVBQUUsSUFBSSxFQUFFLFVBQVUsRUFBRSxLQUFLLEVBQUUsV0FBVyxFQUFFLGlCQUFpQixFQUFFO1NBQ3BFLENBQUE7UUFFRCxTQUFTLENBQUMsT0FBTyxDQUFDLENBQUMsRUFBRSxNQUFNLEVBQUUsVUFBVSxFQUFFLFdBQVcsRUFBRSxFQUFFLEVBQUU7WUFDeEQsRUFBRSxDQUFDLFdBQVcsV0FBVyxZQUFZLEVBQUUsR0FBRyxFQUFFO2dCQUMxQyxNQUFNLGVBQWUsR0FBRyxNQUFNLEdBQUcsQ0FBQyxDQUFDLENBQUMsQ0FBQyxHQUFHLENBQUMsTUFBTSxDQUFDLE1BQU0sQ0FBQyxDQUFDLENBQUMsQ0FBQyxFQUFFLENBQUE7Z0JBQzVELE1BQU0sQ0FBQyxlQUFlLENBQUMsTUFBTSxDQUFDLENBQUMsSUFBSSxDQUFDLE1BQU0sQ0FBQyxDQUFBO2dCQUUzQyxJQUFJLFVBQVUsRUFBRSxDQUFDO29CQUNmLE1BQU0sQ0FBQyxHQUFHLEVBQUUsQ0FBQyx5QkFBeUIsQ0FBQyxlQUFlLENBQUMsQ0FBQyxDQUFDLEdBQUcsQ0FBQyxPQUFPLEVBQUUsQ0FBQTtvQkFDdEUsTUFBTSxDQUFDLHlCQUF5QixDQUFDLGVBQWUsQ0FBQyxDQUFDLENBQUMsSUFBSSxDQUFDLGVBQWUsQ0FBQyxDQUFBO2dCQUMxRSxDQUFDO3FCQUNJLENBQUM7b0JBQ0osTUFBTSxDQUFDLEdBQUcsRUFBRSxDQUFDLHlCQUF5QixDQUFDLGVBQWUsQ0FBQyxDQUFDLENBQUMsT0FBTyxDQUM5RCwyQ0FBMkMsQ0FDNUMsQ0FBQTtnQkFDSCxDQUFDO1lBQ0gsQ0FBQyxDQUFDLENBQUE7UUFDSixDQUFDLENBQUMsQ0FBQTtJQUNKLENBQUMsQ0FBQyxDQUFBO0FBQ0osQ0FBQyxDQUFDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIERlc2NyaXB0aW9uIFZhbGlkYXRpb24gVGVzdFxuICpcbiAqIFRlc3RzIGZvciB0aGUgNDAwLWNoYXJhY3RlciBkZXNjcmlwdGlvbiB2YWxpZGF0aW9uIGFjcm9zcyBBcHAgYW5kIERhdGFzZXRcbiAqIGNyZWF0aW9uIGFuZCBlZGl0aW5nIHdvcmtmbG93cyB0byBlbnN1cmUgY29uc2lzdGVudCB2YWxpZGF0aW9uIGJlaGF2aW9yLlxuICovXG5cbmRlc2NyaWJlKCdEZXNjcmlwdGlvbiBWYWxpZGF0aW9uIExvZ2ljJywgKCkgPT4ge1xuICAvLyBTaW11bGF0ZSBiYWNrZW5kIHZhbGlkYXRpb24gZnVuY3Rpb25cbiAgY29uc3QgdmFsaWRhdGVEZXNjcmlwdGlvbkxlbmd0aCA9IChkZXNjcmlwdGlvbj86IHN0cmluZyB8IG51bGwpID0+IHtcbiAgICBpZiAoZGVzY3JpcHRpb24gJiYgZGVzY3JpcHRpb24ubGVuZ3RoID4gNDAwKVxuICAgICAgdGhyb3cgbmV3IEVycm9yKCdEZXNjcmlwdGlvbiBjYW5ub3QgZXhjZWVkIDQwMCBjaGFyYWN0ZXJzLicpXG5cbiAgICByZXR1cm4gZGVzY3JpcHRpb25cbiAgfVxuXG4gIGRlc2NyaWJlKCdCYWNrZW5kIFZhbGlkYXRpb24gRnVuY3Rpb24nLCAoKSA9PiB7XG4gICAgaXQoJ2FsbG93cyBkZXNjcmlwdGlvbiB3aXRoaW4gNDAwIGNoYXJhY3RlcnMnLCAoKSA9PiB7XG4gICAgICBjb25zdCB2YWxpZERlc2NyaXB0aW9uID0gJ3gnLnJlcGVhdCg0MDApXG4gICAgICBleHBlY3QoKCkgPT4gdmFsaWRhdGVEZXNjcmlwdGlvbkxlbmd0aCh2YWxpZERlc2NyaXB0aW9uKSkubm90LnRvVGhyb3coKVxuICAgICAgZXhwZWN0KHZhbGlkYXRlRGVzY3JpcHRpb25MZW5ndGgodmFsaWREZXNjcmlwdGlvbikpLnRvQmUodmFsaWREZXNjcmlwdGlvbilcbiAgICB9KVxuXG4gICAgaXQoJ2FsbG93cyBlbXB0eSBkZXNjcmlwdGlvbicsICgpID0+IHtcbiAgICAgIGV4cGVjdCgoKSA9PiB2YWxpZGF0ZURlc2NyaXB0aW9uTGVuZ3RoKCcnKSkubm90LnRvVGhyb3coKVxuICAgICAgZXhwZWN0KCgpID0+IHZhbGlkYXRlRGVzY3JpcHRpb25MZW5ndGgobnVsbCkpLm5vdC50b1Rocm93KClcbiAgICAgIGV4cGVjdCgoKSA9PiB2YWxpZGF0ZURlc2NyaXB0aW9uTGVuZ3RoKHVuZGVmaW5lZCkpLm5vdC50b1Rocm93KClcbiAgICB9KVxuXG4gICAgaXQoJ3JlamVjdHMgZGVzY3JpcHRpb24gZXhjZWVkaW5nIDQwMCBjaGFyYWN0ZXJzJywgKCkgPT4ge1xuICAgICAgY29uc3QgaW52YWxpZERlc2NyaXB0aW9uID0gJ3gnLnJlcGVhdCg0MDEpXG4gICAgICBleHBlY3QoKCkgPT4gdmFsaWRhdGVEZXNjcmlwdGlvbkxlbmd0aChpbnZhbGlkRGVzY3JpcHRpb24pKS50b1Rocm93KFxuICAgICAgICAnRGVzY3JpcHRpb24gY2Fubm90IGV4Y2VlZCA0MDAgY2hhcmFjdGVycy4nLFxuICAgICAgKVxuICAgIH0pXG4gIH0pXG5cbiAgZGVzY3JpYmUoJ0JhY2tlbmQgVmFsaWRhdGlvbiBDb25zaXN0ZW5jeScsICgpID0+IHtcbiAgICBpdCgnQXBwIGFuZCBEYXRhc2V0IGhhdmUgY29uc2lzdGVudCB2YWxpZGF0aW9uIGxpbWl0cycsICgpID0+IHtcbiAgICAgIGNvbnN0IG1heExlbmd0aCA9IDQwMFxuICAgICAgY29uc3QgdmFsaWREZXNjcmlwdGlvbiA9ICd4Jy5yZXBlYXQobWF4TGVuZ3RoKVxuICAgICAgY29uc3QgaW52YWxpZERlc2NyaXB0aW9uID0gJ3gnLnJlcGVhdChtYXhMZW5ndGggKyAxKVxuXG4gICAgICAvLyBCb3RoIHNob3VsZCBhY2NlcHQgZXhhY3RseSA0MDAgY2hhcmFjdGVyc1xuICAgICAgZXhwZWN0KHZhbGlkRGVzY3JpcHRpb24ubGVuZ3RoKS50b0JlKDQwMClcbiAgICAgIGV4cGVjdCgoKSA9PiB2YWxpZGF0ZURlc2NyaXB0aW9uTGVuZ3RoKHZhbGlkRGVzY3JpcHRpb24pKS5ub3QudG9UaHJvdygpXG5cbiAgICAgIC8vIEJvdGggc2hvdWxkIHJlamVjdCA0MDEgY2hhcmFjdGVyc1xuICAgICAgZXhwZWN0KGludmFsaWREZXNjcmlwdGlvbi5sZW5ndGgpLnRvQmUoNDAxKVxuICAgICAgZXhwZWN0KCgpID0+IHZhbGlkYXRlRGVzY3JpcHRpb25MZW5ndGgoaW52YWxpZERlc2NyaXB0aW9uKSkudG9UaHJvdygpXG4gICAgfSlcblxuICAgIGl0KCd2YWxpZGF0aW9uIGVycm9yIG1lc3NhZ2VzIGFyZSBjb25zaXN0ZW50JywgKCkgPT4ge1xuICAgICAgY29uc3QgZXhwZWN0ZWRFcnJvck1lc3NhZ2UgPSAnRGVzY3JpcHRpb24gY2Fubm90IGV4Y2VlZCA0MDAgY2hhcmFjdGVycy4nXG5cbiAgICAgIC8vIFRoaXMgd291bGQgYmUgdGhlIGVycm9yIG1lc3NhZ2UgZnJvbSBib3RoIEFwcCBhbmQgRGF0YXNldCBiYWNrZW5kIHZhbGlkYXRpb25cbiAgICAgIGV4cGVjdChleHBlY3RlZEVycm9yTWVzc2FnZSkudG9CZSgnRGVzY3JpcHRpb24gY2Fubm90IGV4Y2VlZCA0MDAgY2hhcmFjdGVycy4nKVxuXG4gICAgICBjb25zdCBpbnZhbGlkRGVzY3JpcHRpb24gPSAneCcucmVwZWF0KDQwMSlcbiAgICAgIHRyeSB7XG4gICAgICAgIHZhbGlkYXRlRGVzY3JpcHRpb25MZW5ndGgoaW52YWxpZERlc2NyaXB0aW9uKVxuICAgICAgfVxuICAgICAgY2F0Y2ggKGVycm9yKSB7XG4gICAgICAgIGV4cGVjdCgoZXJyb3IgYXMgRXJyb3IpLm1lc3NhZ2UpLnRvQmUoZXhwZWN0ZWRFcnJvck1lc3NhZ2UpXG4gICAgICB9XG4gICAgfSlcbiAgfSlcblxuICBkZXNjcmliZSgnQ2hhcmFjdGVyIExlbmd0aCBFZGdlIENhc2VzJywgKCkgPT4ge1xuICAgIGNvbnN0IHRlc3RDYXNlcyA9IFtcbiAgICAgIHsgbGVuZ3RoOiAwLCBzaG91bGRQYXNzOiB0cnVlLCBkZXNjcmlwdGlvbjogJ2VtcHR5IGRlc2NyaXB0aW9uJyB9LFxuICAgICAgeyBsZW5ndGg6IDEsIHNob3VsZFBhc3M6IHRydWUsIGRlc2NyaXB0aW9uOiAnMSBjaGFyYWN0ZXInIH0sXG4gICAgICB7IGxlbmd0aDogMzk5LCBzaG91bGRQYXNzOiB0cnVlLCBkZXNjcmlwdGlvbjogJzM5OSBjaGFyYWN0ZXJzJyB9LFxuICAgICAgeyBsZW5ndGg6IDQwMCwgc2hvdWxkUGFzczogdHJ1ZSwgZGVzY3JpcHRpb246ICc0MDAgY2hhcmFjdGVycyAoYm91bmRhcnkpJyB9LFxuICAgICAgeyBsZW5ndGg6IDQwMSwgc2hvdWxkUGFzczogZmFsc2UsIGRlc2NyaXB0aW9uOiAnNDAxIGNoYXJhY3RlcnMgKG92ZXIgbGltaXQpJyB9LFxuICAgICAgeyBsZW5ndGg6IDUwMCwgc2hvdWxkUGFzczogZmFsc2UsIGRlc2NyaXB0aW9uOiAnNTAwIGNoYXJhY3RlcnMnIH0sXG4gICAgICB7IGxlbmd0aDogMTAwMCwgc2hvdWxkUGFzczogZmFsc2UsIGRlc2NyaXB0aW9uOiAnMTAwMCBjaGFyYWN0ZXJzJyB9LFxuICAgIF1cblxuICAgIHRlc3RDYXNlcy5mb3JFYWNoKCh7IGxlbmd0aCwgc2hvdWxkUGFzcywgZGVzY3JpcHRpb24gfSkgPT4ge1xuICAgICAgaXQoYGhhbmRsZXMgJHtkZXNjcmlwdGlvbn0gY29ycmVjdGx5YCwgKCkgPT4ge1xuICAgICAgICBjb25zdCB0ZXN0RGVzY3JpcHRpb24gPSBsZW5ndGggPiAwID8gJ3gnLnJlcGVhdChsZW5ndGgpIDogJydcbiAgICAgICAgZXhwZWN0KHRlc3REZXNjcmlwdGlvbi5sZW5ndGgpLnRvQmUobGVuZ3RoKVxuXG4gICAgICAgIGlmIChzaG91bGRQYXNzKSB7XG4gICAgICAgICAgZXhwZWN0KCgpID0+IHZhbGlkYXRlRGVzY3JpcHRpb25MZW5ndGgodGVzdERlc2NyaXB0aW9uKSkubm90LnRvVGhyb3coKVxuICAgICAgICAgIGV4cGVjdCh2YWxpZGF0ZURlc2NyaXB0aW9uTGVuZ3RoKHRlc3REZXNjcmlwdGlvbikpLnRvQmUodGVzdERlc2NyaXB0aW9uKVxuICAgICAgICB9XG4gICAgICAgIGVsc2Uge1xuICAgICAgICAgIGV4cGVjdCgoKSA9PiB2YWxpZGF0ZURlc2NyaXB0aW9uTGVuZ3RoKHRlc3REZXNjcmlwdGlvbikpLnRvVGhyb3coXG4gICAgICAgICAgICAnRGVzY3JpcHRpb24gY2Fubm90IGV4Y2VlZCA0MDAgY2hhcmFjdGVycy4nLFxuICAgICAgICAgIClcbiAgICAgICAgfVxuICAgICAgfSlcbiAgICB9KVxuICB9KVxufSlcbiJdfQ==

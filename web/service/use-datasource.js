@@ -1,0 +1,54 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useInvalidDataSourceAuth = exports.useGetDataSourceAuth = exports.useGetDataSourceOAuthUrl = exports.useInvalidDefaultDataSourceListAuth = exports.useGetDefaultDataSourceListAuth = exports.useInvalidDataSourceListAuth = exports.useGetDataSourceListAuth = void 0;
+const react_query_1 = require("@tanstack/react-query");
+const base_1 = require("./base");
+const use_base_1 = require("./use-base");
+const NAME_SPACE = 'data-source-auth';
+const useGetDataSourceListAuth = () => {
+    return (0, react_query_1.useQuery)({
+        queryKey: [NAME_SPACE, 'list'],
+        queryFn: () => (0, base_1.get)('/auth/plugin/datasource/list'),
+        retry: 0,
+    });
+};
+exports.useGetDataSourceListAuth = useGetDataSourceListAuth;
+const useInvalidDataSourceListAuth = () => {
+    return (0, use_base_1.useInvalid)([NAME_SPACE, 'list']);
+};
+exports.useInvalidDataSourceListAuth = useInvalidDataSourceListAuth;
+// !This hook is used for fetching the default data source list, which will be legacy and deprecated in the near future.
+const useGetDefaultDataSourceListAuth = () => {
+    return (0, react_query_1.useQuery)({
+        queryKey: [NAME_SPACE, 'default-list'],
+        queryFn: () => (0, base_1.get)('/auth/plugin/datasource/default-list'),
+        retry: 0,
+    });
+};
+exports.useGetDefaultDataSourceListAuth = useGetDefaultDataSourceListAuth;
+const useInvalidDefaultDataSourceListAuth = () => {
+    return (0, use_base_1.useInvalid)([NAME_SPACE, 'default-list']);
+};
+exports.useInvalidDefaultDataSourceListAuth = useInvalidDefaultDataSourceListAuth;
+const useGetDataSourceOAuthUrl = (provider) => {
+    return (0, react_query_1.useMutation)({
+        mutationKey: [NAME_SPACE, 'oauth-url', provider],
+        mutationFn: (credentialId) => {
+            return (0, base_1.get)(`/oauth/plugin/${provider}/datasource/get-authorization-url?credential_id=${credentialId}`);
+        },
+    });
+};
+exports.useGetDataSourceOAuthUrl = useGetDataSourceOAuthUrl;
+const useGetDataSourceAuth = ({ pluginId, provider, }) => {
+    return (0, react_query_1.useQuery)({
+        queryKey: [NAME_SPACE, 'specific-data-source', pluginId, provider],
+        queryFn: () => (0, base_1.get)(`/auth/plugin/datasource/${pluginId}/${provider}`),
+        retry: 0,
+    });
+};
+exports.useGetDataSourceAuth = useGetDataSourceAuth;
+const useInvalidDataSourceAuth = ({ pluginId, provider, }) => {
+    return (0, use_base_1.useInvalid)([NAME_SPACE, 'specific-data-source', pluginId, provider]);
+};
+exports.useInvalidDataSourceAuth = useInvalidDataSourceAuth;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXNlLWRhdGFzb3VyY2UuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ1c2UtZGF0YXNvdXJjZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFJQSx1REFHOEI7QUFDOUIsaUNBQTRCO0FBQzVCLHlDQUF1QztBQUV2QyxNQUFNLFVBQVUsR0FBRyxrQkFBa0IsQ0FBQTtBQUU5QixNQUFNLHdCQUF3QixHQUFHLEdBQUcsRUFBRTtJQUMzQyxPQUFPLElBQUEsc0JBQVEsRUFBQztRQUNkLFFBQVEsRUFBRSxDQUFDLFVBQVUsRUFBRSxNQUFNLENBQUM7UUFDOUIsT0FBTyxFQUFFLEdBQUcsRUFBRSxDQUFDLElBQUEsVUFBRyxFQUErQiw4QkFBOEIsQ0FBQztRQUNoRixLQUFLLEVBQUUsQ0FBQztLQUNULENBQUMsQ0FBQTtBQUNKLENBQUMsQ0FBQTtBQU5ZLFFBQUEsd0JBQXdCLDRCQU1wQztBQUVNLE1BQU0sNEJBQTRCLEdBQUcsR0FDMUMsRUFBRTtJQUNGLE9BQU8sSUFBQSxxQkFBVSxFQUFDLENBQUMsVUFBVSxFQUFFLE1BQU0sQ0FBQyxDQUFDLENBQUE7QUFDekMsQ0FBQyxDQUFBO0FBSFksUUFBQSw0QkFBNEIsZ0NBR3hDO0FBRUQsd0hBQXdIO0FBQ2pILE1BQU0sK0JBQStCLEdBQUcsR0FBRyxFQUFFO0lBQ2xELE9BQU8sSUFBQSxzQkFBUSxFQUFDO1FBQ2QsUUFBUSxFQUFFLENBQUMsVUFBVSxFQUFFLGNBQWMsQ0FBQztRQUN0QyxPQUFPLEVBQUUsR0FBRyxFQUFFLENBQUMsSUFBQSxVQUFHLEVBQStCLHNDQUFzQyxDQUFDO1FBQ3hGLEtBQUssRUFBRSxDQUFDO0tBQ1QsQ0FBQyxDQUFBO0FBQ0osQ0FBQyxDQUFBO0FBTlksUUFBQSwrQkFBK0IsbUNBTTNDO0FBRU0sTUFBTSxtQ0FBbUMsR0FBRyxHQUNqRCxFQUFFO0lBQ0YsT0FBTyxJQUFBLHFCQUFVLEVBQUMsQ0FBQyxVQUFVLEVBQUUsY0FBYyxDQUFDLENBQUMsQ0FBQTtBQUNqRCxDQUFDLENBQUE7QUFIWSxRQUFBLG1DQUFtQyx1Q0FHL0M7QUFFTSxNQUFNLHdCQUF3QixHQUFHLENBQ3RDLFFBQWdCLEVBQ2hCLEVBQUU7SUFDRixPQUFPLElBQUEseUJBQVcsRUFBQztRQUNqQixXQUFXLEVBQUUsQ0FBQyxVQUFVLEVBQUUsV0FBVyxFQUFFLFFBQVEsQ0FBQztRQUNoRCxVQUFVLEVBQUUsQ0FBQyxZQUFxQixFQUFFLEVBQUU7WUFDcEMsT0FBTyxJQUFBLFVBQUcsRUFNUixpQkFBaUIsUUFBUSxtREFBbUQsWUFBWSxFQUFFLENBQUMsQ0FBQTtRQUMvRixDQUFDO0tBQ0YsQ0FBQyxDQUFBO0FBQ0osQ0FBQyxDQUFBO0FBZlksUUFBQSx3QkFBd0IsNEJBZXBDO0FBRU0sTUFBTSxvQkFBb0IsR0FBRyxDQUFDLEVBQ25DLFFBQVEsRUFDUixRQUFRLEdBSVQsRUFBRSxFQUFFO0lBQ0gsT0FBTyxJQUFBLHNCQUFRLEVBQUM7UUFDZCxRQUFRLEVBQUUsQ0FBQyxVQUFVLEVBQUUsc0JBQXNCLEVBQUUsUUFBUSxFQUFFLFFBQVEsQ0FBQztRQUNsRSxPQUFPLEVBQUUsR0FBRyxFQUFFLENBQUMsSUFBQSxVQUFHLEVBQXFDLDJCQUEyQixRQUFRLElBQUksUUFBUSxFQUFFLENBQUM7UUFDekcsS0FBSyxFQUFFLENBQUM7S0FDVCxDQUFDLENBQUE7QUFDSixDQUFDLENBQUE7QUFaWSxRQUFBLG9CQUFvQix3QkFZaEM7QUFFTSxNQUFNLHdCQUF3QixHQUFHLENBQUMsRUFDdkMsUUFBUSxFQUNSLFFBQVEsR0FJVCxFQUFFLEVBQUU7SUFDSCxPQUFPLElBQUEscUJBQVUsRUFBQyxDQUFDLFVBQVUsRUFBRSxzQkFBc0IsRUFBRSxRQUFRLEVBQUUsUUFBUSxDQUFDLENBQUMsQ0FBQTtBQUM3RSxDQUFDLENBQUE7QUFSWSxRQUFBLHdCQUF3Qiw0QkFRcEMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7XG4gIERhdGFTb3VyY2VBdXRoLFxuICBEYXRhU291cmNlQ3JlZGVudGlhbCxcbn0gZnJvbSAnQC9hcHAvY29tcG9uZW50cy9oZWFkZXIvYWNjb3VudC1zZXR0aW5nL2RhdGEtc291cmNlLXBhZ2UtbmV3L3R5cGVzJ1xuaW1wb3J0IHtcbiAgdXNlTXV0YXRpb24sXG4gIHVzZVF1ZXJ5LFxufSBmcm9tICdAdGFuc3RhY2svcmVhY3QtcXVlcnknXG5pbXBvcnQgeyBnZXQgfSBmcm9tICcuL2Jhc2UnXG5pbXBvcnQgeyB1c2VJbnZhbGlkIH0gZnJvbSAnLi91c2UtYmFzZSdcblxuY29uc3QgTkFNRV9TUEFDRSA9ICdkYXRhLXNvdXJjZS1hdXRoJ1xuXG5leHBvcnQgY29uc3QgdXNlR2V0RGF0YVNvdXJjZUxpc3RBdXRoID0gKCkgPT4ge1xuICByZXR1cm4gdXNlUXVlcnkoe1xuICAgIHF1ZXJ5S2V5OiBbTkFNRV9TUEFDRSwgJ2xpc3QnXSxcbiAgICBxdWVyeUZuOiAoKSA9PiBnZXQ8eyByZXN1bHQ6IERhdGFTb3VyY2VBdXRoW10gfT4oJy9hdXRoL3BsdWdpbi9kYXRhc291cmNlL2xpc3QnKSxcbiAgICByZXRyeTogMCxcbiAgfSlcbn1cblxuZXhwb3J0IGNvbnN0IHVzZUludmFsaWREYXRhU291cmNlTGlzdEF1dGggPSAoXG4pID0+IHtcbiAgcmV0dXJuIHVzZUludmFsaWQoW05BTUVfU1BBQ0UsICdsaXN0J10pXG59XG5cbi8vICFUaGlzIGhvb2sgaXMgdXNlZCBmb3IgZmV0Y2hpbmcgdGhlIGRlZmF1bHQgZGF0YSBzb3VyY2UgbGlzdCwgd2hpY2ggd2lsbCBiZSBsZWdhY3kgYW5kIGRlcHJlY2F0ZWQgaW4gdGhlIG5lYXIgZnV0dXJlLlxuZXhwb3J0IGNvbnN0IHVzZUdldERlZmF1bHREYXRhU291cmNlTGlzdEF1dGggPSAoKSA9PiB7XG4gIHJldHVybiB1c2VRdWVyeSh7XG4gICAgcXVlcnlLZXk6IFtOQU1FX1NQQUNFLCAnZGVmYXVsdC1saXN0J10sXG4gICAgcXVlcnlGbjogKCkgPT4gZ2V0PHsgcmVzdWx0OiBEYXRhU291cmNlQXV0aFtdIH0+KCcvYXV0aC9wbHVnaW4vZGF0YXNvdXJjZS9kZWZhdWx0LWxpc3QnKSxcbiAgICByZXRyeTogMCxcbiAgfSlcbn1cblxuZXhwb3J0IGNvbnN0IHVzZUludmFsaWREZWZhdWx0RGF0YVNvdXJjZUxpc3RBdXRoID0gKFxuKSA9PiB7XG4gIHJldHVybiB1c2VJbnZhbGlkKFtOQU1FX1NQQUNFLCAnZGVmYXVsdC1saXN0J10pXG59XG5cbmV4cG9ydCBjb25zdCB1c2VHZXREYXRhU291cmNlT0F1dGhVcmwgPSAoXG4gIHByb3ZpZGVyOiBzdHJpbmcsXG4pID0+IHtcbiAgcmV0dXJuIHVzZU11dGF0aW9uKHtcbiAgICBtdXRhdGlvbktleTogW05BTUVfU1BBQ0UsICdvYXV0aC11cmwnLCBwcm92aWRlcl0sXG4gICAgbXV0YXRpb25GbjogKGNyZWRlbnRpYWxJZD86IHN0cmluZykgPT4ge1xuICAgICAgcmV0dXJuIGdldDxcbiAgICAgICAge1xuICAgICAgICAgIGF1dGhvcml6YXRpb25fdXJsOiBzdHJpbmdcbiAgICAgICAgICBzdGF0ZTogc3RyaW5nXG4gICAgICAgICAgY29udGV4dF9pZDogc3RyaW5nXG4gICAgICAgIH1cbiAgICAgID4oYC9vYXV0aC9wbHVnaW4vJHtwcm92aWRlcn0vZGF0YXNvdXJjZS9nZXQtYXV0aG9yaXphdGlvbi11cmw/Y3JlZGVudGlhbF9pZD0ke2NyZWRlbnRpYWxJZH1gKVxuICAgIH0sXG4gIH0pXG59XG5cbmV4cG9ydCBjb25zdCB1c2VHZXREYXRhU291cmNlQXV0aCA9ICh7XG4gIHBsdWdpbklkLFxuICBwcm92aWRlcixcbn06IHtcbiAgcGx1Z2luSWQ6IHN0cmluZ1xuICBwcm92aWRlcjogc3RyaW5nXG59KSA9PiB7XG4gIHJldHVybiB1c2VRdWVyeSh7XG4gICAgcXVlcnlLZXk6IFtOQU1FX1NQQUNFLCAnc3BlY2lmaWMtZGF0YS1zb3VyY2UnLCBwbHVnaW5JZCwgcHJvdmlkZXJdLFxuICAgIHF1ZXJ5Rm46ICgpID0+IGdldDx7IHJlc3VsdDogRGF0YVNvdXJjZUNyZWRlbnRpYWxbXSB9PihgL2F1dGgvcGx1Z2luL2RhdGFzb3VyY2UvJHtwbHVnaW5JZH0vJHtwcm92aWRlcn1gKSxcbiAgICByZXRyeTogMCxcbiAgfSlcbn1cblxuZXhwb3J0IGNvbnN0IHVzZUludmFsaWREYXRhU291cmNlQXV0aCA9ICh7XG4gIHBsdWdpbklkLFxuICBwcm92aWRlcixcbn06IHtcbiAgcGx1Z2luSWQ6IHN0cmluZ1xuICBwcm92aWRlcjogc3RyaW5nXG59KSA9PiB7XG4gIHJldHVybiB1c2VJbnZhbGlkKFtOQU1FX1NQQUNFLCAnc3BlY2lmaWMtZGF0YS1zb3VyY2UnLCBwbHVnaW5JZCwgcHJvdmlkZXJdKVxufVxuIl19

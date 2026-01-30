@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getFlowPrefix = exports.flowPrefixMap = void 0;
+const common_1 = require("@/types/common");
+exports.flowPrefixMap = {
+    [common_1.FlowType.appFlow]: 'apps',
+    [common_1.FlowType.ragPipeline]: 'rag/pipelines',
+};
+const getFlowPrefix = (type) => {
+    return exports.flowPrefixMap[type] || exports.flowPrefixMap[common_1.FlowType.appFlow];
+};
+exports.getFlowPrefix = getFlowPrefix;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXRpbHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ1dGlscy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSwyQ0FBeUM7QUFFNUIsUUFBQSxhQUFhLEdBQUc7SUFDM0IsQ0FBQyxpQkFBUSxDQUFDLE9BQU8sQ0FBQyxFQUFFLE1BQU07SUFDMUIsQ0FBQyxpQkFBUSxDQUFDLFdBQVcsQ0FBQyxFQUFFLGVBQWU7Q0FDeEMsQ0FBQTtBQUVNLE1BQU0sYUFBYSxHQUFHLENBQUMsSUFBZSxFQUFFLEVBQUU7SUFDL0MsT0FBTyxxQkFBYSxDQUFDLElBQUssQ0FBQyxJQUFJLHFCQUFhLENBQUMsaUJBQVEsQ0FBQyxPQUFPLENBQUMsQ0FBQTtBQUNoRSxDQUFDLENBQUE7QUFGWSxRQUFBLGFBQWEsaUJBRXpCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgRmxvd1R5cGUgfSBmcm9tICdAL3R5cGVzL2NvbW1vbidcblxuZXhwb3J0IGNvbnN0IGZsb3dQcmVmaXhNYXAgPSB7XG4gIFtGbG93VHlwZS5hcHBGbG93XTogJ2FwcHMnLFxuICBbRmxvd1R5cGUucmFnUGlwZWxpbmVdOiAncmFnL3BpcGVsaW5lcycsXG59XG5cbmV4cG9ydCBjb25zdCBnZXRGbG93UHJlZml4ID0gKHR5cGU/OiBGbG93VHlwZSkgPT4ge1xuICByZXR1cm4gZmxvd1ByZWZpeE1hcFt0eXBlIV0gfHwgZmxvd1ByZWZpeE1hcFtGbG93VHlwZS5hcHBGbG93XVxufVxuIl19

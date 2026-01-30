@@ -1,0 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("@remixicon/react");
+const React = require("react");
+const react_i18next_1 = require("react-i18next");
+const i18n_1 = require("@/context/i18n");
+const NoLinkedAppsPanel = () => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    const docLink = (0, i18n_1.useDocLink)();
+    return (<div className="w-[240px] rounded-xl border-[0.5px] border-components-panel-border bg-components-panel-bg-blur p-4">
+      <div className="inline-flex rounded-lg border-[0.5px] border-components-panel-border-subtle bg-background-default-subtle p-2">
+        <react_1.RiApps2AddLine className="size-4 text-text-tertiary"/>
+      </div>
+      <div className="my-2 text-xs text-text-tertiary">{t('datasetMenus.emptyTip', { ns: 'common' })}</div>
+      <a className="mt-2 inline-flex cursor-pointer items-center text-xs text-text-accent" href={docLink('/guides/knowledge-base/integrate-knowledge-within-application')} target="_blank" rel="noopener noreferrer">
+        <react_1.RiBookOpenLine className="mr-1 size-4 text-text-accent"/>
+        {t('datasetMenus.viewDoc', { ns: 'common' })}
+      </a>
+    </div>);
+};
+exports.default = React.memo(NoLinkedAppsPanel);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibm8tbGlua2VkLWFwcHMtcGFuZWwuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuby1saW5rZWQtYXBwcy1wYW5lbC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSw0Q0FBaUU7QUFDakUsK0JBQThCO0FBQzlCLGlEQUE4QztBQUM5Qyx5Q0FBMkM7QUFFM0MsTUFBTSxpQkFBaUIsR0FBRyxHQUFHLEVBQUU7SUFDN0IsTUFBTSxFQUFFLENBQUMsRUFBRSxHQUFHLElBQUEsOEJBQWMsR0FBRSxDQUFBO0lBQzlCLE1BQU0sT0FBTyxHQUFHLElBQUEsaUJBQVUsR0FBRSxDQUFBO0lBRTVCLE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsb0dBQW9HLENBQ2pIO01BQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLDhHQUE4RyxDQUMzSDtRQUFBLENBQUMsc0JBQWMsQ0FBQyxTQUFTLENBQUMsMkJBQTJCLEVBQ3ZEO01BQUEsRUFBRSxHQUFHLENBQ0w7TUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsaUNBQWlDLENBQUMsQ0FBQyxDQUFDLENBQUMsdUJBQXVCLEVBQUUsRUFBRSxFQUFFLEVBQUUsUUFBUSxFQUFFLENBQUMsQ0FBQyxFQUFFLEdBQUcsQ0FDcEc7TUFBQSxDQUFDLENBQUMsQ0FDQSxTQUFTLENBQUMsdUVBQXVFLENBQ2pGLElBQUksQ0FBQyxDQUFDLE9BQU8sQ0FBQywrREFBK0QsQ0FBQyxDQUFDLENBQy9FLE1BQU0sQ0FBQyxRQUFRLENBQ2YsR0FBRyxDQUFDLHFCQUFxQixDQUV6QjtRQUFBLENBQUMsc0JBQWMsQ0FBQyxTQUFTLENBQUMsOEJBQThCLEVBQ3hEO1FBQUEsQ0FBQyxDQUFDLENBQUMsc0JBQXNCLEVBQUUsRUFBRSxFQUFFLEVBQUUsUUFBUSxFQUFFLENBQUMsQ0FDOUM7TUFBQSxFQUFFLENBQUMsQ0FDTDtJQUFBLEVBQUUsR0FBRyxDQUFDLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELGtCQUFlLEtBQUssQ0FBQyxJQUFJLENBQUMsaUJBQWlCLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFJpQXBwczJBZGRMaW5lLCBSaUJvb2tPcGVuTGluZSB9IGZyb20gJ0ByZW1peGljb24vcmVhY3QnXG5pbXBvcnQgKiBhcyBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCB7IHVzZVRyYW5zbGF0aW9uIH0gZnJvbSAncmVhY3QtaTE4bmV4dCdcbmltcG9ydCB7IHVzZURvY0xpbmsgfSBmcm9tICdAL2NvbnRleHQvaTE4bidcblxuY29uc3QgTm9MaW5rZWRBcHBzUGFuZWwgPSAoKSA9PiB7XG4gIGNvbnN0IHsgdCB9ID0gdXNlVHJhbnNsYXRpb24oKVxuICBjb25zdCBkb2NMaW5rID0gdXNlRG9jTGluaygpXG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2IGNsYXNzTmFtZT1cInctWzI0MHB4XSByb3VuZGVkLXhsIGJvcmRlci1bMC41cHhdIGJvcmRlci1jb21wb25lbnRzLXBhbmVsLWJvcmRlciBiZy1jb21wb25lbnRzLXBhbmVsLWJnLWJsdXIgcC00XCI+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImlubGluZS1mbGV4IHJvdW5kZWQtbGcgYm9yZGVyLVswLjVweF0gYm9yZGVyLWNvbXBvbmVudHMtcGFuZWwtYm9yZGVyLXN1YnRsZSBiZy1iYWNrZ3JvdW5kLWRlZmF1bHQtc3VidGxlIHAtMlwiPlxuICAgICAgICA8UmlBcHBzMkFkZExpbmUgY2xhc3NOYW1lPVwic2l6ZS00IHRleHQtdGV4dC10ZXJ0aWFyeVwiIC8+XG4gICAgICA8L2Rpdj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwibXktMiB0ZXh0LXhzIHRleHQtdGV4dC10ZXJ0aWFyeVwiPnt0KCdkYXRhc2V0TWVudXMuZW1wdHlUaXAnLCB7IG5zOiAnY29tbW9uJyB9KX08L2Rpdj5cbiAgICAgIDxhXG4gICAgICAgIGNsYXNzTmFtZT1cIm10LTIgaW5saW5lLWZsZXggY3Vyc29yLXBvaW50ZXIgaXRlbXMtY2VudGVyIHRleHQteHMgdGV4dC10ZXh0LWFjY2VudFwiXG4gICAgICAgIGhyZWY9e2RvY0xpbmsoJy9ndWlkZXMva25vd2xlZGdlLWJhc2UvaW50ZWdyYXRlLWtub3dsZWRnZS13aXRoaW4tYXBwbGljYXRpb24nKX1cbiAgICAgICAgdGFyZ2V0PVwiX2JsYW5rXCJcbiAgICAgICAgcmVsPVwibm9vcGVuZXIgbm9yZWZlcnJlclwiXG4gICAgICA+XG4gICAgICAgIDxSaUJvb2tPcGVuTGluZSBjbGFzc05hbWU9XCJtci0xIHNpemUtNCB0ZXh0LXRleHQtYWNjZW50XCIgLz5cbiAgICAgICAge3QoJ2RhdGFzZXRNZW51cy52aWV3RG9jJywgeyBuczogJ2NvbW1vbicgfSl9XG4gICAgICA8L2E+XG4gICAgPC9kaXY+XG4gIClcbn1cblxuZXhwb3J0IGRlZmF1bHQgUmVhY3QubWVtbyhOb0xpbmtlZEFwcHNQYW5lbClcbiJdfQ==

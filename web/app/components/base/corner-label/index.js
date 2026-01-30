@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const classnames_1 = require("@/utils/classnames");
+const shapes_1 = require("../icons/src/vender/solid/shapes");
+const CornerLabel = ({ label, className, labelClassName }) => {
+    return (<div className={(0, classnames_1.cn)('group/corner-label inline-flex items-start', className)}>
+      <shapes_1.Corner className="h-5 w-[13px] text-background-section-burn"/>
+      <div className={(0, classnames_1.cn)('flex items-center gap-0.5 bg-background-section-burn py-1 pr-2', labelClassName)}>
+        <div className="system-2xs-medium-uppercase text-text-tertiary">{label}</div>
+      </div>
+    </div>);
+};
+exports.default = CornerLabel;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxtREFBdUM7QUFDdkMsNkRBQXlEO0FBUXpELE1BQU0sV0FBVyxHQUErQixDQUFDLEVBQUUsS0FBSyxFQUFFLFNBQVMsRUFBRSxjQUFjLEVBQUUsRUFBRSxFQUFFO0lBQ3ZGLE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsQ0FBQyxJQUFBLGVBQUUsRUFBQyw0Q0FBNEMsRUFBRSxTQUFTLENBQUMsQ0FBQyxDQUMxRTtNQUFBLENBQUMsZUFBTSxDQUFDLFNBQVMsQ0FBQywyQ0FBMkMsRUFDN0Q7TUFBQSxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsQ0FBQyxJQUFBLGVBQUUsRUFBQyxnRUFBZ0UsRUFBRSxjQUFjLENBQUMsQ0FBQyxDQUNuRztRQUFBLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxnREFBZ0QsQ0FBQyxDQUFDLEtBQUssQ0FBQyxFQUFFLEdBQUcsQ0FDOUU7TUFBQSxFQUFFLEdBQUcsQ0FDUDtJQUFBLEVBQUUsR0FBRyxDQUFDLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELGtCQUFlLFdBQVcsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGNuIH0gZnJvbSAnQC91dGlscy9jbGFzc25hbWVzJ1xuaW1wb3J0IHsgQ29ybmVyIH0gZnJvbSAnLi4vaWNvbnMvc3JjL3ZlbmRlci9zb2xpZC9zaGFwZXMnXG5cbnR5cGUgQ29ybmVyTGFiZWxQcm9wcyA9IHtcbiAgbGFiZWw6IHN0cmluZ1xuICBjbGFzc05hbWU/OiBzdHJpbmdcbiAgbGFiZWxDbGFzc05hbWU/OiBzdHJpbmdcbn1cblxuY29uc3QgQ29ybmVyTGFiZWw6IFJlYWN0LkZDPENvcm5lckxhYmVsUHJvcHM+ID0gKHsgbGFiZWwsIGNsYXNzTmFtZSwgbGFiZWxDbGFzc05hbWUgfSkgPT4ge1xuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPXtjbignZ3JvdXAvY29ybmVyLWxhYmVsIGlubGluZS1mbGV4IGl0ZW1zLXN0YXJ0JywgY2xhc3NOYW1lKX0+XG4gICAgICA8Q29ybmVyIGNsYXNzTmFtZT1cImgtNSB3LVsxM3B4XSB0ZXh0LWJhY2tncm91bmQtc2VjdGlvbi1idXJuXCIgLz5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPXtjbignZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTAuNSBiZy1iYWNrZ3JvdW5kLXNlY3Rpb24tYnVybiBweS0xIHByLTInLCBsYWJlbENsYXNzTmFtZSl9PlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cInN5c3RlbS0yeHMtbWVkaXVtLXVwcGVyY2FzZSB0ZXh0LXRleHQtdGVydGlhcnlcIj57bGFiZWx9PC9kaXY+XG4gICAgICA8L2Rpdj5cbiAgICA8L2Rpdj5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBDb3JuZXJMYWJlbFxuIl19

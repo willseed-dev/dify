@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BoxGroupField = void 0;
+const react_1 = require("react");
+const _1 = require(".");
+exports.BoxGroupField = (0, react_1.memo)(({ children, fieldProps, boxGroupProps, }) => {
+    return (<_1.BoxGroup {...boxGroupProps}>
+      <_1.Field {...fieldProps}>
+        {children}
+      </_1.Field>
+    </_1.BoxGroup>);
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYm94LWdyb3VwLWZpZWxkLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiYm94LWdyb3VwLWZpZWxkLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFLQSxpQ0FBNEI7QUFDNUIsd0JBR1U7QUFPRyxRQUFBLGFBQWEsR0FBRyxJQUFBLFlBQUksRUFBQyxDQUFDLEVBQ2pDLFFBQVEsRUFDUixVQUFVLEVBQ1YsYUFBYSxHQUNNLEVBQUUsRUFBRTtJQUN2QixPQUFPLENBQ0wsQ0FBQyxXQUFRLENBQUMsSUFBSSxhQUFhLENBQUMsQ0FDMUI7TUFBQSxDQUFDLFFBQUssQ0FBQyxJQUFJLFVBQVUsQ0FBQyxDQUNwQjtRQUFBLENBQUMsUUFBUSxDQUNYO01BQUEsRUFBRSxRQUFLLENBQ1Q7SUFBQSxFQUFFLFdBQVEsQ0FBQyxDQUNaLENBQUE7QUFDSCxDQUFDLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB0eXBlIHsgUmVhY3ROb2RlIH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgdHlwZSB7XG4gIEJveEdyb3VwUHJvcHMsXG4gIEZpZWxkUHJvcHMsXG59IGZyb20gJy4nXG5pbXBvcnQgeyBtZW1vIH0gZnJvbSAncmVhY3QnXG5pbXBvcnQge1xuICBCb3hHcm91cCxcbiAgRmllbGQsXG59IGZyb20gJy4nXG5cbnR5cGUgQm94R3JvdXBGaWVsZFByb3BzID0ge1xuICBjaGlsZHJlbj86IFJlYWN0Tm9kZVxuICBib3hHcm91cFByb3BzPzogT21pdDxCb3hHcm91cFByb3BzLCAnY2hpbGRyZW4nPlxuICBmaWVsZFByb3BzPzogT21pdDxGaWVsZFByb3BzLCAnY2hpbGRyZW4nPlxufVxuZXhwb3J0IGNvbnN0IEJveEdyb3VwRmllbGQgPSBtZW1vKCh7XG4gIGNoaWxkcmVuLFxuICBmaWVsZFByb3BzLFxuICBib3hHcm91cFByb3BzLFxufTogQm94R3JvdXBGaWVsZFByb3BzKSA9PiB7XG4gIHJldHVybiAoXG4gICAgPEJveEdyb3VwIHsuLi5ib3hHcm91cFByb3BzfT5cbiAgICAgIDxGaWVsZCB7Li4uZmllbGRQcm9wc30+XG4gICAgICAgIHtjaGlsZHJlbn1cbiAgICAgIDwvRmllbGQ+XG4gICAgPC9Cb3hHcm91cD5cbiAgKVxufSlcbiJdfQ==

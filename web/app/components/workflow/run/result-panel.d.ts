@@ -1,0 +1,32 @@
+import type { FC } from 'react';
+import type { AgentLogItemWithChildren, NodeTracing } from '@/types/workflow';
+export type ResultPanelProps = {
+    nodeInfo?: NodeTracing;
+    inputs?: string;
+    inputs_truncated?: boolean;
+    process_data?: string;
+    process_data_truncated?: boolean;
+    outputs?: string | Record<string, any>;
+    outputs_truncated?: boolean;
+    outputs_full_content?: {
+        download_url: string;
+    };
+    status: string;
+    error?: string;
+    elapsed_time?: number;
+    total_tokens?: number;
+    created_at?: number;
+    created_by?: string;
+    finished_at?: number;
+    steps?: number;
+    showSteps?: boolean;
+    exceptionCounts?: number;
+    execution_metadata?: any;
+    isListening?: boolean;
+    handleShowIterationResultList?: (detail: NodeTracing[][], iterDurationMap: any) => void;
+    handleShowLoopResultList?: (detail: NodeTracing[][], loopDurationMap: any) => void;
+    onShowRetryDetail?: (detail: NodeTracing[]) => void;
+    handleShowAgentOrToolLog?: (detail?: AgentLogItemWithChildren) => void;
+};
+declare const ResultPanel: FC<ResultPanelProps>;
+export default ResultPanel;

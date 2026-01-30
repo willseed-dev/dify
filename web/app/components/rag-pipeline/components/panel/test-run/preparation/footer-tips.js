@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const react_i18next_1 = require("react-i18next");
+const FooterTips = () => {
+    const { t } = (0, react_i18next_1.useTranslation)();
+    return (<div className="system-xs-regular flex grow flex-col justify-end p-4 pt-2 text-text-tertiary">
+      {t('testRun.tooltip', { ns: 'datasetPipeline' })}
+    </div>);
+};
+exports.default = React.memo(FooterTips);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZm9vdGVyLXRpcHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJmb290ZXItdGlwcy50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSwrQkFBOEI7QUFDOUIsaURBQThDO0FBRTlDLE1BQU0sVUFBVSxHQUFHLEdBQUcsRUFBRTtJQUN0QixNQUFNLEVBQUUsQ0FBQyxFQUFFLEdBQUcsSUFBQSw4QkFBYyxHQUFFLENBQUE7SUFFOUIsT0FBTyxDQUNMLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyw4RUFBOEUsQ0FDM0Y7TUFBQSxDQUFDLENBQUMsQ0FBQyxpQkFBaUIsRUFBRSxFQUFFLEVBQUUsRUFBRSxpQkFBaUIsRUFBRSxDQUFDLENBQ2xEO0lBQUEsRUFBRSxHQUFHLENBQUMsQ0FDUCxDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsS0FBSyxDQUFDLElBQUksQ0FBQyxVQUFVLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgdXNlVHJhbnNsYXRpb24gfSBmcm9tICdyZWFjdC1pMThuZXh0J1xuXG5jb25zdCBGb290ZXJUaXBzID0gKCkgPT4ge1xuICBjb25zdCB7IHQgfSA9IHVzZVRyYW5zbGF0aW9uKClcblxuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPVwic3lzdGVtLXhzLXJlZ3VsYXIgZmxleCBncm93IGZsZXgtY29sIGp1c3RpZnktZW5kIHAtNCBwdC0yIHRleHQtdGV4dC10ZXJ0aWFyeVwiPlxuICAgICAge3QoJ3Rlc3RSdW4udG9vbHRpcCcsIHsgbnM6ICdkYXRhc2V0UGlwZWxpbmUnIH0pfVxuICAgIDwvZGl2PlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IFJlYWN0Lm1lbW8oRm9vdGVyVGlwcylcbiJdfQ==

@@ -1,0 +1,13 @@
+import type { CredentialTypeEnum, PluginPayload } from '../types';
+export declare const useGetPluginCredentialInfoHook: (pluginPayload: PluginPayload, enable?: boolean) => any;
+export declare const useDeletePluginCredentialHook: (pluginPayload: PluginPayload) => any;
+export declare const useInvalidPluginCredentialInfoHook: (pluginPayload: PluginPayload) => () => void;
+export declare const useSetPluginDefaultCredentialHook: (pluginPayload: PluginPayload) => any;
+export declare const useGetPluginCredentialSchemaHook: (pluginPayload: PluginPayload, credentialType: CredentialTypeEnum) => any;
+export declare const useAddPluginCredentialHook: (pluginPayload: PluginPayload) => any;
+export declare const useUpdatePluginCredentialHook: (pluginPayload: PluginPayload) => any;
+export declare const useGetPluginOAuthUrlHook: (pluginPayload: PluginPayload) => any;
+export declare const useGetPluginOAuthClientSchemaHook: (pluginPayload: PluginPayload) => any;
+export declare const useInvalidPluginOAuthClientSchemaHook: (pluginPayload: PluginPayload) => any;
+export declare const useSetPluginOAuthCustomClientHook: (pluginPayload: PluginPayload) => any;
+export declare const useDeletePluginOAuthCustomClientHook: (pluginPayload: PluginPayload) => any;

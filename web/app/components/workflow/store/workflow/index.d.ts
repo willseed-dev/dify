@@ -1,0 +1,26 @@
+import type { StateCreator } from 'zustand';
+import type { ChatVariableSliceShape } from './chat-variable-slice';
+import type { InspectVarsSliceShape } from './debug/inspect-vars-slice';
+import type { EnvVariableSliceShape } from './env-variable-slice';
+import type { FormSliceShape } from './form-slice';
+import type { HelpLineSliceShape } from './help-line-slice';
+import type { HistorySliceShape } from './history-slice';
+import type { LayoutSliceShape } from './layout-slice';
+import type { NodeSliceShape } from './node-slice';
+import type { PanelSliceShape } from './panel-slice';
+import type { ToolSliceShape } from './tool-slice';
+import type { VersionSliceShape } from './version-slice';
+import type { WorkflowDraftSliceShape } from './workflow-draft-slice';
+import type { WorkflowSliceShape } from './workflow-slice';
+import type { RagPipelineSliceShape } from '@/app/components/rag-pipeline/store';
+import type { WorkflowSliceShape as WorkflowAppSliceShape } from '@/app/components/workflow-app/store/workflow/workflow-slice';
+export type SliceFromInjection = Partial<WorkflowAppSliceShape> & Partial<RagPipelineSliceShape>;
+export type Shape = ChatVariableSliceShape & EnvVariableSliceShape & FormSliceShape & HelpLineSliceShape & HistorySliceShape & NodeSliceShape & PanelSliceShape & ToolSliceShape & VersionSliceShape & WorkflowDraftSliceShape & WorkflowSliceShape & InspectVarsSliceShape & LayoutSliceShape & SliceFromInjection;
+export type InjectWorkflowStoreSliceFn = StateCreator<SliceFromInjection>;
+type CreateWorkflowStoreParams = {
+    injectWorkflowStoreSliceFn?: InjectWorkflowStoreSliceFn;
+};
+export declare const createWorkflowStore: (params: CreateWorkflowStoreParams) => any;
+export declare function useStore<T>(selector: (state: Shape) => T): T;
+export declare const useWorkflowStore: () => any;
+export {};

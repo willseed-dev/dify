@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getInitialTokenV2 = exports.isTokenV1 = void 0;
+const isTokenV1 = (token) => {
+    return !token.version;
+};
+exports.isTokenV1 = isTokenV1;
+const getInitialTokenV2 = () => ({
+    version: 2,
+});
+exports.getInitialTokenV2 = getInitialTokenV2;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXRpbHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJ1dGlscy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBTyxNQUFNLFNBQVMsR0FBRyxDQUFDLEtBQTBCLEVBQUUsRUFBRTtJQUN0RCxPQUFPLENBQUMsS0FBSyxDQUFDLE9BQU8sQ0FBQTtBQUN2QixDQUFDLENBQUE7QUFGWSxRQUFBLFNBQVMsYUFFckI7QUFFTSxNQUFNLGlCQUFpQixHQUFHLEdBQXdCLEVBQUUsQ0FBQyxDQUFDO0lBQzNELE9BQU8sRUFBRSxDQUFDO0NBQ1gsQ0FBQyxDQUFBO0FBRlcsUUFBQSxpQkFBaUIscUJBRTVCIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IGlzVG9rZW5WMSA9ICh0b2tlbjogUmVjb3JkPHN0cmluZywgYW55PikgPT4ge1xuICByZXR1cm4gIXRva2VuLnZlcnNpb25cbn1cblxuZXhwb3J0IGNvbnN0IGdldEluaXRpYWxUb2tlblYyID0gKCk6IFJlY29yZDxzdHJpbmcsIGFueT4gPT4gKHtcbiAgdmVyc2lvbjogMixcbn0pXG4iXX0=

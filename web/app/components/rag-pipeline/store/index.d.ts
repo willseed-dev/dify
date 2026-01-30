@@ -1,0 +1,27 @@
+import type { StateCreator } from 'zustand';
+import type { InputFieldEditorProps } from '../components/panel/input-field/editor';
+import type { DataSourceItem } from '@/app/components/workflow/block-selector/types';
+import type { ToolWithProvider } from '@/app/components/workflow/types';
+import type { IconInfo } from '@/models/datasets';
+import type { RAGPipelineVariables } from '@/models/pipeline';
+export type RagPipelineSliceShape = {
+    pipelineId: string;
+    knowledgeName: string;
+    knowledgeIcon?: IconInfo;
+    showInputFieldPanel: boolean;
+    setShowInputFieldPanel: (showInputFieldPanel: boolean) => void;
+    showInputFieldPreviewPanel: boolean;
+    setShowInputFieldPreviewPanel: (showInputFieldPreviewPanel: boolean) => void;
+    inputFieldEditPanelProps: InputFieldEditorProps | null;
+    setInputFieldEditPanelProps: (showInputFieldEditPanel: InputFieldEditorProps | null) => void;
+    nodesDefaultConfigs: Record<string, any>;
+    setNodesDefaultConfigs: (nodesDefaultConfigs: Record<string, any>) => void;
+    ragPipelineVariables: RAGPipelineVariables;
+    setRagPipelineVariables: (ragPipelineVariables: RAGPipelineVariables) => void;
+    dataSourceList: ToolWithProvider[];
+    setDataSourceList: (dataSourceList: DataSourceItem[]) => void;
+    isPreparingDataSource: boolean;
+    setIsPreparingDataSource: (isPreparingDataSource: boolean) => void;
+};
+export type CreateRagPipelineSliceSlice = StateCreator<RagPipelineSliceShape>;
+export declare const createRagPipelineSliceSlice: StateCreator<RagPipelineSliceShape>;

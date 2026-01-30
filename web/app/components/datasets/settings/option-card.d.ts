@@ -1,0 +1,23 @@
+import type { ReactNode } from 'react';
+import * as React from 'react';
+import { EffectColor } from './chunk-structure/types';
+type OptionCardProps<T> = {
+    id: T;
+    className?: string;
+    isActive?: boolean;
+    icon?: ReactNode;
+    iconActiveColor?: string;
+    title: string;
+    description?: string;
+    isRecommended?: boolean;
+    effectColor?: EffectColor;
+    showEffectColor?: boolean;
+    disabled?: boolean;
+    onClick?: (id: T) => void;
+    children?: ReactNode;
+    showChildren?: boolean;
+    ref?: React.Ref<HTMLDivElement>;
+};
+declare const OptionCard: <T>({ id, className, isActive, icon, iconActiveColor, title, description, isRecommended, effectColor, showEffectColor, disabled, onClick, children, showChildren, ref, }: OptionCardProps<T>) => any;
+declare const _default: typeof OptionCard;
+export default _default;

@@ -1,0 +1,23 @@
+import type { FC } from 'react';
+import type { ResourceVarInputs } from '../types';
+import type { CredentialFormSchema } from '@/app/components/header/account-setting/model-provider-page/declarations';
+import type { Event, Tool } from '@/app/components/tools/types';
+import type { TriggerWithProvider } from '@/app/components/workflow/block-selector/types';
+import type { ToolWithProvider } from '@/app/components/workflow/types';
+type Props = {
+    readOnly: boolean;
+    nodeId: string;
+    schema: CredentialFormSchema;
+    value: ResourceVarInputs;
+    onChange: (value: any) => void;
+    inPanel?: boolean;
+    currentTool?: Tool | Event;
+    currentProvider?: ToolWithProvider | TriggerWithProvider;
+    showManageInputField?: boolean;
+    onManageInputField?: () => void;
+    extraParams?: Record<string, any>;
+    providerType?: string;
+    disableVariableInsertion?: boolean;
+};
+declare const FormInputItem: FC<Props>;
+export default FormInputItem;

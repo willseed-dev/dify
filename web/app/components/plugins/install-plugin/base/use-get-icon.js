@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
+const config_1 = require("@/config");
+const app_context_1 = require("@/context/app-context");
+const useGetIcon = () => {
+    const currentWorkspace = (0, app_context_1.useSelector)(s => s.currentWorkspace);
+    const getIconUrl = (0, react_1.useCallback)((fileName) => {
+        return `${config_1.API_PREFIX}/workspaces/current/plugin/icon?tenant_id=${currentWorkspace.id}&filename=${fileName}`;
+    }, [currentWorkspace.id]);
+    return {
+        getIconUrl,
+    };
+};
+exports.default = useGetIcon;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidXNlLWdldC1pY29uLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidXNlLWdldC1pY29uLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsaUNBQW1DO0FBQ25DLHFDQUFxQztBQUNyQyx1REFBbUQ7QUFFbkQsTUFBTSxVQUFVLEdBQUcsR0FBRyxFQUFFO0lBQ3RCLE1BQU0sZ0JBQWdCLEdBQUcsSUFBQSx5QkFBVyxFQUFDLENBQUMsQ0FBQyxFQUFFLENBQUMsQ0FBQyxDQUFDLGdCQUFnQixDQUFDLENBQUE7SUFDN0QsTUFBTSxVQUFVLEdBQUcsSUFBQSxtQkFBVyxFQUFDLENBQUMsUUFBZ0IsRUFBRSxFQUFFO1FBQ2xELE9BQU8sR0FBRyxtQkFBVSw2Q0FBNkMsZ0JBQWdCLENBQUMsRUFBRSxhQUFhLFFBQVEsRUFBRSxDQUFBO0lBQzdHLENBQUMsRUFBRSxDQUFDLGdCQUFnQixDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUE7SUFFekIsT0FBTztRQUNMLFVBQVU7S0FDWCxDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsVUFBVSxDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdXNlQ2FsbGJhY2sgfSBmcm9tICdyZWFjdCdcbmltcG9ydCB7IEFQSV9QUkVGSVggfSBmcm9tICdAL2NvbmZpZydcbmltcG9ydCB7IHVzZVNlbGVjdG9yIH0gZnJvbSAnQC9jb250ZXh0L2FwcC1jb250ZXh0J1xuXG5jb25zdCB1c2VHZXRJY29uID0gKCkgPT4ge1xuICBjb25zdCBjdXJyZW50V29ya3NwYWNlID0gdXNlU2VsZWN0b3IocyA9PiBzLmN1cnJlbnRXb3Jrc3BhY2UpXG4gIGNvbnN0IGdldEljb25VcmwgPSB1c2VDYWxsYmFjaygoZmlsZU5hbWU6IHN0cmluZykgPT4ge1xuICAgIHJldHVybiBgJHtBUElfUFJFRklYfS93b3Jrc3BhY2VzL2N1cnJlbnQvcGx1Z2luL2ljb24/dGVuYW50X2lkPSR7Y3VycmVudFdvcmtzcGFjZS5pZH0mZmlsZW5hbWU9JHtmaWxlTmFtZX1gXG4gIH0sIFtjdXJyZW50V29ya3NwYWNlLmlkXSlcblxuICByZXR1cm4ge1xuICAgIGdldEljb25VcmwsXG4gIH1cbn1cblxuZXhwb3J0IGRlZmF1bHQgdXNlR2V0SWNvblxuIl19

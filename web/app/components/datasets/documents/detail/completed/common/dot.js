@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const Dot = () => {
+    return (<div className="system-xs-medium text-text-quaternary">·</div>);
+};
+Dot.displayName = 'Dot';
+exports.default = React.memo(Dot);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZG90LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiZG90LnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLCtCQUE4QjtBQUU5QixNQUFNLEdBQUcsR0FBRyxHQUFHLEVBQUU7SUFDZixPQUFPLENBQ0wsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLHVDQUF1QyxDQUFDLENBQUMsRUFBRSxHQUFHLENBQUMsQ0FDL0QsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELEdBQUcsQ0FBQyxXQUFXLEdBQUcsS0FBSyxDQUFBO0FBRXZCLGtCQUFlLEtBQUssQ0FBQyxJQUFJLENBQUMsR0FBRyxDQUFDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgKiBhcyBSZWFjdCBmcm9tICdyZWFjdCdcblxuY29uc3QgRG90ID0gKCkgPT4ge1xuICByZXR1cm4gKFxuICAgIDxkaXYgY2xhc3NOYW1lPVwic3lzdGVtLXhzLW1lZGl1bSB0ZXh0LXRleHQtcXVhdGVybmFyeVwiPsK3PC9kaXY+XG4gIClcbn1cblxuRG90LmRpc3BsYXlOYW1lID0gJ0RvdCdcblxuZXhwb3J0IGRlZmF1bHQgUmVhY3QubWVtbyhEb3QpXG4iXX0=

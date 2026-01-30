@@ -1,0 +1,24 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SettingItem = void 0;
+const react_1 = require("react");
+const tooltip_1 = require("@/app/components/base/tooltip");
+const indicator_1 = require("@/app/components/header/indicator");
+const classnames_1 = require("@/utils/classnames");
+exports.SettingItem = (0, react_1.memo)(({ label, children, status, tooltip }) => {
+    const indicator = status === 'error' ? 'red' : status === 'warning' ? 'yellow' : undefined;
+    const needTooltip = ['error', 'warning'].includes(status);
+    return (<div className="relative flex items-center justify-between space-x-1 rounded-md bg-workflow-block-parma-bg px-1.5 py-1 text-xs font-normal">
+      <div className={(0, classnames_1.cn)('system-xs-medium-uppercase max-w-full shrink-0 truncate text-text-tertiary', !!children && 'max-w-[100px]')}>
+        {label}
+      </div>
+      <tooltip_1.default popupContent={tooltip} disabled={!needTooltip}>
+        <div className="system-xs-medium truncate text-right text-text-secondary">
+          {children}
+        </div>
+      </tooltip_1.default>
+      {indicator && <indicator_1.default color={indicator} className="absolute -right-0.5 -top-0.5"/>}
+    </div>);
+});
+exports.SettingItem.displayName = 'SettingItem';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2V0dGluZy1pdGVtLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsic2V0dGluZy1pdGVtLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFDQSxpQ0FBNEI7QUFDNUIsMkRBQW1EO0FBQ25ELGlFQUF5RDtBQUN6RCxtREFBdUM7QUFRMUIsUUFBQSxXQUFXLEdBQUcsSUFBQSxZQUFJLEVBQUMsQ0FBQyxFQUFFLEtBQUssRUFBRSxRQUFRLEVBQUUsTUFBTSxFQUFFLE9BQU8sRUFBb0IsRUFBRSxFQUFFO0lBQ3pGLE1BQU0sU0FBUyxHQUE4QyxNQUFNLEtBQUssT0FBTyxDQUFDLENBQUMsQ0FBQyxLQUFLLENBQUMsQ0FBQyxDQUFDLE1BQU0sS0FBSyxTQUFTLENBQUMsQ0FBQyxDQUFDLFFBQVEsQ0FBQyxDQUFDLENBQUMsU0FBUyxDQUFBO0lBQ3JJLE1BQU0sV0FBVyxHQUFHLENBQUMsT0FBTyxFQUFFLFNBQVMsQ0FBQyxDQUFDLFFBQVEsQ0FBQyxNQUFhLENBQUMsQ0FBQTtJQUNoRSxPQUFPLENBQ0wsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLDRIQUE0SCxDQUN6STtNQUFBLENBQUMsR0FBRyxDQUFDLFNBQVMsQ0FBQyxDQUFDLElBQUEsZUFBRSxFQUFDLDRFQUE0RSxFQUFFLENBQUMsQ0FBQyxRQUFRLElBQUksZUFBZSxDQUFDLENBQUMsQ0FDOUg7UUFBQSxDQUFDLEtBQUssQ0FDUjtNQUFBLEVBQUUsR0FBRyxDQUNMO01BQUEsQ0FBQyxpQkFBTyxDQUFDLFlBQVksQ0FBQyxDQUFDLE9BQU8sQ0FBQyxDQUFDLFFBQVEsQ0FBQyxDQUFDLENBQUMsV0FBVyxDQUFDLENBQ3JEO1FBQUEsQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLDBEQUEwRCxDQUN2RTtVQUFBLENBQUMsUUFBUSxDQUNYO1FBQUEsRUFBRSxHQUFHLENBQ1A7TUFBQSxFQUFFLGlCQUFPLENBQ1Q7TUFBQSxDQUFDLFNBQVMsSUFBSSxDQUFDLG1CQUFTLENBQUMsS0FBSyxDQUFDLENBQUMsU0FBUyxDQUFDLENBQUMsU0FBUyxDQUFDLDhCQUE4QixFQUFHLENBQ3hGO0lBQUEsRUFBRSxHQUFHLENBQUMsQ0FDUCxDQUFBO0FBQ0gsQ0FBQyxDQUFDLENBQUE7QUFFRixtQkFBVyxDQUFDLFdBQVcsR0FBRyxhQUFhLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IENvbXBvbmVudFByb3BzLCBQcm9wc1dpdGhDaGlsZHJlbiwgUmVhY3ROb2RlIH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgeyBtZW1vIH0gZnJvbSAncmVhY3QnXG5pbXBvcnQgVG9vbHRpcCBmcm9tICdAL2FwcC9jb21wb25lbnRzL2Jhc2UvdG9vbHRpcCdcbmltcG9ydCBJbmRpY2F0b3IgZnJvbSAnQC9hcHAvY29tcG9uZW50cy9oZWFkZXIvaW5kaWNhdG9yJ1xuaW1wb3J0IHsgY24gfSBmcm9tICdAL3V0aWxzL2NsYXNzbmFtZXMnXG5cbmV4cG9ydCB0eXBlIFNldHRpbmdJdGVtUHJvcHMgPSBQcm9wc1dpdGhDaGlsZHJlbjx7XG4gIGxhYmVsOiBzdHJpbmdcbiAgc3RhdHVzPzogJ2Vycm9yJyB8ICd3YXJuaW5nJ1xuICB0b29sdGlwPzogUmVhY3ROb2RlXG59PlxuXG5leHBvcnQgY29uc3QgU2V0dGluZ0l0ZW0gPSBtZW1vKCh7IGxhYmVsLCBjaGlsZHJlbiwgc3RhdHVzLCB0b29sdGlwIH06IFNldHRpbmdJdGVtUHJvcHMpID0+IHtcbiAgY29uc3QgaW5kaWNhdG9yOiBDb21wb25lbnRQcm9wczx0eXBlb2YgSW5kaWNhdG9yPlsnY29sb3InXSA9IHN0YXR1cyA9PT0gJ2Vycm9yJyA/ICdyZWQnIDogc3RhdHVzID09PSAnd2FybmluZycgPyAneWVsbG93JyA6IHVuZGVmaW5lZFxuICBjb25zdCBuZWVkVG9vbHRpcCA9IFsnZXJyb3InLCAnd2FybmluZyddLmluY2x1ZGVzKHN0YXR1cyBhcyBhbnkpXG4gIHJldHVybiAoXG4gICAgPGRpdiBjbGFzc05hbWU9XCJyZWxhdGl2ZSBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4gc3BhY2UteC0xIHJvdW5kZWQtbWQgYmctd29ya2Zsb3ctYmxvY2stcGFybWEtYmcgcHgtMS41IHB5LTEgdGV4dC14cyBmb250LW5vcm1hbFwiPlxuICAgICAgPGRpdiBjbGFzc05hbWU9e2NuKCdzeXN0ZW0teHMtbWVkaXVtLXVwcGVyY2FzZSBtYXgtdy1mdWxsIHNocmluay0wIHRydW5jYXRlIHRleHQtdGV4dC10ZXJ0aWFyeScsICEhY2hpbGRyZW4gJiYgJ21heC13LVsxMDBweF0nKX0+XG4gICAgICAgIHtsYWJlbH1cbiAgICAgIDwvZGl2PlxuICAgICAgPFRvb2x0aXAgcG9wdXBDb250ZW50PXt0b29sdGlwfSBkaXNhYmxlZD17IW5lZWRUb29sdGlwfT5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJzeXN0ZW0teHMtbWVkaXVtIHRydW5jYXRlIHRleHQtcmlnaHQgdGV4dC10ZXh0LXNlY29uZGFyeVwiPlxuICAgICAgICAgIHtjaGlsZHJlbn1cbiAgICAgICAgPC9kaXY+XG4gICAgICA8L1Rvb2x0aXA+XG4gICAgICB7aW5kaWNhdG9yICYmIDxJbmRpY2F0b3IgY29sb3I9e2luZGljYXRvcn0gY2xhc3NOYW1lPVwiYWJzb2x1dGUgLXJpZ2h0LTAuNSAtdG9wLTAuNVwiIC8+fVxuICAgIDwvZGl2PlxuICApXG59KVxuXG5TZXR0aW5nSXRlbS5kaXNwbGF5TmFtZSA9ICdTZXR0aW5nSXRlbSdcbiJdfQ==

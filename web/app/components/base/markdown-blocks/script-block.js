@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * @fileoverview ScriptBlock component for handling <script> tags in Markdown.
+ * Extracted from the main markdown renderer for modularity.
+ * Note: Current implementation returns the script tag as a string, which might not execute as expected in React.
+ * This behavior is preserved from the original implementation and may need review for security and functionality.
+ */
+const react_1 = require("react");
+const ScriptBlock = (0, react_1.memo)(({ node }) => {
+    const scriptContent = node.children[0]?.value || '';
+    return `<script>${scriptContent}</script>`;
+});
+ScriptBlock.displayName = 'ScriptBlock';
+exports.default = ScriptBlock;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2NyaXB0LWJsb2NrLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsic2NyaXB0LWJsb2NrLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBOzs7OztHQUtHO0FBQ0gsaUNBQTRCO0FBRTVCLE1BQU0sV0FBVyxHQUFHLElBQUEsWUFBSSxFQUFDLENBQUMsRUFBRSxJQUFJLEVBQU8sRUFBRSxFQUFFO0lBQ3pDLE1BQU0sYUFBYSxHQUFHLElBQUksQ0FBQyxRQUFRLENBQUMsQ0FBQyxDQUFDLEVBQUUsS0FBSyxJQUFJLEVBQUUsQ0FBQTtJQUNuRCxPQUFPLFdBQVcsYUFBYSxXQUFXLENBQUE7QUFDNUMsQ0FBQyxDQUFDLENBQUE7QUFDRixXQUFXLENBQUMsV0FBVyxHQUFHLGFBQWEsQ0FBQTtBQUV2QyxrQkFBZSxXQUFXLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEBmaWxlb3ZlcnZpZXcgU2NyaXB0QmxvY2sgY29tcG9uZW50IGZvciBoYW5kbGluZyA8c2NyaXB0PiB0YWdzIGluIE1hcmtkb3duLlxuICogRXh0cmFjdGVkIGZyb20gdGhlIG1haW4gbWFya2Rvd24gcmVuZGVyZXIgZm9yIG1vZHVsYXJpdHkuXG4gKiBOb3RlOiBDdXJyZW50IGltcGxlbWVudGF0aW9uIHJldHVybnMgdGhlIHNjcmlwdCB0YWcgYXMgYSBzdHJpbmcsIHdoaWNoIG1pZ2h0IG5vdCBleGVjdXRlIGFzIGV4cGVjdGVkIGluIFJlYWN0LlxuICogVGhpcyBiZWhhdmlvciBpcyBwcmVzZXJ2ZWQgZnJvbSB0aGUgb3JpZ2luYWwgaW1wbGVtZW50YXRpb24gYW5kIG1heSBuZWVkIHJldmlldyBmb3Igc2VjdXJpdHkgYW5kIGZ1bmN0aW9uYWxpdHkuXG4gKi9cbmltcG9ydCB7IG1lbW8gfSBmcm9tICdyZWFjdCdcblxuY29uc3QgU2NyaXB0QmxvY2sgPSBtZW1vKCh7IG5vZGUgfTogYW55KSA9PiB7XG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBub2RlLmNoaWxkcmVuWzBdPy52YWx1ZSB8fCAnJ1xuICByZXR1cm4gYDxzY3JpcHQ+JHtzY3JpcHRDb250ZW50fTwvc2NyaXB0PmBcbn0pXG5TY3JpcHRCbG9jay5kaXNwbGF5TmFtZSA9ICdTY3JpcHRCbG9jaydcblxuZXhwb3J0IGRlZmF1bHQgU2NyaXB0QmxvY2tcbiJdfQ==

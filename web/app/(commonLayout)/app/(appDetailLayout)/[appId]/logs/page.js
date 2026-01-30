@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const log_annotation_1 = require("@/app/components/app/log-annotation");
+const type_1 = require("@/app/components/base/features/new-feature-panel/annotation-reply/type");
+const Logs = async () => {
+    return (<log_annotation_1.default pageType={type_1.PageType.log}/>);
+};
+exports.default = Logs;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFnZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbInBhZ2UudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsK0JBQThCO0FBQzlCLHdFQUFzRDtBQUN0RCxpR0FBaUc7QUFFakcsTUFBTSxJQUFJLEdBQUcsS0FBSyxJQUFJLEVBQUU7SUFDdEIsT0FBTyxDQUNMLENBQUMsd0JBQUksQ0FBQyxRQUFRLENBQUMsQ0FBQyxlQUFRLENBQUMsR0FBRyxDQUFDLEVBQUcsQ0FDakMsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELGtCQUFlLElBQUksQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IE1haW4gZnJvbSAnQC9hcHAvY29tcG9uZW50cy9hcHAvbG9nLWFubm90YXRpb24nXG5pbXBvcnQgeyBQYWdlVHlwZSB9IGZyb20gJ0AvYXBwL2NvbXBvbmVudHMvYmFzZS9mZWF0dXJlcy9uZXctZmVhdHVyZS1wYW5lbC9hbm5vdGF0aW9uLXJlcGx5L3R5cGUnXG5cbmNvbnN0IExvZ3MgPSBhc3luYyAoKSA9PiB7XG4gIHJldHVybiAoXG4gICAgPE1haW4gcGFnZVR5cGU9e1BhZ2VUeXBlLmxvZ30gLz5cbiAgKVxufVxuXG5leHBvcnQgZGVmYXVsdCBMb2dzXG4iXX0=

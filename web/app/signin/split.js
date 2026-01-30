@@ -1,0 +1,11 @@
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", { value: true });
+const React = require("react");
+const classnames_1 = require("@/utils/classnames");
+const Split = ({ className, }) => {
+    return (<div className={(0, classnames_1.cn)('h-px w-[400px] bg-[linear-gradient(90deg,rgba(255,255,255,0.01)_0%,rgba(16,24,40,0.08)_50.5%,rgba(255,255,255,0.01)_100%)]', className)}>
+    </div>);
+};
+exports.default = React.memo(Split);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3BsaXQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJzcGxpdC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLFlBQVksQ0FBQTs7QUFFWiwrQkFBOEI7QUFDOUIsbURBQXVDO0FBTXZDLE1BQU0sS0FBSyxHQUFjLENBQUMsRUFDeEIsU0FBUyxHQUNWLEVBQUUsRUFBRTtJQUNILE9BQU8sQ0FDTCxDQUFDLEdBQUcsQ0FDRixTQUFTLENBQUMsQ0FBQyxJQUFBLGVBQUUsRUFBQyw0SEFBNEgsRUFBRSxTQUFTLENBQUMsQ0FBQyxDQUV6SjtJQUFBLEVBQUUsR0FBRyxDQUFDLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUNELGtCQUFlLEtBQUssQ0FBQyxJQUFJLENBQUMsS0FBSyxDQUFDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIndXNlIGNsaWVudCdcbmltcG9ydCB0eXBlIHsgRkMgfSBmcm9tICdyZWFjdCdcbmltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0J1xuaW1wb3J0IHsgY24gfSBmcm9tICdAL3V0aWxzL2NsYXNzbmFtZXMnXG5cbnR5cGUgUHJvcHMgPSB7XG4gIGNsYXNzTmFtZT86IHN0cmluZ1xufVxuXG5jb25zdCBTcGxpdDogRkM8UHJvcHM+ID0gKHtcbiAgY2xhc3NOYW1lLFxufSkgPT4ge1xuICByZXR1cm4gKFxuICAgIDxkaXZcbiAgICAgIGNsYXNzTmFtZT17Y24oJ2gtcHggdy1bNDAwcHhdIGJnLVtsaW5lYXItZ3JhZGllbnQoOTBkZWcscmdiYSgyNTUsMjU1LDI1NSwwLjAxKV8wJSxyZ2JhKDE2LDI0LDQwLDAuMDgpXzUwLjUlLHJnYmEoMjU1LDI1NSwyNTUsMC4wMSlfMTAwJSldJywgY2xhc3NOYW1lKX1cbiAgICA+XG4gICAgPC9kaXY+XG4gIClcbn1cbmV4cG9ydCBkZWZhdWx0IFJlYWN0Lm1lbW8oU3BsaXQpXG4iXX0=
